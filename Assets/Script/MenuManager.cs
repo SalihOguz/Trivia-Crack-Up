@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 	// DatabaseReference reference;
@@ -42,4 +43,9 @@ public class MenuManager : MonoBehaviour {
 
 	// 	reference.Child("users").Child(inputUserId.text).SetRawJsonValueAsync(json);
 	// }
+
+    public void GoToScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 }

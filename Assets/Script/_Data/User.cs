@@ -8,11 +8,15 @@ public class User {
     public string username;
     public float score;
 	public List<int> seenQuestionIds;
+    public int totalCoin;
+    public int avatarId;
 
-	public User(int userId, string username) {
+    public User(int userId, string username, int totalCoin = 0) {
         this.userId = userId;
 		this.username = username;
         this.score = 0;
 		this.seenQuestionIds = new List<int>();
+        this.totalCoin = totalCoin;
+        this.avatarId = 0;
     }
 }
