@@ -157,6 +157,7 @@ public class GameManager : MonoBehaviour {
 
 	void EvaluateBidding()
 	{
+        gameState++;
         if (Random.Range(0,1) == 0) // if both of them didn't choose, we will choose randomly? TODO
         {
             if (playerBid == 0)
@@ -180,7 +181,7 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-		gameState++;
+		
 		if (playerBid > opponentBid)
 		{
 			playingPlayerId = 0;
@@ -223,8 +224,9 @@ public class GameManager : MonoBehaviour {
         player1.totalCoin -= bidAmounts[index];
         playerMoneyText.text = player1.totalCoin.ToString();
 
-        if (opponentBid != 0)
+        if (opponentBid != 0 && gameState == 1)
 		{
+            print("ahaaa" + gameState);
 			EvaluateBidding();
 		}
 	}
@@ -237,7 +239,7 @@ public class GameManager : MonoBehaviour {
         player2.totalCoin -= amount;
         opponentMoneyText.text = player2.totalCoin.ToString();
 
-        if (playerBid != 0)
+        if (playerBid != 0 && gameState == 1)
 		{
 			EvaluateBidding();
 		}
@@ -332,6 +334,7 @@ public class GameManager : MonoBehaviour {
         else
         {
             print("Game Over");
+            gameState = 4;
             // put winner on and finish the game TODO
         }
     }
