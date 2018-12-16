@@ -17,8 +17,10 @@ public class GameManager : MonoBehaviour {
     public GameObject playerIndicator;
     public GameObject opponentIndicator;
     public Text questionTimerText;
-    public Text playerScoreText;
-    public Text opponentScoreText;
+    public GameObject playerScoreStarsParent;
+    public GameObject opponentScoreStarsParent;
+    public Sprite fullStarSprite;
+    public GameObject questionLockObject;
 
     [Header ("In Game Variables")]
     int turnCount = 0;
@@ -54,8 +56,8 @@ public class GameManager : MonoBehaviour {
     void Init()
     {
         // get user data and fill avatar etc
-        User p1 = new User(0, "Oyuncu 1", 1000);
-        User p2 = new User(1, "Bot", 2000);
+        User p1 = new User(0, "MustafaSalih", 1000);
+        User p2 = new User(1, "Musab Bey", 2000);
         player1 = p1;
         player2 = p2;
 
@@ -72,9 +74,9 @@ public class GameManager : MonoBehaviour {
 	{
 		if (gameState == 0) // chosing question and showing choices
 		{
-			gameState++;
 			GetNextQuesiton();
 			StartCoroutine(ShowChoices());
+            gameState++;
 			return;
 		}
 		else if (gameState == 1) // bidding stage
@@ -91,6 +93,7 @@ public class GameManager : MonoBehaviour {
 
 	void Update()
 	{
+        //print(gameState);
 		if (gameState == 1) // bidding
 		{
 			bidTimer += Time.deltaTime;
@@ -226,7 +229,6 @@ public class GameManager : MonoBehaviour {
 
         if (opponentBid != 0 && gameState == 1)
 		{
-            print("ahaaa" + gameState);
 			EvaluateBidding();
 		}
 	}
@@ -256,6 +258,7 @@ public class GameManager : MonoBehaviour {
         {
             botManager.Choose();
         }
+        questionLockObject.SetActive(false);
     }
 
     void ChangeActivePlayer()
@@ -283,7 +286,7 @@ public class GameManager : MonoBehaviour {
         {
             if (currentQuestion.rightAnswerIndex == index + 1) // Answered right! - rightAnswerIndex starts from 1
             {
-                optionTexts[index].transform.parent.GetComponent<Image>().color = Color.green; // TODO make a sprite change
+                //optionTexts[index].transform.parent.GetComponent<Image>().color = Color.green; // TODO make a sprite change
                 IncreaseScore();
                 GoToTheNextTurn();
             }
@@ -299,7 +302,7 @@ public class GameManager : MonoBehaviour {
     {
         if (currentQuestion.rightAnswerIndex == index + 1) // Answered right! - rightAnswerIndex starts from 1
         {
-            optionTexts[index].transform.parent.GetComponent<Image>().color = Color.green; // TODO make a sprite change
+            //optionTexts[index].transform.parent.GetComponent<Image>().color = Color.green; // TODO make a sprite change
             IncreaseScore();
             GoToTheNextTurn();
         }
@@ -315,12 +318,12 @@ public class GameManager : MonoBehaviour {
         if (playingPlayerId == 0)
         {
             playerScore++;
-            playerScoreText.text = playerScore.ToString();
+            playerScoreStarsParent.transform.GetChild(playerScore-1).GetComponent<Image>().sprite = fullStarSprite;
         }
         else
         {
             opponentScore++;
-            opponentScoreText.text = opponentScore.ToString();
+            opponentScoreStarsParent.transform.GetChild(opponentScore-1).GetComponent<Image>().sprite = fullStarSprite;
         }
     }
 
@@ -349,17 +352,21 @@ public class GameManager : MonoBehaviour {
             optionTexts[i].transform.parent.GetComponent<Button>().interactable = true;
             optionTexts[i].transform.parent.GetComponent<Image>().color = Color.white;
 
-            bidButtonsParent.transform.GetChild(i).GetComponent<Image>().color = Color.white; // TODO remove this, lengths might change
+            //bidButtonsParent.transform.GetChild(i).GetComponent<Image>().color = Color.white; // TODO remove this, lengths might change
         }
 
         questionText.gameObject.SetActive(false);
+        questionLockObject.SetActive(true);
         playerIndicator.SetActive(false);
         opponentIndicator.SetActive(false);
+        
+        bidTimer = 0;
+        questionTimer = 0;
 
         playerBid = 0;
         opponentBid = 0;
 
         gameState = 0;
         ProceedGame();
-    }
-}
+    }                                     
+}                            

@@ -24,7 +24,7 @@ public class BotManager : MonoBehaviour {
 		yield return new WaitForSeconds(delay);
 		int choice = UnityEngine.Random.Range(0,3);
 		gameManager.MakeBidBot(gameManager.bidAmounts[choice]);
-		gameManager.bidButtonsParent.transform.GetChild(choice).GetComponent<Image>().color = Color.red; // chosen amount must be visible AFTER each player has chosen TODO
+		//gameManager.bidButtonsParent.transform.GetChild(choice).GetComponent<Image>().color = Color.red; // chosen amount must be visible AFTER each player has chosen TODO
     }
 
     public void Choose()

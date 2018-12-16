@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 	// DatabaseReference reference;
+	public GameObject uiLayer;
+
 
 	// void Start () {
 	// 	UpdateGoogle();
@@ -48,4 +50,44 @@ public class MenuManager : MonoBehaviour {
     {
         SceneManager.LoadScene(name);
     }
+
+	public void ChangeLayerTo(int layerCount)
+	{
+		uiLayer.GetComponent<Animator>().SetInteger("layerCount", layerCount);
+	}
+
+	public void ChangeShopLayer(int shopLayer)
+	{
+		uiLayer.GetComponent<Animator>().SetInteger("shopIndex", shopLayer);
+	}
+
+	public void FakeSearchPlayer()
+	{
+		StartCoroutine(PlayerFound());
+	}
+
+	IEnumerator PlayerFound()
+	{
+		yield return new WaitForSeconds(UnityEngine.Random.Range(4f, 6f));
+		ChangeLayerTo(5);
+		yield return new WaitForSeconds(3f);
+		ChangeLayerTo(6);
+		yield return new WaitForSeconds(1);
+		GoToScene("Game");
+	}
+
+	public void ShowAd()
+	{
+
+	}
+
+	public void PurchasePass()
+	{
+
+	}
+
+	public void PurchaseCoin()
+	{
+
+	}
 }

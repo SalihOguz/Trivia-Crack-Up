@@ -1,0 +1,1539 @@
+fileFormatVersion: 2
+guid: 9f04da2f3c3224e629be28b45d2bfe2b
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: TRIVIA_ATLAS1_0
+    21300002: TRIVIA_ATLAS1_1
+    21300004: TRIVIA_ATLAS1_2
+    21300006: TRIVIA_ATLAS1_3
+    21300008: TRIVIA_ATLAS1_4
+    21300010: TRIVIA_ATLAS1_5
+    21300012: TRIVIA_ATLAS1_6
+    21300014: TRIVIA_ATLAS1_7
+    21300016: TRIVIA_ATLAS1_8
+    21300018: TRIVIA_ATLAS1_9
+    21300020: TRIVIA_ATLAS1_10
+    21300022: TRIVIA_ATLAS1_11
+    21300024: TRIVIA_ATLAS1_12
+    21300026: TRIVIA_ATLAS1_13
+    21300028: TRIVIA_ATLAS1_16
+    21300030: TRIVIA_ATLAS1_20
+    21300032: TRIVIA_ATLAS1_21
+    21300034: TRIVIA_ATLAS1_22
+    21300036: TRIVIA_ATLAS1_23
+    21300038: TRIVIA_ATLAS1_24
+    21300040: TRIVIA_ATLAS1_25
+    21300042: TRIVIA_ATLAS1_26
+    21300044: TRIVIA_ATLAS1_27
+    21300046: TRIVIA_ATLAS1_28
+    21300048: TRIVIA_ATLAS1_30
+    21300050: TRIVIA_ATLAS1_31
+    21300052: TRIVIA_ATLAS1_32
+    21300054: TRIVIA_ATLAS1_38
+    21300056: TRIVIA_ATLAS1_39
+    21300058: TRIVIA_ATLAS1_40
+    21300060: TRIVIA_ATLAS1_47
+    21300062: TRIVIA_ATLAS1_48
+    21300064: TRIVIA_ATLAS1_49
+    21300066: TRIVIA_ATLAS1_50
+    21300068: TRIVIA_ATLAS1_51
+    21300070: TRIVIA_ATLAS1_52
+    21300072: TRIVIA_ATLAS1_53
+    21300074: TRIVIA_ATLAS1_54
+    21300076: TRIVIA_ATLAS1_55
+    21300078: TRIVIA_ATLAS1_56
+    21300080: TRIVIA_ATLAS1_57
+    21300082: TRIVIA_ATLAS1_58
+    21300084: TRIVIA_ATLAS1_14
+    21300086: TRIVIA_ATLAS1_15
+    21300088: TRIVIA_ATLAS1_17
+    21300090: TRIVIA_ATLAS1_18
+    21300092: TRIVIA_ATLAS1_19
+    21300094: TRIVIA_ATLAS1_29
+    21300096: TRIVIA_ATLAS1_33
+    21300098: TRIVIA_ATLAS1_34
+    21300100: TRIVIA_ATLAS1_35
+    21300102: TRIVIA_ATLAS1_36
+    21300104: TRIVIA_ATLAS1_37
+    21300106: TRIVIA_ATLAS1_41
+    21300108: TRIVIA_ATLAS1_42
+    21300110: TRIVIA_ATLAS1_43
+    21300112: TRIVIA_ATLAS1_44
+    21300114: TRIVIA_ATLAS1_45
+    21300116: TRIVIA_ATLAS1_46
+    21300118: TRIVIA_ATLAS1_59
+    21300120: TRIVIA_ATLAS1_60
+    21300122: TRIVIA_ATLAS1_61
+    21300124: TRIVIA_ATLAS1_62
+    21300126: TRIVIA_ATLAS1_63
+    21300128: TRIVIA_ATLAS1_64
+    21300130: TRIVIA_ATLAS1_65
+    21300132: TRIVIA_ATLAS1_66
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1105
+        width: 331
+        height: 940
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7556ebb92371b4241ad219770875f8e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_1
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 1463
+        width: 893
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a841ad090e70441528ba292b6db7242a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_2
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 1342
+        width: 893
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c356e887f6a634fce81afccbca66c16c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_3
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 1221
+        width: 893
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67cfc34f389c04fcfaef65d3a1893e27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_4
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 1033
+        width: 186
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a8fc26ef6be4bd8b7f6cee4e8bc6d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_5
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1032
+        width: 186
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a1b2d4a515b40b9837788b9f04a1d1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_6
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 1032
+        width: 186
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004a7dbad12c74ed5a0c49a987d7122e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_7
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 1101
+        width: 893
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be97154f3913846a19ba9c2234994e4c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 931
+        width: 176
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da74059d11ad94bec9aeff5535436e0c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_9
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 919
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77370e2b7f1bb43eb826da95c3121d7d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_10
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 919
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc2e36cc60aa462b9aea4d9d5e5a9e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_11
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 919
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195932486cc7243c79b2341297b083c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_12
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 725
+        width: 366
+        height: 365
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05af37d58b60e49c2afd738b10ca2b12
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_13
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 724
+        width: 366
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62de547b6f01453189d50f91f5df8f4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 725
+        width: 243
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772ab32e48c49487192dc1b389889f08
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_20
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 819
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36fb41e04968240eba6a8e6b846aaa24
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_21
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 819
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec3f28407d2b4920a45ee25962b2346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_22
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 819
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2edfc8ef3964342ed9574e7c2c9c64b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_23
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 776
+        width: 174
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0904131568574af3bd025556301e7d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_24
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 650
+        width: 164
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a8e08a26897499cb2cc515c41b4996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_25
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 652
+        width: 160
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6f3c97318c740748b7d79a0c393ee3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_26
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 684
+        width: 757
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb156b82972147409871a301e3b5478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_27
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 716
+        width: 37
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09bab008ebace416fa5d31cdfef272a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_28
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 667
+        width: 361
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9166e7e73edf9402d8539bee1099e7f2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_30
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 697
+        width: 496
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc1a762f035f471fbd5f99ee21a8926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_31
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 532
+        width: 374
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c736e666d083d41a9bd28307b8c9a56a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_32
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 534
+        width: 431
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562ff803922ae4379ba5e274a1cf15d9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_38
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 470
+        width: 648
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb202c3cc9ac43489e2075720541cdf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_39
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 470
+        width: 222
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6270cf0b664f94298bd75e17b4407e43
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_40
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 526
+        width: 144
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f6743535312431f8fa0bee51aac1a5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_47
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 400
+        width: 917
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb08c11c1d1b4d209245f375c613faa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_48
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 234
+        width: 938
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd4088db37bf434d94f966d26b7124c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_49
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 363
+        width: 100
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d0106906c3e24682946ad67a18721e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_50
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 268
+        width: 917
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d43b6c49658440ab7b254e5b546dc0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_51
+      rect:
+        serializedVersion: 2
+        x: 1873
+        y: 271
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061baadb425bd428287246a2419555ee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_52
+      rect:
+        serializedVersion: 2
+        x: 1961
+        y: 272
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5f10af6ce1140c1979586553afa3c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_53
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 136
+        width: 917
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f311a67be5d84f9090d0ed48448c2c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_54
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 4
+        width: 924
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10683be29720947fa805209b77985b02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_55
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 185
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fff368e993a946beadf18529128fba0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_56
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 187
+        width: 57
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80fd2251d0a04001bc49257498d4e2d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_57
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4
+        width: 917
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68705f3e6a5c84e45bf1b26287628e7d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_58
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 9
+        width: 164
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c902ccfb7b34079b7710114763dab3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_14
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 692
+        width: 100
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a41babf492724c2780fe4c06ac23da9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_15
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 534
+        width: 103
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7af8601e91854d789582aae0a39079f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_17
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 822
+        width: 119
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4191637238af443e7940fe261a8e1e5c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_18
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 815
+        width: 112
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b17864af85864a94a98868165d95850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_19
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1717
+        width: 1203
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97cd0bd183bf34dc181177d73003a06f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_29
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 1745
+        width: 299
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7ed275cd77a4ccc84355901cca2fe9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_33
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 1846
+        width: 372
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4155e1f86c14d5bb13dd44cebf666f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_34
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 1948
+        width: 372
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59b5d45eec3c4ceea14257ddc344a53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_35
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 1746
+        width: 297
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd063f34e77494d4faf47221f099c034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_36
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1852
+        width: 455
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be6c79c81e6e348b4a62981d0f14a6eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_37
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1737
+        width: 791
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b792ac431e1aa4d658d8d461798230cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_41
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1421
+        width: 752
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a631d979fd232482a98c772e2f45de28
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_42
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1043
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84cf8acb2391c408487ce8a667196112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_43
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1044
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782527d44a3c44a6fb730b8bb1f8565e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_44
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1032
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ad0f717e8f54722a890ea719734eed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_45
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 997
+        width: 33
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1eb9c29043bf4c4ba6ae33cef4fb9c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_46
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 968
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4281c507b0344d9833bec4f180e8c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_59
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 918
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a66c7bb351746dfa66476967ef793a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_60
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 865
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83265bd876c794cbc84750f1d5d22998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_61
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 830
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b17f1b4864744e94857338af6301c0b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_62
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 823
+        width: 35
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c680dd6a4a91841348dc8b1eaa923692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_63
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 841
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19896aea52d04403bb2b0dbb0eec3b1f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_64
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 885
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8b6631bc9f2477a8e156cf195f00c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_65
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 939
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c584e54bb50841058a179e5473d3175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_66
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 983
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66574469e75cc419496e8a1937e9b5df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 31369446f3eeb448586cb9c4dc38c6f7
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
