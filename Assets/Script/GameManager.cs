@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour {
     public GameObject opponentScoreStarsParent;
     public Sprite fullStarSprite;
     public GameObject questionLockObject;
+    public GameObject bidIndicatorsParent;
+    public Text infoText;
+    public Sprite[] choiceSprites;
+    public Sprite[] nameBGSprites;
 
     [Header ("In Game Variables")]
     int turnCount = 0;
@@ -40,8 +44,8 @@ public class GameManager : MonoBehaviour {
 	float playerBidTime, opponentBidTime;
 
 	[Header ("Gameplay Variables")]
-	public float totalBiddingTime = 5f;
-	public float choiceApperTime = 0.3f;
+	public float totalBiddingTime = 10f;
+	public float choiceApperTime = 0.4f;
     public int[] bidAmounts = { 15, 35, 70, 100};
     public float questionAnsweringTime = 10f;
     public int totalTurnCount = 5;
@@ -135,6 +139,8 @@ public class GameManager : MonoBehaviour {
 
 	IEnumerator ShowChoices()
 	{
+        infoText.text = "Şıklar geliyor";
+
 		optionTexts[0].text = currentQuestion.option1;
 		yield return new WaitForSeconds(choiceApperTime);
 		optionTexts[1].text = currentQuestion.option2;
@@ -147,7 +153,8 @@ public class GameManager : MonoBehaviour {
 
 	IEnumerator ShowBiddinButtons()
 	{
-		yield return new WaitForSeconds(0.3f);
+		yield return new WaitForSeconds(choiceApperTime);
+        infoText.text = "Soruyu görmek için\nortaya para koy";
 		//play a sound TODO
 		bidTimer = 0;
         bidStartTime = Time.timeSinceLevelLoad;
@@ -208,24 +215,50 @@ public class GameManager : MonoBehaviour {
         if (playingPlayerId == 0)
         {
             player1.totalCoin += (playerBid + opponentBid);
-            playerIndicator.SetActive(true);
+            playerIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
         }
         else
         {
             player2.totalCoin += (playerBid + opponentBid);
-            opponentIndicator.SetActive(true);
+            opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
         }
-        ProceedGame();
+        StartCoroutine(EndBidState());
 	}
+
+    IEnumerator EndBidState()
+    {
+        // show bids
+        bidIndicatorsParent.SetActive(true);
+
+        // arrange info text
+        if (playingPlayerId == 0)
+        {
+            infoText.text = "Soru <b><color=#FFEA00>" + player1.username + "</color></b> için geliyor";
+        }
+        else
+        {
+             infoText.text = "Soru <b><color=#FFEA00>" + player2.username + "</color></b> için geliyor";           
+        }
+
+        // money animation
+        
+
+        yield return new WaitForSeconds(3f);
+        ProceedGame();
+    }
 
 	public void MakeBid(int index)
 	{
 		playerBid = bidAmounts[index];
 		playerBidTime = Time.timeSinceLevelLoad - bidStartTime;
-        bidButtonsParent.transform.GetChild(index).GetComponent<Image>().color = Color.green; // chosen amount must be visible after each player has chosen TODO
-
+    
         player1.totalCoin -= bidAmounts[index];
         playerMoneyText.text = player1.totalCoin.ToString();
+
+        // indicators
+        bidIndicatorsParent.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = playerBidTime.ToString("0.00");
+        Vector3 indicatorPos = bidIndicatorsParent.transform.GetChild(0).transform.position;
+        bidIndicatorsParent.transform.GetChild(0).transform.position = new Vector3(indicatorPos.x, bidIndicatorsParent.transform.parent.GetChild(index).position.y, 0);
 
         if (opponentBid != 0 && gameState == 1)
 		{
@@ -233,13 +266,18 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void MakeBidBot(int amount)
+	public void MakeBidBot(int index)
 	{
-		opponentBid = amount;
+		opponentBid = bidAmounts[index];
 		opponentBidTime = Time.timeSinceLevelLoad - bidStartTime;
 
-        player2.totalCoin -= amount;
+        player2.totalCoin -= bidAmounts[index];
         opponentMoneyText.text = player2.totalCoin.ToString();
+
+        // indicators
+        bidIndicatorsParent.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = opponentBidTime.ToString("0.00");
+        Vector3 indicatorPos = bidIndicatorsParent.transform.GetChild(1).transform.position;
+        bidIndicatorsParent.transform.GetChild(1).transform.position = new Vector3(indicatorPos.x, bidIndicatorsParent.transform.parent.GetChild(index).position.y, 0);
 
         if (playerBid != 0 && gameState == 1)
 		{
@@ -259,6 +297,15 @@ public class GameManager : MonoBehaviour {
             botManager.Choose();
         }
         questionLockObject.SetActive(false);
+
+        if (playingPlayerId == 0)
+        {
+            infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b> cevaplıyor";
+        }
+        else
+        {
+            infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b> cevaplıyor";
+        }
     }
 
     void ChangeActivePlayer()
@@ -266,16 +313,23 @@ public class GameManager : MonoBehaviour {
         if (playingPlayerId == 0)
         {
             playingPlayerId = 1;
-            playerIndicator.SetActive(false);
-            opponentIndicator.SetActive(true);
+            playerIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
+            opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
+            
+            // we can put a simple bounce animation to infotext TODO
+            infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b> cevaplıyor";
             botManager.Choose();
         }
         else
         {
             playingPlayerId = 0;
-            playerIndicator.SetActive(true);
-            opponentIndicator.SetActive(false);
+            playerIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
+            opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
+
+            // we can put a simple bounce animation to infotext TODO
+            infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b> cevaplıyor";
         }
+
         questionTimer = 0;
         gameState = 2;  // to start the timer
     }
@@ -286,14 +340,17 @@ public class GameManager : MonoBehaviour {
         {
             if (currentQuestion.rightAnswerIndex == index + 1) // Answered right! - rightAnswerIndex starts from 1
             {
-                //optionTexts[index].transform.parent.GetComponent<Image>().color = Color.green; // TODO make a sprite change
+                // TODO get and save data for question difficulty
                 IncreaseScore();
                 GoToTheNextTurn();
+                optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[2];
             }
             else
             {
+                // TODO get and save data for question difficulty
                 ChangeActivePlayer();
-                optionTexts[index].transform.parent.GetComponent<Button>().interactable = false;
+                optionTexts[index].transform.parent.GetComponent<Button>().enabled = false;
+                optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[1];
             }
         }
     }
@@ -302,14 +359,15 @@ public class GameManager : MonoBehaviour {
     {
         if (currentQuestion.rightAnswerIndex == index + 1) // Answered right! - rightAnswerIndex starts from 1
         {
-            //optionTexts[index].transform.parent.GetComponent<Image>().color = Color.green; // TODO make a sprite change
             IncreaseScore();
             GoToTheNextTurn();
+            optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[2];
         }
         else
         {
             ChangeActivePlayer();
-            optionTexts[index].transform.parent.GetComponent<Button>().interactable = false;
+            optionTexts[index].transform.parent.GetComponent<Button>().enabled = false;
+            optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[1];
         }
     }
 
@@ -345,20 +403,21 @@ public class GameManager : MonoBehaviour {
     IEnumerator CleanScreen()
     {
         gameState = 3; // to stop the timer
+        infoText.text = "";
         yield return new WaitForSeconds(1f);
         for(int i = 0; i < optionTexts.Length; i++)
         {
             optionTexts[i].text = "";
-            optionTexts[i].transform.parent.GetComponent<Button>().interactable = true;
-            optionTexts[i].transform.parent.GetComponent<Image>().color = Color.white;
-
-            //bidButtonsParent.transform.GetChild(i).GetComponent<Image>().color = Color.white; // TODO remove this, lengths might change
+            optionTexts[i].transform.parent.GetComponent<Button>().enabled = true;
+            optionTexts[i].transform.parent.GetComponent<Image>().sprite = choiceSprites[0];
         }
 
         questionText.gameObject.SetActive(false);
         questionLockObject.SetActive(true);
-        playerIndicator.SetActive(false);
-        opponentIndicator.SetActive(false);
+        bidIndicatorsParent.SetActive(false);
+
+        playerIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
+        opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
         
         bidTimer = 0;
         questionTimer = 0;

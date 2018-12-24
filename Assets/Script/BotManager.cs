@@ -23,8 +23,7 @@ public class BotManager : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(delay);
 		int choice = UnityEngine.Random.Range(0,3);
-		gameManager.MakeBidBot(gameManager.bidAmounts[choice]);
-		//gameManager.bidButtonsParent.transform.GetChild(choice).GetComponent<Image>().color = Color.red; // chosen amount must be visible AFTER each player has chosen TODO
+		gameManager.MakeBidBot(choice);
     }
 
     public void Choose()
@@ -37,7 +36,7 @@ public class BotManager : MonoBehaviour {
         yield return new WaitForSeconds(delay);
         for(int i = 0; i < gameManager.optionTexts.Length; i++)
         {
-            if (gameManager.optionTexts[i].transform.parent.GetComponent<Button>().interactable)
+            if (gameManager.optionTexts[i].transform.parent.GetComponent<Button>().enabled)
             {
                 gameManager.ChooseAnswerBot(i);
                 break;
