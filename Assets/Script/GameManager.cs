@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour {
     public Text infoText;
     public Sprite[] choiceSprites;
     public Sprite[] nameBGSprites;
+    public GameObject endScreen;
 
     [Header ("In Game Variables")]
     int turnCount = 0;
@@ -176,14 +178,14 @@ public class GameManager : MonoBehaviour {
             }
             if (opponentBid == 0)
             {
-                MakeBidBot(bidAmounts[0]);
+                MakeBidBot(bidAmounts[bidAmounts.Length-1]);
             }
         }
         else
         {
             if (opponentBid == 0)
             {
-                MakeBidBot(bidAmounts[0]);
+                MakeBidBot(bidAmounts[bidAmounts.Length-1]);
             }
             if (playerBid == 0)
             {
@@ -396,8 +398,27 @@ public class GameManager : MonoBehaviour {
         {
             print("Game Over");
             gameState = 4;
-            // put winner on and finish the game TODO
+            GameOver();
         }
+    }
+
+    void GameOver()
+    {
+        // make animation TODO
+        endScreen.SetActive(true);
+        questionLockObject.transform.parent.gameObject.SetActive(false);
+        optionTexts[0].transform.parent.parent.gameObject.SetActive(false);
+        infoText.gameObject.SetActive(false);
+
+        if(playerScore > opponentScore)
+        {
+            endScreen.transform.GetChild(0).gameObject.SetActive(true);
+        }
+        else
+        {
+            endScreen.transform.GetChild(1).gameObject.SetActive(true);
+        }
+        endScreen.transform.GetChild(2).GetComponent<Text>().text = "240"; // TODO I don't know what will come here
     }
 
     IEnumerator CleanScreen()
@@ -427,5 +448,15 @@ public class GameManager : MonoBehaviour {
 
         gameState = 0;
         ProceedGame();
-    }                                     
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Game"); // TODO player must play with the same opponent
+    } 
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }                                    
 }                            
