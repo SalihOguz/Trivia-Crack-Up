@@ -27,17 +27,19 @@ public class GameManager : MonoBehaviour {
     public Sprite[] choiceSprites;
     public Sprite[] nameBGSprites;
     public GameObject endScreen;
+    public Text accumulatedMoneyText;
 
     [Header ("In Game Variables")]
     int turnCount = 0;
     int gameState = 0; // 0 = answers come, 1 = bidding, 2 = answering
-	Question currentQuestion;
+	public Question currentQuestion;
 	float bidTimer;
     float bidStartTime;
 	public BotManager botManager;
-    User player1;
+    public User player1;
     User player2;
     float questionTimer;
+    int totalMoneyAccumulated = 0;
 
 	[Header ("User Variables")]
 	int playingPlayerId;
@@ -54,16 +56,14 @@ public class GameManager : MonoBehaviour {
 
     void Start () {
         Init();
-
-        // I may choose 5 questions at the start?
-        ProceedGame();
+        StartCoroutine(DelayedStart());
     }
 
     void Init()
     {
         // get user data and fill avatar etc
-        User p1 = new User(0, "MustafaSalih", 1000);
-        User p2 = new User(1, "Musab Bey", 2000);
+        User p1 = new User(0, "MustafaSalih", true, 1000);
+        User p2 = new User(1, "Musab Bey", true, 2000);
         player1 = p1;
         player2 = p2;
 
@@ -74,6 +74,12 @@ public class GameManager : MonoBehaviour {
 
         playerMoneyText.text = player1.totalCoin.ToString();
         opponentMoneyText.text = player2.totalCoin.ToString();
+    }
+
+    IEnumerator DelayedStart()
+    {
+        yield return new WaitForSeconds(0.2f);
+        ProceedGame();
     }
 
 	void ProceedGame()
@@ -115,6 +121,7 @@ public class GameManager : MonoBehaviour {
             questionTimerText.text = (Mathf.CeilToInt(questionAnsweringTime - questionTimer)).ToString();
             if (questionTimer >= questionAnsweringTime)
             {
+                print("lololoooo");
                 gameState++;  // to stop the timer
                 ChangeActivePlayer();
             }
@@ -123,33 +130,22 @@ public class GameManager : MonoBehaviour {
 
 	void GetNextQuesiton()
 	{
-		// question must be chosen so that players haven't seen them TODO
-
-		// demo
-		Question tempQ = new Question();
-		tempQ.questionText = "Cevabı ne bu sorunun?";
-		tempQ.option1 = "Bu değil";
-		tempQ.option2 = "Bu doğru";
-		tempQ.option3 = "Bu da değil";
-		tempQ.option4 = "Bu hiç değil";
-		tempQ.rightAnswerIndex = 2;
-
-		currentQuestion = tempQ;
-        questionText.text = tempQ.questionText;
-        // question must be added to players' seen question list TODO
+        currentQuestion = GetComponent<QuestionManager>().ChooseQuestion();
+        questionText.text = currentQuestion.questionText;
+        player1.seenQuestionIds.Add(currentQuestion.questionId);
     }
 
 	IEnumerator ShowChoices()
 	{
         infoText.text = "Şıklar geliyor";
 
-		optionTexts[0].text = currentQuestion.option1;
+		optionTexts[0].text = currentQuestion.choice1;
 		yield return new WaitForSeconds(choiceApperTime);
-		optionTexts[1].text = currentQuestion.option2;
+		optionTexts[1].text = currentQuestion.choice2;
 		yield return new WaitForSeconds(choiceApperTime);
-		optionTexts[2].text = currentQuestion.option3;
+		optionTexts[2].text = currentQuestion.choice3;
 		yield return new WaitForSeconds(choiceApperTime);
-		optionTexts[3].text = currentQuestion.option4;
+		optionTexts[3].text = currentQuestion.choice4;
 		ProceedGame();
 	}
 
@@ -216,14 +212,15 @@ public class GameManager : MonoBehaviour {
 
         if (playingPlayerId == 0)
         {
-            player1.totalCoin += (playerBid + opponentBid);
+            //player1.totalCoin += (playerBid + opponentBid);
             playerIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
         }
         else
         {
-            player2.totalCoin += (playerBid + opponentBid);
+            //player2.totalCoin += (playerBid + opponentBid);
             opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
         }
+
         StartCoroutine(EndBidState());
 	}
 
@@ -242,39 +239,53 @@ public class GameManager : MonoBehaviour {
              infoText.text = "Soru <b><color=#FFEA00>" + player2.username + "</color></b> için geliyor";           
         }
 
-        // money animation
-        
+        // money animation TODO make decrase and flow with animation
+        playerMoneyText.gameObject.SetActive(true);
+        opponentMoneyText.gameObject.SetActive(true);
+        playerNameText.gameObject.SetActive(false);
+        opponentNameText.gameObject.SetActive(false);
+
+        player2.totalCoin -= opponentBid;
+        player1.totalCoin -= playerBid;
+        totalMoneyAccumulated += playerBid + opponentBid;
+
+        playerMoneyText.text = player1.totalCoin.ToString();
+        opponentMoneyText.text = player2.totalCoin.ToString();
+        accumulatedMoneyText.text = totalMoneyAccumulated.ToString();
 
         yield return new WaitForSeconds(3f);
+
+        playerMoneyText.gameObject.SetActive(false);
+        opponentMoneyText.gameObject.SetActive(false);
+        playerNameText.gameObject.SetActive(true);
+        opponentNameText.gameObject.SetActive(true);
+
         ProceedGame();
     }
 
 	public void MakeBid(int index)
 	{
-		playerBid = bidAmounts[index];
-		playerBidTime = Time.timeSinceLevelLoad - bidStartTime;
-    
-        player1.totalCoin -= bidAmounts[index];
-        playerMoneyText.text = player1.totalCoin.ToString();
+        if (playerBid == 0) // didn't make a bid before
+        {
+            playerBid = bidAmounts[index];
+            playerBidTime = Time.timeSinceLevelLoad - bidStartTime;
 
-        // indicators
-        bidIndicatorsParent.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = playerBidTime.ToString("0.00");
-        Vector3 indicatorPos = bidIndicatorsParent.transform.GetChild(0).transform.position;
-        bidIndicatorsParent.transform.GetChild(0).transform.position = new Vector3(indicatorPos.x, bidIndicatorsParent.transform.parent.GetChild(index).position.y, 0);
+            // indicators
+            bidIndicatorsParent.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = playerBidTime.ToString("0.00");
+            Vector3 indicatorPos = bidIndicatorsParent.transform.GetChild(0).transform.position;
+            bidIndicatorsParent.transform.GetChild(0).transform.position = new Vector3(indicatorPos.x, bidIndicatorsParent.transform.parent.GetChild(index).position.y, 0);
 
-        if (opponentBid != 0 && gameState == 1)
-		{
-			EvaluateBidding();
-		}
+            if (opponentBid != 0 && gameState == 1)
+            {
+                EvaluateBidding();
+            }
+        }
 	}
 
 	public void MakeBidBot(int index)
 	{
 		opponentBid = bidAmounts[index];
 		opponentBidTime = Time.timeSinceLevelLoad - bidStartTime;
-
-        player2.totalCoin -= bidAmounts[index];
-        opponentMoneyText.text = player2.totalCoin.ToString();
 
         // indicators
         bidIndicatorsParent.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = opponentBidTime.ToString("0.00");
@@ -308,6 +319,11 @@ public class GameManager : MonoBehaviour {
         {
             infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b> cevaplıyor";
         }
+
+        for (int i = 0; i < optionTexts.Length; i++)
+        {
+            optionTexts[i].transform.parent.GetComponent<Button>().interactable = true;
+        }
     }
 
     void ChangeActivePlayer()
@@ -340,26 +356,36 @@ public class GameManager : MonoBehaviour {
     {
         if (playingPlayerId == 0 && gameState == 2)
         {
-            if (currentQuestion.rightAnswerIndex == index + 1) // Answered right! - rightAnswerIndex starts from 1
+            if (currentQuestion.rightAnswerIndex == index) // Answered right!
             {
                 // TODO get and save data for question difficulty
                 IncreaseScore();
                 GoToTheNextTurn();
                 optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[2];
             }
-            else
+            else // Answered Wrong!
             {
                 // TODO get and save data for question difficulty
-                ChangeActivePlayer();
+
                 optionTexts[index].transform.parent.GetComponent<Button>().enabled = false;
                 optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[1];
+
+                print(GetAvaliableChoiceCount());
+                if (GetAvaliableChoiceCount() > 1)
+                {
+                  ChangeActivePlayer();                
+                }
+                else
+                {
+                    StartCoroutine(CleanScreen());
+                }
             }
         }
     }
 
     public void ChooseAnswerBot(int index)
     {
-        if (currentQuestion.rightAnswerIndex == index + 1) // Answered right! - rightAnswerIndex starts from 1
+        if (currentQuestion.rightAnswerIndex == index) // Answered right!
         {
             IncreaseScore();
             GoToTheNextTurn();
@@ -367,9 +393,18 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
-            ChangeActivePlayer();
             optionTexts[index].transform.parent.GetComponent<Button>().enabled = false;
             optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[1];
+
+            print(GetAvaliableChoiceCount());
+            if (GetAvaliableChoiceCount() > 1)
+            {
+                ChangeActivePlayer();                
+            }
+            else
+            {
+               StartCoroutine(CleanScreen());
+            }
         }
     }
 
@@ -413,12 +448,14 @@ public class GameManager : MonoBehaviour {
         if(playerScore > opponentScore)
         {
             endScreen.transform.GetChild(0).gameObject.SetActive(true);
+            player1.totalCoin += totalMoneyAccumulated;
         }
         else
         {
             endScreen.transform.GetChild(1).gameObject.SetActive(true);
+            player2.totalCoin += totalMoneyAccumulated;
         }
-        endScreen.transform.GetChild(2).GetComponent<Text>().text = "240"; // TODO I don't know what will come here
+        endScreen.transform.GetChild(2).GetComponent<Text>().text = totalMoneyAccumulated.ToString();
     }
 
     IEnumerator CleanScreen()
@@ -430,6 +467,7 @@ public class GameManager : MonoBehaviour {
         {
             optionTexts[i].text = "";
             optionTexts[i].transform.parent.GetComponent<Button>().enabled = true;
+            optionTexts[i].transform.parent.GetComponent<Button>().interactable = false;
             optionTexts[i].transform.parent.GetComponent<Image>().sprite = choiceSprites[0];
         }
 
@@ -458,5 +496,18 @@ public class GameManager : MonoBehaviour {
     public void GoToMenu()
     {
         SceneManager.LoadScene("MainMenu");
-    }                                    
+    }    
+
+    int GetAvaliableChoiceCount()
+    {
+        int count = 0;
+        for (int i = 0; i < optionTexts.Length; i++)
+        {
+            if (optionTexts[i].transform.parent.GetComponent<Button>().enabled)
+            {
+                count++;
+            }
+        }
+        return count;
+    }                                
 }                            
