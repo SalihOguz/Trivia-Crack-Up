@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
 
 	[Header ("User Variables")]
 	int playingPlayerId;
-	int playerScore, opponentScore = 0;
+	public int playerScore, opponentScore = 0;
 	int playerBid, opponentBid = 0;
 	float playerBidTime, opponentBidTime;
 
@@ -62,18 +62,37 @@ public class GameManager : MonoBehaviour {
     void Init()
     {
         // get user data and fill avatar etc
-        User p1 = new User(0, "MustafaSalih", true, 1000);
-        User p2 = new User(1, "Musab Bey", true, 2000);
-        player1 = p1;
-        player2 = p2;
+        
+        player1 = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
+        if (GameObject.Find("UserData"))
+        {
+            player2 = GameObject.Find("UserData").GetComponent<UserData>().player2;
+        }
+        else
+        {
+            player2 = MakeFakeUser();
+        }
 
         // put avatar
+        Avatars av = Resources.Load<Avatars>("Data/Avatars");
+        playerIndicator.transform.parent.GetChild(1).GetComponent<Image>().sprite = av.avatarSprites[player1.avatarId];
+        opponentIndicator.transform.parent.GetChild(1).GetComponent<Image>().sprite = av.avatarSprites[player2.avatarId];
 
         playerNameText.text = player1.username;
         opponentNameText.text = player2.username;
 
         playerMoneyText.text = player1.totalCoin.ToString();
         opponentMoneyText.text = player2.totalCoin.ToString();
+    }
+
+    User MakeFakeUser()
+    {
+        TextAsset textAssset = Resources.Load<TextAsset>("Data/FakeUserList");
+		FakeUserList ful = JsonUtility.FromJson<FakeUserList>(textAssset.text);
+        UserLite fake = ful.fakeUserList[UnityEngine.Random.Range(0, ful.fakeUserList.Count)];
+
+        User p2 = new User(1, fake.userName, fake.isMale, fake.totalCoin + 30 * (Random.Range(-65,65)));
+        return p2;
     }
 
     IEnumerator DelayedStart()
@@ -362,15 +381,15 @@ public class GameManager : MonoBehaviour {
                 IncreaseScore();
                 GoToTheNextTurn();
                 optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[2];
+                player1.rightAnswersInDifficulties[currentQuestion.difficulty]++;
             }
             else // Answered Wrong!
             {
                 // TODO get and save data for question difficulty
-
                 optionTexts[index].transform.parent.GetComponent<Button>().enabled = false;
                 optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[1];
+                player1.wrongAnswersInDifficulties[currentQuestion.difficulty]++;
 
-                print(GetAvaliableChoiceCount());
                 if (GetAvaliableChoiceCount() > 1)
                 {
                   ChangeActivePlayer();                
@@ -456,6 +475,7 @@ public class GameManager : MonoBehaviour {
             player2.totalCoin += totalMoneyAccumulated;
         }
         endScreen.transform.GetChild(2).GetComponent<Text>().text = totalMoneyAccumulated.ToString();
+        PlayerPrefs.SetString("userData", JsonUtility.ToJson(player1));
     }
 
     IEnumerator CleanScreen()

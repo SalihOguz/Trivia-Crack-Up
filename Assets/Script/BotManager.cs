@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class BotManager : MonoBehaviour {
 
 	GameManager gameManager;
+    QuestionManager questionManager;
     public float botMinBidTime = 0.3f;
     public float botMaxBidTime = 3.5f;   
     public float botMinAnswerTime = 2f;
@@ -14,21 +15,60 @@ public class BotManager : MonoBehaviour {
     public float baseRightAnswerPercentage = 0.625f;
     public float difficultyEffectOnRightAnswer = 0.08f; // decreases the chance of answering right by this amount for every difficulty level
     public float choiceCountMultiplier = 0.125f; // the increases the chance of answering right the less choices there are
+    public float randomBidChance = 0.2f;
+    public float bidDelayAmount = 1.5f; // if question is hard or if AI has scored 2 points, it gives bid in longer time
+
 	void Start()
 	{
-		gameManager = Camera.main.GetComponent<GameManager>();	
+		gameManager = Camera.main.GetComponent<GameManager>();
+        questionManager = Camera.main.GetComponent<QuestionManager>();
 	}
 
 	public void Bid()
 	{
-		StartCoroutine(DelayedBid(UnityEngine.Random.Range(botMinBidTime, botMaxBidTime)));
+        // AI is winning or question is so hard, so, we give player a higher chance to win
+        if (gameManager.opponentScore == 2 ||gameManager.currentQuestion.difficulty >= questionManager.difficultyLevelCount - 2 ) 
+        {
+            StartCoroutine(DelayedBid(UnityEngine.Random.Range(botMinBidTime, botMaxBidTime + bidDelayAmount)));
+        }
+        else
+        {
+        	StartCoroutine(DelayedBid(UnityEngine.Random.Range(botMinBidTime, botMaxBidTime)));
+        }
 	}
 
 	IEnumerator DelayedBid(float delay)
 	{
 		yield return new WaitForSeconds(delay);
-		int choice = UnityEngine.Random.Range(0,3); // TODO not random, if winning 2 - 0 or easiest two level question put higer. if losing 2 - 0 or hardest two level question put less. 
-        //Not certain, there is a chance to play randomly
+		int choice;
+        int rnd = UnityEngine.Random.Range(0, 100);
+        if(rnd < randomBidChance)
+        {
+            choice = UnityEngine.Random.Range(0,3);
+        }
+        else
+        {
+            if (gameManager.playerScore == 0 && gameManager.opponentScore == 2)
+            {
+                choice = UnityEngine.Random.Range(1,3);
+            }
+            else if (gameManager.playerScore == 2 && gameManager.opponentScore == 0)
+            {
+                choice = UnityEngine.Random.Range(0,2);
+            }
+            else if (gameManager.currentQuestion.difficulty == 0) // easeist level question
+            {
+                choice = UnityEngine.Random.Range(1,3);
+            }
+            else if (gameManager.currentQuestion.difficulty >= questionManager.difficultyLevelCount - 2) // hardest two level question
+            {
+                choice = UnityEngine.Random.Range(0,2);
+            }
+            else
+            {
+                choice = UnityEngine.Random.Range(0,3);
+            }
+        }
 		gameManager.MakeBidBot(choice);
     }
 
@@ -49,10 +89,10 @@ public class BotManager : MonoBehaviour {
             }
         }
 
-        float rnd = UnityEngine.Random.Range(0f, 100.0f);
-        float rightChance = baseRightAnswerPercentage - (difficultyEffectOnRightAnswer * gameManager.currentQuestion.difficulty);
-        rightChance += (gameManager.optionTexts.Length - availableWrongChoices.Count + 1) * choiceCountMultiplier; // if there are less choices, chance is higher by choiceCountMultiplier
-        if (rnd <  rightChance * 100)
+        float rnd = UnityEngine.Random.Range(0f, 1000.0f);
+        float rightChance = baseRightAnswerPercentage - (difficultyEffectOnRightAnswer * gameManager.currentQuestion.difficulty); // if question is hard, chance is lower by difficulty * difficultyEffectOnRightAnswer
+        rightChance += (gameManager.optionTexts.Length - availableWrongChoices.Count + 1) * choiceCountMultiplier; // if there are less number of choices available, chance is higher by choiceCountMultiplier
+        if (rnd <  rightChance * 1000)
         {
             gameManager.ChooseAnswerBot(gameManager.currentQuestion.rightAnswerIndex);
         }

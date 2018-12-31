@@ -16,21 +16,25 @@ public class QuestionManager : MonoBehaviour {
 
 	void Start()
 	{
-		TextAsset textAssset = Resources.Load<TextAsset>("Data/Questions");
-		ql = JsonUtility.FromJson<QuestionList>(textAssset.text);
 		player1 = GetComponent<GameManager>().player1;
-
+		GetQuestionsFromJson();
 		FindUserLevel();
 		FillQuestionLists();
+	}
+
+	void GetQuestionsFromJson()
+	{
+		TextAsset textAssset = Resources.Load<TextAsset>("Data/Questions");
+		ql = JsonUtility.FromJson<QuestionList>(textAssset.text);
 	}
 
 	void FindUserLevel()
 	{
 		for (int i = difficultyLevelCount - 1; i > -1; i--)
 		{
-			if (player1.rightAnswersInDifficulties[i] > 0 && player1.wrongAnswersInDifficulties[i] > 0 && 
-			player1.rightAnswersInDifficulties[i] / player1.wrongAnswersInDifficulties[i] > userLevelTreshold &&
+			if (player1.rightAnswersInDifficulties[i] / (player1.wrongAnswersInDifficulties[i] + 0.001) > userLevelTreshold &&
 			player1.rightAnswersInDifficulties[i] + player1.wrongAnswersInDifficulties[i] > 10)
+			// player1.rightAnswersInDifficulties[i] > 0 && player1.wrongAnswersInDifficulties[i] > 0 &&
 			{
 				userDifficultyLevel = Mathf.Clamp(i + 1, 0, difficultyLevelCount - 1);
 				break;
@@ -44,7 +48,6 @@ public class QuestionManager : MonoBehaviour {
 
 	void FillQuestionLists() //  TODO I may call this again if we run out of questions
 	{
-		CheckQuestionCount();
 		RemoveSeenQuestions();
 
 		// initalize the lists to fill
@@ -54,15 +57,7 @@ public class QuestionManager : MonoBehaviour {
 			difficultyList[i] = new QuestionList();
 		}
 
-		ChooseQuestionsFromDifficulty(userDifficultyLevel);
-	}
-
-	void CheckQuestionCount() // checs if there are enough unseen questions
-	{
-		if (ql.questionList.Count - player1.seenQuestionIds.Count < 10) // there are only ten questions left that is unseen by the player
-		{
-			player1.seenQuestionIds.RemoveRange(0, 50); // TODO I delete first 50 seen questions, there may be a better solution, I have to also delete according to user level
-		}
+		ChooseQuestionsFromDifficulty();
 	}
 
 	void RemoveSeenQuestions()
@@ -75,9 +70,52 @@ public class QuestionManager : MonoBehaviour {
 		{
 			ql.questionList.RemoveAt(i);
 		}
+		CheckQuestionCount();
 	}
 
-	void ChooseQuestionsFromDifficulty(int difficulty)
+	void CheckQuestionCount() // checs if there are enough unseen questions
+	{
+		// check if there are 5 questions available from every difficulty needed
+		int[] count = new int[difficultyLevelCount];
+		foreach (Question i in ql.questionList)
+		{
+			if (i.difficulty == userDifficultyLevel || i.difficulty == userDifficultyLevel - 1 || i.difficulty == userDifficultyLevel + 1)
+			{
+				count[i.difficulty] ++;
+			}
+			if(count[userDifficultyLevel] > 5 && 
+			count[Mathf.Clamp(userDifficultyLevel - 1, 0, difficultyLevelCount-1)] > 5 &&
+			count[Mathf.Clamp(userDifficultyLevel + 1, 0, difficultyLevelCount-1)] > 5)
+			{
+				return;
+			}
+		}
+
+		// if there are not enough questions, delete question ids from seenQuestionIds until there are enough
+		GetQuestionsFromJson();
+		List<int> temp = new List<int>(player1.seenQuestionIds);
+		foreach (int i in temp)
+		{
+			int diff = ql.questionList[i].difficulty;
+			if (diff  == userDifficultyLevel || diff == userDifficultyLevel - 1 || diff == userDifficultyLevel + 1)
+			{
+				count[diff]++;
+				player1.seenQuestionIds.Remove(i);
+			}
+
+			if(count[userDifficultyLevel] > 5 && 
+			count[Mathf.Clamp(userDifficultyLevel - 1, 0, difficultyLevelCount-1)] > 5 &&
+			count[Mathf.Clamp(userDifficultyLevel + 1, 0, difficultyLevelCount-1)] > 5)
+			{
+				break;
+			}
+		}
+
+
+		RemoveSeenQuestions();
+	}
+
+	void ChooseQuestionsFromDifficulty()
 	{
 		Shuffle(ql.questionList); // TODO then maybe sort according to difficulty
 
@@ -85,7 +123,7 @@ public class QuestionManager : MonoBehaviour {
 		foreach (Question i in ql.questionList)
 		{
 			iterCount++;
-			if (i.difficulty == difficulty || i.difficulty == difficulty - 1 || i.difficulty == difficulty + 1)
+			if (i.difficulty == userDifficultyLevel || i.difficulty == userDifficultyLevel - 1 || i.difficulty == userDifficultyLevel + 1)
 			{
 				difficultyList[i.difficulty].questionList.Add(i);
 			}
@@ -95,9 +133,9 @@ public class QuestionManager : MonoBehaviour {
 			}
 
 			// check if we are done
-			if (difficultyList[i.difficulty].questionList.Count > 5 && 
-				difficultyList[Mathf.Clamp(i.difficulty - 1, 0, difficultyLevelCount-1)].questionList.Count > 5 &&
-				difficultyList[Mathf.Clamp(i.difficulty + 1, 0, difficultyLevelCount-1)].questionList.Count > 5)
+			if (difficultyList[userDifficultyLevel].questionList.Count > 5 && 
+				difficultyList[Mathf.Clamp(userDifficultyLevel - 1, 0, difficultyLevelCount-1)].questionList.Count > 5 &&
+				difficultyList[Mathf.Clamp(userDifficultyLevel + 1, 0, difficultyLevelCount-1)].questionList.Count > 5)
 			{
 				print("finished after looking at " + iterCount + " questions");
 				break;
@@ -108,26 +146,26 @@ public class QuestionManager : MonoBehaviour {
 	public Question ChooseQuestion()
 	{
 		int rnd = UnityEngine.Random.Range(0, 100);
-		if (rnd < chanceOfAskingLowerLevel * 100 && userDifficultyLevel > 0)
+		if (rnd < chanceOfAskingLowerLevel * 100)
 		{
-			if (difficultyList[userDifficultyLevel - 1].questionList.Count == 0)
+			if (difficultyList[Mathf.Clamp(userDifficultyLevel - 1, 0, difficultyLevelCount-1)].questionList.Count == 0)
 			{
 				FillQuestionLists();
 			}
-			int index = UnityEngine.Random.Range(0, difficultyList[userDifficultyLevel - 1].questionList.Count);
-			Question toReturn = difficultyList[userDifficultyLevel - 1].questionList[index];
-			difficultyList[userDifficultyLevel - 1].questionList.RemoveAt(index);
+			int index = UnityEngine.Random.Range(0, difficultyList[Mathf.Clamp(userDifficultyLevel - 1, 0, difficultyLevelCount-1)].questionList.Count);
+			Question toReturn = difficultyList[Mathf.Clamp(userDifficultyLevel - 1, 0, difficultyLevelCount-1)].questionList[index];
+			difficultyList[Mathf.Clamp(userDifficultyLevel - 1, 0, difficultyLevelCount-1)].questionList.RemoveAt(index);
 			return toReturn;
 		}
-		else if (rnd < (chanceOfAskingLowerLevel + chanceOfAskingHigherLevel) * 100 && userDifficultyLevel < difficultyLevelCount - 1)
+		else if (rnd < (chanceOfAskingLowerLevel + chanceOfAskingHigherLevel) * 100)
 		{
 			if (difficultyList[userDifficultyLevel + 1].questionList.Count == 0)
 			{
 				FillQuestionLists();
 			}
-			int index = UnityEngine.Random.Range(0, difficultyList[userDifficultyLevel + 1].questionList.Count);
-			Question toReturn = difficultyList[userDifficultyLevel + 1].questionList[index];
-			difficultyList[userDifficultyLevel + 1].questionList.RemoveAt(index);
+			int index = UnityEngine.Random.Range(0, difficultyList[Mathf.Clamp(userDifficultyLevel + 1, 0, difficultyLevelCount-1)].questionList.Count);
+			Question toReturn = difficultyList[Mathf.Clamp(userDifficultyLevel + 1, 0, difficultyLevelCount-1)].questionList[index];
+			difficultyList[Mathf.Clamp(userDifficultyLevel + 1, 0, difficultyLevelCount-1)].questionList.RemoveAt(index);
 			return toReturn;	
 		}
 		else

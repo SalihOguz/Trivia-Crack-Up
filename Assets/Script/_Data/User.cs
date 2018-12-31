@@ -15,18 +15,26 @@ public class User {
     public float[] wrongAnswersInDifficulties; // wrng answer count in every question difficulty
     public int wonGameCount;
     public int playedGameCount;
+    // public int knowQuestionCount; // item counts should be added
 
-    public User(int userId, string username, bool isMale, int totalCoin = 0) {
+    public User(int userId, string username, bool isMale, int totalCoin = 2000) {
         this.userId = userId;
 		this.username = username;
         this.score = 0;
-		this.seenQuestionIds = new List<int>{0,1,4,3,5,8,6}; //new List<int>(); TODO reverse the change
+		this.seenQuestionIds = new List<int>();
         this.totalCoin = totalCoin;
-        this.avatarId = 0;
         this.isMale = isMale;
         this.rightAnswersInDifficulties = new float[] {0,0,0,0}; // TODO may change according to the difficulty levels
         this.wrongAnswersInDifficulties = new float[] {0,0,0,0}; // TODO may change according to the difficulty levels
         this.wonGameCount = 0;
         this.playedGameCount = 0;
+        if (isMale)
+        {
+            this.avatarId = 0;
+        }
+        else
+        {
+            this.avatarId = 1;
+        }
     }
 }

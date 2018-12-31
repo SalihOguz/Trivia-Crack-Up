@@ -1,12 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 	// DatabaseReference reference;
 	public GameObject uiLayer;
+	public GameObject userDataObject;
+	public GameObject userDataObject2;
+	public GameObject userDataObject3;
+	public GameObject opponentDataObject;
+	User player;
 
+
+	void Start()
+	{
+		player = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
+		
+		Sprite avatar = Resources.Load<Avatars>("Data/Avatars").avatarSprites[player.avatarId];
+		userDataObject.transform.GetChild(0).GetComponent<Image>().sprite = avatar;
+		userDataObject.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = player.username;
+		userDataObject.transform.GetChild(3).GetChild(0).GetComponent<Text>().text = player.totalCoin.ToString();
+		// TODO put pass or other powers
+
+		userDataObject2.transform.GetChild(0).GetComponent<Image>().sprite = avatar;
+		userDataObject2.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = player.username;
+
+		userDataObject3.transform.GetChild(0).GetComponent<Image>().sprite = avatar;
+		userDataObject3.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = player.username;
+	}
 
 	// void Start () {
 	// 	UpdateGoogle();
@@ -46,6 +69,14 @@ public class MenuManager : MonoBehaviour {
 	// 	reference.Child("users").Child(inputUserId.text).SetRawJsonValueAsync(json);
 	// }
 
+	void ChooseOpponent()
+	{
+		if(GameObject.Find("UserData"))
+		{
+			GameObject.Find("UserData").GetComponent<UserData>().ChooseOpponent();
+		}
+	}
+
     public void GoToScene(string name)
     {
         SceneManager.LoadScene(name);
@@ -63,6 +94,8 @@ public class MenuManager : MonoBehaviour {
 
 	public void FakeSearchPlayer()
 	{
+		ChooseOpponent();
+		ChangeLayerTo(4);
 		StartCoroutine(PlayerFound());
 	}
 

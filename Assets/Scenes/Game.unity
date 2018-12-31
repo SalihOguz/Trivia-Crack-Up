@@ -859,9 +859,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 1faa88f5d3983443faf3d2b94ec59b3e, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 35
+    m_MaxSize: 30
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1818,12 +1818,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botMinBidTime: 0.3
-  botMaxBidTime: 3.5
+  botMaxBidTime: 2.5
   botMinAnswerTime: 2
   botMaxAnswerTime: 8
   baseRightAnswerPercentage: 0.625
   difficultyEffectOnRightAnswer: 0.08
   choiceCountMultiplier: 0.125
+  randomBidChance: 0.2
+  bidDelayAmount: 1
 --- !u!4 &595133827
 Transform:
   m_ObjectHideFlags: 0
@@ -2553,9 +2555,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 1faa88f5d3983443faf3d2b94ec59b3e, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 35
+    m_MaxSize: 30
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4193,6 +4195,8 @@ MonoBehaviour:
     wrongAnswersInDifficulties: []
     wonGameCount: 0
     playedGameCount: 0
+  playerScore: 0
+  opponentScore: 0
   totalBiddingTime: 10
   choiceApperTime: 0.5
   bidAmounts: 1e0000003c0000005a000000
