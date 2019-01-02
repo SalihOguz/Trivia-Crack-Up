@@ -24,8 +24,17 @@ public class QuestionManager : MonoBehaviour {
 
 	void GetQuestionsFromJson()
 	{
-		TextAsset textAssset = Resources.Load<TextAsset>("Data/Questions");
-		ql = JsonUtility.FromJson<QuestionList>(textAssset.text);
+		if (GameObject.Find("DataToCarry"))
+		{
+			ql.questionList = new List<Question>(GameObject.Find("DataToCarry").GetComponent<DataToCarry>().ql.questionList);
+		}
+		else
+		{
+			TextAsset textAssset = Resources.Load<TextAsset>("Data/Questions");
+			ql = JsonUtility.FromJson<QuestionList>(textAssset.text);
+			print("Working with offline questions! You need to come from the menu for online questions.");	
+		}
+
 	}
 
 	void FindUserLevel()

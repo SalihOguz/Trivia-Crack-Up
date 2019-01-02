@@ -64,9 +64,9 @@ public class GameManager : MonoBehaviour {
         // get user data and fill avatar etc
         
         player1 = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
-        if (GameObject.Find("UserData"))
+        if (GameObject.Find("DataToCarry"))
         {
-            player2 = GameObject.Find("UserData").GetComponent<UserData>().player2;
+            player2 = GameObject.Find("DataToCarry").GetComponent<DataToCarry>().player2;
         }
         else
         {
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour {
 		FakeUserList ful = JsonUtility.FromJson<FakeUserList>(textAssset.text);
         UserLite fake = ful.fakeUserList[UnityEngine.Random.Range(0, ful.fakeUserList.Count)];
 
-        User p2 = new User(1, fake.userName, fake.isMale, fake.totalCoin + 30 * (Random.Range(-65,65)));
+        User p2 = new User("1", fake.userName, fake.isMale, fake.totalCoin + 30 * (Random.Range(-65,65)));
         return p2;
     }
 

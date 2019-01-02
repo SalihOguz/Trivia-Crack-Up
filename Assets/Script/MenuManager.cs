@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Firebase;
+using Firebase.Database;
+using Firebase.Unity.Editor;
 
 public class MenuManager : MonoBehaviour {
 	// DatabaseReference reference;
@@ -11,8 +14,7 @@ public class MenuManager : MonoBehaviour {
 	public GameObject userDataObject2;
 	public GameObject userDataObject3;
 	public GameObject opponentDataObject;
-	User player;
-
+	public User player;
 
 	void Start()
 	{
@@ -29,38 +31,89 @@ public class MenuManager : MonoBehaviour {
 
 		userDataObject3.transform.GetChild(0).GetComponent<Image>().sprite = avatar;
 		userDataObject3.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = player.username;
+
+		UpdateGoogle();
+		FirebaseStart();
+
+		if (GameObject.Find("DataToCarry"))
+		{
+			GetQuestions(GameObject.Find("DataToCarry").GetComponent<DataToCarry>().ql);
+		}
+		else
+		{
+			Debug.LogError("DataToCarry gameObject couldn't be found");
+		}
+
+		UserLogin();
 	}
 
-	// void Start () {
-	// 	UpdateGoogle();
-	// 	FirebaseStart();
-	// }
+	void UpdateGoogle()
+	{
+		Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+		var dependencyStatus = task.Result;
+		if (dependencyStatus == Firebase.DependencyStatus.Available) {
+			// Create and hold a reference to your FirebaseApp, i.e.
+			//   app = Firebase.FirebaseApp.DefaultInstance;
+			// where app is a Firebase.FirebaseApp property of your application class.
 
-	// void UpdateGoogle()
-	// {
-	// 	Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
-	// 	var dependencyStatus = task.Result;
-	// 	if (dependencyStatus == Firebase.DependencyStatus.Available) {
-	// 		// Create and hold a reference to your FirebaseApp, i.e.
-	// 		//   app = Firebase.FirebaseApp.DefaultInstance;
-	// 		// where app is a Firebase.FirebaseApp property of your application class.
+			// Set a flag here indicating that Firebase is ready to use by your
+			// application.
+		} else {
+			UnityEngine.Debug.LogError(System.String.Format(
+			"Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+			// Firebase Unity SDK is not safe to use here.
+		}
+		});
+	}
+	
 
-	// 		// Set a flag here indicating that Firebase is ready to use by your
-	// 		// application.
-	// 	} else {
-	// 		UnityEngine.Debug.LogError(System.String.Format(
-	// 		"Could not resolve all Firebase dependencies: {0}", dependencyStatus));
-	// 		// Firebase Unity SDK is not safe to use here.
-	// 	}
-	// 	});
-	// }
+	void FirebaseStart()
+	{
+		// Set up the Editor before calling into the realtime database.
+		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://trivia-challanger.firebaseio.com/");
 
-	// void FirebaseStart()
-	// {
-	// 	FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://try-storage-33aaa.firebaseio.com/");
-	// 	reference = FirebaseDatabase.DefaultInstance.RootReference;
+		// Get the root reference location of the database.
+    	DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
 
-	// }
+	}
+
+	void UserLogin()
+	{
+		// Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+
+		// auth.SignInAnonymouslyAsync().ContinueWith(task => {
+		// if (task.IsCanceled) {
+		// 	Debug.LogError("SignInAnonymouslyAsync was canceled.");
+		// 	return;
+		// }
+		// if (task.IsFaulted) {
+		// 	Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
+		// 	return;
+		// }
+
+		// Firebase.Auth.FirebaseUser newUser = task.Result;
+		// Debug.LogFormat("User signed in successfully: {0} ({1})",
+		// 	newUser.DisplayName, newUser.UserId);
+		// });
+	}
+
+	void GetQuestions(QuestionList ql)
+	{
+			FirebaseDatabase.DefaultInstance.GetReference("questionList").GetValueAsync().ContinueWith(task => {
+			if (task.IsFaulted) {
+				// Handle the error...
+				Debug.LogError("Error in FirebaseStart");
+			}
+			else if (task.IsCompleted) {
+				DataSnapshot snapshot = task.Result;				
+
+				foreach (DataSnapshot i in snapshot.Children)
+				{
+					ql.questionList.Add(JsonUtility.FromJson<Question>(i.GetRawJsonValue()));
+				}
+			}
+		});
+	}
 
 	// public void writeNewUser() {
 	// 	User user = new User(int.Parse(inputUserId.text), inputUsername.text);
@@ -71,9 +124,9 @@ public class MenuManager : MonoBehaviour {
 
 	void ChooseOpponent()
 	{
-		if(GameObject.Find("UserData"))
+		if(GameObject.Find("DataToCarry"))
 		{
-			GameObject.Find("UserData").GetComponent<UserData>().ChooseOpponent();
+			GameObject.Find("DataToCarry").GetComponent<DataToCarry>().ChooseOpponent();
 		}
 	}
 

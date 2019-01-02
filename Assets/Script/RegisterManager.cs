@@ -13,6 +13,7 @@ public class RegisterManager : MonoBehaviour {
 
 	void Awake()
 	{
+		//PlayerPrefs.DeleteAll();
 		if (PlayerPrefs.HasKey("userData"))
 		{
 			SceneManager.LoadScene("MainMenu");
@@ -62,7 +63,7 @@ public class RegisterManager : MonoBehaviour {
 
 	public void CreateUser()
 	{
-		User newUser = new User(0, userName, isMale);
+		User newUser = new User("0", userName, isMale);
 		PlayerPrefs.SetString("userData", JsonUtility.ToJson(newUser));
 		ChangeLayerTo(2);
 		StartCoroutine(GoToMenu());

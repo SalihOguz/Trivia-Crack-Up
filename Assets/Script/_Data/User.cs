@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class User {
-	public int userId;
+	public string userId;
     public string username;
     public float score;
 	public List<int> seenQuestionIds;
@@ -17,7 +17,7 @@ public class User {
     public int playedGameCount;
     // public int knowQuestionCount; // item counts should be added
 
-    public User(int userId, string username, bool isMale, int totalCoin = 2000) {
+    public User(string userId, string username, bool isMale, int totalCoin = 2000) {
         this.userId = userId;
 		this.username = username;
         this.score = 0;
