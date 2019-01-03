@@ -6516,7 +6516,6 @@ GameObject:
   - component: {fileID: 1509419778}
   - component: {fileID: 1509419777}
   - component: {fileID: 1509419780}
-  - component: {fileID: 1509419781}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6600,30 +6599,6 @@ MonoBehaviour:
   userDataObject2: {fileID: 2069130940}
   userDataObject3: {fileID: 808408486}
   opponentDataObject: {fileID: 1019876434}
-  player:
-    userId: 
-    username: 
-    score: 0
-    seenQuestionIds: 
-    totalCoin: 0
-    avatarId: 0
-    isMale: 0
-    rightAnswersInDifficulties: []
-    wrongAnswersInDifficulties: []
-    wonGameCount: 0
-    playedGameCount: 0
---- !u!114 &1509419781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1509419776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e05e0b3a87d7bd444942fd5e86c8922e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  userId: 
 --- !u!1 &1528300246
 GameObject:
   m_ObjectHideFlags: 0

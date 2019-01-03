@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Firebase;
+using Firebase.Auth;
+using Firebase.Database;
 
 public class RegisterManager : MonoBehaviour {
 	public GameObject uiLayer;
@@ -63,8 +66,26 @@ public class RegisterManager : MonoBehaviour {
 
 	public void CreateUser()
 	{
-		User newUser = new User("0", userName, isMale);
-		PlayerPrefs.SetString("userData", JsonUtility.ToJson(newUser));
+		Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+		auth.SignInAnonymouslyAsync().ContinueWith(task => {
+		if (task.IsCanceled) {
+			Debug.LogError("SignInAnonymouslyAsync was canceled.");
+			return;
+		}
+		if (task.IsFaulted) {
+			Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
+			return;
+		}
+
+		Firebase.Auth.FirebaseUser newUser = task.Result;
+		
+		User newUserData = new User(newUser.UserId, userName, isMale);
+		PlayerPrefs.SetString("userData", JsonUtility.ToJson(newUserData));
+
+		DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+		reference.Child("userList").Child(newUser.UserId).SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
+		});
+
 		ChangeLayerTo(2);
 		StartCoroutine(GoToMenu());
 	}

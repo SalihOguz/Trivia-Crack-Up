@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour {
 	public GameObject userDataObject2;
 	public GameObject userDataObject3;
 	public GameObject opponentDataObject;
-	public User player;
+	User player;
 
 	void Start()
 	{
@@ -72,29 +72,35 @@ public class MenuManager : MonoBehaviour {
 		// Set up the Editor before calling into the realtime database.
 		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://trivia-challanger.firebaseio.com/");
 
-		// Get the root reference location of the database.
-    	DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
-
 	}
 
 	void UserLogin()
 	{
-		// Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+		Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
 
-		// auth.SignInAnonymouslyAsync().ContinueWith(task => {
-		// if (task.IsCanceled) {
-		// 	Debug.LogError("SignInAnonymouslyAsync was canceled.");
-		// 	return;
-		// }
-		// if (task.IsFaulted) {
-		// 	Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
-		// 	return;
-		// }
+		if (!PlayerPrefs.HasKey("userData")) 
+		{
+			auth.SignInAnonymouslyAsync().ContinueWith(task => {
+			if (task.IsCanceled) {
+				Debug.LogError("SignInAnonymouslyAsync was canceled.");
+				return;
+			}
+			if (task.IsFaulted) {
+				Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
+				return;
+			}
 
-		// Firebase.Auth.FirebaseUser newUser = task.Result;
-		// Debug.LogFormat("User signed in successfully: {0} ({1})",
-		// 	newUser.DisplayName, newUser.UserId);
-		// });
+			Firebase.Auth.FirebaseUser newUser = task.Result;
+			User newUserData = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
+			newUserData.userId = newUser.UserId;
+			PlayerPrefs.SetString("userData", JsonUtility.ToJson(newUserData));
+			});
+		}
+		else
+		{
+			auth.SignInAnonymouslyAsync();
+		}
+		print(PlayerPrefs.GetString("userData"));
 	}
 
 	void GetQuestions(QuestionList ql)
@@ -114,13 +120,6 @@ public class MenuManager : MonoBehaviour {
 			}
 		});
 	}
-
-	// public void writeNewUser() {
-	// 	User user = new User(int.Parse(inputUserId.text), inputUsername.text);
-	// 	string json = JsonUtility.ToJson(user);
-
-	// 	reference.Child("users").Child(inputUserId.text).SetRawJsonValueAsync(json);
-	// }
 
 	void ChooseOpponent()
 	{
