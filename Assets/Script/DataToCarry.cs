@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DataToCarry : Singleton<DataToCarry> {
 	public User player2;
 	public QuestionList ql;
+	public FakeUserList ful;
 
 	void Start()
 	{
@@ -29,10 +30,9 @@ public class DataToCarry : Singleton<DataToCarry> {
 
 	User MakeFakeUser()
     {
-        TextAsset textAssset = Resources.Load<TextAsset>("Data/FakeUserList");
-		FakeUserList ful = JsonUtility.FromJson<FakeUserList>(textAssset.text);
+        // TextAsset textAssset = Resources.Load<TextAsset>("Data/FakeUserList");
+		// FakeUserList ful = JsonUtility.FromJson<FakeUserList>(textAssset.text);
         UserLite fake = ful.fakeUserList[UnityEngine.Random.Range(0, ful.fakeUserList.Count)];
-
         User p2 = new User("1", fake.userName, fake.isMale, fake.totalCoin + 30 * (Random.Range(-65,65)));
         return p2;
     }
