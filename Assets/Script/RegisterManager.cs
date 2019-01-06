@@ -6,14 +6,17 @@ using UnityEngine.SceneManagement;
 using Firebase;
 using Firebase.Auth;
 using Firebase.Database;
+using Firebase.Unity.Editor;
+using DG.Tweening;
 
 public class RegisterManager : MonoBehaviour {
 	public GameObject uiLayer;
 	public InputField nameField;
 	public Text infoText;
-	string userName = "";
 	bool isMale = false;
+	public GameObject scrollBar;
 	DataToCarry dtc;
+
 
 	void Awake()
 	{
@@ -31,16 +34,21 @@ public class RegisterManager : MonoBehaviour {
 		{
 			Debug.LogError("DataToCarry gameObject couldn't be found");
 		}
+		DOTween.To(()=> scrollBar.GetComponent<Scrollbar>().size, x=> scrollBar.GetComponent<Scrollbar>().size = x, 1, 1).OnComplete(Cont);
+	}
 
+	void Cont()
+	{
 		if (PlayerPrefs.HasKey("userData"))
 		{
 			SceneManager.LoadScene("MainMenu");
 		}
 		else
 		{
-			ChangeLayerTo(1);
+			ChangeLayerTo(0);
 		}
 	}
+
 	void FirebaseStart()
 	{
 		// Set up the Editor before calling into the realtime database.
@@ -103,36 +111,6 @@ public class RegisterManager : MonoBehaviour {
 		});
 	}
 
-	bool UsernameAvailable(string username)
-	{
-			FirebaseDatabase.DefaultInstance.GetReference("userList").GetValueAsync().ContinueWith(task => {
-			if (task.IsFaulted) {
-				// Handle the error...
-				Debug.LogError("Error in FirebaseStart");
-			}
-			else if (task.IsCompleted) {
-				DataSnapshot snapshot = task.Result;				
-
-				foreach (DataSnapshot i in snapshot.Children)
-				{
-					if(userName == JsonUtility.FromJson<User>(i.GetRawJsonValue()).username)
-					{
-						return false;
-					}
-				}
-			}
-		});
-
-		foreach (UserLite fakeUser in dtc.ful.fakeUserList)
-		{
-			if (userName == fakeUser.userName)
-			{
-				return false;
-			}
-		}
-		return true;
-	}
-
 	public void ChangeLayerTo(int layerCount)
 	{
 		uiLayer.GetComponent<Animator>().SetInteger("layerCount", layerCount);
@@ -153,17 +131,50 @@ public class RegisterManager : MonoBehaviour {
 			infoText.gameObject.SetActive(true);
 			return;
 		}
-		
-		if (!UsernameAvailable(nameField.text))
-		{
-			infoText.text = "Bu kullanıcı adı zaten kullanılıyor";
-			infoText.gameObject.SetActive(true);
-		}
-		else
-		{
-			userName = nameField.text;
-			ChangeLayerTo(1);		
-		}
+
+		// check if name exist
+		FirebaseDatabase.DefaultInstance.GetReference("userList").GetValueAsync().ContinueWith(task => {
+			if (task.IsFaulted) {
+				Debug.LogError("Error in FirebaseStart");
+				infoText.text = "İnternet bağlantınızı kontrol edin";
+				infoText.gameObject.SetActive(true);
+			}
+			else if (task.IsCompleted) {
+				bool isNameAvailable = true;
+				DataSnapshot snapshot = task.Result;				
+	
+				foreach (DataSnapshot i in snapshot.Children)
+				{
+					if(nameField.text.Equals(JsonUtility.FromJson<User>(i.GetRawJsonValue()).username))
+					{
+						isNameAvailable = false;
+						break;
+					}
+				}
+				if (isNameAvailable)
+				{
+					foreach (UserLite fakeUser in dtc.ful.fakeUserList)
+					{
+						if (nameField.text == fakeUser.userName)
+						{
+							isNameAvailable = false;
+							break;
+						}
+					}
+				}
+
+				if (!isNameAvailable)
+				{
+					infoText.text = "Bu kullanıcı adı zaten kullanılıyor";
+					infoText.gameObject.SetActive(true);
+				}
+				else
+				{
+					nameField.interactable = false;
+					ChangeLayerTo(1);	
+				}
+			}
+		});
 	}
 
 	public void GetGender(bool isMale)
@@ -171,13 +182,13 @@ public class RegisterManager : MonoBehaviour {
 		this.isMale = isMale;
 		if (isMale)
 		{
-			uiLayer.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(false);
-			uiLayer.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(true);
+			uiLayer.transform.GetChild(2).GetChild(0).GetChild(0).gameObject.SetActive(false);
+			uiLayer.transform.GetChild(2).GetChild(1).GetChild(0).gameObject.SetActive(true);
 		}
 		else
 		{
-			uiLayer.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(true);
-			uiLayer.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(false);			
+			uiLayer.transform.GetChild(2).GetChild(0).GetChild(0).gameObject.SetActive(true);
+			uiLayer.transform.GetChild(2).GetChild(1).GetChild(0).gameObject.SetActive(false);			
 		}
 	}
 
@@ -196,7 +207,7 @@ public class RegisterManager : MonoBehaviour {
 
 			Firebase.Auth.FirebaseUser newUser = task.Result;
 			
-			User newUserData = new User(newUser.UserId, userName, isMale);
+			User newUserData = new User(newUser.UserId, nameField.text, isMale);
 			PlayerPrefs.SetString("userData", JsonUtility.ToJson(newUserData));
 
 			DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;

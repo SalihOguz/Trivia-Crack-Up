@@ -26,13 +26,15 @@ public class QuestionManager : MonoBehaviour {
 	{
 		if (GameObject.Find("DataToCarry"))
 		{
-			ql.questionList = new List<Question>(GameObject.Find("DataToCarry").GetComponent<DataToCarry>().ql.questionList);
+			QuestionList temp = new QuestionList();
+			temp.questionList = new List<Question>(GameObject.Find("DataToCarry").GetComponent<DataToCarry>().ql.questionList);
+			ql = temp;
 		}
 		else
 		{
 			TextAsset textAssset = Resources.Load<TextAsset>("Data/Questions");
 			ql = JsonUtility.FromJson<QuestionList>(textAssset.text);
-			print("Working with offline questions! You need to come from the menu for online questions.");	
+			print("Working with offline questions! You need to come from the register scene for online questions.");	
 		}
 
 	}

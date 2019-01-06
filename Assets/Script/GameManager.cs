@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Firebase;
+using Firebase.Database;
 
 public class GameManager : MonoBehaviour {
 
@@ -54,15 +56,19 @@ public class GameManager : MonoBehaviour {
     public float questionAnsweringTime = 10f;
     public int totalTurnCount = 5;
 
+    [Header ("Question Data")]
+    int[] chosenChoiceCounts = new int[4];
+    int[] chosenBidIndexCounts = new int[3];
+    float firstAnsweringTime = 0;
+    float secondAnsweringTime = 0;
+
     void Start () {
         Init();
         StartCoroutine(DelayedStart());
     }
 
     void Init()
-    {
-        // get user data and fill avatar etc
-        
+    {        
         player1 = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
         if (GameObject.Find("DataToCarry"))
         {
@@ -468,14 +474,48 @@ public class GameManager : MonoBehaviour {
         {
             endScreen.transform.GetChild(0).gameObject.SetActive(true);
             player1.totalCoin += totalMoneyAccumulated;
+            player1.score += 5;
         }
         else
         {
             endScreen.transform.GetChild(1).gameObject.SetActive(true);
             player2.totalCoin += totalMoneyAccumulated;
+            player1.score += 1;
         }
         endScreen.transform.GetChild(2).GetComponent<Text>().text = totalMoneyAccumulated.ToString();
+        SendUserData();
+    }
+
+    void SendUserData()
+    {
         PlayerPrefs.SetString("userData", JsonUtility.ToJson(player1));
+        DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+		reference.Child("userList").Child(player1.userId).SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
+    }
+
+    void SendQuestionData()
+    {
+        // save question data to firebase
+
+        // aşağıdaki fonksiyondan örnek al
+        // private void WriteNewScore(string userId, int score) {
+        //     // Create new entry at /user-scores/$userid/$scoreid and at
+        //     // /leaderboard/$scoreid simultaneously
+        //     string key = mDatabase.Child("scores").Push().Key;
+        //     LeaderBoardEntry entry = new LeaderBoardEntry(userId, score);
+        //     Dictionary<string, Object> entryValues = entry.ToDictionary();
+
+        //     Dictionary<string, Object> childUpdates = new Dictionary<string, Object>();
+        //     childUpdates["/scores/" + key] = entryValues;
+        //     childUpdates["/user-scores/" + userId + "/" + key] = entryValues;
+
+        //     mDatabase.UpdateChildrenAsync(childUpdates);
+        // }
+
+
+
+        // DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+		// reference.Child("questionData").Child(currentQuestion.questionId.ToString()).Child .SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
     }
 
     IEnumerator CleanScreen()

@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour {
 	public GameObject userDataObject2;
 	public GameObject userDataObject3;
 	public GameObject opponentDataObject;
-	User player;
+	public User player;
 
 	void Start()
 	{
@@ -88,9 +88,16 @@ public class MenuManager : MonoBehaviour {
 
 	public void FakeSearchPlayer()
 	{
-		ChooseOpponent();
-		ChangeLayerTo(4);
-		StartCoroutine(PlayerFound());
+		if (player.totalCoin >= 30 * 5) // TODO this is min bid amount 30 * 5 turns
+		{
+			ChooseOpponent();
+			ChangeLayerTo(4);
+			StartCoroutine(PlayerFound());
+		}
+		else
+		{
+			ChangeLayerTo(3);
+		}
 	}
 
 	IEnumerator PlayerFound()
