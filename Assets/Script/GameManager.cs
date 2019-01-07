@@ -433,6 +433,29 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+	public void KnowTheQuestion()
+	{
+		ChooseAnswer(currentQuestion.rightAnswerIndex);
+	}
+
+    public void DiasbleTwoChoices()
+    {
+        List<Button> enabledbuttons = new List<Button>();
+        for(int i = 0; i < optionTexts.Length; i++)
+        {
+            if (optionTexts[i].gameObject.GetComponent<Button>().enabled && i != currentQuestion.rightAnswerIndex)
+            {
+                enabledbuttons.Add(optionTexts[i].gameObject.GetComponent<Button>());
+            }
+        }
+        int rnd = Random.Range(0,enabledbuttons.Count);
+        enabledbuttons[rnd].enabled = false;
+        enabledbuttons.RemoveAt(rnd);
+
+        rnd = Random.Range(0,enabledbuttons.Count);
+        enabledbuttons[rnd].enabled = false;
+    }
+
     void IncreaseScore()
     {
         if (playingPlayerId == 0)
@@ -469,12 +492,14 @@ public class GameManager : MonoBehaviour {
         questionLockObject.transform.parent.gameObject.SetActive(false);
         optionTexts[0].transform.parent.parent.gameObject.SetActive(false);
         infoText.gameObject.SetActive(false);
+        player1.playedGameCount++;
 
         if(playerScore > opponentScore)
         {
             endScreen.transform.GetChild(0).gameObject.SetActive(true);
             player1.totalCoin += totalMoneyAccumulated;
             player1.score += 5;
+            player1.wonGameCount++;
         }
         else
         {

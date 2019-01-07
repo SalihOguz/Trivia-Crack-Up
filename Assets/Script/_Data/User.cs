@@ -15,7 +15,8 @@ public class User {
     public float[] wrongAnswersInDifficulties; // wrng answer count in every question difficulty
     public int wonGameCount;
     public int playedGameCount;
-    // public int knowQuestionCount; // item counts should be added
+    public int knowQuestionSkillCount; // item that makes user know the question
+    public int fiftyFiftySkillCount; // item that eliminates two choices
 
     public User(string userId, string username, bool isMale, int totalCoin = 2000) {
         this.userId = userId;
@@ -28,6 +29,8 @@ public class User {
         this.wrongAnswersInDifficulties = new float[] {0,0,0,0}; // TODO may change according to the difficulty levels
         this.wonGameCount = 0;
         this.playedGameCount = 0;
+        this.knowQuestionSkillCount = 0;
+        this.fiftyFiftySkillCount = 0;
         if (isMale)
         {
             this.avatarId = 0;
