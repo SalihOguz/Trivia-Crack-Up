@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour {
     public Sprite[] nameBGSprites;
     public GameObject endScreen;
     public Text accumulatedMoneyText;
+    public Button knowQuestionButton;
+    public Button fiftyFiftyButton;
 
     [Header ("In Game Variables")]
     int turnCount = 0;
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour {
 	public int playerScore, opponentScore = 0;
 	int playerBid, opponentBid = 0;
 	float playerBidTime, opponentBidTime;
+    bool knowQuestionUsed = false;
+    bool fiftyFiftyUsed = false;
 
 	[Header ("Gameplay Variables")]
 	public float totalBiddingTime = 10f;
@@ -381,6 +385,7 @@ public class GameManager : MonoBehaviour {
     {
         if (playingPlayerId == 0 && gameState == 2)
         {
+            fiftyFiftyButton.interactable = false;
             if (currentQuestion.rightAnswerIndex == index) // Answered right!
             {
                 // TODO get and save data for question difficulty
@@ -410,6 +415,7 @@ public class GameManager : MonoBehaviour {
 
     public void ChooseAnswerBot(int index)
     {
+        fiftyFiftyButton.interactable = false;
         if (currentQuestion.rightAnswerIndex == index) // Answered right!
         {
             IncreaseScore();
@@ -435,25 +441,40 @@ public class GameManager : MonoBehaviour {
 
 	public void KnowTheQuestion()
 	{
-		ChooseAnswer(currentQuestion.rightAnswerIndex);
+        if (!knowQuestionUsed)
+        {
+    		ChooseAnswer(currentQuestion.rightAnswerIndex);
+            knowQuestionUsed = true;
+            knowQuestionButton.interactable = false;
+            
+        }
 	}
 
     public void DiasbleTwoChoices()
     {
-        List<Button> enabledbuttons = new List<Button>();
-        for(int i = 0; i < optionTexts.Length; i++)
+        if(!fiftyFiftyUsed && GetAvaliableChoiceCount() == 4)
         {
-            if (optionTexts[i].gameObject.GetComponent<Button>().enabled && i != currentQuestion.rightAnswerIndex)
+            List<Button> enabledbuttons = new List<Button>();
+            for(int i = 0; i < optionTexts.Length; i++)
             {
-                enabledbuttons.Add(optionTexts[i].gameObject.GetComponent<Button>());
+                if (optionTexts[i].transform.parent.gameObject.GetComponent<Button>().enabled && i != currentQuestion.rightAnswerIndex)
+                {
+                    enabledbuttons.Add(optionTexts[i].transform.parent.gameObject.GetComponent<Button>());
+                }
             }
-        }
-        int rnd = Random.Range(0,enabledbuttons.Count);
-        enabledbuttons[rnd].enabled = false;
-        enabledbuttons.RemoveAt(rnd);
+            int rnd = Random.Range(0,enabledbuttons.Count);
+            enabledbuttons[rnd].enabled = false;
+            enabledbuttons[rnd].gameObject.gameObject.GetComponent<Image>().sprite = choiceSprites[1];
+            enabledbuttons.RemoveAt(rnd);
 
-        rnd = Random.Range(0,enabledbuttons.Count);
-        enabledbuttons[rnd].enabled = false;
+            rnd = Random.Range(0,enabledbuttons.Count);
+            enabledbuttons[rnd].enabled = false;
+            //enabledbuttons[rnd].interactable = false;
+            enabledbuttons[rnd].gameObject.gameObject.GetComponent<Image>().sprite = choiceSprites[1];
+
+            fiftyFiftyButton.interactable = false;
+            fiftyFiftyUsed = true;            
+        }
     }
 
     void IncreaseScore()
@@ -562,6 +583,9 @@ public class GameManager : MonoBehaviour {
 
         playerIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
         opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
+
+        fiftyFiftyUsed = false;
+        fiftyFiftyButton.interactable = true;
         
         bidTimer = 0;
         questionTimer = 0;
