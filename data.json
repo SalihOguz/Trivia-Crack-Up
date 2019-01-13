@@ -1969,7 +1969,7 @@
             "totalCoin":33000
         },
 	{
-            "userName":"çýlgýn çiçek",
+            "userName":"ï¿½ï¿½lgï¿½n ï¿½iï¿½ek",
             "isMale":"false",
             "totalCoin":5200
         },
@@ -1999,12 +1999,12 @@
             "totalCoin":18000
         },
 	{
-            "userName":"FakýrKral",
+            "userName":"Fakï¿½rKral",
             "isMale":"true",
             "totalCoin":3000
         },
 	{
-            "userName":"UçanTekmeCetLi",
+            "userName":"Uï¿½anTekmeCetLi",
             "isMale":"true",
             "totalCoin":5000
         },
@@ -2027,6 +2027,2402 @@
             "userName":"Tarhanatula",
             "isMale":"false",
             "totalCoin":58000
+        }
+    ],
+    "gameDataList": [
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 0,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 1,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 2,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 3,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 4,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 5,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 6,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 7,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 8,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 9,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 10,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 11,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 12,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 13,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 14,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 15,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 16,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 17,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 18,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 19,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 20,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 21,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 22,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 23,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 24,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 25,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 26,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 27,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 28,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 29,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 30,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 31,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 32,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 33,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 34,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 35,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 36,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 37,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 38,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 39,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 40,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 41,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 42,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 43,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 44,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 45,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 46,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 47,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 48,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 49,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 50,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 51,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 52,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 53,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 54,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 55,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 56,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 57,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 58,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 59,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 60,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 61,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 62,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 63,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 64,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 65,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 66,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 67,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 68,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 69,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 70,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 71,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 72,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 73,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 74,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 75,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 76,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 77,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 78,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 79,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 80,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 81,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 82,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 83,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 84,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 85,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 86,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 87,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 88,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 89,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 90,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 91,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 92,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 93,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 94,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 95,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 96,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 97,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 98,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 99,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 100,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 101,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 102,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 103,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 104,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 105,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 106,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 107,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 108,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 109,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 110,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 111,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 112,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
+        },
+        {
+            "disableTwoUsedTime": 0,
+            "secondAnsweringTimes": [],
+            "questionId": 113,
+            "chosenBidIndexCounts": [
+                0,
+                0,
+                0
+            ],
+            "answeredWrongCount": 0,
+            "bidGivingTimes": [],
+            "chosenChoiceCounts": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "firstAnsweringTimes": [],
+            "answeredRightCount": 0,
+            "knowQuestionUsedTime": 0
         }
     ]
 }

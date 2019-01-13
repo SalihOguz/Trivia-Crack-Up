@@ -12,4 +12,6 @@ public class QuestionData {
 	public List<float> bidGivingTimes = new List<float>();
 	public List<float> firstAnsweringTimes = new List<float>();
 	public List<float> secondAnsweringTimes = new List<float>();
+	public int knowQuestionUsedTime;
+	public int disableTwoUsedTime;
 }

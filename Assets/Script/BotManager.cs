@@ -17,6 +17,12 @@ public class BotManager : MonoBehaviour {
     public float choiceCountMultiplier = 0.125f; // the increases the chance of answering right the less choices there are
     public float randomBidChance = 0.2f;
     public float bidDelayAmount = 1.5f; // if question is hard or if AI has scored 2 points, it gives bid in longer time
+    public float minSkillUseTime = 1f;
+    public float maxSkillUseTime = 4f;
+    public float chanceOfUsingKnowQuestion = 0.05f;
+    public float chanceOfUsingDisableTwo = 0.05f;
+    public bool isFiftyFiftyUsed = false;
+    bool knowQuestionUsed = false;
 
 	void Start()
 	{
@@ -74,7 +80,38 @@ public class BotManager : MonoBehaviour {
 
     public void Choose()
     {
-        StartCoroutine(DelayedChoose(UnityEngine.Random.Range(botMinAnswerTime, botMaxAnswerTime)));
+        // using skills before answering
+        float skillUseTime = 0;
+        float rnd = UnityEngine.Random.Range(0, 100);
+        if (rnd < chanceOfUsingKnowQuestion * 100 && gameManager.GetAvaliableChoiceCount() == 4 && !isFiftyFiftyUsed && gameManager.currentQuestion.difficulty >= 2) // use fiftyFifty skill
+        {
+            isFiftyFiftyUsed = true;
+            skillUseTime += UnityEngine.Random.Range(minSkillUseTime, maxSkillUseTime);
+            StartCoroutine(DelayedDisableTwoChoices(skillUseTime));
+            skillUseTime++;  // to leave more time to answer after skill used to make it look like thinking
+        }
+        else if (rnd < (chanceOfUsingKnowQuestion + chanceOfUsingDisableTwo) * 100 && !knowQuestionUsed && gameManager.currentQuestion.difficulty >= 3) // use know question skill
+        {
+            knowQuestionUsed = true;
+            skillUseTime += UnityEngine.Random.Range(minSkillUseTime, maxSkillUseTime);
+            StartCoroutine(DelayedKnowQuestion(skillUseTime));
+            skillUseTime++; // to leave more time to answer after skill used to make it look like thinking
+        }
+
+        // answering
+        StartCoroutine(DelayedChoose(UnityEngine.Random.Range(botMinAnswerTime + skillUseTime, botMaxAnswerTime)));
+    }
+
+    IEnumerator DelayedKnowQuestion(float time)
+    {
+        yield return new WaitForSeconds(time);
+        gameManager.KnowTheQuestionBot();     
+    }
+
+    IEnumerator DelayedDisableTwoChoices(float time)
+    {
+        yield return new WaitForSeconds(time);
+        gameManager.DisableTwoChoicesBot();
     }
 
     IEnumerator DelayedChoose(float delay)

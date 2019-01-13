@@ -34,7 +34,6 @@ public class MenuManager : MonoBehaviour {
 
 		UserLogin();
 	}
-
 	void UserLogin()
 	{
 		Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;

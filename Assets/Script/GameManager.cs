@@ -28,10 +28,13 @@ public class GameManager : MonoBehaviour {
     public Text infoText;
     public Sprite[] choiceSprites;
     public Sprite[] nameBGSprites;
+    public Sprite[] bidSprites;
     public GameObject endScreen;
     public Text accumulatedMoneyText;
     public Button knowQuestionButton;
     public Button fiftyFiftyButton;
+    public Text knowQuestionAmountText;
+    public Text fiftyFiftyAmountText;
 
     [Header ("In Game Variables")]
     int turnCount = 0;
@@ -93,6 +96,9 @@ public class GameManager : MonoBehaviour {
 
         playerMoneyText.text = player1.totalCoin.ToString();
         opponentMoneyText.text = player2.totalCoin.ToString();
+
+        knowQuestionAmountText.text = player1.knowQuestionSkillCount.ToString();
+        fiftyFiftyAmountText.text = player1.fiftyFiftySkillCount.ToString();
     }
 
     User MakeFakeUser()
@@ -181,7 +187,7 @@ public class GameManager : MonoBehaviour {
 	IEnumerator ShowBiddinButtons()
 	{
 		yield return new WaitForSeconds(choiceApperTime);
-        infoText.text = "Soruyu görmek için\nortaya para koy";
+        infoText.text = "Bahsini seç";
 		//play a sound TODO
 		bidTimer = 0;
         bidStartTime = Time.timeSinceLevelLoad;
@@ -215,6 +221,15 @@ public class GameManager : MonoBehaviour {
             if (playerBid == 0)
             {
                 MakeBid(0);
+            }
+        }
+
+        for(int i = 0; i < bidAmounts.Length; i++)
+        {
+            if (opponentBid == bidAmounts[i])
+            {
+                bidButtonsParent.transform.GetChild(i).GetComponent<Image>().sprite = bidSprites[i];
+                break;
             }
         }
 
@@ -280,7 +295,7 @@ public class GameManager : MonoBehaviour {
 
         playerMoneyText.text = player1.totalCoin.ToString();
         opponentMoneyText.text = player2.totalCoin.ToString();
-        accumulatedMoneyText.text = totalMoneyAccumulated.ToString();
+        accumulatedMoneyText.text = totalMoneyAccumulated.ToString() + " COIN";
 
         yield return new WaitForSeconds(3f);
 
@@ -303,6 +318,7 @@ public class GameManager : MonoBehaviour {
             bidIndicatorsParent.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = playerBidTime.ToString("0.00");
             Vector3 indicatorPos = bidIndicatorsParent.transform.GetChild(0).transform.position;
             bidIndicatorsParent.transform.GetChild(0).transform.position = new Vector3(indicatorPos.x, bidIndicatorsParent.transform.parent.GetChild(index).position.y, 0);
+            bidButtonsParent.transform.GetChild(index).GetComponent<Image>().sprite = bidSprites[index];
 
             if (opponentBid != 0 && gameState == 1)
             {
@@ -342,11 +358,11 @@ public class GameManager : MonoBehaviour {
 
         if (playingPlayerId == 0)
         {
-            infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b> cevaplıyor";
+            infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b>\ncevaplıyor";
         }
         else
         {
-            infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b> cevaplıyor";
+            infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b>\ncevaplıyor";
         }
 
         for (int i = 0; i < optionTexts.Length; i++)
@@ -441,18 +457,25 @@ public class GameManager : MonoBehaviour {
 
 	public void KnowTheQuestion()
 	{
-        if (!knowQuestionUsed)
+        if (!knowQuestionUsed && player1.knowQuestionSkillCount > 0)
         {
     		ChooseAnswer(currentQuestion.rightAnswerIndex);
             knowQuestionUsed = true;
             knowQuestionButton.interactable = false;
-            
+            player1.knowQuestionSkillCount--;
+            knowQuestionAmountText.text = player1.knowQuestionSkillCount.ToString();
         }
 	}
 
+    public void KnowTheQuestionBot()
+    {
+        ChooseAnswerBot(currentQuestion.rightAnswerIndex);
+        // knowQuestionButton.interactable = false; // needs to be done for bot? TODO
+    }
+
     public void DiasbleTwoChoices()
     {
-        if(!fiftyFiftyUsed && GetAvaliableChoiceCount() == 4)
+        if(!fiftyFiftyUsed && GetAvaliableChoiceCount() == 4 && player1.fiftyFiftySkillCount > 0)
         {
             List<Button> enabledbuttons = new List<Button>();
             for(int i = 0; i < optionTexts.Length; i++)
@@ -469,12 +492,36 @@ public class GameManager : MonoBehaviour {
 
             rnd = Random.Range(0,enabledbuttons.Count);
             enabledbuttons[rnd].enabled = false;
-            //enabledbuttons[rnd].interactable = false;
             enabledbuttons[rnd].gameObject.gameObject.GetComponent<Image>().sprite = choiceSprites[1];
 
             fiftyFiftyButton.interactable = false;
-            fiftyFiftyUsed = true;            
+            fiftyFiftyUsed = true;
+
+            player1.fiftyFiftySkillCount--;
+            fiftyFiftyAmountText.text = player1.fiftyFiftySkillCount.ToString();
         }
+    }
+
+    public void DisableTwoChoicesBot()
+    {
+        List<Button> enabledbuttons = new List<Button>();
+        for(int i = 0; i < optionTexts.Length; i++)
+        {
+            if (optionTexts[i].transform.parent.gameObject.GetComponent<Button>().enabled && i != currentQuestion.rightAnswerIndex)
+            {
+                enabledbuttons.Add(optionTexts[i].transform.parent.gameObject.GetComponent<Button>());
+            }
+        }
+        int rnd = Random.Range(0,enabledbuttons.Count);
+        enabledbuttons[rnd].enabled = false;
+        enabledbuttons[rnd].gameObject.gameObject.GetComponent<Image>().sprite = choiceSprites[1];
+        enabledbuttons.RemoveAt(rnd);
+
+        rnd = Random.Range(0,enabledbuttons.Count);
+        enabledbuttons[rnd].enabled = false;
+        enabledbuttons[rnd].gameObject.gameObject.GetComponent<Image>().sprite = choiceSprites[1];
+
+        // fiftyFiftyButton.interactable = false;  // needs to be done for bot? TODO
     }
 
     void IncreaseScore()
@@ -521,12 +568,14 @@ public class GameManager : MonoBehaviour {
             player1.totalCoin += totalMoneyAccumulated;
             player1.score += 5;
             player1.wonGameCount++;
+            opponentScoreStarsParent.SetActive(false);
         }
         else
         {
             endScreen.transform.GetChild(1).gameObject.SetActive(true);
             player2.totalCoin += totalMoneyAccumulated;
             player1.score += 1;
+            playerScoreStarsParent.SetActive(false);
         }
         endScreen.transform.GetChild(2).GetComponent<Text>().text = totalMoneyAccumulated.ToString();
         SendUserData();
@@ -577,6 +626,11 @@ public class GameManager : MonoBehaviour {
             optionTexts[i].transform.parent.GetComponent<Image>().sprite = choiceSprites[0];
         }
 
+        for(int i = 0; i < bidAmounts.Length; i++)
+        {
+            bidButtonsParent.transform.GetChild(i).GetComponent<Image>().sprite = bidSprites[bidSprites.Length-1];
+        }
+
         questionText.gameObject.SetActive(false);
         questionLockObject.SetActive(true);
         bidIndicatorsParent.SetActive(false);
@@ -585,6 +639,7 @@ public class GameManager : MonoBehaviour {
         opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
 
         fiftyFiftyUsed = false;
+        botManager.isFiftyFiftyUsed = false;
         fiftyFiftyButton.interactable = true;
         
         bidTimer = 0;
@@ -607,7 +662,7 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("MainMenu");
     }    
 
-    int GetAvaliableChoiceCount()
+    public int GetAvaliableChoiceCount()
     {
         int count = 0;
         for (int i = 0; i < optionTexts.Length; i++)

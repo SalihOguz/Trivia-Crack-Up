@@ -1,0 +1,38 @@
+---BOT---
+BİD VERME ALGORİTMASI:
+Bid verme zamanı:
+Normalde minimum bid verme zamanı 0.3 saniye, maksimum 2.5 saniye. Bunun arasında rastgele bir zamanda ortalama 1.4 saniyede bid veriyor. Eğer soru en zor iki seviyeden birine aitse yani çok zorsa veya AI 2 puan kazanmışsa yani bu soruyu bildiği zaman oyunu kazanacaksa maksimum saniyenin üzerine 1 saniye daha ekliyorum ki kullanıcının kazanma ihtimali biraz daha artsın. Böylece zor sorularda veya AI kazanmasına bir soru kala, AI'ın ortalama cevaplama süresi 1.9 saniye oluyor. Belki de böyle bir ertelemeye hiç gerek yok.
+
+Bid seçme:
+%20 oranında tamamen rastgele bir bid veriyor. %80 oranında ise aşağıdaki ihtimallere bakılıyor. Daha gerçekçi olması için 2-0 AI kazanıyorsa en yüksek iki bidden birisini veriyor. 2-0 kullanıcı kazanıyorsa en düşük iki bidden birisini veriyor. Bunlardan birisi değilse sorunun zorluğuna bakılıyor. Eğer sorunun zorluğu en düşük zorluksa, AI en yüksek iki bidden birisini veriyor. Eğer sorunun zorluğu en yüksek iki zorluktan birisiyse, AI en düşük iki bidden birini veriyor. Bu ihtimaller de geçerli değilse yine tamamen rastgele bid veriyor.
+
+CEVAP VERME ALGORİTMASI:
+Bot'un en kolay soruyu bilme olasılığı 0.625 = 5/8. Soru zorlaştıkça, her zorlukta bir bilme ihtimali 0.08 azalıyor. Yani ikinci zorlukta bir soruda 0.625 - 0.08 = 0.545 ihtimalle doğru biliyor AI. Bunun yanında seçilebilecek şık sayısı azaldıkça doğruluk ihtimali artıyor. Elenen her şık doğru olma ihtimalini 0.125 arttırıyor. Mesela iki şık kaldığında doğru billme ihtimali 0.25 artmış oluyor. Yani en kolay soruda iki şık kalırsa botun doğu bilme ihtimali 0.625 + 0.25 = 0.875 oluyor. En düşük ihtimalde, dördüncü seviyede zor bir soruda dört şık da duruyorsa botun doğru bilme ihtimali 0.625 - (4*0.08) = 0.305 oluyor.
+Temel bilme olasılığı: 0.625, zorlaştıkça azalma etkisi: 0.08, şık azalma etkisi: 0.125 hepsi değişken, deneme yanılma yoluyla değiştirebiliriz.
+
+ÖZELLİK KULLANMA ALGORİTMASI:
+Eğer zorluk seviyesi 3 veya üstü ise %5 ihtimalle, her oyunda en fazla bir kere olmak şartıyla soruyu bil kullanacak bot. 
+Eğer zorluk seviyesi 2 veya üstünde ise %5 ihtimalle her oyunda en fazla iki kere olmak şartıyla iki şık ele kullanacak bot.
+(skora göre ihtimaller artabilir, şu anda sabit)
+---
+
+---SORULAR---
+SORU SEÇME ALGORTİMASI:
+Soruları Almak:
+Bütün soruları json dosyasından çekip bir listeye kaydediyorum.
+
+Zoluk seviyesi tespiti:
+Önce kullanıcının zorluk seviyesini tespit ediyoruz. Son zorluk seviyesinden başlayarak şuna bakıyoruz: bu zorluk seviyesindeki sorularda; toplam 10 soruya cevap vermiş mi, doğru yapma oranı %80 üzerinde mi? Eğer bu iki durumu da sağlıyorsa bu kullanıcının zorluk seviyesini bundan bir yukarı seviye olarak ayarlıyoruz. Yani en kolay seviye sorularda %80 üzeri bir başarısı varsa bu kullanıcının zorluk seviyesi ikinci seviye oluyor. Eğer en son seviyede de çok iyiyse seviyesi en son seviye olarak kalıyor çünkü daha üstü yok. Eğer en kolayda bile iyi değilse seviyesi en kolay olarak kalıyor çünkü daha altı yok. Bu zorluk seviyesini de kullanıcıya uygun soru sormak için kullanacağız.
+
+Görülen Soruları Silmek:
+Bütün soruların listesinden kullanıcının gördüğü soruları siliyoruz.
+
+Soru sayısı kontrolü:
+Görlen sorular silindikten sonra yeterli görülmemiş soru var mı istediğimiz zorluk seviyelerinde diye kontrol ediyoruz. Eğer şimdiki zorluk seviyesinden, bir altında ve bir üstündeki zorluk seviyesinden 5'er olmak üzere 15 tane görülmemiş soru yoksa en az 5'er soru oluncaya kadar görülmüş sorular listesinden soruları siliyorum. Eğer ilk veya son zorluk derecesindeyse bir altı veya bir üstünden toplam 10 soru yeterli.
+
+Zorluğa Göre Sorular Seçmek:
+Önce görülmemiş sorular listesini rastgele bir şekilde karıştırıyorum ki bütün oyunculara sorular sırayla gelmesin. Sonra kullanıcının zorluk seviyesinden ve eğer varsa bir alt ve bir üst seviyesinden toplam 5'er soru bulana kadar sıradan sorulara bakıyorum ve zorluğu istediğmiz aralığa uyan soruları listelere atıyorum. Böylece bütün sorulara bakmam gerekmiyor, iki veya üç zorluk seviyesinden en az 5'er soru olana kadar bakıyorum, bu da bütün sorulara bakmaktan daha kısa sürüyor ama eğer soru setinde çok az bulunan bir zorluk seviyesinden soru bulmak gerekiyorsa uzun sürebilir. Şu anda 114 sorudan 20 - 40 soru arası bakıyor, belki daha iyi bir çözüm bulunabilir!
+
+Gösterilecek Soru Seçmek:
+%15 ihtimalle kullanıcının zorluk seviyesinden bir aşağıda soru soruyor. %15 ihtimalle kullanıcının zorluk seviyesinden bir yukarıda soru soruyor.
+%70 ihtimalle kullanıcının zorluk seviyesinde soru soruyor. Eğer kullanıcı en düşük veya en yüksek seviye ise kendi seviyesinde sorma ihtimal %85'e çıkıyor, mümkün olmayan ihtimal yani bir üst veya alt seviye ihtimali yok oluyor. Gösterilecek sorular bütün sorular içinden zorluklara göre seçtiğimiz 5'er sorudan rastgele seçiliyor. Eğer oyun çok uzar ve istenilen zorlukta 5 sorunun tamamı biterse ve sorulacak soru kalmazsa; soru sayısı kontrolü, görüleni silmek, zorluğa göre soruları seçmek aşamaları tekrar gerçekleştirilir ve soru yeniden doldurulan 5'er soruluk listelerden seçilir.

@@ -14,7 +14,7 @@ public class RegisterManager : MonoBehaviour {
 	public InputField nameField;
 	public Text infoText;
 	bool isMale = false;
-	public GameObject scrollBar;
+	public GameObject loadingImage;
 	DataToCarry dtc;
 
 
@@ -34,7 +34,7 @@ public class RegisterManager : MonoBehaviour {
 		{
 			Debug.LogError("DataToCarry gameObject couldn't be found");
 		}
-		DOTween.To(()=> scrollBar.GetComponent<Scrollbar>().size, x=> scrollBar.GetComponent<Scrollbar>().size = x, 1, 1).OnComplete(Cont);
+		loadingImage.GetComponent<Image>().DOFillAmount(1, 1).OnComplete(Cont);
 	}
 
 	void Cont()
