@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Firebase;
 using Firebase.Database;
+using TMPro;
 
 public class GameManager : MonoBehaviour {
 
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour {
     public Button fiftyFiftyButton;
     public Text knowQuestionAmountText;
     public Text fiftyFiftyAmountText;
+    public Text endGameInfoText;
 
     [Header ("In Game Variables")]
     int turnCount = 0;
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour {
     User player2;
     float questionTimer;
     int totalMoneyAccumulated = 0;
+    public bool userWantsAgain = false;
 
 	[Header ("User Variables")]
 	int playingPlayerId;
@@ -561,10 +564,13 @@ public class GameManager : MonoBehaviour {
         optionTexts[0].transform.parent.parent.gameObject.SetActive(false);
         infoText.gameObject.SetActive(false);
         player1.playedGameCount++;
+        accumulatedMoneyText.transform.parent.gameObject.SetActive(false);
+        knowQuestionButton.transform.parent.gameObject.SetActive(false);
+        fiftyFiftyButton.transform.parent.gameObject.SetActive(false);
 
         if(playerScore > opponentScore)
         {
-            endScreen.transform.GetChild(0).gameObject.SetActive(true);
+            endScreen.transform.Find("Win").gameObject.SetActive(true);
             player1.totalCoin += totalMoneyAccumulated;
             player1.score += 5;
             player1.wonGameCount++;
@@ -572,12 +578,12 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
-            endScreen.transform.GetChild(1).gameObject.SetActive(true);
+            endScreen.transform.Find("Lose").gameObject.SetActive(true);
             player2.totalCoin += totalMoneyAccumulated;
             player1.score += 1;
             playerScoreStarsParent.SetActive(false);
         }
-        endScreen.transform.GetChild(2).GetComponent<Text>().text = totalMoneyAccumulated.ToString();
+        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = totalMoneyAccumulated.ToString() + " " + "COIN";
         SendUserData();
     }
 
@@ -652,9 +658,26 @@ public class GameManager : MonoBehaviour {
         ProceedGame();
     }
 
+    public void PlayAgain()
+    {
+        if (player1.totalCoin >= 30*5)
+        {
+             userWantsAgain = true;
+
+            if (botManager.botWantsAgain)
+            {
+
+            }
+        }
+        else
+        {
+            endGameInfoText.text = "Yetersiz bakiye! Marketten daha fazla coin alabilirsiniz";
+        }
+    }
+
     public void Restart()
     {
-        SceneManager.LoadScene("Game"); // TODO player must play with the same opponent
+        SceneManager.LoadScene("Game");
     } 
 
     public void GoToMenu()

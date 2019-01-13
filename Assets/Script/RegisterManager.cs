@@ -13,7 +13,7 @@ public class RegisterManager : MonoBehaviour {
 	public GameObject uiLayer;
 	public InputField nameField;
 	public Text infoText;
-	bool isMale = false;
+	bool isMale = true;
 	public GameObject loadingImage;
 	DataToCarry dtc;
 
@@ -118,6 +118,7 @@ public class RegisterManager : MonoBehaviour {
 
 	IEnumerator GoToMenu()
 	{
+		ChangeLayerTo(2);
 		yield return new WaitForSeconds(1.2f);
 		SceneManager.LoadScene("MainMenu");
 	}
@@ -171,7 +172,8 @@ public class RegisterManager : MonoBehaviour {
 				else
 				{
 					nameField.interactable = false;
-					ChangeLayerTo(1);	
+					//ChangeLayerTo(2);	
+					CreateUser();
 				}
 			}
 		});
@@ -214,7 +216,6 @@ public class RegisterManager : MonoBehaviour {
 			reference.Child("userList").Child(newUser.UserId).SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
 		});
 
-		ChangeLayerTo(2);
 		StartCoroutine(GoToMenu());
 	}
 }

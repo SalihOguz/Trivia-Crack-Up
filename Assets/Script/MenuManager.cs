@@ -11,9 +11,9 @@ public class MenuManager : MonoBehaviour {
 	// DatabaseReference reference;
 	public GameObject uiLayer;
 	public GameObject userDataObject;
-	public GameObject userDataObject2;
-	public GameObject userDataObject3;
 	public GameObject opponentDataObject;
+	public Text knowQuestionCountText;
+	public Text disableTwoCountText;
 	public User player;
 
 	void Start()
@@ -24,13 +24,9 @@ public class MenuManager : MonoBehaviour {
 		userDataObject.transform.GetChild(0).GetComponent<Image>().sprite = avatar;
 		userDataObject.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = player.username;
 		userDataObject.transform.GetChild(3).GetChild(0).GetComponent<Text>().text = player.totalCoin.ToString();
-		// TODO put pass or other powers
 
-		userDataObject2.transform.GetChild(0).GetComponent<Image>().sprite = avatar;
-		userDataObject2.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = player.username;
-
-		userDataObject3.transform.GetChild(0).GetComponent<Image>().sprite = avatar;
-		userDataObject3.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = player.username;
+		knowQuestionCountText.text = player.knowQuestionSkillCount.ToString();
+		disableTwoCountText.text = player.fiftyFiftySkillCount.ToString();
 
 		UserLogin();
 	}
@@ -109,7 +105,17 @@ public class MenuManager : MonoBehaviour {
 		GoToScene("Game");
 	}
 
-	public void ShowAd()
+	public void ShowAdEarnCoin()
+	{
+
+	}
+
+	public void ShowAdEarnKnowQuestion()
+	{
+
+	}
+
+	public void ShowAdEarnDisableTwo()
 	{
 
 	}

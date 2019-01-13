@@ -23,6 +23,9 @@ public class BotManager : MonoBehaviour {
     public float chanceOfUsingDisableTwo = 0.05f;
     public bool isFiftyFiftyUsed = false;
     bool knowQuestionUsed = false;
+    public float minReplayClickTime = 1f;
+    public float maxReplayClickTime = 4f;
+    public bool botWantsAgain = false;
 
 	void Start()
 	{
@@ -138,4 +141,7 @@ public class BotManager : MonoBehaviour {
             gameManager.ChooseAnswerBot(availableWrongChoices[UnityEngine.Random.Range(0, availableWrongChoices.Count)]);
         }
     }
+
+    
+
 }
