@@ -24,8 +24,12 @@ public class BotManager : MonoBehaviour {
     public bool isFiftyFiftyUsed = false;
     bool knowQuestionUsed = false;
     public float minReplayClickTime = 1f;
-    public float maxReplayClickTime = 4f;
+    public float maxReplayClickTime = 6f;
     public bool botWantsAgain = false;
+    public float revengeAcceptenceRate = 0.7f;
+    public float revengeOfferRate = 0.45f;
+    public float minRunAwayTime = 10f;
+    public float maxRunAwayTime = 15f;
 
 	void Start()
 	{
@@ -142,6 +146,49 @@ public class BotManager : MonoBehaviour {
         }
     }
 
-    
+    void WantAgain()
+    {
+        StartCoroutine(DelayedWantAgain(UnityEngine.Random.Range(minReplayClickTime, maxReplayClickTime)));
+        StartCoroutine(RunAway()); // no one would stay more than runAwayTime after the game ended
+    }
 
+    IEnumerator DelayedWantAgain(float time)
+    {
+        yield return new WaitForSeconds(time); 
+        if (gameManager.userWantsAgain)
+        {
+            float rnd = UnityEngine.Random.Range(0, 100);
+            if (rnd < revengeAcceptenceRate)
+            {
+                botWantsAgain = true;
+                StartCoroutine(gameManager.DelayRestart());
+            }
+            else
+            {
+                botWantsAgain = false;
+                gameManager.BotRunAway();
+            }
+        }
+        else
+        {
+            float rnd = UnityEngine.Random.Range(0, 100);
+            if (rnd < revengeOfferRate)
+            {
+                botWantsAgain = true;
+                gameManager.BotWantsAgain();
+            }
+            else
+            {
+                botWantsAgain = false;
+                gameManager.BotRunAway();
+            }
+        }
+    }
+
+    IEnumerator RunAway()
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(minRunAwayTime, maxRunAwayTime + 1));
+        botWantsAgain = false;
+        gameManager.BotRunAway();
+    }
 }

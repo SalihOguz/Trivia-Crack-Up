@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour {
     public Text knowQuestionAmountText;
     public Text fiftyFiftyAmountText;
     public Text endGameInfoText;
+    public Sprite[] retryButtonSprites;
+    public GameObject retryButton;
 
     [Header ("In Game Variables")]
     int turnCount = 0;
@@ -584,6 +586,11 @@ public class GameManager : MonoBehaviour {
             playerScoreStarsParent.SetActive(false);
         }
         endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = totalMoneyAccumulated.ToString() + " " + "COIN";
+        retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
+        retryButton.transform.GetChild(0).GetComponent<Text>().text = "tekrar oyna";
+        endGameInfoText.text = "";
+         retryButton.GetComponent<Button>().interactable = true;
+
         SendUserData();
     }
 
@@ -662,17 +669,56 @@ public class GameManager : MonoBehaviour {
     {
         if (player1.totalCoin >= 30*5)
         {
-             userWantsAgain = true;
+            userWantsAgain = true;
 
             if (botManager.botWantsAgain)
             {
-
+                StartCoroutine(DelayRestart());
+            }
+            else if (endGameInfoText.text != "Rakip kaçtı!")
+            {
+                retryButton.GetComponent<Image>().sprite = retryButtonSprites[1];
+                endGameInfoText.text = "Rakibe istek gönderildi";
+                retryButton.transform.GetChild(0).GetComponent<Text>().text = "bekleniyor";
+                retryButton.GetComponent<Button>().interactable = false;
             }
         }
         else
         {
             endGameInfoText.text = "Yetersiz bakiye! Marketten daha fazla coin alabilirsiniz";
         }
+    }
+
+    public void BotWantsAgain()
+    {
+        if (player1.totalCoin >= 30*5)
+        {
+            retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
+            endGameInfoText.text = "Rakip tekrar oynamak istiyor!";
+            retryButton.transform.GetChild(0).GetComponent<Text>().text = "tekrar oyna";
+             retryButton.GetComponent<Button>().interactable = true;
+        }
+    }
+
+    public void BotRunAway()
+    {
+        if (player1.totalCoin >= 30*5)
+        {
+            retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
+            endGameInfoText.text = "Rakip kaçtı!";
+            retryButton.transform.GetChild(0).GetComponent<Text>().text = "yeni oyun";
+             retryButton.GetComponent<Button>().interactable = true;
+        }
+    }
+
+    public IEnumerator DelayRestart()
+    {
+        retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
+        retryButton.GetComponent<Button>().interactable = false;
+        endGameInfoText.text = "İstek kabul edildi";
+        retryButton.transform.GetChild(0).GetComponent<Text>().text = "başlıyor";
+        yield return new WaitForSeconds(1f);
+        Restart();
     }
 
     public void Restart()
