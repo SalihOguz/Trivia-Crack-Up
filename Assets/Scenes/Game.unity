@@ -1760,6 +1760,13 @@ MonoBehaviour:
   chanceOfUsingKnowQuestion: 0.05
   chanceOfUsingDisableTwo: 0.05
   isFiftyFiftyUsed: 0
+  minReplayClickTime: 1
+  maxReplayClickTime: 4
+  botWantsAgain: 0
+  revengeAcceptenceRate: 0.7
+  revengeOfferRate: 0.45
+  minRunAwayTime: 10
+  maxRunAwayTime: 15
 --- !u!4 &595133827
 Transform:
   m_ObjectHideFlags: 0
@@ -2026,7 +2033,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1330268789}
-        m_MethodName: Restart
+        m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3013,7 +3020,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -44.099976, y: -273.80005}
+  m_AnchoredPosition: {x: -44, y: -273.80005}
   m_SizeDelta: {x: 209.20001, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &936848503
@@ -3372,7 +3379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1027672562
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3423,7 +3430,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Rakibe davet g\xF6nderildi"
+  m_Text: 
 --- !u!222 &1027672564
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4718,6 +4725,11 @@ MonoBehaviour:
   fiftyFiftyButton: {fileID: 1114278666}
   knowQuestionAmountText: {fileID: 1080506563}
   fiftyFiftyAmountText: {fileID: 848743736}
+  endGameInfoText: {fileID: 1027672563}
+  retryButtonSprites:
+  - {fileID: 21300054, guid: 9f04da2f3c3224e629be28b45d2bfe2b, type: 3}
+  - {fileID: 21300006, guid: 115c0312c4caf4543979fca5d8abe126, type: 3}
+  retryButton: {fileID: 608619091}
   currentQuestion:
     questionId: 0
     questionText: 
@@ -4743,6 +4755,7 @@ MonoBehaviour:
     playedGameCount: 0
     knowQuestionSkillCount: 0
     fiftyFiftySkillCount: 0
+  userWantsAgain: 0
   playerScore: 0
   opponentScore: 0
   totalBiddingTime: 10
@@ -4798,7 +4811,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -39.400024, y: -51}
+  m_AnchoredPosition: {x: -39.5, y: -51}
   m_SizeDelta: {x: 126.45001, y: 102.900024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1370942292

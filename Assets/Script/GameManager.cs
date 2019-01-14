@@ -163,6 +163,7 @@ public class GameManager : MonoBehaviour {
             {
                 print("lololoooo");
                 gameState++;  // to stop the timer
+
                 ChangeActivePlayer();
             }
         }
@@ -589,7 +590,8 @@ public class GameManager : MonoBehaviour {
         retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
         retryButton.transform.GetChild(0).GetComponent<Text>().text = "tekrar oyna";
         endGameInfoText.text = "";
-         retryButton.GetComponent<Button>().interactable = true;
+        retryButton.GetComponent<Button>().interactable = true;
+        botManager.WantAgain();
 
         SendUserData();
     }
@@ -682,6 +684,10 @@ public class GameManager : MonoBehaviour {
                 retryButton.transform.GetChild(0).GetComponent<Text>().text = "bekleniyor";
                 retryButton.GetComponent<Button>().interactable = false;
             }
+            else
+            {
+                GoToMenu(); // TODO load player choose
+            }
         }
         else
         {
@@ -707,7 +713,9 @@ public class GameManager : MonoBehaviour {
             retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
             endGameInfoText.text = "Rakip kaçtı!";
             retryButton.transform.GetChild(0).GetComponent<Text>().text = "yeni oyun";
-             retryButton.GetComponent<Button>().interactable = true;
+            retryButton.GetComponent<Button>().interactable = true;
+            // retryButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            // retryButton.GetComponent<Button>().onClick.AddListener(delegate{GoToMenu();});
         }
     }
 
