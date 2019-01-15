@@ -24,8 +24,10 @@ public class MenuManager : MonoBehaviour {
 		
 		Sprite avatar = Resources.Load<Avatars>("Data/Avatars").avatarSprites[player.avatarId];
 		userDataObject.transform.GetChild(0).GetComponent<Image>().sprite = avatar;
-		userDataObject.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = player.username;
-		userDataObject.transform.GetChild(3).GetChild(0).GetComponent<Text>().text = player.totalCoin.ToString();
+		userDataObject.transform.Find("UserNameBG").GetChild(0).GetComponent<Text>().text = player.username;
+		userDataObject.transform.Find("CoinButton").GetChild(0).GetComponent<Text>().text = player.totalCoin.ToString();
+		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = "Joker " + player.knowQuestionSkillCount.ToString();
+		userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = "Şık Eleme " + player.fiftyFiftySkillCount.ToString();
 
 		knowQuestionCountText.text = player.knowQuestionSkillCount.ToString();
 		disableTwoCountText.text = player.fiftyFiftySkillCount.ToString();

@@ -470,13 +470,25 @@ public class GameManager : MonoBehaviour {
             knowQuestionButton.interactable = false;
             player1.knowQuestionSkillCount--;
             knowQuestionAmountText.text = player1.knowQuestionSkillCount.ToString();
+
+            infoText.transform.Find("joker").gameObject.SetActive(true);
+            infoText.text = "";
+            StartCoroutine(KnowEnd());
         }
 	}
 
     public void KnowTheQuestionBot()
     {
         ChooseAnswerBot(currentQuestion.rightAnswerIndex);
-        // knowQuestionButton.interactable = false; // needs to be done for bot? TODO
+        infoText.transform.Find("joker").gameObject.SetActive(true);
+        infoText.text = "";
+        StartCoroutine(KnowEnd());
+    }
+
+    IEnumerator KnowEnd()
+    {
+        yield return new WaitForSeconds(1.9f);
+        infoText.transform.Find("joker").gameObject.SetActive(false);
     }
 
     public void DiasbleTwoChoices()
@@ -505,6 +517,10 @@ public class GameManager : MonoBehaviour {
 
             player1.fiftyFiftySkillCount--;
             fiftyFiftyAmountText.text = player1.fiftyFiftySkillCount.ToString();
+
+            infoText.transform.Find("disable").gameObject.SetActive(true);
+            infoText.text = "";
+            StartCoroutine(DisableEnd());
         }
     }
 
@@ -527,7 +543,23 @@ public class GameManager : MonoBehaviour {
         enabledbuttons[rnd].enabled = false;
         enabledbuttons[rnd].gameObject.gameObject.GetComponent<Image>().sprite = choiceSprites[1];
 
-        // fiftyFiftyButton.interactable = false;  // needs to be done for bot? TODO
+        infoText.transform.Find("disable").gameObject.SetActive(true);
+        infoText.text = "";
+        StartCoroutine(DisableEnd());
+    }
+
+    IEnumerator DisableEnd()
+    {
+        yield return new WaitForSeconds(1.9f);
+        infoText.transform.Find("disable").gameObject.SetActive(false);
+        if (playingPlayerId == 0)
+        {
+            infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b> cevaplıyor";
+        }
+        else
+        {
+            infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b> cevaplıyor";
+        }
     }
 
     void IncreaseScore()
@@ -632,7 +664,7 @@ public class GameManager : MonoBehaviour {
     {
         gameState = 3; // to stop the timer
         infoText.text = "";
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         for(int i = 0; i < optionTexts.Length; i++)
         {
             optionTexts[i].text = "";

@@ -29,8 +29,8 @@ public class User {
         this.wrongAnswersInDifficulties = new float[] {0,0,0,0}; // TODO may change according to the difficulty levels
         this.wonGameCount = 0;
         this.playedGameCount = 0;
-        this.knowQuestionSkillCount = 0;
-        this.fiftyFiftySkillCount = 0;
+        this.knowQuestionSkillCount = 3;
+        this.fiftyFiftySkillCount = 5;
         if (isMale)
         {
             this.avatarId = 0;

@@ -1,42 +1,37 @@
 {
-  "project_info": {
-    "project_number": "457317115974",
-    "firebase_url": "https://trivia-challanger.firebaseio.com",
-    "project_id": "trivia-challanger",
-    "storage_bucket": "trivia-challanger.appspot.com"
-  },
   "client": [
     {
+      "services": {
+        "appinvite_service": {
+          "status": 0
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "457317115974-mc5npacn8rkmlnlq143ihvplhm7ri4t2.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyClAlFvViMBDRrp5wTY-CxXmC9k6Ubw1HI"
+        }
+      ], 
       "client_info": {
-        "mobilesdk_app_id": "1:457317115974:android:1a6714deb2a083b1",
+        "mobilesdk_app_id": "1:457317115974:ios:1a6714deb2a083b1", 
         "android_client_info": {
           "package_name": "com.digitalwords.triviachallanger"
         }
-      },
-      "oauth_client": [
-        {
-          "client_id": "457317115974-6471evq6bro5p6mb4uco33q52ks2bkps.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCuC38D7WwAbrVS2mEGCYXgaqEOpaM0SC0"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
       }
     }
-  ],
-  "configuration_version": "1"
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "trivia-challanger.appspot.com", 
+    "project_id": "trivia-challanger", 
+    "firebase_url": "https://trivia-challanger.firebaseio.com", 
+    "project_number": "457317115974"
+  }
 }
