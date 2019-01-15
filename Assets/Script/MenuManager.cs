@@ -15,6 +15,7 @@ public class MenuManager : MonoBehaviour {
 	public Text knowQuestionCountText;
 	public Text disableTwoCountText;
 	public User player;
+	public GameObject leaderboardObject;
 
 	void Start()
 	{
@@ -29,6 +30,7 @@ public class MenuManager : MonoBehaviour {
 		disableTwoCountText.text = player.fiftyFiftySkillCount.ToString();
 
 		UserLogin();
+		LoadLeaderboard();
 	}
 	void UserLogin()
 	{
@@ -129,4 +131,81 @@ public class MenuManager : MonoBehaviour {
 	{
 
 	}
+
+	void LoadLeaderboard()
+	{
+		List<User> userList = new List<User>();
+		FirebaseDatabase.DefaultInstance.GetReference("userList").GetValueAsync().ContinueWith(task => {
+			if (task.IsFaulted) {
+				// Handle the error...
+				Debug.LogError("Error in FirebaseStart");
+			}
+			else if (task.IsCompleted) {
+				DataSnapshot snapshot = task.Result;				
+
+				foreach (DataSnapshot i in snapshot.Children)
+				{
+					print(i.GetRawJsonValue());
+					userList.Add(JsonUtility.FromJson<User>(i.GetRawJsonValue()));
+				}
+				QuickSort(userList, 0, userList.Count - 1);
+
+				for (int i = 0; i < userList.Count; i++)
+				{
+					if (i == 10)
+					{
+						break;
+					}
+					//leaderboardObject.transform.GetChild() TODO
+				}
+			}
+		});
+
+
+	}
+
+	  public static void QuickSort(List<User> userList, int left, int right)
+    {
+        if(left > right || left <0 || right <0) return; 
+
+        int index = partition(userList, left, right);
+
+        if (index != -1)
+        {
+            QuickSort(userList, left, index - 1);
+            QuickSort(userList, index + 1, right);
+        }
+		else
+		{
+			print("sorted");
+		}
+    }
+
+    private static int partition(List<User> userList, int left, int right)
+    {
+        if(left > right) return -1; 
+
+        int end = left; 
+
+        User pivot = userList[right];    // choose last one to pivot, easy to code
+        for(int i= left; i< right; i++)
+        {
+            if (userList[i].score > pivot.score || (userList[i].score == pivot.score && userList[i].wonGameCount > pivot.wonGameCount)) // score is higher or score equals but more game won
+            {
+                swap(userList, i, end);
+                end++; 
+            }
+        }
+
+        swap(userList, end, right);
+
+        return end; 
+    }
+
+    private static void swap(List<User> userList, int left, int right)
+    {
+        User tmp = userList[left];
+        userList[left] = userList[right];
+        userList[right] = tmp; 
+    }
 }

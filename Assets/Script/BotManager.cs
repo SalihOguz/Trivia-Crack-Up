@@ -152,7 +152,7 @@ public class BotManager : MonoBehaviour {
         StartCoroutine(RunAway(UnityEngine.Random.Range(minRunAwayTime, maxRunAwayTime + 1))); // no one would stay more than runAwayTime after the game ended
     }
 
-    IEnumerator DelayedWantAgain(float time)
+    public IEnumerator DelayedWantAgain(float time)
     {
         yield return new WaitForSeconds(time); 
         if (gameManager.userWantsAgain)
@@ -185,7 +185,7 @@ public class BotManager : MonoBehaviour {
         }
     }
 
-    IEnumerator RunAway(float time)
+    public IEnumerator RunAway(float time)
     {
         yield return new WaitForSeconds(time);
         botWantsAgain = false;
