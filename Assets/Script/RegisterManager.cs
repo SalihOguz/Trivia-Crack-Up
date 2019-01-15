@@ -20,7 +20,7 @@ public class RegisterManager : MonoBehaviour {
 
 	void Awake()
 	{
-		//PlayerPrefs.DeleteAll();
+		PlayerPrefs.DeleteAll();
 
 		UpdateGoogle();
 		FirebaseStart();

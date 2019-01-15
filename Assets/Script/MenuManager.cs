@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour {
 	public Text disableTwoCountText;
 	public User player;
 	public GameObject leaderboardObject;
+	public GameObject leaderboardLoadingObject;
 
 	void Start()
 	{
@@ -30,7 +31,6 @@ public class MenuManager : MonoBehaviour {
 		disableTwoCountText.text = player.fiftyFiftySkillCount.ToString();
 
 		UserLogin();
-		LoadLeaderboard();
 	}
 	void UserLogin()
 	{
@@ -132,8 +132,10 @@ public class MenuManager : MonoBehaviour {
 
 	}
 
-	void LoadLeaderboard()
+	public void LoadLeaderboard()
 	{
+		// getting all users evertime leaderboard viewed might not be the best idea TODO
+		leaderboardLoadingObject.SetActive(true);
 		List<User> userList = new List<User>();
 		FirebaseDatabase.DefaultInstance.GetReference("userList").GetValueAsync().ContinueWith(task => {
 			if (task.IsFaulted) {
@@ -145,23 +147,72 @@ public class MenuManager : MonoBehaviour {
 
 				foreach (DataSnapshot i in snapshot.Children)
 				{
-					print(i.GetRawJsonValue());
 					userList.Add(JsonUtility.FromJson<User>(i.GetRawJsonValue()));
 				}
-				QuickSort(userList, 0, userList.Count - 1);
-
-				for (int i = 0; i < userList.Count; i++)
-				{
-					if (i == 10)
-					{
-						break;
-					}
-					//leaderboardObject.transform.GetChild() TODO
-				}
+				FillLeaderboard(userList);	
 			}
 		});
 
 
+	}
+
+	public void FillLeaderboard(List<User> userList)
+	{
+		QuickSort(userList, 0, userList.Count - 1);
+
+		bool userFound = false;
+
+		for (int i = 0; i < userList.Count; i++)
+		{
+			if (i == 10)
+			{
+				break;
+			}
+			leaderboardObject.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = userList[i].username;
+			leaderboardObject.transform.GetChild(i).GetChild(1).GetComponent<Text>().text = userList[i].score.ToString();
+			leaderboardObject.transform.GetChild(i).GetChild(2).GetComponent<Text>().text = (i+1).ToString() + ".";
+			leaderboardObject.transform.GetChild(i).gameObject.SetActive(true);
+
+			if(userList[i].userId == player.userId)
+			{
+				userFound = true;
+				leaderboardObject.transform.GetChild(i).GetChild(3).gameObject.SetActive(true);
+			}
+		}
+		
+		if (!userFound)
+		{
+			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount).gameObject.SetActive(true);
+			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount).GetChild(0).GetComponent<Text>().text = player.username;
+			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount).GetChild(1).GetComponent<Text>().text = player.score.ToString();
+			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount).GetChild(2).GetComponent<Text>().text = (FindUserIndex(userList)).ToString() + ".";
+		}
+		
+		leaderboardLoadingObject.SetActive(false);
+	}
+
+	int FindUserIndex(List<User> userList)
+	{
+		// Binary Search
+		int min = 0;
+  		int max = userList.Count - 1; 
+		while (min <=max)  
+		{  
+			int mid = (min + max) / 2;  
+			if (player.userId == userList[mid].userId)  
+			{  
+				return ++mid;  
+			}  
+			else if (player.score < userList[mid].score)  
+			{  
+				max = mid - 1;  
+			}  
+			else  
+			{  
+				min = mid + 1;  
+			}  
+		}  
+		return 0;
 	}
 
 	  public static void QuickSort(List<User> userList, int left, int right)

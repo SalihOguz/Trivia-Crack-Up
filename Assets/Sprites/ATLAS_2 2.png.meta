@@ -22,6 +22,10 @@ TextureImporter:
     21300034: ATLAS_2 2_17
     21300036: ATLAS_2 2_18
     21300038: ATLAS_2 2_19
+    21300040: ATLAS_2 2_20
+    21300042: ATLAS_2 2_21
+    21300044: ATLAS_2 2_22
+    21300046: ATLAS_2 2_23
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -425,7 +429,7 @@ TextureImporter:
         width: 310
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -445,7 +449,7 @@ TextureImporter:
         width: 232
         height: 177
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -465,7 +469,7 @@ TextureImporter:
         width: 192
         height: 195
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -485,13 +489,133 @@ TextureImporter:
         width: 192
         height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 845123bfc4761455aa822b8a70776025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_2 2_10
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 1357
+        width: 420
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4295cce37badf4bdcb9db5e4bc4d16c0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_2 2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1074
+        width: 720
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2854fa248fc20411a96bf7bbb7bec56e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_2 2_20
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 1117
+        width: 390
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c4d8dcfbdfe4f2da8591d046331a9f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_2 2_21
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 872
+        width: 530
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6778b259a8a47a2a795ef6a67a3488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_2 2_22
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 1145
+        height: 685
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f45a70dab2ae409797f08a225f93da1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_2 2_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 686
+        width: 441
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814ac264cc59643e2ba1704516f04abf
       vertices: []
       indices: 
       edges: []
