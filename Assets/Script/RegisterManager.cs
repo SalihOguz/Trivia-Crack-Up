@@ -18,23 +18,12 @@ public class RegisterManager : MonoBehaviour {
 	DataToCarry dtc;
 
 
-	void Awake()
+	void Start()
 	{
-		PlayerPrefs.DeleteAll();
+		//PlayerPrefs.DeleteAll();
 
 		UpdateGoogle();
-		FirebaseStart();
-		if (GameObject.Find("DataToCarry"))
-		{
-			dtc = GameObject.Find("DataToCarry").GetComponent<DataToCarry>();
-			GetQuestions();
-			GetFakeUsers();
-		}
-		else
-		{
-			Debug.LogError("DataToCarry gameObject couldn't be found");
-		}
-		loadingImage.GetComponent<Image>().DOFillAmount(1, 1).OnComplete(Cont);
+		
 	}
 
 	void Cont()
@@ -55,7 +44,6 @@ public class RegisterManager : MonoBehaviour {
 		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://trivia-challanger.firebaseio.com/");
 	}
 
-
 	void UpdateGoogle()
 	{
 		Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
@@ -67,6 +55,18 @@ public class RegisterManager : MonoBehaviour {
 
 				// Set a flag here indicating that Firebase is ready to use by your
 				// application.
+				FirebaseStart();
+				if (GameObject.Find("DataToCarry"))
+				{
+					dtc = GameObject.Find("DataToCarry").GetComponent<DataToCarry>();
+					GetQuestions();
+					GetFakeUsers();
+				}
+				else
+				{
+					Debug.LogError("DataToCarry gameObject couldn't be found");
+				}
+				loadingImage.GetComponent<Image>().DOFillAmount(1, 1).OnComplete(Cont);
 			} else {
 				UnityEngine.Debug.LogError(System.String.Format(
 				"Could not resolve all Firebase dependencies: {0}", dependencyStatus));
