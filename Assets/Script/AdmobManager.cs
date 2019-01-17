@@ -8,24 +8,44 @@ public class AdmobManager : MonoBehaviour {
 
     public void Start()
     {
-        #if UNITY_ANDROID
-			string appId = "ca-app-pub-7734671340913331~2255058673";
-		#elif UNITY_IPHONE
-			string appId = "ca-app-pub-7734671340913331~7160002623";
-        #else
-            string appId = "unexpected_platform";
-        #endif
-
-        // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize(appId);
-
-        // Get singleton reward based video ad reference.
         this.rewardBasedVideo = RewardBasedVideoAd.Instance;
-
+        rewardBasedVideo.OnAdRewarded += HandleRewardBasedVideoRewarded;
         this.RequestRewardBasedVideo();
     }
 
     private void RequestRewardBasedVideo()
+    {
+        #if UNITY_ANDROID
+            string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        #elif UNITY_IPHONE
+            string adUnitId = "ca-app-pub-3940256099942544/1712485313";
+        #else
+            string adUnitId = "unexpected_platform";
+        #endif
+
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().Build();
+        // Load the rewarded video ad with the request.
+        this.rewardBasedVideo.LoadAd(request, adUnitId);
+    }
+
+    public void HandleRewardBasedVideoRewarded(object sender, Reward args)
+    {
+        string type = args.Type;
+        double amount = args.Amount;
+        MonoBehaviour.print(
+            "HandleRewardBasedVideoRewarded event received for "
+                        + amount.ToString() + " " + type);
+    }
+
+    public void UserOptToWatchAd()
+    {
+        if (rewardBasedVideo.IsLoaded()) {
+            rewardBasedVideo.Show();
+        }
+    }
+
+    private void RequestRewardBasedVideoCoin50()
     {
         
         #if UNITY_ANDROID

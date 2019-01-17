@@ -22,7 +22,7 @@ public class RegisterManager : MonoBehaviour {
 	{
 		//PlayerPrefs.DeleteAll();
 
-		UpdateGoogle();
+		//UpdateGoogle();
 		FirebaseStart();
 		if (GameObject.Find("DataToCarry"))
 		{
@@ -53,7 +53,9 @@ public class RegisterManager : MonoBehaviour {
 	void FirebaseStart()
 	{
 		// Set up the Editor before calling into the realtime database.
-		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://trivia-challanger.firebaseio.com/");
+		#if UNITY_EDITOR
+			FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://trivia-challanger.firebaseio.com/");
+		#endif
 	}
 
 	void UpdateGoogle()
