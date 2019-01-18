@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour {
 	public User player;
 	public GameObject leaderboardObject;
 	public GameObject leaderboardLoadingObject;
+	public GameObject adButton;
 
 	void Start()
 	{
@@ -28,6 +29,7 @@ public class MenuManager : MonoBehaviour {
 		userDataObject.transform.Find("CoinButton").GetChild(0).GetComponent<Text>().text = player.totalCoin.ToString();
 		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = "Joker " + player.knowQuestionSkillCount.ToString();
 		userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = "Şık Eleme " + player.fiftyFiftySkillCount.ToString();
+		adButton.transform.GetChild(UnityEngine.Random.Range(0, adButton.transform.childCount)).gameObject.SetActive(true);
 
 		knowQuestionCountText.text = player.knowQuestionSkillCount.ToString();
 		disableTwoCountText.text = player.fiftyFiftySkillCount.ToString();
@@ -154,8 +156,6 @@ public class MenuManager : MonoBehaviour {
 				FillLeaderboard(userList);	
 			}
 		});
-
-
 	}
 
 	public void FillLeaderboard(List<User> userList)

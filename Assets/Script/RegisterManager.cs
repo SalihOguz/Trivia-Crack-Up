@@ -16,13 +16,44 @@ public class RegisterManager : MonoBehaviour {
 	bool isMale = true;
 	public GameObject loadingImage;
 	DataToCarry dtc;
+	int tryConnectionCount = 0;
+	int maxConectionTryCount = 7;
 
 
 	void Start()
 	{
 		//PlayerPrefs.DeleteAll();
+		loadingImage.GetComponent<Image>().DOFillAmount(0.2f, 0.2f);
+		StartCoroutine(CheckConnection());
+	}
 
-		//UpdateGoogle();
+	IEnumerator CheckConnection()
+	{
+		if (ConnectionManager.isOnline)
+		{
+			print("Online");
+			DelayedStart();
+		}
+		else
+		{
+			print("notOnline");
+			tryConnectionCount++;
+			if (tryConnectionCount == maxConectionTryCount)
+			{
+				ChangeLayerTo(3);
+				print("yooooook");
+			}
+			else
+			{
+				yield return new WaitForSeconds(0.2f);
+				StartCoroutine(CheckConnection());
+			}
+		}
+	}
+
+	void DelayedStart()
+	{
+		UpdateGoogle();
 		FirebaseStart();
 		if (GameObject.Find("DataToCarry"))
 		{
@@ -34,8 +65,7 @@ public class RegisterManager : MonoBehaviour {
 		{
 			Debug.LogError("DataToCarry gameObject couldn't be found");
 		}
-		loadingImage.GetComponent<Image>().DOFillAmount(1, 1).OnComplete(Cont);
-
+		loadingImage.GetComponent<Image>().DOFillAmount(1, 0.8f).OnComplete(Cont);
 	}
 
 	void Cont()
@@ -43,6 +73,7 @@ public class RegisterManager : MonoBehaviour {
 		if (PlayerPrefs.HasKey("userData"))
 		{
 			SceneManager.LoadScene("MainMenu");
+			// TODO we may put transition animation here
 		}
 		else
 		{

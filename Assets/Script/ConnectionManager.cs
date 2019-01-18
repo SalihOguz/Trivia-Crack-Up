@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class ConnectionManager : MonoBehaviour {
+public class ConnectionManager : Singleton<ConnectionManager> {
 
-	public float pingInterval;
+	public float pingInterval = 1f;
 	public static bool isOnline = false;
 
 	void Start() {
