@@ -61,11 +61,11 @@ public class BotManager : MonoBehaviour {
         }
         else
         {
-            if (gameManager.playerScore == 0 && gameManager.opponentScore == 2)
+            if (gameManager.playerScore == 0 && gameManager.opponentScore == 3)
             {
                 choice = UnityEngine.Random.Range(1,3);
             }
-            else if (gameManager.playerScore == 2 && gameManager.opponentScore == 0)
+            else if (gameManager.playerScore == 3 && gameManager.opponentScore == 0)
             {
                 choice = UnityEngine.Random.Range(0,2);
             }

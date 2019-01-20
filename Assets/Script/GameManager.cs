@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour {
     public Text endGameInfoText;
     public Sprite[] retryButtonSprites;
     public GameObject retryButton;
+    public GameObject noInternetMenu;
 
     [Header ("In Game Variables")]
     int turnCount = 0;
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour {
     float questionTimer;
     int totalMoneyAccumulated = 0;
     public bool userWantsAgain = false;
+    float disconnectedSec = 0;
 
 	[Header ("User Variables")]
 	int playingPlayerId;
@@ -62,11 +64,12 @@ public class GameManager : MonoBehaviour {
     bool fiftyFiftyUsed = false;
 
 	[Header ("Gameplay Variables")]
-	public float totalBiddingTime = 10f;
+	public float totalBiddingTime = 5f;
 	public float choiceApperTime = 0.4f;
     public int[] bidAmounts = { 15, 35, 70, 100};
     public float questionAnsweringTime = 10f;
-    public int totalTurnCount = 5;
+    public int totalTurnCount = 7;
+    public float maxDisconnectedSec = 3;
 
     [Header ("Question Data")]
     int[] chosenChoiceCounts = new int[4];
@@ -77,6 +80,7 @@ public class GameManager : MonoBehaviour {
     void Start () {
         Init();
         StartCoroutine(DelayedStart());
+        StartCoroutine(CheckConnection());
     }
 
     void Init()
@@ -105,6 +109,23 @@ public class GameManager : MonoBehaviour {
         knowQuestionAmountText.text = player1.knowQuestionSkillCount.ToString();
         fiftyFiftyAmountText.text = player1.fiftyFiftySkillCount.ToString();
     }
+
+    IEnumerator CheckConnection()
+	{
+		if (!ConnectionManager.isOnline)
+		{
+			print("notOnline");
+			disconnectedSec++;
+			if (disconnectedSec >= maxDisconnectedSec)
+			{
+				noInternetMenu.SetActive(true);
+                Time.timeScale = 0f;
+				print("yooooook");
+			}
+		}
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(CheckConnection());
+	}
 
     User MakeFakeUser()
     {
@@ -150,7 +171,7 @@ public class GameManager : MonoBehaviour {
 		{
 			bidTimer += Time.deltaTime;
             bidTimerText.text =  (Mathf.CeilToInt(totalBiddingTime - bidTimer)).ToString();
-            if (bidTimer >= totalBiddingTime && (playerBid == 0 || opponentBid == 0)) // bidding time ended
+            if (bidTimer >= totalBiddingTime) // bidding time ended // && (playerBid == 0 || opponentBid == 0) 
 			{
 				EvaluateBidding();
 			}
@@ -326,10 +347,10 @@ public class GameManager : MonoBehaviour {
             bidIndicatorsParent.transform.GetChild(0).transform.position = new Vector3(indicatorPos.x, bidIndicatorsParent.transform.parent.GetChild(index).position.y, 0);
             bidButtonsParent.transform.GetChild(index).GetComponent<Image>().sprite = bidSprites[index];
 
-            if (opponentBid != 0 && gameState == 1)
-            {
-                EvaluateBidding();
-            }
+            // if (opponentBid != 0 && gameState == 1) // commented because we want 5 sec to be completed
+            // {
+            //     EvaluateBidding();
+            // }
         }
 	}
 
@@ -343,10 +364,10 @@ public class GameManager : MonoBehaviour {
         Vector3 indicatorPos = bidIndicatorsParent.transform.GetChild(1).transform.position;
         bidIndicatorsParent.transform.GetChild(1).transform.position = new Vector3(indicatorPos.x, bidIndicatorsParent.transform.parent.GetChild(index).position.y, 0);
 
-        if (playerBid != 0 && gameState == 1)
-		{
-			EvaluateBidding();
-		}
+        // if (playerBid != 0 && gameState == 1) // commented because we want 5 sec to be completed
+		// {
+		// 	EvaluateBidding();
+		// }
 	}
 
     IEnumerator ShowQuestion()
@@ -578,7 +599,7 @@ public class GameManager : MonoBehaviour {
 
     void GoToTheNextTurn()
     {
-        if (turnCount < totalTurnCount && playerScore < 3 && opponentScore < 3)
+        if (turnCount < totalTurnCount && playerScore < Mathf.Floor(totalTurnCount/2) + 1 && opponentScore < Mathf.Floor(totalTurnCount/2) + 1)
         {
             turnCount++;
             StartCoroutine(CleanScreen());
@@ -628,11 +649,33 @@ public class GameManager : MonoBehaviour {
         SendUserData();
     }
 
+    public void DoubleTheCoin()
+    {
+        player1.totalCoin += totalMoneyAccumulated;
+        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = (totalMoneyAccumulated *2).ToString() + " " + "COIN";
+        SendUserData();
+    } 
+
     void SendUserData()
     {
-        PlayerPrefs.SetString("userData", JsonUtility.ToJson(player1));
-        DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
-		reference.Child("userList").Child(player1.userId).SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
+        if (ConnectionManager.isOnline)
+        {
+            PlayerPrefs.SetString("userData", JsonUtility.ToJson(player1));
+            DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+            reference.Child("userList").Child(player1.userId).SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
+        }
+        else
+        {
+            Debug.LogError("No internet. Data couldn't be sent");
+        }
+    }
+
+    public void DoubleCoinAdShow()
+    {
+        if (GameObject.Find("AdManager"))
+        {
+            GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("earn2x");
+        }
     }
 
     void SendQuestionData()
@@ -768,6 +811,7 @@ public class GameManager : MonoBehaviour {
 
     public void GoToMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }    
 

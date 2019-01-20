@@ -34,7 +34,16 @@ public class MenuManager : MonoBehaviour {
 		knowQuestionCountText.text = player.knowQuestionSkillCount.ToString();
 		disableTwoCountText.text = player.fiftyFiftySkillCount.ToString();
 
-		UserLogin();
+		if (ConnectionManager.isOnline)
+		{
+			UserLogin();
+		}
+		else
+		{
+			Debug.LogError("No internet. User couldn't login");
+			ChangeLayerTo(7);
+		}
+
 	}
 	void UserLogin()
 	{
@@ -79,7 +88,15 @@ public class MenuManager : MonoBehaviour {
 
 	public void ChangeLayerTo(int layerCount)
 	{
-		uiLayer.GetComponent<Animator>().SetInteger("layerCount", layerCount);
+		if (ConnectionManager.isOnline)
+		{
+			uiLayer.GetComponent<Animator>().SetInteger("layerCount", layerCount);
+		}
+		else
+		{
+			Debug.Log("No internet in menu");
+			uiLayer.GetComponent<Animator>().SetInteger("layerCount", 7);
+		}
 	}
 
 	public void ChangeShopLayer(int shopLayer)
@@ -113,17 +130,29 @@ public class MenuManager : MonoBehaviour {
 
 	public void ShowAdEarnCoin()
 	{
-
+		if(GameObject.Find("AdManager"))
+		{
+			print("coin");
+			GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("coin");
+		}
 	}
 
 	public void ShowAdEarnKnowQuestion()
 	{
-
-	}
+		if(GameObject.Find("AdManager"))
+		{
+			print("joker");
+			GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("joker");
+		}
+	}	
 
 	public void ShowAdEarnDisableTwo()
 	{
-
+		if(GameObject.Find("AdManager"))
+		{
+			print("disable");
+			GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("disable");
+		}
 	}
 
 	public void PurchasePass()

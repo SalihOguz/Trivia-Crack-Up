@@ -8,6 +8,7 @@ using Firebase.Auth;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 using DG.Tweening;
+using GoogleMobileAds.Api;
 
 public class RegisterManager : MonoBehaviour {
 	public GameObject uiLayer;
@@ -31,17 +32,14 @@ public class RegisterManager : MonoBehaviour {
 	{
 		if (ConnectionManager.isOnline)
 		{
-			print("Online");
 			DelayedStart();
 		}
 		else
 		{
-			print("notOnline");
 			tryConnectionCount++;
 			if (tryConnectionCount == maxConectionTryCount)
 			{
 				ChangeLayerTo(3);
-				print("yooooook");
 			}
 			else
 			{
@@ -53,13 +51,24 @@ public class RegisterManager : MonoBehaviour {
 
 	void DelayedStart()
 	{
-		UpdateGoogle();
+		//UpdateGoogle();
 		FirebaseStart();
 		if (GameObject.Find("DataToCarry"))
 		{
 			dtc = GameObject.Find("DataToCarry").GetComponent<DataToCarry>();
-			GetQuestions();
-			GetFakeUsers();
+			if (ConnectionManager.isOnline)
+			{
+				if(GameObject.Find("AdManager"))
+				{
+					GameObject.Find("AdManager").GetComponent<AdmobManager>().DelayedStart();
+				}
+				GetQuestions();
+				GetFakeUsers();
+			}
+			else
+			{
+				ChangeLayerTo(3);
+			}
 		}
 		else
 		{
