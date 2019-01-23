@@ -40,24 +40,31 @@ public class GameManager : MonoBehaviour {
     public Sprite[] retryButtonSprites;
     public GameObject retryButton;
     public GameObject noInternetMenu;
+    public GameObject questionCountdown;
 
     [Header ("In Game Variables")]
+    [HideInInspector]
+    public Question currentQuestion;
     int turnCount = 0;
     int gameState = 0; // 0 = answers come, 1 = bidding, 2 = answering
-	public Question currentQuestion;
 	float bidTimer;
     float bidStartTime;
 	public BotManager botManager;
+    [HideInInspector]
     public User player1;
     User player2;
     float questionTimer;
     int totalMoneyAccumulated = 0;
+    [HideInInspector]
     public bool userWantsAgain = false;
     float disconnectedSec = 0;
 
 	[Header ("User Variables")]
+    [HideInInspector]
+    public int playerScore = 0;
+    [HideInInspector]
+    public int opponentScore = 0;
 	int playingPlayerId;
-	public int playerScore, opponentScore = 0;
 	int playerBid, opponentBid = 0;
 	float playerBidTime, opponentBidTime;
     bool knowQuestionUsed = false;
@@ -79,8 +86,14 @@ public class GameManager : MonoBehaviour {
 
     void Start () {
         Init();
+        StartCoroutine(AnimationDelay());
+    }
+
+    IEnumerator AnimationDelay()
+    {
+        yield return new WaitForSeconds(1f);
         StartCoroutine(DelayedStart());
-        StartCoroutine(CheckConnection());
+        //StartCoroutine(CheckConnection()); // TODO uncomment
     }
 
     void Init()
@@ -346,6 +359,8 @@ public class GameManager : MonoBehaviour {
             Vector3 indicatorPos = bidIndicatorsParent.transform.GetChild(0).transform.position;
             bidIndicatorsParent.transform.GetChild(0).transform.position = new Vector3(indicatorPos.x, bidIndicatorsParent.transform.parent.GetChild(index).position.y, 0);
             bidButtonsParent.transform.GetChild(index).GetComponent<Image>().sprite = bidSprites[index];
+            
+            bidButtonsParent.GetComponent<Animator>().SetTrigger("clicked");
 
             // if (opponentBid != 0 && gameState == 1) // commented because we want 5 sec to be completed
             // {
@@ -396,6 +411,8 @@ public class GameManager : MonoBehaviour {
         {
             optionTexts[i].transform.parent.GetComponent<Button>().interactable = true;
         }
+        questionCountdown.GetComponent<Animator>().enabled = true;
+       //questionCountdown.GetComponent<Animation>().Play();
     }
 
     void ChangeActivePlayer()
@@ -422,10 +439,16 @@ public class GameManager : MonoBehaviour {
 
         questionTimer = 0;
         gameState = 2;  // to start the timer
+
+        questionCountdown.SetActive(false);
+        questionCountdown.SetActive(true);
+        questionCountdown.GetComponent<Animator>().enabled = true;
     }
 
     public void ChooseAnswer(int index)
     {
+        questionCountdown.GetComponent<Animator>().enabled = false;
+
         if (playingPlayerId == 0 && gameState == 2)
         {
             fiftyFiftyButton.interactable = false;
@@ -458,6 +481,8 @@ public class GameManager : MonoBehaviour {
 
     public void ChooseAnswerBot(int index)
     {
+        questionCountdown.GetComponent<Animator>().enabled = false;
+
         fiftyFiftyButton.interactable = false;
         if (currentQuestion.rightAnswerIndex == index) // Answered right!
         {
