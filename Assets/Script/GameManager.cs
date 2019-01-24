@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public bool userWantsAgain = false;
     float disconnectedSec = 0;
+    SoundManager soundManager;
 
 	[Header ("User Variables")]
     [HideInInspector]
@@ -85,6 +86,11 @@ public class GameManager : MonoBehaviour {
     float secondAnsweringTime = 0;
 
     void Start () {
+        if (GameObject.FindGameObjectWithTag("sound"))
+        {
+            soundManager = GameObject.FindGameObjectWithTag("sound").GetComponent<SoundManager>();
+        }
+
         Init();
         StartCoroutine(AnimationDelay());
     }
@@ -831,11 +837,13 @@ public class GameManager : MonoBehaviour {
 
     public void Restart()
     {
+        PlaySound(0);
         SceneManager.LoadScene("Game");
     } 
 
     public void GoToMenu()
     {
+        PlaySound(0);
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }    
@@ -851,5 +859,18 @@ public class GameManager : MonoBehaviour {
             }
         }
         return count;
-    }                                
+    }
+
+    void PlaySound(int id)
+	{
+        if(soundManager)
+        {
+            soundManager.GetComponent<SoundManager>().PlaySound(id);
+        }
+        else if (GameObject.FindGameObjectWithTag("sound"))
+        {
+            soundManager = GameObject.FindGameObjectWithTag("sound").GetComponent<SoundManager>();
+            soundManager.GetComponent<SoundManager>().PlaySound(id);
+        }
+	}                       
 }                            

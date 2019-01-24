@@ -90,6 +90,7 @@ public class MenuManager : MonoBehaviour {
 	{
 		if (ConnectionManager.isOnline)
 		{
+			PlaySound(0);
 			uiLayer.GetComponent<Animator>().SetInteger("layerCount", layerCount);
 		}
 		else
@@ -290,4 +291,12 @@ public class MenuManager : MonoBehaviour {
         userList[left] = userList[right];
         userList[right] = tmp; 
     }
+
+	void PlaySound(int id)
+	{
+		if (GameObject.FindGameObjectWithTag("sound"))
+		{
+			GameObject.FindGameObjectWithTag("sound").GetComponent<SoundManager>().PlaySound(id);
+		}
+	}
 }
