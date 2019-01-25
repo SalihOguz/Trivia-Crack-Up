@@ -792,7 +792,11 @@ public class GameManager : MonoBehaviour {
             }
             else
             {
-                GoToMenu(); // TODO load player choose
+                if (GameObject.Find("DataToCarry"))
+                {
+                    GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex = 4;
+                }
+                StartCoroutine(DelayedGoToMenu()); // TODO load player choose
             }
         }
         else
@@ -820,18 +824,21 @@ public class GameManager : MonoBehaviour {
             endGameInfoText.text = "Rakip kaçtı!";
             retryButton.transform.GetChild(0).GetComponent<Text>().text = "yeni oyun";
             retryButton.GetComponent<Button>().interactable = true;
-            // retryButton.GetComponent<Button>().onClick.RemoveAllListeners();
-            // retryButton.GetComponent<Button>().onClick.AddListener(delegate{GoToMenu();});
         }
     }
 
     public IEnumerator DelayRestart()
     {
+        endScreen.GetComponent<Animator>().SetTrigger("gameEnded");
+        playerScoreStarsParent.transform.parent.GetComponent<Animator>().SetTrigger("gameEnded");
+        opponentScoreStarsParent.transform.parent.GetComponent<Animator>().SetTrigger("gameEnded");
+
         retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
         retryButton.GetComponent<Button>().interactable = false;
         endGameInfoText.text = "İstek kabul edildi";
         retryButton.transform.GetChild(0).GetComponent<Text>().text = "başlıyor";
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
+
         Restart();
     }
 
@@ -846,7 +853,22 @@ public class GameManager : MonoBehaviour {
         PlaySound(0);
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
-    }    
+    }
+
+    public void ExitButton()
+    {
+        StartCoroutine(DelayedGoToMenu());
+    }
+
+    IEnumerator DelayedGoToMenu()
+    {
+        endScreen.GetComponent<Animator>().SetTrigger("gameEnded");
+        playerScoreStarsParent.transform.parent.GetComponent<Animator>().SetTrigger("gameEnded");
+        opponentScoreStarsParent.transform.parent.GetComponent<Animator>().SetTrigger("gameEnded");
+        yield return new WaitForSeconds(1.5f);
+
+        GoToMenu();
+    }
 
     public int GetAvaliableChoiceCount()
     {

@@ -22,7 +22,7 @@ public class SoundManager : MonoBehaviour {
 	public void PlaySound(int id)
 	{
 		audioSource.Stop();
-		audioSource.clip = soundClips[id];
+		//audioSource.clip = soundClips[id]; // TODO uncomment when sound come
 		audioSource.Play();
 	}
 

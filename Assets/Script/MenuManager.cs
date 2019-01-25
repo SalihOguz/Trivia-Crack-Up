@@ -21,6 +21,18 @@ public class MenuManager : MonoBehaviour {
 
 	void Start()
 	{
+		if (GameObject.Find("DataToCarry"))
+		{
+			if (GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex == 4)
+			{
+				FakeSearchPlayer();
+			}
+			else
+			{
+				uiLayer.GetComponent<Animator>().SetInteger("layerCount", -1);
+			}
+		}
+
 		player = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
 		
 		Sprite avatar = Resources.Load<Avatars>("Data/Avatars").avatarSprites[player.avatarId];
@@ -121,6 +133,11 @@ public class MenuManager : MonoBehaviour {
 
 	IEnumerator PlayerFound()
 	{
+		if (GameObject.Find("DataToCarry"))
+		{
+			GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex = -1;
+		}
+
 		yield return new WaitForSeconds(UnityEngine.Random.Range(4f, 6f));
 		ChangeLayerTo(5);
 		yield return new WaitForSeconds(3f);

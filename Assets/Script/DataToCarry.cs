@@ -7,6 +7,7 @@ public class DataToCarry : Singleton<DataToCarry> {
 	public User player2;
 	public QuestionList ql;
 	public FakeUserList ful;
+	public int mainMenuAnimLayerIndex = -1;
 
 	void Start()
 	{
