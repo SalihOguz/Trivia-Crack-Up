@@ -1650,6 +1650,7 @@ MonoBehaviour:
     questionList: []
   ful:
     fakeUserList: []
+  mainMenuAnimLayerIndex: -1
 --- !u!4 &1578045865
 Transform:
   m_ObjectHideFlags: 0

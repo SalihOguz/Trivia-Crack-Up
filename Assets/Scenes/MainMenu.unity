@@ -3203,8 +3203,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000017054, y: -133}
-  m_SizeDelta: {x: 432.3, y: 114.4}
+  m_AnchoredPosition: {x: -0.000017054, y: -124.69}
+  m_SizeDelta: {x: 432.3, y: 137.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531459981
 MonoBehaviour:
@@ -3227,7 +3227,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d3b3e36a88aaa46e885022ee8d5adaca, type: 3}
-    m_FontSize: 45
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3238,7 +3238,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Wordcoin yetersiz!\nL\xFCtfen sat\u0131n al."
+  m_Text: "Oyuna girebilmek i\xE7in\n150 Coin'e ihtiyac\u0131n var.\nL\xFCtfen sat\u0131n
+    al."
 --- !u!222 &531459982
 CanvasRenderer:
   m_ObjectHideFlags: 0

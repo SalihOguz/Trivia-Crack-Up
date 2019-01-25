@@ -21,18 +21,6 @@ public class MenuManager : MonoBehaviour {
 
 	void Start()
 	{
-		if (GameObject.Find("DataToCarry"))
-		{
-			if (GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex == 4)
-			{
-				FakeSearchPlayer();
-			}
-			else
-			{
-				uiLayer.GetComponent<Animator>().SetInteger("layerCount", -1);
-			}
-		}
-
 		player = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
 		
 		Sprite avatar = Resources.Load<Avatars>("Data/Avatars").avatarSprites[player.avatarId];
@@ -56,7 +44,33 @@ public class MenuManager : MonoBehaviour {
 			ChangeLayerTo(7);
 		}
 
+		SetStartScreen();
 	}
+
+	void SetStartScreen()
+	{
+		if (GameObject.Find("DataToCarry"))
+		{
+			if (GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex == 4)
+			{
+				if (player.totalCoin >= 30 * 5) // TODO this is min bid amount 30 * 5 turns
+				{
+					ChooseOpponent();
+					uiLayer.GetComponent<Animator>().SetInteger("layerCount", 4);
+					StartCoroutine(PlayerFound());
+				}
+				else
+				{
+					uiLayer.GetComponent<Animator>().SetInteger("layerCount", -1);
+				}
+			}
+			else
+			{
+				uiLayer.GetComponent<Animator>().SetInteger("layerCount", -1);
+			}
+		}
+	}
+
 	void UserLogin()
 	{
 		Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;

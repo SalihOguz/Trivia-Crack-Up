@@ -23,7 +23,7 @@ public class RegisterManager : MonoBehaviour {
 
 	void Start()
 	{
-		//PlayerPrefs.DeleteAll();
+		PlayerPrefs.DeleteAll();
 		loadingImage.GetComponent<Image>().DOFillAmount(0.2f, 0.2f);
 		StartCoroutine(CheckConnection());
 	}
@@ -163,7 +163,7 @@ public class RegisterManager : MonoBehaviour {
 	IEnumerator GoToMenu()
 	{
 		ChangeLayerTo(2);
-		yield return new WaitForSeconds(1.2f);
+		yield return new WaitForSeconds(1.3f);
 		SceneManager.LoadScene("MainMenu");
 	}
 
