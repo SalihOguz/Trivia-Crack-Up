@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Firebase;
 using Firebase.Database;
 using TMPro;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour {
 
@@ -41,6 +42,10 @@ public class GameManager : MonoBehaviour {
     public GameObject retryButton;
     public GameObject noInternetMenu;
     public GameObject questionCountdown;
+    public GameObject animStar;
+    public GameObject playerCoinsParent;
+    public GameObject opponentCoinsParent;
+    public GameObject chestCoinsParent;
 
     [Header ("In Game Variables")]
     [HideInInspector]
@@ -49,6 +54,7 @@ public class GameManager : MonoBehaviour {
     int gameState = 0; // 0 = answers come, 1 = bidding, 2 = answering
 	float bidTimer;
     float bidStartTime;
+    [HideInInspector]
 	public BotManager botManager;
     [HideInInspector]
     public User player1;
@@ -242,6 +248,11 @@ public class GameManager : MonoBehaviour {
         bidTimerText.text = totalBiddingTime.ToString();
         bidButtonsParent.SetActive(true);
 		botManager.Bid();
+
+        playerMoneyText.gameObject.SetActive(true);
+        opponentMoneyText.gameObject.SetActive(true);
+        playerNameText.gameObject.SetActive(false);
+        opponentNameText.gameObject.SetActive(false);
 	}
 
 	void EvaluateBidding()
@@ -329,11 +340,9 @@ public class GameManager : MonoBehaviour {
              infoText.text = "Soru <b><color=#FFEA00>" + player2.username + "</color></b> için geliyor";           
         }
 
-        // money animation TODO make decrase and flow with animation
-        playerMoneyText.gameObject.SetActive(true);
-        opponentMoneyText.gameObject.SetActive(true);
-        playerNameText.gameObject.SetActive(false);
-        opponentNameText.gameObject.SetActive(false);
+        SendCoinsToChest();
+
+        yield return new WaitForSeconds(4f);
 
         player2.totalCoin -= opponentBid;
         player1.totalCoin -= playerBid;
@@ -343,14 +352,66 @@ public class GameManager : MonoBehaviour {
         opponentMoneyText.text = player2.totalCoin.ToString();
         accumulatedMoneyText.text = totalMoneyAccumulated.ToString() + " COIN";
 
-        yield return new WaitForSeconds(3f);
-
         playerMoneyText.gameObject.SetActive(false);
         opponentMoneyText.gameObject.SetActive(false);
         playerNameText.gameObject.SetActive(true);
         opponentNameText.gameObject.SetActive(true);
 
         ProceedGame();
+    }
+
+    void SendCoinsToChest()
+    {
+        // reset previous positions
+        foreach (Transform i in playerCoinsParent.transform)
+        {
+            i.localPosition = Vector3.zero;
+            i.gameObject.SetActive(true);
+        }
+
+        foreach (Transform i in opponentCoinsParent.transform)
+        {
+            i.localPosition = Vector3.zero;
+            i.gameObject.SetActive(true);
+        }
+
+        // coin animation
+        int p1 = player1.totalCoin;
+        int p2 = player2.totalCoin;
+        int tot = totalMoneyAccumulated;
+
+        for(int i = 0; i < Mathf.Max(playerBid/10, opponentBid/10); i++)
+        {
+            if (i < playerBid/10)
+            {
+                int no = i;
+                playerCoinsParent.transform.GetChild(i).DOMove(accumulatedMoneyText.transform.parent.GetChild(0).position, 1f).SetEase(Ease.InCubic).SetDelay(0.15f*i).OnComplete(delegate() { 
+                    tot += 10;
+                    accumulatedMoneyText.text = tot + " COIN";
+                    playerCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
+                 }).OnStart(delegate() {
+                    p1 -= 10;
+                    playerMoneyText.text = p1.ToString();
+                 });
+            }
+            if (i < opponentBid/10)
+            {
+                int no = i;
+                opponentCoinsParent.transform.GetChild(i).DOMove(accumulatedMoneyText.transform.parent.GetChild(0).position, 1f).SetEase(Ease.InCubic).SetDelay(0.15f*i).OnComplete(delegate() { 
+                    tot += 10;
+                    accumulatedMoneyText.text = tot + " COIN";
+                    playerCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
+                 }).OnStart(delegate() {
+                    p2 -= 10;
+                    opponentMoneyText.text = p2.ToString();
+                 });;
+            }
+            if (i < playerBid/10 || i < opponentBid/10)
+            {
+                accumulatedMoneyText.transform.parent.GetChild(0).DOShakeRotation(0.1f, new Vector3(0,0,20f),90,90).SetDelay(1f + 0.15f*i);
+                accumulatedMoneyText.transform.parent.GetChild(0).DOShakeScale(0.1f, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(1f + 0.15f*i);
+            }
+        }
     }
 
 	public void MakeBid(int index)
@@ -461,6 +522,9 @@ public class GameManager : MonoBehaviour {
             if (currentQuestion.rightAnswerIndex == index) // Answered right!
             {
                 // TODO get and save data for question difficulty
+                Vector3 pos = optionTexts[index].transform.position;
+                animStar.transform.position = new Vector3(pos.x, pos.y, 0);
+
                 IncreaseScore();
                 GoToTheNextTurn();
                 optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[2];
@@ -492,6 +556,9 @@ public class GameManager : MonoBehaviour {
         fiftyFiftyButton.interactable = false;
         if (currentQuestion.rightAnswerIndex == index) // Answered right!
         {
+            Vector3 pos = optionTexts[index].transform.position;
+            animStar.transform.position = new Vector3(pos.x, pos.y, 0);
+
             IncreaseScore();
             GoToTheNextTurn();
             optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[2];
@@ -515,7 +582,7 @@ public class GameManager : MonoBehaviour {
 
 	public void KnowTheQuestion()
 	{
-        if (!knowQuestionUsed && player1.knowQuestionSkillCount > 0)
+        if (!knowQuestionUsed && player1.knowQuestionSkillCount > 0 &&  gameState == 2)
         {
     		ChooseAnswer(currentQuestion.rightAnswerIndex);
             knowQuestionUsed = true;
@@ -545,7 +612,7 @@ public class GameManager : MonoBehaviour {
 
     public void DiasbleTwoChoices()
     {
-        if(!fiftyFiftyUsed && GetAvaliableChoiceCount() == 4 && player1.fiftyFiftySkillCount > 0)
+        if(!fiftyFiftyUsed && GetAvaliableChoiceCount() == 4 && player1.fiftyFiftySkillCount > 0 && gameState == 2)
         {
             List<Button> enabledbuttons = new List<Button>();
             for(int i = 0; i < optionTexts.Length; i++)
@@ -616,16 +683,29 @@ public class GameManager : MonoBehaviour {
 
     void IncreaseScore()
     {
+        Transform destination;
+
         if (playingPlayerId == 0)
         {
             playerScore++;
-            playerScoreStarsParent.transform.GetChild(playerScore-1).GetComponent<Image>().sprite = fullStarSprite;
+            destination = playerScoreStarsParent.transform.GetChild(playerScore-1);
         }
         else
         {
             opponentScore++;
-            opponentScoreStarsParent.transform.GetChild(opponentScore-1).GetComponent<Image>().sprite = fullStarSprite;
+            destination = opponentScoreStarsParent.transform.GetChild(opponentScore-1);
         }
+
+        // Star animation
+        animStar.transform.localScale = Vector3.zero;
+        animStar.SetActive(true);
+        animStar.transform.DOJump(destination.position, 4, 1, 2f);
+        animStar.transform.DORotate(new Vector3(0,0,1080), 2f, RotateMode.WorldAxisAdd).SetEase(Ease.InCubic).OnComplete(delegate(){
+            destination.GetComponent<Image>().sprite = fullStarSprite; 
+            animStar.SetActive(false);
+            });
+        animStar.transform.DOScale(Vector3.one * 0.3f, 0.5f).SetEase(Ease.OutQuint);
+        animStar.transform.DOScale(Vector3.one * 0.159f, 1.5f).SetEase(Ease.OutQuint).SetDelay(1.5f); 
     }
 
     void GoToTheNextTurn()
@@ -639,13 +719,24 @@ public class GameManager : MonoBehaviour {
         {
             print("Game Over");
             gameState = 4;
-            GameOver();
+            StartCoroutine(GameOver());
         }
     }
 
-    void GameOver()
+    IEnumerator GameOver()
     {
-        // make animation TODO
+        yield return new WaitForSeconds(2.1f);
+
+        foreach (Transform i in playerCoinsParent.transform)
+        {
+            i.gameObject.SetActive(false);
+        }
+
+        foreach (Transform i in opponentCoinsParent.transform)
+        {
+            i.gameObject.SetActive(false);
+        }
+
         endScreen.SetActive(true);
         questionLockObject.transform.parent.gameObject.SetActive(false);
         optionTexts[0].transform.parent.parent.gameObject.SetActive(false);
@@ -655,8 +746,17 @@ public class GameManager : MonoBehaviour {
         knowQuestionButton.transform.parent.gameObject.SetActive(false);
         fiftyFiftyButton.transform.parent.gameObject.SetActive(false);
 
+        playerMoneyText.gameObject.SetActive(true);
+        opponentMoneyText.gameObject.SetActive(true);
+        playerNameText.gameObject.SetActive(false);
+        opponentNameText.gameObject.SetActive(false);
+
+        print(player1.totalCoin + " " + totalMoneyAccumulated + " " + player1.totalCoin + totalMoneyAccumulated);
+
         if(playerScore > opponentScore)
         {
+            StartEndGameCoinFlow();
+
             endScreen.transform.Find("Win").gameObject.SetActive(true);
             player1.totalCoin += totalMoneyAccumulated;
             player1.score += 5;
@@ -678,6 +778,47 @@ public class GameManager : MonoBehaviour {
         botManager.WantAgain();
 
         SendUserData();
+    }
+
+    void StartEndGameCoinFlow()
+    {
+        int p1 = player1.totalCoin;
+        int p2 = player2.totalCoin;
+
+        if(playerScore > opponentScore)
+        {
+            for (int i = 0; i <  Mathf.Clamp(Mathf.FloorToInt(totalMoneyAccumulated/30), 1, chestCoinsParent.transform.childCount); i++)
+            {
+                chestCoinsParent.transform.GetChild(i).DOMove(playerCoinsParent.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(2f + 0.1f*i).OnStart(delegate() {
+                    p1 += 30;
+                    playerMoneyText.text = p1.ToString();
+                 }).OnComplete(delegate(){
+                     chestCoinsParent.transform.GetChild(i).gameObject.SetActive(false);
+                 });
+
+                playerIndicator.transform.DOShakeRotation(0.1f, new Vector3(0,0,10f),50,50).SetDelay(3f + 0.1f*i);
+                playerIndicator.transform.DOShakeScale(0.1f, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(3f + 0.1f*i);
+            }
+            p1 += totalMoneyAccumulated % 30;
+            playerMoneyText.text = p1.ToString();
+        }
+        else
+        {
+            for (int i = 0; i <  Mathf.Clamp(Mathf.FloorToInt(totalMoneyAccumulated/30), 1, chestCoinsParent.transform.childCount); i++)
+            {
+                chestCoinsParent.transform.GetChild(i).DOMove(opponentCoinsParent.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(2f + 0.1f*i).OnStart(delegate() {
+                    p2 += 30;
+                    opponentMoneyText.text = p2.ToString();
+                 }).OnComplete(delegate(){
+                     chestCoinsParent.transform.GetChild(i).gameObject.SetActive(false);
+                 });
+
+                opponentIndicator.transform.DOShakeRotation(0.1f, new Vector3(0,0,20f),90,90).SetDelay(3f + 1.1f*i);
+                opponentIndicator.transform.DOShakeScale(0.1f, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(3f + 1.1f*i);
+            }
+            p2 += totalMoneyAccumulated % 30;
+            opponentMoneyText.text = p2.ToString();
+        }
     }
 
     public void DoubleTheCoin()
@@ -761,7 +902,10 @@ public class GameManager : MonoBehaviour {
 
         fiftyFiftyUsed = false;
         botManager.isFiftyFiftyUsed = false;
-        fiftyFiftyButton.interactable = true;
+        if (player1.fiftyFiftySkillCount > 0)
+        {
+            fiftyFiftyButton.interactable = true;
+        }
         
         bidTimer = 0;
         questionTimer = 0;
@@ -775,6 +919,11 @@ public class GameManager : MonoBehaviour {
 
     public void PlayAgain()
     {
+        foreach (Transform i in chestCoinsParent.transform)
+        {
+            i.gameObject.SetActive(false);
+        }
+
         if (player1.totalCoin >= 30*5)
         {
             userWantsAgain = true;
