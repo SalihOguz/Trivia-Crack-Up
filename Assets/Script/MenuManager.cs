@@ -18,6 +18,7 @@ public class MenuManager : MonoBehaviour {
 	public GameObject leaderboardObject;
 	public GameObject leaderboardLoadingObject;
 	public GameObject adButton;
+	public GameObject soundButton;
 
 	void Start()
 	{
@@ -44,7 +45,17 @@ public class MenuManager : MonoBehaviour {
 			ChangeLayerTo(7);
 		}
 
+		ArrangeSound();
 		SetStartScreen();
+	}
+
+	void ArrangeSound()
+	{
+		int id = PlayerPrefs.GetInt("isMusicOn");
+		TurnMusic(id);
+		TurnSound(id);
+
+		PlayMusic(0);
 	}
 
 	void SetStartScreen()
@@ -109,6 +120,7 @@ public class MenuManager : MonoBehaviour {
 
     public void GoToScene(string name)
     {
+		PlaySound(0);
         SceneManager.LoadScene(name);
     }
 
@@ -128,6 +140,7 @@ public class MenuManager : MonoBehaviour {
 
 	public void ChangeShopLayer(int shopLayer)
 	{
+		PlaySound(0);
 		uiLayer.GetComponent<Animator>().SetInteger("shopIndex", shopLayer);
 	}
 
@@ -164,6 +177,7 @@ public class MenuManager : MonoBehaviour {
 	{
 		if(GameObject.Find("AdManager"))
 		{
+			PlaySound(0);
 			print("coin");
 			GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("coin");
 		}
@@ -173,6 +187,7 @@ public class MenuManager : MonoBehaviour {
 	{
 		if(GameObject.Find("AdManager"))
 		{
+			PlaySound(0);
 			print("joker");
 			GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("joker");
 		}
@@ -182,6 +197,7 @@ public class MenuManager : MonoBehaviour {
 	{
 		if(GameObject.Find("AdManager"))
 		{
+			PlaySound(0);
 			print("disable");
 			GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("disable");
 		}
@@ -330,4 +346,30 @@ public class MenuManager : MonoBehaviour {
 			GameObject.FindGameObjectWithTag("sound").GetComponent<SoundManager>().PlaySound(id);
 		}
 	}
+
+	void PlayMusic(int id)
+	{
+		if (GameObject.FindGameObjectWithTag("music"))
+		{
+			GameObject.FindGameObjectWithTag("music").GetComponent<MusicManager>().PlayMusic(id);
+		}
+	}
+
+	public void TurnMusic(int id)
+	{
+		if (GameObject.FindGameObjectWithTag("music"))
+		{
+			GameObject.FindGameObjectWithTag("music").GetComponent<MusicManager>().TurnMusic(id);
+			soundButton.transform.GetChild(0).gameObject.SetActive(0 == id);
+		}
+	}
+
+	public void TurnSound(int id)
+	{
+		if (GameObject.FindGameObjectWithTag("sound"))
+		{
+			GameObject.FindGameObjectWithTag("sound").GetComponent<SoundManager>().TurnSound(id);
+			soundButton.transform.GetChild(0).gameObject.SetActive(0 == id);
+		}
+	}	
 }

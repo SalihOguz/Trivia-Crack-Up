@@ -82,11 +82,12 @@ public class RegisterManager : MonoBehaviour {
 		if (PlayerPrefs.HasKey("userData"))
 		{
 			SceneManager.LoadScene("MainMenu");
-			// TODO we may put transition animation here
 		}
-		else
+		else // First time opening
 		{
 			ChangeLayerTo(0);
+			PlayerPrefs.SetInt("isMusicOn", 1);
+			PlayerPrefs.SetInt("isSoundOn", 1);
 		}
 	}
 

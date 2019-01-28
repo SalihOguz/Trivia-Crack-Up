@@ -1506,6 +1506,75 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 274027482}
   m_CullTransparentMesh: 0
+--- !u!1 &275533316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275533317}
+  - component: {fileID: 275533319}
+  - component: {fileID: 275533318}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &275533317
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 275533316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 868703213}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &275533318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 275533316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300090, guid: 9f04da2f3c3224e629be28b45d2bfe2b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &275533319
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 275533316}
+  m_CullTransparentMesh: 0
 --- !u!1 &277817329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,7 +2993,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8839259975749e6bf2dd64a7387d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClips: []
+  musicClips:
+  - {fileID: 8300000, guid: 429c1064738594c049b69d5e599b0796, type: 3}
+  - {fileID: 8300000, guid: aabc79e5106a4457e879f209e9ed1213, type: 3}
+  - {fileID: 8300000, guid: 2da3d7c70c8c2408ba52e0910019a6a6, type: 3}
 --- !u!1 &515338867
 GameObject:
   m_ObjectHideFlags: 0
@@ -6018,6 +6090,7 @@ GameObject:
   - component: {fileID: 868703213}
   - component: {fileID: 868703215}
   - component: {fileID: 868703214}
+  - component: {fileID: 868703216}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -6034,14 +6107,15 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 275533317}
   m_Father: {fileID: 1272822900}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -0.000014305, y: 0.000015259}
+  m_SizeDelta: {x: 176, y: 162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868703214
 MonoBehaviour:
@@ -6055,7 +6129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6064,7 +6138,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300090, guid: 9f04da2f3c3224e629be28b45d2bfe2b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -6077,6 +6151,69 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 868703212}
   m_CullTransparentMesh: 0
+--- !u!114 &868703216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 868703212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1272822902}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1509419780}
+        m_MethodName: TurnMusic
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1509419780}
+        m_MethodName: TurnSound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &869783255
 GameObject:
   m_ObjectHideFlags: 0
@@ -8700,7 +8837,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1272822902}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1509419780}
+        m_MethodName: TurnMusic
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1509419780}
+        m_MethodName: TurnSound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1272822902
@@ -9817,6 +9976,7 @@ MonoBehaviour:
   leaderboardObject: {fileID: 1563015932}
   leaderboardLoadingObject: {fileID: 460618823}
   adButton: {fileID: 1528300246}
+  soundButton: {fileID: 1272822899}
 --- !u!1 &1517549255
 GameObject:
   m_ObjectHideFlags: 0
@@ -12917,7 +13077,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c142df0f5894d45a5a86eb7339cd9ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundClips: []
+  soundClips:
+  - {fileID: 8300000, guid: 8986c47c83cc84261a51adb2fad45812, type: 3}
+  - {fileID: 8300000, guid: 92ffc675f78a94e2bbf1387f90e15200, type: 3}
+  - {fileID: 8300000, guid: 23e976ca24c094e07b080c014cb47ae4, type: 3}
+  - {fileID: 8300000, guid: e53b929f5abe240a388997706809e4a0, type: 3}
+  - {fileID: 8300000, guid: a669c278b5c0a4297ad73e6d836bec6e, type: 3}
+  - {fileID: 8300000, guid: fc8c90fa7c8ce4dabbdd73470e48f64e, type: 3}
+  - {fileID: 8300000, guid: b9c47f2831fbc462497130ab00fd7e3e, type: 3}
+  - {fileID: 8300000, guid: 83049b138e7af4873ac849748e25b946, type: 3}
+  - {fileID: 8300000, guid: 01aa509fc336740c2970be44aedd3d7d, type: 3}
+  - {fileID: 8300000, guid: 24c10659a253d4a558095aadcaff9a87, type: 3}
 --- !u!1 &1935560525
 GameObject:
   m_ObjectHideFlags: 0

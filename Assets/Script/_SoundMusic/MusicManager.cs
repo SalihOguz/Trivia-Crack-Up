@@ -6,7 +6,7 @@ public class MusicManager : MonoBehaviour {
 	public AudioClip[] musicClips;
 	AudioSource audioSource;
 
-	void Start()
+	void Awake()
 	{
 		audioSource = GetComponent<AudioSource>();
 		if (PlayerPrefs.GetInt("isMusicOn") == 1)
@@ -23,20 +23,13 @@ public class MusicManager : MonoBehaviour {
 	public void PlayMusic(int id)
 	{
 		audioSource.Stop();
-		//audioSource.clip = musicClips[id];  // TODO uncomment when sound come
+		audioSource.clip = musicClips[id];
 		audioSource.Play();
 	}
 
-	public void TurnSound(int state) // 1 = on, 0 = off
+	public void TurnMusic(int state) // 1 = on, 0 = off
 	{
 		PlayerPrefs.SetInt("isMusicOn", state);
-		if (state == 0)
-		{
-			audioSource.volume = 0;
-		}
-		else
-		{
-			audioSource.volume = 1;
-		}
+		audioSource.volume = state;
 	}
 }
