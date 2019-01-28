@@ -19,6 +19,7 @@ public class RegisterManager : MonoBehaviour {
 	DataToCarry dtc;
 	int tryConnectionCount = 0;
 	int maxConectionTryCount = 7;
+	bool isCheckingName;
 
 
 	void Start()
@@ -170,58 +171,64 @@ public class RegisterManager : MonoBehaviour {
 
 	public void GetName()
 	{
-		infoText.gameObject.SetActive(false);
-		if (nameField.text.Length < 3)
+		if(!isCheckingName)
 		{
-			infoText.text = "Kullanıcı adınız 3 karakterden kısa olamaz";
-			infoText.gameObject.SetActive(true);
-			return;
-		}
-
-		// check if name exist
-		FirebaseDatabase.DefaultInstance.GetReference("userList").GetValueAsync().ContinueWith(task => {
-			if (task.IsFaulted) {
-				Debug.LogError("Error in FirebaseStart");
-				infoText.text = "İnternet bağlantınızı kontrol edin";
+			isCheckingName = true;
+			infoText.gameObject.SetActive(false);
+			if (nameField.text.Length < 3)
+			{
+				infoText.text = "Kullanıcı adınız 3 karakterden kısa olamaz";
 				infoText.gameObject.SetActive(true);
+				isCheckingName = false;
+				return;
 			}
-			else if (task.IsCompleted) {
-				bool isNameAvailable = true;
-				DataSnapshot snapshot = task.Result;				
-	
-				foreach (DataSnapshot i in snapshot.Children)
-				{
-					if(nameField.text.Equals(JsonUtility.FromJson<User>(i.GetRawJsonValue()).username))
-					{
-						isNameAvailable = false;
-						break;
-					}
+
+			// check if name exist
+			FirebaseDatabase.DefaultInstance.GetReference("userList").GetValueAsync().ContinueWith(task => {
+				if (task.IsFaulted) {
+					Debug.LogError("Error in FirebaseStart");
+					infoText.text = "İnternet bağlantınızı kontrol edin";
+					infoText.gameObject.SetActive(true);
 				}
-				if (isNameAvailable)
-				{
-					foreach (UserLite fakeUser in dtc.ful.fakeUserList)
+				else if (task.IsCompleted) {
+					bool isNameAvailable = true;
+					DataSnapshot snapshot = task.Result;				
+		
+					foreach (DataSnapshot i in snapshot.Children)
 					{
-						if (nameField.text == fakeUser.userName)
+						if(nameField.text.Equals(JsonUtility.FromJson<User>(i.GetRawJsonValue()).username))
 						{
 							isNameAvailable = false;
 							break;
 						}
 					}
-				}
+					if (isNameAvailable)
+					{
+						foreach (UserLite fakeUser in dtc.ful.fakeUserList)
+						{
+							if (nameField.text == fakeUser.userName)
+							{
+								isNameAvailable = false;
+								break;
+							}
+						}
+					}
 
-				if (!isNameAvailable)
-				{
-					infoText.text = "Bu kullanıcı adı zaten kullanılıyor";
-					infoText.gameObject.SetActive(true);
+					if (!isNameAvailable)
+					{
+						infoText.text = "Bu kullanıcı adı zaten kullanılıyor";
+						infoText.gameObject.SetActive(true);
+					}
+					else
+					{
+						nameField.interactable = false;
+						//ChangeLayerTo(2);	
+						CreateUser();
+					}
 				}
-				else
-				{
-					nameField.interactable = false;
-					//ChangeLayerTo(2);	
-					CreateUser();
-				}
-			}
-		});
+				isCheckingName = false;
+			});
+		}
 	}
 
 	public void GetGender(bool isMale)
@@ -259,9 +266,9 @@ public class RegisterManager : MonoBehaviour {
 
 			DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
 			reference.Child("userList").Child(newUser.UserId).SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
-		});
 
-		StartCoroutine(GoToMenu());
+			StartCoroutine(GoToMenu());
+		});	
 	}
 
 	public void Restart()

@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour {
     public bool userWantsAgain = false;
     float disconnectedSec = 0;
     SoundManager soundManager;
+    MusicManager musicManager;
 
 	[Header ("User Variables")]
     [HideInInspector]
@@ -96,6 +97,12 @@ public class GameManager : MonoBehaviour {
         {
             soundManager = GameObject.FindGameObjectWithTag("sound").GetComponent<SoundManager>();
         }
+        if (GameObject.FindGameObjectWithTag("music"))
+        {
+            musicManager = GameObject.FindGameObjectWithTag("music").GetComponent<MusicManager>();
+        }
+
+        PlayMusic(2);
 
         Init();
         StartCoroutine(AnimationDelay());
@@ -145,7 +152,6 @@ public class GameManager : MonoBehaviour {
 			{
 				noInternetMenu.SetActive(true);
                 Time.timeScale = 0f;
-				print("yooooook");
 			}
 		}
         yield return new WaitForSeconds(1f);
@@ -239,8 +245,9 @@ public class GameManager : MonoBehaviour {
 	IEnumerator ShowBiddinButtons()
 	{
 		yield return new WaitForSeconds(choiceApperTime);
+        PlayMusic(1);
+
         infoText.text = "Bahsini seç";
-		//play a sound TODO
 		bidTimer = 0;
         bidStartTime = Time.timeSinceLevelLoad;
         playerBid = 0;
@@ -357,11 +364,15 @@ public class GameManager : MonoBehaviour {
         playerNameText.gameObject.SetActive(true);
         opponentNameText.gameObject.SetActive(true);
 
+        PlaySound(1);
+
         ProceedGame();
     }
 
     void SendCoinsToChest()
     {
+        PlaySound(2);
+
         // reset previous positions
         foreach (Transform i in playerCoinsParent.transform)
         {
@@ -418,6 +429,8 @@ public class GameManager : MonoBehaviour {
 	{
         if (playerBid == 0) // didn't make a bid before
         {
+            PlaySound(0);
+
             playerBid = bidAmounts[index];
             playerBidTime = Time.timeSinceLevelLoad - bidStartTime;
 
@@ -437,7 +450,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void MakeBidBot(int index)
-	{
+	{        
 		opponentBid = bidAmounts[index];
 		opponentBidTime = Time.timeSinceLevelLoad - bidStartTime;
 
@@ -456,6 +469,8 @@ public class GameManager : MonoBehaviour {
     {
         bidButtonsParent.SetActive(false);
         yield return new WaitForSeconds(choiceApperTime);
+        PlayMusic(2);
+
         questionText.gameObject.SetActive(true);
         questionTimer = 0;
 
@@ -521,6 +536,7 @@ public class GameManager : MonoBehaviour {
             fiftyFiftyButton.interactable = false;
             if (currentQuestion.rightAnswerIndex == index) // Answered right!
             {
+                PlaySound(8);
                 // TODO get and save data for question difficulty
                 Vector3 pos = optionTexts[index].transform.position;
                 animStar.transform.position = new Vector3(pos.x, pos.y, 0);
@@ -532,6 +548,7 @@ public class GameManager : MonoBehaviour {
             }
             else // Answered Wrong!
             {
+                PlaySound(9);
                 // TODO get and save data for question difficulty
                 optionTexts[index].transform.parent.GetComponent<Button>().enabled = false;
                 optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[1];
@@ -556,6 +573,7 @@ public class GameManager : MonoBehaviour {
         fiftyFiftyButton.interactable = false;
         if (currentQuestion.rightAnswerIndex == index) // Answered right!
         {
+            PlaySound(8);
             Vector3 pos = optionTexts[index].transform.position;
             animStar.transform.position = new Vector3(pos.x, pos.y, 0);
 
@@ -565,6 +583,7 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
+            PlaySound(9);
             optionTexts[index].transform.parent.GetComponent<Button>().enabled = false;
             optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[1];
 
@@ -584,6 +603,8 @@ public class GameManager : MonoBehaviour {
 	{
         if (!knowQuestionUsed && player1.knowQuestionSkillCount > 0 &&  gameState == 2)
         {
+            PlaySound(6);
+
     		ChooseAnswer(currentQuestion.rightAnswerIndex);
             knowQuestionUsed = true;
             knowQuestionButton.interactable = false;
@@ -612,8 +633,10 @@ public class GameManager : MonoBehaviour {
 
     public void DiasbleTwoChoices()
     {
-        if(!fiftyFiftyUsed && GetAvaliableChoiceCount() == 4 && player1.fiftyFiftySkillCount > 0 && gameState == 2)
+        if(!fiftyFiftyUsed && GetAvaliableChoiceCount() == 4 && player1.fiftyFiftySkillCount > 0 && gameState == 2 && playingPlayerId == 0)
         {
+            PlaySound(10);
+
             List<Button> enabledbuttons = new List<Button>();
             for(int i = 0; i < optionTexts.Length; i++)
             {
@@ -697,6 +720,8 @@ public class GameManager : MonoBehaviour {
         }
 
         // Star animation
+        PlaySound(4);
+
         animStar.transform.localScale = Vector3.zero;
         animStar.SetActive(true);
         animStar.transform.DOJump(destination.position, 4, 1, 2f);
@@ -762,6 +787,7 @@ public class GameManager : MonoBehaviour {
             player1.score += 5;
             player1.wonGameCount++;
             opponentScoreStarsParent.SetActive(false);
+            PlaySound(7);
         }
         else
         {
@@ -769,6 +795,7 @@ public class GameManager : MonoBehaviour {
             player2.totalCoin += totalMoneyAccumulated;
             player1.score += 1;
             playerScoreStarsParent.SetActive(false);
+            PlaySound(5);
         }
         endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = totalMoneyAccumulated.ToString() + " " + "COIN";
         retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
@@ -776,12 +803,16 @@ public class GameManager : MonoBehaviour {
         endGameInfoText.text = "";
         retryButton.GetComponent<Button>().interactable = true;
         botManager.WantAgain();
+        
+        PlayMusic(0);
 
         SendUserData();
     }
 
     void StartEndGameCoinFlow()
     {
+        PlayDelayedSound(2, 2.1f);
+
         int p1 = player1.totalCoin;
         int p2 = player2.totalCoin;
 
@@ -789,11 +820,12 @@ public class GameManager : MonoBehaviour {
         {
             for (int i = 0; i <  Mathf.Clamp(Mathf.FloorToInt(totalMoneyAccumulated/30), 1, chestCoinsParent.transform.childCount); i++)
             {
+                int no = i;
                 chestCoinsParent.transform.GetChild(i).DOMove(playerCoinsParent.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(2f + 0.1f*i).OnStart(delegate() {
                     p1 += 30;
                     playerMoneyText.text = p1.ToString();
                  }).OnComplete(delegate(){
-                     chestCoinsParent.transform.GetChild(i).gameObject.SetActive(false);
+                     chestCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
                  });
 
                 playerIndicator.transform.DOShakeRotation(0.1f, new Vector3(0,0,10f),50,50).SetDelay(3f + 0.1f*i);
@@ -806,11 +838,12 @@ public class GameManager : MonoBehaviour {
         {
             for (int i = 0; i <  Mathf.Clamp(Mathf.FloorToInt(totalMoneyAccumulated/30), 1, chestCoinsParent.transform.childCount); i++)
             {
+                int no = i;
                 chestCoinsParent.transform.GetChild(i).DOMove(opponentCoinsParent.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(2f + 0.1f*i).OnStart(delegate() {
                     p2 += 30;
                     opponentMoneyText.text = p2.ToString();
                  }).OnComplete(delegate(){
-                     chestCoinsParent.transform.GetChild(i).gameObject.SetActive(false);
+                     chestCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
                  });
 
                 opponentIndicator.transform.DOShakeRotation(0.1f, new Vector3(0,0,20f),90,90).SetDelay(3f + 1.1f*i);
@@ -919,10 +952,10 @@ public class GameManager : MonoBehaviour {
 
     public void PlayAgain()
     {
-        foreach (Transform i in chestCoinsParent.transform)
-        {
-            i.gameObject.SetActive(false);
-        }
+        // foreach (Transform i in chestCoinsParent.transform)
+        // {
+        //     i.gameObject.SetActive(false);
+        // }
 
         if (player1.totalCoin >= 30*5)
         {
@@ -1043,5 +1076,25 @@ public class GameManager : MonoBehaviour {
             soundManager = GameObject.FindGameObjectWithTag("sound").GetComponent<SoundManager>();
             soundManager.GetComponent<SoundManager>().PlaySound(id);
         }
-	}                       
+	} 
+
+    IEnumerator PlayDelayedSound(int id, float time)
+    {
+        yield return new WaitForSeconds(time);
+        PlaySound(id);
+    }
+
+    void PlayMusic(int id)
+	{
+        if(musicManager)
+        {
+            musicManager.GetComponent<MusicManager>().PlayMusic(id);
+        }
+        else if (GameObject.FindGameObjectWithTag("music"))
+        {
+            musicManager = GameObject.FindGameObjectWithTag("music").GetComponent<MusicManager>();
+            musicManager.GetComponent<MusicManager>().PlayMusic(id);
+        }
+	} 
+
 }                            

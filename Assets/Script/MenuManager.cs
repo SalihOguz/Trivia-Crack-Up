@@ -120,7 +120,6 @@ public class MenuManager : MonoBehaviour {
 
     public void GoToScene(string name)
     {
-		PlaySound(0);
         SceneManager.LoadScene(name);
     }
 
@@ -128,6 +127,7 @@ public class MenuManager : MonoBehaviour {
 	{
 		if (ConnectionManager.isOnline)
 		{
+			if(layerCount != 7 && layerCount != 5 && layerCount != 8)
 			PlaySound(0);
 			uiLayer.GetComponent<Animator>().SetInteger("layerCount", layerCount);
 		}
@@ -168,7 +168,7 @@ public class MenuManager : MonoBehaviour {
 		yield return new WaitForSeconds(UnityEngine.Random.Range(4f, 6f));
 		ChangeLayerTo(5);
 		yield return new WaitForSeconds(3f);
-		ChangeLayerTo(6);
+		ChangeLayerTo(8);
 		yield return new WaitForSeconds(1);
 		GoToScene("Game");
 	}
