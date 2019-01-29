@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour {
     public GameObject playerCoinsParent;
     public GameObject opponentCoinsParent;
     public GameObject chestCoinsParent;
+    public GameObject tutorialPanel;
+    public GameObject tutorialHandBid;
+    public GameObject tutorialHandQuestion;
 
     [Header ("In Game Variables")]
     [HideInInspector]
@@ -92,7 +95,8 @@ public class GameManager : MonoBehaviour {
     float firstAnsweringTime = 0;
     float secondAnsweringTime = 0;
 
-    void Start () {
+    void Start () 
+    {
         if (GameObject.FindGameObjectWithTag("sound"))
         {
             soundManager = GameObject.FindGameObjectWithTag("sound").GetComponent<SoundManager>();
@@ -239,6 +243,7 @@ public class GameManager : MonoBehaviour {
 		optionTexts[2].text = currentQuestion.choice3;
 		yield return new WaitForSeconds(choiceApperTime);
 		optionTexts[3].text = currentQuestion.choice4;
+
 		ProceedGame();
 	}
 
@@ -247,7 +252,7 @@ public class GameManager : MonoBehaviour {
 		yield return new WaitForSeconds(choiceApperTime);
         PlayMusic(1);
 
-        infoText.text = "Bahsini seç";
+        infoText.text = "Teklifini Yap!";
 		bidTimer = 0;
         bidStartTime = Time.timeSinceLevelLoad;
         playerBid = 0;
@@ -260,12 +265,21 @@ public class GameManager : MonoBehaviour {
         opponentMoneyText.gameObject.SetActive(true);
         playerNameText.gameObject.SetActive(false);
         opponentNameText.gameObject.SetActive(false);
+
+        if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+        {
+            tutorialPanel.SetActive(true);
+            tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0.45f),0.5f);
+            tutorialHandBid.SetActive(true);
+            tutorialHandBid.transform.DOScale(Vector3.one * 0.8f, 0.5f).SetLoops(-1,LoopType.Yoyo);
+        }
 	}
 
 	void EvaluateBidding()
 	{
         gameState++;
-        if (Random.Range(0,1) == 0) // if both of them didn't choose, we will choose randomly? TODO
+
+        if (Random.Range(0,1) == 0 || PlayerPrefs.GetInt("IsTutorialCompeted") == 0) // if both of them didn't choose or in tutorial, we will choose randomly? TODO
         {
             if (playerBid == 0)
             {
@@ -273,14 +287,14 @@ public class GameManager : MonoBehaviour {
             }
             if (opponentBid == 0)
             {
-                MakeBidBot(bidAmounts[bidAmounts.Length-1]);
+                MakeBidBot(0);
             }
         }
         else
         {
             if (opponentBid == 0)
             {
-                MakeBidBot(bidAmounts[bidAmounts.Length-1]);
+                MakeBidBot(0);
             }
             if (playerBid == 0)
             {
@@ -366,6 +380,15 @@ public class GameManager : MonoBehaviour {
 
         PlaySound(1);
 
+        if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+        {
+            tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0f),0.5f).OnComplete(delegate()
+            {
+                tutorialPanel.SetActive(false);
+            });
+            tutorialHandBid.SetActive(false);
+        }
+
         ProceedGame();
     }
 
@@ -446,6 +469,16 @@ public class GameManager : MonoBehaviour {
             // {
             //     EvaluateBidding();
             // }
+            if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+            {
+                tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0f),0.5f).OnComplete(delegate()
+                {
+                    tutorialPanel.SetActive(false);
+                    tutorialPanel.transform.GetChild(0).gameObject.SetActive(false);
+                    tutorialPanel.transform.GetChild(2).gameObject.SetActive(true);
+                });
+                tutorialHandBid.SetActive(false);
+            }
         }
 	}
 
@@ -494,7 +527,18 @@ public class GameManager : MonoBehaviour {
             optionTexts[i].transform.parent.GetComponent<Button>().interactable = true;
         }
         questionCountdown.GetComponent<Animator>().enabled = true;
-       //questionCountdown.GetComponent<Animation>().Play();
+
+        if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+        {
+            print("aaaa");
+            tutorialHandQuestion.transform.position = new Vector3(1.5f, optionTexts[currentQuestion.rightAnswerIndex].transform.parent.position.y, 0);
+            tutorialPanel.transform.GetChild(2).position = new Vector3(0, optionTexts[currentQuestion.rightAnswerIndex].transform.parent.position.y, 0); //new Vector3(2.53f, optionTexts[currentQuestion.rightAnswerIndex].transform.parent.position.y, 0);
+
+            tutorialPanel.SetActive(true);
+            tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0.45f),0.5f);
+            tutorialHandQuestion.SetActive(true);
+            tutorialHandQuestion.transform.DOScale(Vector3.one * 0.65f, 0.5f).SetLoops(-1,LoopType.Yoyo);
+        }
     }
 
     void ChangeActivePlayer()
@@ -562,6 +606,16 @@ public class GameManager : MonoBehaviour {
                 {
                     StartCoroutine(CleanScreen());
                 }
+            }
+
+            if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+            {
+                tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0f),0.5f).OnComplete(delegate()
+                {
+                    tutorialPanel.SetActive(false);
+                });
+                tutorialHandQuestion.SetActive(false);
+                PlayerPrefs.SetInt("IsTutorialCompeted", 1); // tutorial completed
             }
         }
     }

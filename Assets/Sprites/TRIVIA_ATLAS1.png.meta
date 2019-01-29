@@ -69,6 +69,7 @@ TextureImporter:
     21300128: TRIVIA_ATLAS1_64
     21300130: TRIVIA_ATLAS1_65
     21300132: TRIVIA_ATLAS1_66
+    21300134: TRIVIA_ATLAS1_67
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -1530,6 +1531,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 66574469e75cc419496e8a1937e9b5df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TRIVIA_ATLAS1_67
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1380
+        width: 292
+        height: 276
+      alignment: 9
+      pivot: {x: 0.1504817, y: 0.8863375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf723effff5e4921ac218f9002593d9
       vertices: []
       indices: 
       edges: []

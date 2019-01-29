@@ -82,7 +82,11 @@ public class BotManager : MonoBehaviour {
                 choice = UnityEngine.Random.Range(0,3);
             }
         }
-		gameManager.MakeBidBot(choice);
+        
+        if (PlayerPrefs.GetInt("IsTutorialCompeted") == 1)
+        {
+    		gameManager.MakeBidBot(choice);
+        }
     }
 
     public void Choose()
