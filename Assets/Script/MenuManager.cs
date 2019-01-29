@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
+using UnityEngine.Purchasing;
 
 public class MenuManager : MonoBehaviour {
 	// DatabaseReference reference;
@@ -212,6 +213,52 @@ public class MenuManager : MonoBehaviour {
 	{
 
 	}
+
+	public void AddCoins(int amount)
+	{
+		player.totalCoin += amount;
+		SendUserData();
+
+	}
+
+	public void AddMixedPack(int amount)
+	{
+		player.knowQuestionSkillCount += amount;
+		player.fiftyFiftySkillCount += amount;
+		SendUserData();
+	}
+
+    void SendUserData()
+    {
+        if (ConnectionManager.isOnline)
+        {
+            PlayerPrefs.SetString("userData", JsonUtility.ToJson(player));
+            DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+            reference.Child("userList").Child(player.userId).SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
+        }
+        else
+        {
+            Debug.LogError("No internet. Data couldn't be sent");
+        }
+    }
+
+	public void updatePriceList(Product[] products) {
+        // foreach(var product in products) {
+        //     if(product.definition.id.Equals("com.digitalwords.wordcube.pass5")) {
+        //         hintPanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+        //     } else if (product.definition.id.Equals("com.digitalwords.wordcube.pass10")) {
+        //         hintPanel.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+        //     } else if (product.definition.id.Equals("com.digitalwords.wordcube.pass20")) {
+        //         hintPanel.transform.GetChild(2).GetChild(2).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+        //     } else if (product.definition.id.Equals("com.digitalwords.wordcube.coin1000")) {
+        //         coinPanel.transform.GetChild(0).GetChild(3).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+        //     } else if (product.definition.id.Equals("com.digitalwords.wordcube.coin5000")) {
+        //         coinPanel.transform.GetChild(1).GetChild(3).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+        //     } else if (product.definition.id.Equals("com.digitalwords.wordcube.coin10000")) {
+        //         coinPanel.transform.GetChild(2).GetChild(3).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+        //     }
+        // }
+    }
 
 	public void LoadLeaderboard()
 	{
