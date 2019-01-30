@@ -113,6 +113,77 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10836847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 10836848}
+  - component: {fileID: 10836850}
+  - component: {fileID: 10836849}
+  m_Layer: 5
+  m_Name: BuyLoading
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &10836848
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 10836847}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0001999, y: 1.0001999, z: 1.0001999}
+  m_Children:
+  - {fileID: 246876460}
+  - {fileID: 1074280570}
+  m_Father: {fileID: 657082470}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 75.200005, y: -3}
+  m_SizeDelta: {x: 646, y: 638.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &10836849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 10836847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 3cd33c1c25a7a4fac8afa0e87498c871, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &10836850
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 10836847}
+  m_CullTransparentMesh: 0
 --- !u!1 &25304738
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +552,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300028, guid: 9f04da2f3c3224e629be28b45d2bfe2b, type: 3}
+  m_Sprite: {fileID: 21300014, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -528,7 +599,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.75, y: 169}
+  m_AnchoredPosition: {x: 2, y: 169}
   m_SizeDelta: {x: 247.7, y: -540.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &137369817
@@ -875,7 +946,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 173272869}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 657082471}
+        m_MethodName: BuyConsumable
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: com.digitalwords.triviachallanger.mix10
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &181634302
@@ -1149,6 +1231,81 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 242886322}
+  m_CullTransparentMesh: 0
+--- !u!1 &246876459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246876460}
+  - component: {fileID: 246876462}
+  - component: {fileID: 246876461}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &246876460
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246876459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 10836848}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -74.1, y: -2.9}
+  m_SizeDelta: {x: 229.8, y: 191.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &246876461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246876459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: d3b3e36a88aaa46e885022ee8d5adaca, type: 3}
+    m_FontSize: 24
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0130\u015Fleminiz Ger\xE7ekle\u015Ftiriliyor"
+--- !u!222 &246876462
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246876459}
   m_CullTransparentMesh: 0
 --- !u!1 &256974369
 GameObject:
@@ -1821,7 +1978,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: coin
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114257864342652108, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300014, guid: 2afcb53155e521940a4606e7b34ee959,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 114017588008427240, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!224 &295464533 stripped
@@ -1834,6 +1998,69 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224286814702418288, guid: 219c582b736e34268bd6d63aa96874a0,
     type: 2}
   m_PrefabInternal: {fileID: 295464532}
+--- !u!1 &295464535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1478783493865660, guid: 219c582b736e34268bd6d63aa96874a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 295464532}
+--- !u!114 &295464536 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114858938692467090, guid: 219c582b736e34268bd6d63aa96874a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 295464532}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &295464537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 295464535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 295464536}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1509419780}
+        m_MethodName: ShowAdEarnCoin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: coin
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &299106672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,7 +2365,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 331033959}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 657082471}
+        m_MethodName: BuyConsumable
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: com.digitalwords.triviachallanger.mixed30
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &331873094
@@ -3554,7 +3792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.75, y: 169}
+  m_AnchoredPosition: {x: 2, y: 169}
   m_SizeDelta: {x: 247.7, y: -540.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570628701
@@ -4004,7 +4242,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 637202137}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 657082471}
+        m_MethodName: BuyConsumable
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: com.digitalwords.triviachallanger.mix100
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &645026607
@@ -4210,6 +4459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 657082470}
+  - component: {fileID: 657082471}
   m_Layer: 5
   m_Name: StoreLayer1
   m_TagString: Untagged
@@ -4233,6 +4483,7 @@ RectTransform:
   - {fileID: 2014282097}
   - {fileID: 1539097456}
   - {fileID: 959901293}
+  - {fileID: 10836848}
   m_Father: {fileID: 2087344582}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4241,6 +4492,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &657082471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657082469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba22e6a02b7ecac47b3e09325417ed9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loading: {fileID: 10836847}
+  menuManager: {fileID: 1509419780}
 --- !u!1 &661159794
 GameObject:
   m_ObjectHideFlags: 0
@@ -5660,7 +5924,14 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: 280.9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114257864342652108, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300014, guid: 2afcb53155e521940a4606e7b34ee959,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 114017588008427240, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!224 &842161549 stripped
@@ -7972,6 +8243,75 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035225241}
   m_CullTransparentMesh: 0
+--- !u!1 &1074280569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1074280570}
+  - component: {fileID: 1074280572}
+  - component: {fileID: 1074280571}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1074280570
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1074280569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 10836848}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -74.1, y: 98}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1074280571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1074280569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300012, guid: 115c0312c4caf4543979fca5d8abe126, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1074280572
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1074280569}
+  m_CullTransparentMesh: 0
 --- !u!1 &1078618810
 GameObject:
   m_ObjectHideFlags: 0
@@ -8339,7 +8679,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1166605659}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 657082471}
+        m_MethodName: BuyConsumable
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: com.digitalwords.triviachallanger.mix500
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1207859620
@@ -9790,6 +10141,69 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1432720100}
   m_CullTransparentMesh: 0
+--- !u!1 &1457329597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1478783493865660, guid: 219c582b736e34268bd6d63aa96874a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 2078165605}
+--- !u!114 &1457329599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1457329597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1457329600}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 657082471}
+        m_MethodName: BuyConsumable
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: com.digitalwords.triviachallanger.coin1000
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1457329600 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114858938692467090, guid: 219c582b736e34268bd6d63aa96874a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 2078165605}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1506168764
 GameObject:
   m_ObjectHideFlags: 0
@@ -10087,7 +10501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -39.25, y: 46.7}
+  m_AnchoredPosition: {x: -39, y: 46.7}
   m_SizeDelta: {x: 176, y: 162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1528300249
@@ -10250,7 +10664,14 @@ Prefab:
       propertyPath: m_Text
       value: 9,99 TL
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114257864342652108, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300014, guid: 2afcb53155e521940a4606e7b34ee959,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 114017588008427240, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!224 &1537254049 stripped
@@ -10258,6 +10679,69 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224269231525174570, guid: 219c582b736e34268bd6d63aa96874a0,
     type: 2}
   m_PrefabInternal: {fileID: 1537254048}
+--- !u!1 &1537254050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1478783493865660, guid: 219c582b736e34268bd6d63aa96874a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1537254048}
+--- !u!114 &1537254051 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114858938692467090, guid: 219c582b736e34268bd6d63aa96874a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1537254048}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1537254052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537254050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1537254051}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 657082471}
+        m_MethodName: BuyConsumable
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: com.digitalwords.triviachallanger.coin4000
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1539097455
 GameObject:
   m_ObjectHideFlags: 0
@@ -10571,7 +11055,14 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: -358.85
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114257864342652108, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300014, guid: 2afcb53155e521940a4606e7b34ee959,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 114017588008427240, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!224 &1547491040 stripped
@@ -10579,6 +11070,69 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224269231525174570, guid: 219c582b736e34268bd6d63aa96874a0,
     type: 2}
   m_PrefabInternal: {fileID: 1547491039}
+--- !u!1 &1547491041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1478783493865660, guid: 219c582b736e34268bd6d63aa96874a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1547491039}
+--- !u!114 &1547491042 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114858938692467090, guid: 219c582b736e34268bd6d63aa96874a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1547491039}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1547491043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1547491041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1547491042}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 657082471}
+        m_MethodName: BuyConsumable
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: com.digitalwords.triviachallanger.coin10000
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1563015932
 GameObject:
   m_ObjectHideFlags: 0
@@ -14264,7 +14818,14 @@ Prefab:
       propertyPath: m_Text
       value: 1.000
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114257864342652108, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300014, guid: 2afcb53155e521940a4606e7b34ee959,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 114017588008427240, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!224 &2078165606 stripped

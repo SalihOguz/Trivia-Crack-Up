@@ -10,6 +10,7 @@ using DG.Tweening;
 
 public class GameManager : MonoBehaviour {
 
+    #region Variables
 	[Header("UI Elements")]
 	public Text questionText;
 	public Text[] optionTexts;
@@ -52,6 +53,8 @@ public class GameManager : MonoBehaviour {
     public GameObject emojiBg;
     public GameObject emojiButton;
     public GameObject showEmojiObject;
+    public GameObject botEmojiButton;
+    public GameObject botShowEmojiObject;
 
     [Header ("In Game Variables")]
     [HideInInspector]
@@ -97,6 +100,8 @@ public class GameManager : MonoBehaviour {
     int[] chosenBidIndexCounts = new int[3];
     float firstAnsweringTime = 0;
     float secondAnsweringTime = 0;
+
+    #endregion
 
     void Start () 
     {
@@ -592,6 +597,11 @@ public class GameManager : MonoBehaviour {
                 GoToTheNextTurn();
                 optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[2];
                 player1.rightAnswersInDifficulties[currentQuestion.difficulty]++;
+
+                if (!botShowEmojiObject.activeSelf)
+                {
+                    botManager.SendEmojiLose();
+                }
             }
             else // Answered Wrong!
             {
@@ -608,6 +618,11 @@ public class GameManager : MonoBehaviour {
                 else
                 {
                     StartCoroutine(CleanScreen());
+                }
+                
+                if (!botShowEmojiObject.activeSelf)
+                {
+                    botManager.SendEmojiWin();
                 }
             }
 
@@ -637,6 +652,11 @@ public class GameManager : MonoBehaviour {
             IncreaseScore();
             GoToTheNextTurn();
             optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[2];
+           
+            if (!botShowEmojiObject.activeSelf)
+            {
+                botManager.SendEmojiWin();
+            }
         }
         else
         {
@@ -652,6 +672,11 @@ public class GameManager : MonoBehaviour {
             else
             {
                StartCoroutine(CleanScreen());
+            }
+
+            if (!botShowEmojiObject.activeSelf)
+            {
+                botManager.SendEmojiLose();
             }
         }
     }
@@ -845,6 +870,11 @@ public class GameManager : MonoBehaviour {
             player1.wonGameCount++;
             opponentScoreStarsParent.SetActive(false);
             PlaySound(7);
+
+            if (!botShowEmojiObject.activeSelf)
+            {
+                botManager.SendEmojiLose();
+            }
         }
         else
         {
@@ -853,6 +883,11 @@ public class GameManager : MonoBehaviour {
             player1.score += 1;
             playerScoreStarsParent.SetActive(false);
             PlaySound(5);
+
+            if (!botShowEmojiObject.activeSelf)
+            {
+                botManager.SendEmojiWin();
+            }
         }
         endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = totalMoneyAccumulated.ToString() + " " + "COIN";
         retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
@@ -1160,18 +1195,28 @@ public class GameManager : MonoBehaviour {
         emojiButton.SetActive(false);
     }
 
-    public void SendEmoji(int id)
+    public void SendEmoji(int id) 
     {
         emojiBg.SetActive(false);
         showEmojiObject.GetComponent<Image>().sprite = emojiBg.transform.GetChild(id).GetComponent<Image>().sprite;
         showEmojiObject.SetActive(true);
         showEmojiObject.transform.eulerAngles = new Vector3(0,0,-15f);
-        showEmojiObject.transform.DORotate(new Vector3(0,0,15f),0.5f).SetLoops(7, LoopType.Yoyo).OnComplete(EndShowEmoji).SetEase(Ease.Linear);
+        showEmojiObject.transform.DORotate(new Vector3(0,0,15f),0.5f).SetLoops(6, LoopType.Yoyo).SetEase(Ease.Linear).OnComplete(delegate(){
+            emojiButton.SetActive(true);
+            showEmojiObject.SetActive(false);
+        });
+        // TODO we can make different animations for every emotion
     }
 
-    void EndShowEmoji()
+    public void SendEmojiBot(int id)
     {
-        emojiButton.SetActive(true);
-        showEmojiObject.SetActive(false);
+        botEmojiButton.SetActive(false);
+        botShowEmojiObject.GetComponent<Image>().sprite = emojiBg.transform.GetChild(id).GetComponent<Image>().sprite;
+        botShowEmojiObject.SetActive(true);
+        botShowEmojiObject.transform.eulerAngles = new Vector3(0,0,-15f);
+        botShowEmojiObject.transform.DORotate(new Vector3(0,0,15f),0.5f).SetLoops(6, LoopType.Yoyo).SetEase(Ease.Linear).OnComplete(delegate(){
+            botEmojiButton.SetActive(true);
+            botShowEmojiObject.SetActive(false);
+        });    
     }
 }                            

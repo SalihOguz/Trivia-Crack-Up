@@ -195,4 +195,33 @@ public class BotManager : MonoBehaviour {
         botWantsAgain = false;
         gameManager.BotRunAway();
     }
+
+    public void SendEmojiWin()
+    {
+        if(UnityEngine.Random.Range(0,100) < 15)
+        {
+            StartCoroutine(DelayedSendEmoji(0));
+        }
+    }
+    
+    public void SendEmojiLose()
+    {
+        if(UnityEngine.Random.Range(0,100) < 20)
+        {
+            if(UnityEngine.Random.Range(0,100) < 50)
+            {
+                StartCoroutine(DelayedSendEmoji(1));
+            }
+            else
+            {
+                StartCoroutine(DelayedSendEmoji(2));
+            }
+        }
+    }
+
+    IEnumerator DelayedSendEmoji(int id)
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(2f, 4f));
+        gameManager.SendEmojiBot(id);
+    }
 }
