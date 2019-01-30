@@ -49,6 +49,9 @@ public class GameManager : MonoBehaviour {
     public GameObject tutorialPanel;
     public GameObject tutorialHandBid;
     public GameObject tutorialHandQuestion;
+    public GameObject emojiBg;
+    public GameObject emojiButton;
+    public GameObject showEmojiObject;
 
     [Header ("In Game Variables")]
     [HideInInspector]
@@ -1149,6 +1152,26 @@ public class GameManager : MonoBehaviour {
             musicManager = GameObject.FindGameObjectWithTag("music").GetComponent<MusicManager>();
             musicManager.GetComponent<MusicManager>().PlayMusic(id);
         }
-	} 
+	}
 
+    public void ShowEmojiBG()
+    {
+        emojiBg.SetActive(true);
+        emojiButton.SetActive(false);
+    }
+
+    public void SendEmoji(int id)
+    {
+        emojiBg.SetActive(false);
+        showEmojiObject.GetComponent<Image>().sprite = emojiBg.transform.GetChild(id).GetComponent<Image>().sprite;
+        showEmojiObject.SetActive(true);
+        showEmojiObject.transform.eulerAngles = new Vector3(0,0,-15f);
+        showEmojiObject.transform.DORotate(new Vector3(0,0,15f),0.5f).SetLoops(7, LoopType.Yoyo).OnComplete(EndShowEmoji).SetEase(Ease.Linear);
+    }
+
+    void EndShowEmoji()
+    {
+        emojiButton.SetActive(true);
+        showEmojiObject.SetActive(false);
+    }
 }                            
