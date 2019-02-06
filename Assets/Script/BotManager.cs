@@ -16,15 +16,17 @@ public class BotManager : MonoBehaviour {
     public float difficultyEffectOnRightAnswer = 0.08f; // decreases the chance of answering right by this amount for every difficulty level
     public float choiceCountMultiplier = 0.125f; // the increases the chance of answering right the less choices there are
     public float randomBidChance = 0.2f;
-    public float bidDelayAmount = 1.5f; // if question is hard or if AI has scored 2 points, it gives bid in longer time
+    public float bidDelayAmount = 1f; // if question is hard or if AI has scored 3 points, it gives bid in longer time
     public float minSkillUseTime = 1f;
     public float maxSkillUseTime = 4f;
-    public float chanceOfUsingKnowQuestion = 0.05f;
-    public float chanceOfUsingDisableTwo = 0.05f;
+    public float chanceOfUsingKnowQuestion = 0.1f;
+    public float chanceOfUsingDisableTwo = 0.2f;
+    [HideInInspector]
     public bool isFiftyFiftyUsed = false;
     bool knowQuestionUsed = false;
     public float minReplayClickTime = 1f;
     public float maxReplayClickTime = 6f;
+    [HideInInspector]
     public bool botWantsAgain = false;
     public float revengeAcceptenceRate = 0.7f;
     public float revengeOfferRate = 0.45f;
@@ -40,7 +42,7 @@ public class BotManager : MonoBehaviour {
 	public void Bid()
 	{
         // AI is winning or question is so hard, so, we give player a higher chance to win
-        if (gameManager.opponentScore == 2 ||gameManager.currentQuestion.difficulty >= questionManager.difficultyLevelCount - 2 ) 
+        if (gameManager.opponentScore == 3 ||gameManager.currentQuestion.difficulty >= questionManager.difficultyLevelCount - 2 ) 
         {
             StartCoroutine(DelayedBid(UnityEngine.Random.Range(botMinBidTime, botMaxBidTime + bidDelayAmount)));
         }

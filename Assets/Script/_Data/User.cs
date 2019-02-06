@@ -17,8 +17,9 @@ public class User {
     public int playedGameCount;
     public int knowQuestionSkillCount; // item that makes user know the question
     public int fiftyFiftySkillCount; // item that eliminates two choices
+    public int level;
 
-    public User(string userId, string username, bool isMale, int totalCoin = 2000) {
+    public User(string userId, string username, bool isMale, int totalCoin = 2000, int level = 0) {
         this.userId = userId;
 		this.username = username;
         this.score = 0;
@@ -31,13 +32,20 @@ public class User {
         this.playedGameCount = 0;
         this.knowQuestionSkillCount = 3;
         this.fiftyFiftySkillCount = 5;
-        if (isMale)
+        this.level = level;
+        this.avatarId = level;
+    }
+
+    int UserAvatar(int score)
+    {
+        Avatars av = Resources.Load<Avatars>("Data/Avatars");
+        for (int i = 1; i < av.avatarSprites.Length; i++)
         {
-            this.avatarId = 0;
+            if (score < av.levelUpgradeScores[i])
+            {
+                return --i;
+            }
         }
-        else
-        {
-            this.avatarId = 1;
-        }
+        return 0;
     }
 }

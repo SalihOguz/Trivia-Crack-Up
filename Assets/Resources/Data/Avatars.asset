@@ -12,5 +12,33 @@ MonoBehaviour:
   m_Name: Avatars
   m_EditorClassIdentifier: 
   avatarSprites:
-  - {fileID: 21300026, guid: 9f04da2f3c3224e629be28b45d2bfe2b, type: 3}
-  - {fileID: 21300024, guid: 9f04da2f3c3224e629be28b45d2bfe2b, type: 3}
+  - {fileID: 21300056, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300036, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300058, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300046, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300042, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300054, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300052, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300032, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300044, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300038, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300040, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300048, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300050, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300030, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  avatarBodySprites:
+  - {fileID: 21300028, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300006, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300020, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300016, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300012, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300026, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300024, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300002, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300014, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300008, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300010, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300018, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300022, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  - {fileID: 21300000, guid: 84de8d475b1d54b46929d6e69d7c3dd6, type: 3}
+  levelUpgradeScores: 000000000f000000320000006400000096000000fa000000f4010000ee020000e8030000dc050000c40900008813000010270000983a0000

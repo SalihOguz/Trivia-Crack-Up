@@ -26,7 +26,7 @@ public class MenuManager : MonoBehaviour {
 		player = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
 		
 		Sprite avatar = Resources.Load<Avatars>("Data/Avatars").avatarSprites[player.avatarId];
-		userDataObject.transform.GetChild(0).GetComponent<Image>().sprite = avatar;
+		userDataObject.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = avatar;
 		userDataObject.transform.Find("UserNameBG").GetChild(0).GetComponent<Text>().text = player.username;
 		userDataObject.transform.Find("CoinButton").GetChild(0).GetComponent<Text>().text = player.totalCoin.ToString();
 		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = "Joker " + player.knowQuestionSkillCount.ToString();
@@ -283,7 +283,7 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	public void FillLeaderboard(List<User> userList)
-	{
+	{	
 		QuickSort(userList, 0, userList.Count - 1);
 
 		bool userFound = false;
@@ -308,10 +308,10 @@ public class MenuManager : MonoBehaviour {
 		
 		if (!userFound)
 		{
-			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount).gameObject.SetActive(true);
-			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount).GetChild(0).GetComponent<Text>().text = player.username;
-			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount).GetChild(1).GetComponent<Text>().text = player.score.ToString();
-			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount).GetChild(2).GetComponent<Text>().text = (FindUserIndex(userList)).ToString() + ".";
+			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount-1).gameObject.SetActive(true);
+			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount-1).GetChild(0).GetComponent<Text>().text = player.username;
+			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount-1).GetChild(1).GetComponent<Text>().text = player.score.ToString();
+			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount-1).GetChild(2).GetComponent<Text>().text = (FindUserIndex(userList)).ToString() + ".";
 		}
 		
 		leaderboardLoadingObject.SetActive(false);
@@ -331,17 +331,22 @@ public class MenuManager : MonoBehaviour {
 			}  
 			else if (player.score < userList[mid].score)  
 			{  
-				max = mid - 1;  
-			}  
-			else  
-			{  
 				min = mid + 1;  
+				
 			}  
+			else if (player.score > userList[mid].score || (userList[mid].score == player.score && userList[mid].wonGameCount > player.wonGameCount)) 
+			{  
+				max = mid - 1;  
+			}
+			else if (userList[mid].score == player.score)
+			{
+				return ++mid;
+			}
 		}  
 		return 0;
 	}
 
-	  public static void QuickSort(List<User> userList, int left, int right)
+	public static void QuickSort(List<User> userList, int left, int right)
     {
         if(left > right || left <0 || right <0) return; 
 

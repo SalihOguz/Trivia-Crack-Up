@@ -12,4 +12,5 @@ public class UserLite
     public string userName;
     public bool isMale;
     public int totalCoin;
+    public int score;
 }

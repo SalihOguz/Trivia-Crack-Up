@@ -10,8 +10,8 @@ public class QuestionData {
 	public int[] chosenChoiceCounts = new int[4];
 	public int[] chosenBidIndexCounts = new int[3];
 	public List<float> bidGivingTimes = new List<float>();
-	public List<float> firstAnsweringTimes = new List<float>();
-	public List<float> secondAnsweringTimes = new List<float>();
+	public List<float> firstAnsweringTimes = new List<float>(); // answering first time
+	public List<float> secondAnsweringTimes = new List<float>(); // answering after the bot or second time
 	public int knowQuestionUsedTime;
 	public int disableTwoUsedTime;
 }

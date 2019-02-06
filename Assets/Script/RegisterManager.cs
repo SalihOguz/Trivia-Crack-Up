@@ -25,7 +25,7 @@ public class RegisterManager : MonoBehaviour {
 	void Start()
 	{
 		//PlayerPrefs.DeleteAll();
-		loadingImage.GetComponent<Image>().DOFillAmount(0.2f, 0.2f);
+		loadingImage.GetComponent<Image>().DOFillAmount(0.5f, 0.2f);
 		StartCoroutine(CheckConnection());
 	}
 

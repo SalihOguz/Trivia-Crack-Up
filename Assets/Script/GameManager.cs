@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Firebase;
 using Firebase.Database;
+using Firebase.Unity.Editor;
 using TMPro;
 using DG.Tweening;
 
@@ -55,10 +56,12 @@ public class GameManager : MonoBehaviour {
     public GameObject showEmojiObject;
     public GameObject botEmojiButton;
     public GameObject botShowEmojiObject;
+    public GameObject doublecoinButton;
 
     [Header ("In Game Variables")]
     [HideInInspector]
     public Question currentQuestion;
+    QuestionData currentQuestionData;
     int turnCount = 0;
     int gameState = 0; // 0 = answers come, 1 = bidding, 2 = answering
 	float bidTimer;
@@ -75,6 +78,11 @@ public class GameManager : MonoBehaviour {
     float disconnectedSec = 0;
     SoundManager soundManager;
     MusicManager musicManager;
+    int startingPlayerId; // who wins the bid
+    int totalBidPlayer = 0;
+    int totalBidOpponent = 0;
+    int startingCoin;
+    DatabaseReference reference;
 
 	[Header ("User Variables")]
     [HideInInspector]
@@ -89,7 +97,7 @@ public class GameManager : MonoBehaviour {
 
 	[Header ("Gameplay Variables")]
 	public float totalBiddingTime = 5f;
-	public float choiceApperTime = 0.4f;
+	public float choiceApperTime = 0.75f;
     public int[] bidAmounts = { 15, 35, 70, 100};
     public float questionAnsweringTime = 10f;
     public int totalTurnCount = 7;
@@ -118,6 +126,11 @@ public class GameManager : MonoBehaviour {
 
         Init();
         StartCoroutine(AnimationDelay());
+
+        accumulatedMoneyText.transform.parent.GetChild(4).GetChild(0).position = playerMoneyText.transform.GetChild(0).position;
+        accumulatedMoneyText.transform.parent.GetChild(4).GetChild(1).position = opponentMoneyText.transform.GetChild(0).position;
+        endScreen.transform.GetChild(2).GetChild(4).GetChild(0).position = playerMoneyText.transform.GetChild(0).position;
+        endScreen.transform.GetChild(2).GetChild(4).GetChild(1).position = opponentMoneyText.transform.GetChild(0).position;
     }
 
     IEnumerator AnimationDelay()
@@ -141,8 +154,8 @@ public class GameManager : MonoBehaviour {
 
         // put avatar
         Avatars av = Resources.Load<Avatars>("Data/Avatars");
-        playerIndicator.transform.parent.GetChild(1).GetComponent<Image>().sprite = av.avatarSprites[player1.avatarId];
-        opponentIndicator.transform.parent.GetChild(1).GetComponent<Image>().sprite = av.avatarSprites[player2.avatarId];
+        playerIndicator.transform.parent.GetChild(1).GetChild(0).GetComponent<Image>().sprite = av.avatarSprites[player1.avatarId];
+        opponentIndicator.transform.parent.GetChild(1).GetChild(0).GetComponent<Image>().sprite = av.avatarSprites[player2.avatarId];
 
         playerNameText.text = player1.username;
         opponentNameText.text = player2.username;
@@ -152,6 +165,14 @@ public class GameManager : MonoBehaviour {
 
         knowQuestionAmountText.text = player1.knowQuestionSkillCount.ToString();
         fiftyFiftyAmountText.text = player1.fiftyFiftySkillCount.ToString();
+
+        startingCoin = player1.totalCoin;
+    }
+
+    public void UpdatePlayerAvatar()
+    {
+        Avatars av = Resources.Load<Avatars>("Data/Avatars");
+        playerIndicator.transform.parent.GetChild(1).GetChild(0).GetComponent<Image>().sprite = av.avatarSprites[player1.avatarId];
     }
 
     IEnumerator CheckConnection()
@@ -166,6 +187,14 @@ public class GameManager : MonoBehaviour {
                 Time.timeScale = 0f;
 			}
 		}
+        else if (reference == null)
+        {
+            print("reference was null");
+            #if UNITY_EDITOR
+			    FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://trivia-challanger.firebaseio.com/");
+		    #endif
+            reference = FirebaseDatabase.DefaultInstance.RootReference;
+        }
         yield return new WaitForSeconds(1f);
         StartCoroutine(CheckConnection());
 	}
@@ -176,7 +205,7 @@ public class GameManager : MonoBehaviour {
 		FakeUserList ful = JsonUtility.FromJson<FakeUserList>(textAssset.text);
         UserLite fake = ful.fakeUserList[UnityEngine.Random.Range(0, ful.fakeUserList.Count)];
 
-        User p2 = new User("1", fake.userName, fake.isMale, fake.totalCoin + 30 * (Random.Range(-65,65)));
+        User p2 = new User("1", fake.userName, fake.isMale, fake.totalCoin, fake.score);
         return p2;
     }
 
@@ -235,6 +264,7 @@ public class GameManager : MonoBehaviour {
 
 	void GetNextQuesiton()
 	{
+        currentQuestionData = new QuestionData();
         currentQuestion = GetComponent<QuestionManager>().ChooseQuestion();
         questionText.text = currentQuestion.questionText;
         player1.seenQuestionIds.Add(currentQuestion.questionId);
@@ -260,7 +290,7 @@ public class GameManager : MonoBehaviour {
 		yield return new WaitForSeconds(choiceApperTime);
         PlayMusic(1);
 
-        infoText.text = "Teklifini Yap!";
+        infoText.text = "Bahsini Koy!";
 		bidTimer = 0;
         bidStartTime = Time.timeSinceLevelLoad;
         playerBid = 0;
@@ -287,7 +317,7 @@ public class GameManager : MonoBehaviour {
 	{
         gameState++;
 
-        if (Random.Range(0,1) == 0 || PlayerPrefs.GetInt("IsTutorialCompeted") == 0) // if both of them didn't choose or in tutorial, we will choose randomly? TODO
+        if (Random.Range(0,1) == 0 || PlayerPrefs.GetInt("IsTutorialCompeted") == 0) // if both of them didn't choose or in tutorial, we choose randomly
         {
             if (playerBid == 0)
             {
@@ -339,6 +369,7 @@ public class GameManager : MonoBehaviour {
 				playingPlayerId = 1;
 			}
 		}
+        startingPlayerId = playingPlayerId;
 
         if (playingPlayerId == 0)
         {
@@ -350,6 +381,8 @@ public class GameManager : MonoBehaviour {
             //player2.totalCoin += (playerBid + opponentBid);
             opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
         }
+
+        currentQuestionData.bidGivingTimes.Add(playerBidTime);
 
         StartCoroutine(EndBidState());
 	}
@@ -385,6 +418,8 @@ public class GameManager : MonoBehaviour {
         opponentMoneyText.gameObject.SetActive(false);
         playerNameText.gameObject.SetActive(true);
         opponentNameText.gameObject.SetActive(true);
+
+        accumulatedMoneyText.transform.parent.GetChild(4).gameObject.SetActive(false);
 
         PlaySound(1);
 
@@ -422,37 +457,127 @@ public class GameManager : MonoBehaviour {
         int p2 = player2.totalCoin;
         int tot = totalMoneyAccumulated;
 
-        for(int i = 0; i < Mathf.Max(playerBid/10, opponentBid/10); i++)
+        float flowDelay = 1.5f/Mathf.Max(playerBid/10, opponentBid/10); //Mathf.Max(Mathf.Clamp(playerBid/10, 3, 10), Mathf.Clamp(opponentBid/10, 3, 10));
+
+        accumulatedMoneyText.transform.parent.GetChild(1).DOShakeRotation(Mathf.Max(playerBid/10, opponentBid/10) * flowDelay, new Vector3(0,0,20f),90,90).SetDelay(1f);
+        accumulatedMoneyText.transform.parent.GetChild(1).DOShakeScale(Mathf.Max(playerBid/10, opponentBid/10) * flowDelay, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(1f);
+
+        for(int i = 0; i < Mathf.Max(playerBid/10, opponentBid/10); i++) // Mathf.Max(Mathf.Clamp(playerBid/10, 3, 10), Mathf.Clamp(opponentBid/10, 3, 10))
         {
             if (i < playerBid/10)
             {
                 int no = i;
-                playerCoinsParent.transform.GetChild(i).DOMove(accumulatedMoneyText.transform.parent.GetChild(0).position, 1f).SetEase(Ease.InCubic).SetDelay(0.15f*i).OnComplete(delegate() { 
+                playerCoinsParent.transform.GetChild(i).DOMove(accumulatedMoneyText.transform.parent.GetChild(0).position, 1f).SetEase(Ease.InCubic).SetDelay(flowDelay*i).
+                OnComplete(delegate() { 
                     tot += 10;
                     accumulatedMoneyText.text = tot + " COIN";
-                    playerCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
                  }).OnStart(delegate() {
                     p1 -= 10;
                     playerMoneyText.text = p1.ToString();
                  });
+                playerCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.8f, 0.5f).SetEase(Ease.InCubic).SetDelay(flowDelay*i);
+                playerCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.4f, 0.5f).SetEase(Ease.InCubic).SetDelay(flowDelay*i + 0.5f);
             }
             if (i < opponentBid/10)
             {
                 int no = i;
-                opponentCoinsParent.transform.GetChild(i).DOMove(accumulatedMoneyText.transform.parent.GetChild(0).position, 1f).SetEase(Ease.InCubic).SetDelay(0.15f*i).OnComplete(delegate() { 
+                opponentCoinsParent.transform.GetChild(i).DOMove(accumulatedMoneyText.transform.parent.GetChild(0).position, 1f).SetEase(Ease.InCubic).SetDelay(flowDelay*i).OnComplete(delegate() { 
                     tot += 10;
                     accumulatedMoneyText.text = tot + " COIN";
-                    playerCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
                  }).OnStart(delegate() {
                     p2 -= 10;
                     opponentMoneyText.text = p2.ToString();
                  });;
+                opponentCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.8f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i);
+                opponentCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.4f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i + 0.5f);
             }
-            if (i < playerBid/10 || i < opponentBid/10)
-            {
-                accumulatedMoneyText.transform.parent.GetChild(0).DOShakeRotation(0.1f, new Vector3(0,0,20f),90,90).SetDelay(1f + 0.15f*i);
-                accumulatedMoneyText.transform.parent.GetChild(0).DOShakeScale(0.1f, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(1f + 0.15f*i);
-            }
+        }
+    }
+
+    void SendCoinsToWinner(int playerId)
+    {
+        PlaySound(2);
+
+        // reset previous positions
+        foreach (Transform i in accumulatedMoneyText.transform.parent.GetChild(0))
+        {
+            i.localPosition = Vector3.zero;
+            i.gameObject.SetActive(true);
+        }
+
+         // coin animation
+        int p1;
+        int tot = totalMoneyAccumulated;
+        GameObject target;
+        Text winnerText;
+        GameObject indicator;
+
+        accumulatedMoneyText.transform.parent.GetChild(4).gameObject.SetActive(true);
+
+        if (playerId == 0)
+        {
+            target =  playerCoinsParent;
+            winnerText = playerMoneyText;
+            p1 = player1.totalCoin;
+            player1.totalCoin += totalMoneyAccumulated;
+            indicator = playerIndicator;
+        }
+        else
+        {
+            target = opponentCoinsParent;
+            winnerText = opponentMoneyText;
+            p1 = player2.totalCoin;
+            player2.totalCoin += totalMoneyAccumulated;
+            indicator = opponentIndicator;
+        }
+
+        playerMoneyText.gameObject.SetActive(true);
+        opponentMoneyText.gameObject.SetActive(true);
+        playerNameText.gameObject.SetActive(false);
+        opponentNameText.gameObject.SetActive(false);
+
+        int count = totalMoneyAccumulated/10; //Mathf.Clamp(totalMoneyAccumulated/10, 3, 10);
+
+        float flowDelay = 1.5f/count;
+
+        indicator.transform.DOShakeRotation(count * flowDelay, new Vector3(0,0,10f),50,50).SetDelay(1f);
+        indicator.transform.DOShakeScale(count * flowDelay, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(1f);
+        for(int i = 0; i < count; i++)
+        {
+            accumulatedMoneyText.transform.parent.GetChild(0).GetChild(i).DOMove(target.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(flowDelay * i)
+            .OnComplete(delegate() { 
+                p1 += 10;
+                winnerText.text = p1.ToString();
+            }).OnStart(delegate() {
+                tot -= 10;
+                accumulatedMoneyText.text = tot + " COIN";
+            });
+            accumulatedMoneyText.transform.parent.GetChild(0).GetChild(i).DOScale(Vector3.one * 0.6f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i);
+            accumulatedMoneyText.transform.parent.GetChild(0).GetChild(i).DOScale(Vector3.one * 0.4f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i + 0.5f);
+        }
+    }
+
+    void ApplyCutToLoser(int winnerId)
+    {
+        if (startingPlayerId == 0 && winnerId == 1)
+        {
+            player1.totalCoin -= playerBid;
+            playerMoneyText.text = player1.totalCoin.ToString();
+            playerMoneyText.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = (-playerBid).ToString();
+            playerMoneyText.transform.GetChild(3).gameObject.SetActive(true);
+            playerMoneyText.transform.DOShakeRotation(1.5f, new Vector3(0,0,10f),10,10).OnComplete(delegate(){
+                playerMoneyText.transform.GetChild(3).gameObject.SetActive(false);
+            });
+        }
+        else if (startingPlayerId == 1 && winnerId == 0)
+        {
+            player2.totalCoin -= opponentBid;
+            opponentMoneyText.text = player2.totalCoin.ToString();
+            opponentMoneyText.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = (-opponentBid).ToString();
+            opponentMoneyText.transform.GetChild(3).gameObject.SetActive(true);     
+            opponentMoneyText.transform.DOShakeRotation(1.5f, new Vector3(0,0,10f),10,10).OnComplete(delegate(){
+                opponentMoneyText.transform.GetChild(3).gameObject.SetActive(false);
+            });   
         }
     }
 
@@ -464,6 +589,7 @@ public class GameManager : MonoBehaviour {
 
             playerBid = bidAmounts[index];
             playerBidTime = Time.timeSinceLevelLoad - bidStartTime;
+            totalBidPlayer += playerBid;
 
             // indicators
             bidIndicatorsParent.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = playerBidTime.ToString("0.00");
@@ -487,6 +613,8 @@ public class GameManager : MonoBehaviour {
                 });
                 tutorialHandBid.SetActive(false);
             }
+
+            currentQuestionData.chosenBidIndexCounts[index]++;
         }
 	}
 
@@ -494,6 +622,7 @@ public class GameManager : MonoBehaviour {
 	{        
 		opponentBid = bidAmounts[index];
 		opponentBidTime = Time.timeSinceLevelLoad - bidStartTime;
+        totalBidOpponent += opponentBid;
 
         // indicators
         bidIndicatorsParent.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = opponentBidTime.ToString("0.00");
@@ -509,8 +638,9 @@ public class GameManager : MonoBehaviour {
     IEnumerator ShowQuestion()
     {
         bidButtonsParent.SetActive(false);
-        yield return new WaitForSeconds(choiceApperTime);
         PlayMusic(2);
+        yield return new WaitForSeconds(choiceApperTime);
+        
 
         questionText.gameObject.SetActive(true);
         questionTimer = 0;
@@ -557,7 +687,7 @@ public class GameManager : MonoBehaviour {
             playerIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
             opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
             
-            // we can put a simple bounce animation to infotext TODO
+            infoText.transform.DOShakeRotation(1f,new Vector3(0,0,10f),20,50);
             infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b> cevaplıyor";
             botManager.Choose();
         }
@@ -567,7 +697,7 @@ public class GameManager : MonoBehaviour {
             playerIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
             opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
 
-            // we can put a simple bounce animation to infotext TODO
+            infoText.transform.DOShakeRotation(1f,new Vector3(0,0,10f),20,50);
             infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b> cevaplıyor";
         }
 
@@ -589,7 +719,6 @@ public class GameManager : MonoBehaviour {
             if (currentQuestion.rightAnswerIndex == index) // Answered right!
             {
                 PlaySound(8);
-                // TODO get and save data for question difficulty
                 Vector3 pos = optionTexts[index].transform.position;
                 animStar.transform.position = new Vector3(pos.x, pos.y, 0);
 
@@ -602,11 +731,12 @@ public class GameManager : MonoBehaviour {
                 {
                     botManager.SendEmojiLose();
                 }
+
+                currentQuestionData.answeredRightCount++;
             }
             else // Answered Wrong!
             {
                 PlaySound(9);
-                // TODO get and save data for question difficulty
                 optionTexts[index].transform.parent.GetComponent<Button>().enabled = false;
                 optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[1];
                 player1.wrongAnswersInDifficulties[currentQuestion.difficulty]++;
@@ -624,6 +754,8 @@ public class GameManager : MonoBehaviour {
                 {
                     botManager.SendEmojiWin();
                 }
+
+                currentQuestionData.answeredWrongCount++;
             }
 
             if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
@@ -634,6 +766,15 @@ public class GameManager : MonoBehaviour {
                 });
                 tutorialHandQuestion.SetActive(false);
                 PlayerPrefs.SetInt("IsTutorialCompeted", 1); // tutorial completed
+            }
+            currentQuestionData.chosenChoiceCounts[index]++;
+            if (GetAvaliableChoiceCount() == 0 || fiftyFiftyUsed)
+            {
+                currentQuestionData.firstAnsweringTimes.Add(questionTimer);
+            }
+            else
+            {
+                currentQuestionData.secondAnsweringTimes.Add(questionTimer);
             }
         }
     }
@@ -695,6 +836,9 @@ public class GameManager : MonoBehaviour {
 
             infoText.transform.Find("joker").gameObject.SetActive(true);
             infoText.text = "";
+
+            currentQuestionData.knowQuestionUsedTime++;
+
             StartCoroutine(KnowEnd());
         }
 	}
@@ -744,6 +888,9 @@ public class GameManager : MonoBehaviour {
 
             infoText.transform.Find("disable").gameObject.SetActive(true);
             infoText.text = "";
+
+            currentQuestionData.disableTwoUsedTime++;
+
             StartCoroutine(DisableEnd());
         }
     }
@@ -790,15 +937,18 @@ public class GameManager : MonoBehaviour {
     {
         Transform destination;
 
+        int winnerId = 0;
         if (playingPlayerId == 0)
         {
             playerScore++;
             destination = playerScoreStarsParent.transform.GetChild(playerScore-1);
+            winnerId = 0;
         }
         else
         {
             opponentScore++;
             destination = opponentScoreStarsParent.transform.GetChild(opponentScore-1);
+            winnerId = 1;
         }
 
         // Star animation
@@ -806,17 +956,28 @@ public class GameManager : MonoBehaviour {
 
         animStar.transform.localScale = Vector3.zero;
         animStar.SetActive(true);
-        animStar.transform.DOJump(destination.position, 4, 1, 2f);
-        animStar.transform.DORotate(new Vector3(0,0,1080), 2f, RotateMode.WorldAxisAdd).SetEase(Ease.InCubic).OnComplete(delegate(){
+        animStar.transform.DOJump(destination.position, 4, 1, 2f).SetEase(Ease.InCubic).OnComplete(delegate(){
             destination.GetComponent<Image>().sprite = fullStarSprite; 
             animStar.SetActive(false);
-            });
-        animStar.transform.DOScale(Vector3.one * 0.3f, 0.5f).SetEase(Ease.OutQuint);
-        animStar.transform.DOScale(Vector3.one * 0.159f, 1.5f).SetEase(Ease.OutQuint).SetDelay(1.5f); 
+            SendCoinsToWinner(winnerId);
+            ApplyCutToLoser(winnerId);
+            destination.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+            });;
+        // animStar.transform.DORotate(new Vector3(0,0,1080), 2f, RotateMode.WorldAxisAdd).SetEase(Ease.InCubic).OnComplete(delegate(){
+        //     destination.GetComponent<Image>().sprite = fullStarSprite; 
+        //     animStar.SetActive(false);
+        //     SendCoinsToWinner(winnerId);
+        //     ApplyCutToLoser(winnerId);
+        //     });
+        animStar.transform.DOScale(new Vector3(0.6f,0.6f,0), 1f).SetEase(Ease.OutSine).OnComplete(delegate(){
+            animStar.transform.DOScale(new Vector3(0.159f,0.159f,0), 1f).SetEase(Ease.InQuart);
+        });
+        
     }
 
     void GoToTheNextTurn()
     {
+        SendQuestionData();
         if (turnCount < totalTurnCount && playerScore < Mathf.Floor(totalTurnCount/2) + 1 && opponentScore < Mathf.Floor(totalTurnCount/2) + 1)
         {
             turnCount++;
@@ -832,7 +993,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator GameOver()
     {
-        yield return new WaitForSeconds(2.1f);
+        yield return new WaitForSeconds(5.6f);
 
         foreach (Transform i in playerCoinsParent.transform)
         {
@@ -843,6 +1004,17 @@ public class GameManager : MonoBehaviour {
         {
             i.gameObject.SetActive(false);
         }
+
+        foreach (Transform i in accumulatedMoneyText.transform.parent.GetChild(0))
+        {
+            i.gameObject.SetActive(false);
+        }
+        accumulatedMoneyText.transform.parent.GetChild(4).gameObject.SetActive(false);
+
+        totalMoneyAccumulated = 0;
+        accumulatedMoneyText.text = 0 + " COIN";
+        playerMoneyText.text = player1.totalCoin.ToString();
+        opponentMoneyText.text = player2.totalCoin.ToString();
 
         endScreen.SetActive(true);
         questionLockObject.transform.parent.gameObject.SetActive(false);
@@ -858,14 +1030,12 @@ public class GameManager : MonoBehaviour {
         playerNameText.gameObject.SetActive(false);
         opponentNameText.gameObject.SetActive(false);
 
-        print(player1.totalCoin + " " + totalMoneyAccumulated + " " + player1.totalCoin + totalMoneyAccumulated);
-
         if(playerScore > opponentScore)
         {
             StartEndGameCoinFlow();
 
             endScreen.transform.Find("Win").gameObject.SetActive(true);
-            player1.totalCoin += totalMoneyAccumulated;
+            player1.totalCoin += totalBidPlayer;
             player1.score += 5;
             player1.wonGameCount++;
             opponentScoreStarsParent.SetActive(false);
@@ -879,7 +1049,9 @@ public class GameManager : MonoBehaviour {
         else
         {
             endScreen.transform.Find("Lose").gameObject.SetActive(true);
-            player2.totalCoin += totalMoneyAccumulated;
+            player2.totalCoin += totalBidOpponent;
+            opponentMoneyText.text = player2.totalCoin.ToString();
+
             player1.score += 1;
             playerScoreStarsParent.SetActive(false);
             PlaySound(5);
@@ -889,7 +1061,9 @@ public class GameManager : MonoBehaviour {
                 botManager.SendEmojiWin();
             }
         }
-        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = totalMoneyAccumulated.ToString() + " " + "COIN";
+
+        GetComponent<LevelManager>().CheckLevelUp();
+        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = (player1.totalCoin - startingCoin) + " " + "COIN";
         retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
         retryButton.transform.GetChild(0).GetComponent<Text>().text = "tekrar oyna";
         endGameInfoText.text = "";
@@ -905,51 +1079,69 @@ public class GameManager : MonoBehaviour {
     {
         PlayDelayedSound(2, 2.1f);
 
+        foreach (Transform i in chestCoinsParent.transform)
+        {
+            i.transform.localPosition = Vector3.zero;
+            i.gameObject.SetActive(true);
+        }
+
         int p1 = player1.totalCoin;
         int p2 = player2.totalCoin;
 
         if(playerScore > opponentScore)
         {
-            for (int i = 0; i <  Mathf.Clamp(Mathf.FloorToInt(totalMoneyAccumulated/30), 1, chestCoinsParent.transform.childCount); i++)
+            chestCoinsParent.transform.parent.DOShakeRotation(1 + 0.1f * Mathf.Clamp(Mathf.FloorToInt((totalBidPlayer)/50), 1, chestCoinsParent.transform.childCount), new Vector3(0,0,10f),50,50).SetDelay(2f);
+            for (int i = 0; i <  Mathf.Clamp(Mathf.FloorToInt((totalBidPlayer)/50), 1, chestCoinsParent.transform.childCount); i++)
             {
                 int no = i;
-                chestCoinsParent.transform.GetChild(i).DOMove(playerCoinsParent.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(2f + 0.1f*i).OnStart(delegate() {
-                    p1 += 30;
+                chestCoinsParent.transform.GetChild(i).DOMove(playerCoinsParent.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(2f + 0.1f*i)
+                .OnComplete(delegate(){
+                    p1 += 50;
+                    if (p1 == player1.totalCoin - (totalBidPlayer) % 50)
+                    {
+                        p1 += (totalBidPlayer) % 50;
+                    }
                     playerMoneyText.text = p1.ToString();
-                 }).OnComplete(delegate(){
-                     chestCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
-                 });
+
+                    chestCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
+                });
+                chestCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.6f, 0.5f).SetEase(Ease.Linear).SetDelay(2f + 0.1f*i);
+                chestCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.2148f, 0.5f).SetEase(Ease.Linear).SetDelay(2f + 0.1f*i + 0.5f);
 
                 playerIndicator.transform.DOShakeRotation(0.1f, new Vector3(0,0,10f),50,50).SetDelay(3f + 0.1f*i);
                 playerIndicator.transform.DOShakeScale(0.1f, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(3f + 0.1f*i);
             }
-            p1 += totalMoneyAccumulated % 30;
-            playerMoneyText.text = p1.ToString();
         }
-        else
-        {
-            for (int i = 0; i <  Mathf.Clamp(Mathf.FloorToInt(totalMoneyAccumulated/30), 1, chestCoinsParent.transform.childCount); i++)
-            {
-                int no = i;
-                chestCoinsParent.transform.GetChild(i).DOMove(opponentCoinsParent.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(2f + 0.1f*i).OnStart(delegate() {
-                    p2 += 30;
-                    opponentMoneyText.text = p2.ToString();
-                 }).OnComplete(delegate(){
-                     chestCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
-                 });
+        // else
+        // {
+        //     for (int i = 0; i <  Mathf.Clamp(Mathf.FloorToInt((totalBidOpponent/2)/30), 1, chestCoinsParent.transform.childCount); i++)
+        //     {
+        //         int no = i;
+        //         chestCoinsParent.transform.GetChild(i).DOMove(opponentCoinsParent.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(2f + 0.1f*i).OnStart(delegate() {
+        //             p2 += 30;
+        //             opponentMoneyText.text = p2.ToString();
+        //          }).OnComplete(delegate(){
+        //              if (i == Mathf.Clamp(Mathf.FloorToInt((totalBidOpponent/2)/30), 1, chestCoinsParent.transform.childCount) - 1)
+        //              {
+        //                 p2 += (totalBidOpponent/2) % 30;
+        //                 opponentMoneyText.text = p2.ToString();
+        //              }
+        //              chestCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
+        //          });
 
-                opponentIndicator.transform.DOShakeRotation(0.1f, new Vector3(0,0,20f),90,90).SetDelay(3f + 1.1f*i);
-                opponentIndicator.transform.DOShakeScale(0.1f, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(3f + 1.1f*i);
-            }
-            p2 += totalMoneyAccumulated % 30;
-            opponentMoneyText.text = p2.ToString();
-        }
+        //         opponentIndicator.transform.DOShakeRotation(0.1f, new Vector3(0,0,20f),90,90).SetDelay(3f + 1.1f*i);
+        //         opponentIndicator.transform.DOShakeScale(0.1f, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(3f + 1.1f*i);
+        //     }
+        // }
     }
 
     public void DoubleTheCoin()
     {
-        player1.totalCoin += totalMoneyAccumulated;
-        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = (totalMoneyAccumulated *2).ToString() + " " + "COIN";
+        doublecoinButton.SetActive(false);
+        player1.totalCoin += totalBidPlayer;
+        StartEndGameCoinFlow();
+        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = (player1.totalCoin - startingCoin).ToString() + " COIN";
+        
         SendUserData();
     } 
 
@@ -958,7 +1150,10 @@ public class GameManager : MonoBehaviour {
         if (ConnectionManager.isOnline)
         {
             PlayerPrefs.SetString("userData", JsonUtility.ToJson(player1));
-            DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+            if(reference == null)
+            {
+                reference = FirebaseDatabase.DefaultInstance.RootReference;
+            }
             reference.Child("userList").Child(player1.userId).SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
         }
         else
@@ -978,33 +1173,76 @@ public class GameManager : MonoBehaviour {
     void SendQuestionData()
     {
         // save question data to firebase
+        #if ! UNITY_EDITOR
+            FirebaseDatabase.DefaultInstance.GetReference("questionDataList/"+currentQuestion.questionId).GetValueAsync().ContinueWith(task => {
+                if (task.IsFaulted) {
+                    // Handle the error...
+                    Debug.LogError("Error in FirebaseStart");
+                }
+                else if (task.IsCompleted) {
+                    QuestionData realTimeQuestionData = JsonUtility.FromJson<QuestionData>(task.Result.GetRawJsonValue());
 
-        // aşağıdaki fonksiyondan örnek al
-        // private void WriteNewScore(string userId, int score) {
-        //     // Create new entry at /user-scores/$userid/$scoreid and at
-        //     // /leaderboard/$scoreid simultaneously
-        //     string key = mDatabase.Child("scores").Push().Key;
-        //     LeaderBoardEntry entry = new LeaderBoardEntry(userId, score);
-        //     Dictionary<string, Object> entryValues = entry.ToDictionary();
+                    print(JsonUtility.ToJson(realTimeQuestionData));
+                    print(JsonUtility.ToJson(currentQuestionData));
 
-        //     Dictionary<string, Object> childUpdates = new Dictionary<string, Object>();
-        //     childUpdates["/scores/" + key] = entryValues;
-        //     childUpdates["/user-scores/" + userId + "/" + key] = entryValues;
+                    realTimeQuestionData.answeredRightCount += currentQuestionData.answeredRightCount;
+                    realTimeQuestionData.answeredWrongCount += currentQuestionData.answeredWrongCount;
+                    realTimeQuestionData.knowQuestionUsedTime += currentQuestionData.knowQuestionUsedTime;
+                    realTimeQuestionData.disableTwoUsedTime += currentQuestionData.disableTwoUsedTime;
+                    
+                    for (int i = 0; i <  realTimeQuestionData.chosenChoiceCounts.Length; i++)
+                    {
+                        realTimeQuestionData.chosenChoiceCounts[i] += currentQuestionData.chosenChoiceCounts[i];
+                    }
+                    
+                    for (int i = 0; i <  realTimeQuestionData.chosenBidIndexCounts.Length; i++)
+                    {
+                        realTimeQuestionData.chosenBidIndexCounts[i] += currentQuestionData.chosenBidIndexCounts[i];
+                    }
 
-        //     mDatabase.UpdateChildrenAsync(childUpdates);
-        // }
+                    for (int i = 0; i <  currentQuestionData.bidGivingTimes.Count; i++)
+                    {
+                        realTimeQuestionData.bidGivingTimes.Add(currentQuestionData.bidGivingTimes[i]);
+                    }
 
+                    for (int i = 0; i <  currentQuestionData.firstAnsweringTimes.Count; i++)
+                    {
+                        realTimeQuestionData.firstAnsweringTimes.Add(currentQuestionData.firstAnsweringTimes[i]);
+                    }
 
+                    for (int i = 0; i <  currentQuestionData.secondAnsweringTimes.Count; i++)
+                    {
+                        realTimeQuestionData.secondAnsweringTimes.Add(currentQuestionData.secondAnsweringTimes[i]);
+                    }
 
-        // DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
-		// reference.Child("questionData").Child(currentQuestion.questionId.ToString()).Child .SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
+                    if(reference == null)
+                    {
+                        reference = FirebaseDatabase.DefaultInstance.RootReference;
+                    }
+                    reference.Child("questionDataList").Child(currentQuestion.questionId.ToString()).SetRawJsonValueAsync(JsonUtility.ToJson(realTimeQuestionData));
+                }
+            });
+        #endif
     }
 
-    IEnumerator CleanScreen()
+    IEnumerator CleanScreen(bool keepMoney = false)
     {
         gameState = 3; // to stop the timer
         infoText.text = "";
-        yield return new WaitForSeconds(2f);
+        if (keepMoney)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(5.5f);
+            totalMoneyAccumulated = 0;
+            accumulatedMoneyText.text = 0 + " COIN";
+        }
+        
+        playerMoneyText.text = player1.totalCoin.ToString();
+        opponentMoneyText.text = player2.totalCoin.ToString();
+
         for(int i = 0; i < optionTexts.Length; i++)
         {
             optionTexts[i].text = "";
@@ -1018,9 +1256,21 @@ public class GameManager : MonoBehaviour {
             bidButtonsParent.transform.GetChild(i).GetComponent<Image>().sprite = bidSprites[bidSprites.Length-1];
         }
 
+        foreach (Transform i in accumulatedMoneyText.transform.parent.GetChild(0))
+        {
+            i.gameObject.SetActive(false);
+        }
+
         questionText.gameObject.SetActive(false);
         questionLockObject.SetActive(true);
         bidIndicatorsParent.SetActive(false);
+
+        playerMoneyText.gameObject.SetActive(false);
+        opponentMoneyText.gameObject.SetActive(false);
+        playerNameText.gameObject.SetActive(true);
+        opponentNameText.gameObject.SetActive(true);
+
+        accumulatedMoneyText.transform.parent.GetChild(4).gameObject.SetActive(false);
 
         playerIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
         opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
@@ -1070,7 +1320,7 @@ public class GameManager : MonoBehaviour {
                 {
                     GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex = 4;
                 }
-                StartCoroutine(DelayedGoToMenu()); // TODO load player choose
+                StartCoroutine(DelayedGoToMenu());
             }
         }
         else

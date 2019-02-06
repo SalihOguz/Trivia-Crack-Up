@@ -7,9 +7,10 @@
             "choice2": "Random Only Memory",
             "choice3": "Reach Access Memory",
             "choice4": "Redirect Adaqute Memory",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Read Only Memory",
             "difficulty": 1,
-            "category": "Bili\u015fim"
+            "category": "Bili\u015fim",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 1,
@@ -18,9 +19,10 @@
             "choice2": "Kad\u0131rga",
             "choice3": "Denizalt\u0131",
             "choice4": "Mavna",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Denizalt\u0131",
             "difficulty": 2,
-            "category": "Bilim-Teknik"
+            "category": "Bilim-Teknik",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 2,
@@ -29,9 +31,10 @@
             "choice2": "Eflatun",
             "choice3": "Aristotales",
             "choice4": "Farabi",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Eflatun",
             "difficulty": 0,
-            "category": "Felsefe"
+            "category": "Felsefe",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 3,
@@ -40,9 +43,10 @@
             "choice2": "Uygur Yaz\u0131tlar\u0131",
             "choice3": "Orhun Yaz\u0131tlar\u0131",
             "choice4": "K\u00fcl Tigin Yaz\u0131tlar\u0131",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Orhun Yaz\u0131tlar\u0131",
             "difficulty": 0,
-            "category": "Tarih"
+            "category": "Tarih",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 4,
@@ -51,9 +55,10 @@
             "choice2": "Limon",
             "choice3": "Bizim City",
             "choice4": "Bay Yanl\u0131\u015f",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Bizim City",
             "difficulty": 0,
-            "category": "TV"
+            "category": "TV",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 5,
@@ -62,9 +67,10 @@
             "choice2": "Collina",
             "choice3": "Leonardo Da Vinci",
             "choice4": "Rafael",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Collina",
             "difficulty": 1,
-            "category": "Sanat"
+            "category": "Sanat",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 6,
@@ -73,9 +79,10 @@
             "choice2": "Trafik",
             "choice3": "\u00d6ld\u00fcren Cazibe",
             "choice4": "Chicago",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Zorro",
             "difficulty": 0,
-            "category": "Film"
+            "category": "Film",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 7,
@@ -84,9 +91,10 @@
             "choice2": "Melih Kibar",
             "choice3": "Erkan O\u011fur",
             "choice4": "Cahit Berkay",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Cahit Berkay",
             "difficulty": 0,
-            "category": "Sanat"
+            "category": "Sanat",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 8,
@@ -95,9 +103,10 @@
             "choice2": "Julia Roberts",
             "choice3": "Nicole Kidman",
             "choice4": "Catherine Zeta Jones",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Nicole Kidman",
             "difficulty": 1,
-            "category": "Film"
+            "category": "Film",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 9,
@@ -106,9 +115,10 @@
             "choice2": "Kemal Tengir\u015fek",
             "choice3": "Talat Sait Halman",
             "choice4": "Adnan Ad\u0131var",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Talat Sait Halman",
             "difficulty": 2,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 10,
@@ -117,9 +127,10 @@
             "choice2": "Erime",
             "choice3": "Buharla\u015fma",
             "choice4": "S\u00fcblimle\u015fme",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Donma",
             "difficulty": 0,
-            "category": "Bilim "
+            "category": "Bilim ",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 11,
@@ -128,9 +139,10 @@
             "choice2": "Adem Kemi\u011fi",
             "choice3": "Adem Yuta\u011f\u0131",
             "choice4": "Adem Elmas\u0131",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Adem Elmas\u0131",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 12,
@@ -139,9 +151,10 @@
             "choice2": "Periyodik Cetvel",
             "choice3": "Gruplama Cetveli",
             "choice4": "Atomik Periyot",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Periyodik Cetvel",
             "difficulty": 0,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 13,
@@ -150,9 +163,10 @@
             "choice2": "Civa",
             "choice3": "Bak\u0131r",
             "choice4": "G\u00fcm\u00fc\u015f",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Bak\u0131r",
             "difficulty": 0,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 14,
@@ -161,9 +175,10 @@
             "choice2": "Termostatik",
             "choice3": "Termomekanik",
             "choice4": "Termoelektirik",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Termodinamik",
             "difficulty": 1,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 15,
@@ -172,9 +187,10 @@
             "choice2": "Akabe",
             "choice3": "Sahabe",
             "choice4": "Habe\u015fi",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Sahabe",
             "difficulty": 1,
-            "category": "Tarih"
+            "category": "Tarih",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 16,
@@ -183,9 +199,10 @@
             "choice2": "Cephe",
             "choice3": "Kesit",
             "choice4": "Profil",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Profil",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 17,
@@ -194,9 +211,10 @@
             "choice2": "Demir Yolu",
             "choice3": "Deniz Yolu",
             "choice4": "Hava Yolu",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Deniz Yolu",
             "difficulty": 2,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 18,
@@ -205,9 +223,10 @@
             "choice2": "Dekatlon",
             "choice3": "Squash",
             "choice4": "Jianzi",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Kayakl\u0131 Ko\u015fu",
             "difficulty": 0,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 19,
@@ -216,9 +235,10 @@
             "choice2": "Alt\u0131 Pas",
             "choice3": "Santra",
             "choice4": "Degajman",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Alt\u0131 Pas",
             "difficulty": 2,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 20,
@@ -227,9 +247,10 @@
             "choice2": "Dripling",
             "choice3": "Plonje",
             "choice4": "Verka\u00e7",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Dripling",
             "difficulty": 1,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 21,
@@ -238,9 +259,10 @@
             "choice2": "Detroit Pistons",
             "choice3": "Chicago Bulls",
             "choice4": "Boston Celtics",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Chicago Bulls",
             "difficulty": 1,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 22,
@@ -249,9 +271,10 @@
             "choice2": "Yokozuna",
             "choice3": "Ozeki",
             "choice4": "Makushita",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Yokozuna",
             "difficulty": 2,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 23,
@@ -260,9 +283,10 @@
             "choice2": "Haris",
             "choice3": "Bencil",
             "choice4": "Cazip",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Cazip",
             "difficulty": 0,
-            "category": "Kelime"
+            "category": "Kelime",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 24,
@@ -271,9 +295,10 @@
             "choice2": "Fettan",
             "choice3": "Ferik",
             "choice4": "Koko\u015f",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Fettan",
             "difficulty": 0,
-            "category": "kelime"
+            "category": "Kelime",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 25,
@@ -282,9 +307,10 @@
             "choice2": "Kabaday\u0131",
             "choice3": "Arkada\u015f",
             "choice4": "Kovboy",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Arkada\u015f",
             "difficulty": 0,
-            "category": "Kelime"
+            "category": "Kelime",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 26,
@@ -293,9 +319,10 @@
             "choice2": "Huylu",
             "choice3": "Aheste",
             "choice4": "Alesta",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Alesta",
             "difficulty": 2,
-            "category": "Kelime"
+            "category": "Kelime",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 27,
@@ -304,9 +331,10 @@
             "choice2": "Dayan\u0131\u015fma",
             "choice3": "Ticaret",
             "choice4": "Kom\u00fcnikasyon",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Ortak Pazar",
             "difficulty": 1,
-            "category": "Bilgi"
+            "category": "Bilgi",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 28,
@@ -315,9 +343,10 @@
             "choice2": "\u0130svi\u00e7reliler",
             "choice3": "\u0130ngilizler",
             "choice4": "Araplar",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "\u0130svi\u00e7reliler",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 29,
@@ -326,9 +355,10 @@
             "choice2": "Tamir",
             "choice3": "Tadilat",
             "choice4": "Revizyon",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Revizyon",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 30,
@@ -337,9 +367,10 @@
             "choice2": "Risale",
             "choice3": "Terek",
             "choice4": "Ni\u015f",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Terek",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 31,
@@ -348,9 +379,10 @@
             "choice2": "R\u00fczake",
             "choice3": "Hasabet",
             "choice4": "Istar",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Istar",
             "difficulty": 2,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 32,
@@ -359,9 +391,10 @@
             "choice2": "Hicr etmek",
             "choice3": "Miat etmek",
             "choice4": "Zerk etmek",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Biat etmek",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 33,
@@ -370,9 +403,10 @@
             "choice2": "Kel Mahmut",
             "choice3": "Badi Ekrem",
             "choice4": "\u0130nek \u015eaban",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "G\u00fcd\u00fck Sabri",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 34,
@@ -381,9 +415,10 @@
             "choice2": "Allame",
             "choice3": "Allegro",
             "choice4": "\u00c7e\u015fni",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Allegro",
             "difficulty": 1,
-            "category": "Sanat"
+            "category": "Sanat",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 35,
@@ -392,9 +427,10 @@
             "choice2": "Turgut \u00d6zakman",
             "choice3": "Kemal Tahir",
             "choice4": "Mehmet Niyazi",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Kemal Tahir",
             "difficulty": 1,
-            "category": "Edebiyat"
+            "category": "Edebiyat",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 36,
@@ -403,9 +439,10 @@
             "choice2": "Prima",
             "choice3": "Prova",
             "choice4": "Pr\u00f6miyer",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Pr\u00f6miyer",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 37,
@@ -414,9 +451,10 @@
             "choice2": "Melicarte",
             "choice3": "George Dandin",
             "choice4": "Alceste",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Don Juan",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 38,
@@ -425,9 +463,10 @@
             "choice2": "Agnostik",
             "choice3": "Akrostik",
             "choice4": "Akrolik",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Akrosti\u015f",
             "difficulty": 2,
-            "category": "Edebiyat"
+            "category": "Edebiyat",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 39,
@@ -436,9 +475,10 @@
             "choice2": "II.Mahmut",
             "choice3": "Yavuz Sultan Selim",
             "choice4": "Kanuni Sultan S\u00fcleyman",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Fatih Sultan Mehmet",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 40,
@@ -447,9 +487,10 @@
             "choice2": "Ozan Orhun",
             "choice3": "Dede Korkut",
             "choice4": "K\u00fcltigin",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Dede Korkut",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 41,
@@ -458,9 +499,10 @@
             "choice2": "Stephen King",
             "choice3": "Pavel Kohout",
             "choice4": "Jean Christophe Grange",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Dan Brown",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 42,
@@ -469,9 +511,10 @@
             "choice2": "Dilber",
             "choice3": "Zenne",
             "choice4": "Acem",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Zenne",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 43,
@@ -480,9 +523,10 @@
             "choice2": "\u0130brahim Tatl\u0131ses",
             "choice3": "Sadri Al\u0131\u015f\u0131k",
             "choice4": "\u0130brahim Karag\u00fclle",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Feridun Karakaya",
             "difficulty": 1,
-            "category": "Sinema"
+            "category": "Sinema",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 44,
@@ -491,9 +535,10 @@
             "choice2": "Dubl\u00f6r",
             "choice3": "Dublaj",
             "choice4": "Telesine",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Dublaj",
             "difficulty": 0,
-            "category": "Sinema"
+            "category": "Sinema",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 45,
@@ -502,9 +547,10 @@
             "choice2": "Tolstoy",
             "choice3": "Gorki",
             "choice4": "Dostoyevski",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Balzac",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 46,
@@ -513,9 +559,10 @@
             "choice2": "Mo\u011folistan",
             "choice3": "\u0130spanya",
             "choice4": "Rusya",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Rusya",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 47,
@@ -524,9 +571,10 @@
             "choice2": "Mazhar Alanson",
             "choice3": "B\u00fclent Orta\u00e7gil",
             "choice4": "\u0130lhan \u015ee\u015fen",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Fikret K\u0131z\u0131lok",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 48,
@@ -535,9 +583,10 @@
             "choice2": "III.Ahmet",
             "choice3": "III.Selim",
             "choice4": "III.Mehmet",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "III.Selim",
             "difficulty": 2,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 49,
@@ -546,9 +595,10 @@
             "choice2": "Yenge\u00e7",
             "choice3": "Ku\u015f",
             "choice4": "K\u00f6pek",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Yenge\u00e7",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 50,
@@ -557,9 +607,10 @@
             "choice2": "Kataliz\u00f6r",
             "choice3": "Fakt\u00f6riz\u00f6r",
             "choice4": "Mobiliz\u00f6r",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Kataliz\u00f6r",
             "difficulty": 1,
-            "category": "bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 51,
@@ -568,9 +619,10 @@
             "choice2": "Mikral",
             "choice3": "Lamel",
             "choice4": "Mikro",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Lamel",
             "difficulty": 1,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 52,
@@ -579,9 +631,10 @@
             "choice2": "Loewenhook",
             "choice3": "Newton",
             "choice4": "Ar\u015fimet",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Ar\u015fimet",
             "difficulty": 1,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 53,
@@ -590,9 +643,10 @@
             "choice2": "Filum",
             "choice3": "Alem",
             "choice4": "Familya",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Alem",
             "difficulty": 2,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 54,
@@ -601,9 +655,10 @@
             "choice2": "Mikoloji",
             "choice3": "\u0130htiyoloji",
             "choice4": "Entomoloji",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Ornitoloji",
             "difficulty": 2,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 55,
@@ -612,9 +667,10 @@
             "choice2": "Reosta",
             "choice3": "Bobin",
             "choice4": "Transformat\u00f6r",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Reosta",
             "difficulty": 2,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 56,
@@ -623,9 +679,10 @@
             "choice2": "Suyani",
             "choice3": "Su \u00fcr\u00fcnleri",
             "choice4": "Hidroterapi",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Hidroterapi",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 57,
@@ -634,9 +691,10 @@
             "choice2": "Mikado",
             "choice3": "Dama",
             "choice4": "Dangram",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Mikado",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 58,
@@ -645,9 +703,10 @@
             "choice2": "Cukka",
             "choice3": "Avanta",
             "choice4": "Zula",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Avanta",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 59,
@@ -656,9 +715,10 @@
             "choice2": "Rounders",
             "choice3": "Disk atma",
             "choice4": "Cirit atma",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Rounders",
             "difficulty": 1,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 60,
@@ -667,9 +727,10 @@
             "choice2": "Trambolin",
             "choice3": "Barfiks",
             "choice4": "Yer hareketleri",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Squash",
             "difficulty": 1,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 61,
@@ -678,9 +739,10 @@
             "choice2": "Alpay \u00d6zalan",
             "choice3": "Abdullah Ercan",
             "choice4": "B\u00fclent Korkmaz",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Alpay \u00d6zalan",
             "difficulty": 2,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 62,
@@ -689,9 +751,10 @@
             "choice2": 2,
             "choice3": 3,
             "choice4": 5,
-            "rightAnswerIndex": 3,
+            "rightAnswer": 3,
             "difficulty": 2,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 63,
@@ -700,9 +763,10 @@
             "choice2": "Elti",
             "choice3": "Yenge",
             "choice4": "Bald\u0131z",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "G\u00f6r\u00fcmce",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 64,
@@ -711,9 +775,10 @@
             "choice2": "Demiryama",
             "choice3": "Demiryan\u0131",
             "choice4": "Demir kapan",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Demir kapan",
             "difficulty": 2,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 65,
@@ -722,9 +787,10 @@
             "choice2": "Filo",
             "choice3": "Silo",
             "choice4": "\u0130glo",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Filo",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 66,
@@ -733,9 +799,10 @@
             "choice2": "\u0130kramiye",
             "choice3": "E\u015fantiyon",
             "choice4": "\u00d6d\u00fcl",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "E\u015fantiyon",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 67,
@@ -744,9 +811,10 @@
             "choice2": "Tayy\u00f6r",
             "choice3": "Tennure",
             "choice4": "Semazen",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Tennure",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 68,
@@ -755,9 +823,10 @@
             "choice2": "Hektar",
             "choice3": "Mil",
             "choice4": "Kilometre",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Hektar",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 69,
@@ -766,9 +835,10 @@
             "choice2": "Kalp",
             "choice3": "Kulak",
             "choice4": "Akci\u011fer",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Kalp",
             "difficulty": 0,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 70,
@@ -777,9 +847,10 @@
             "choice2": "Ni\u015fasta",
             "choice3": "Sodyumbikarbonat",
             "choice4": "Vanilin",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Sodyumbikarbonat",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 71,
@@ -788,9 +859,10 @@
             "choice2": "Potasyum",
             "choice3": "Arsenik",
             "choice4": "Astatin",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Arsenik",
             "difficulty": 1,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 72,
@@ -799,9 +871,10 @@
             "choice2": "Barometre",
             "choice3": "Manometre",
             "choice4": "Galvanometre",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Manometre",
             "difficulty": 2,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 73,
@@ -810,9 +883,10 @@
             "choice2": "C\u00fcneyt Ark\u0131n",
             "choice3": "Kemal Sunal",
             "choice4": "Tar\u0131k Akan",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Tar\u0131k Akan",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 74,
@@ -821,9 +895,10 @@
             "choice2": "Necip Faz\u0131l K\u0131sak\u00fcrek",
             "choice3": "Cahit S\u0131tk\u0131 Taranc\u0131",
             "choice4": "Orhan Veli Kan\u0131k",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Cahit S\u0131tk\u0131 Taranc\u0131",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 75,
@@ -832,9 +907,10 @@
             "choice2": "Ahmet Rasim",
             "choice3": "Beh\u00e7et Necatigil",
             "choice4": "Ahmet Hamdi Tanp\u0131nar",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Ahmet Hamdi Tanp\u0131nar",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 76,
@@ -843,9 +919,10 @@
             "choice2": "Cura",
             "choice3": "Tar",
             "choice4": "Kopuz",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Kopuz",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 77,
@@ -854,9 +931,10 @@
             "choice2": "Minyat\u00fcr",
             "choice3": "Tezhip",
             "choice4": "Grav\u00fcr",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Grav\u00fcr",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 78,
@@ -865,9 +943,10 @@
             "choice2": "Kemalettin Kamu",
             "choice3": "Cahit S\u0131tk\u0131 Taranc\u0131",
             "choice4": "H.Fahri Ozansoy",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "F.H\u00fcsn\u00fc Da\u011flarca",
             "difficulty": 2,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 79,
@@ -876,9 +955,10 @@
             "choice2": "Peride Celal",
             "choice3": "Halide Edip Ad\u0131var",
             "choice4": "Halide Nusret Zorlutuna",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Kerime Nadir Azrak",
             "difficulty": 2,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 80,
@@ -887,9 +967,10 @@
             "choice2": "Ben H\u00fcr",
             "choice3": "R\u00fczgar Gibi Ge\u00e7ti",
             "choice4": "Gladyat\u00f6r",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Ben H\u00fcr",
             "difficulty": 3,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 81,
@@ -898,19 +979,22 @@
             "choice2": "Bach",
             "choice3": "Puccini",
             "choice4": "Bizet",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Puccini",
             "difficulty": 3,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 82,
             "questionText": "Osmanl\u0131' da 1718'den 1730'a kadar s\u00fcren d\u00f6neme \u015fair''Lale Devri'' ad\u0131n\u0131 vermi\u015f ve bu adland\u0131rma tarihe ge\u00e7mi\u015ftir.Bu d\u00f6neme Lale Devri ismini veren \u015fair kimdir?",
             "choice1": "Necip Faz\u0131l",
-            "choice2": "Yahya Kemal ",
+            "choice2": "Yahya Kemal",
             "choice3": "\u015einasi",
             "choice4": "Faruk Nafiz \u00c7aml\u0131bel",
+            "rightAnswer": "Yahya Kemal",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 83,
@@ -919,9 +1003,10 @@
             "choice2": "\u015eort",
             "choice3": "Bermuda",
             "choice4": "\u015ealvar",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Kispet",
             "difficulty": 0,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 84,
@@ -930,9 +1015,10 @@
             "choice2": "Kung-Fu",
             "choice3": "Bungee Jumping",
             "choice4": "Kaykay",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Halat \u00e7ekme",
             "difficulty": 0,
-            "category": "spor"
+            "category": "spor",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 85,
@@ -941,9 +1027,10 @@
             "choice2": "Sar\u0131-lacivert",
             "choice3": "Sar\u0131-k\u0131rm\u0131z\u0131",
             "choice4": "K\u0131rm\u0131z\u0131-siyah",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Sar\u0131-k\u0131rm\u0131z\u0131",
             "difficulty": 2,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 86,
@@ -952,8 +1039,10 @@
             "choice2": "Kuzey kombine",
             "choice3": "Dekatlon",
             "choice4": "Pentatlon",
+            "rightAnswer": "Kuzey kombine",
             "difficulty": 2,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 87,
@@ -962,8 +1051,10 @@
             "choice2": "Buz hokeyi",
             "choice3": "Tenis",
             "choice4": "Jianzi",
+            "rightAnswer": "Kulplu Beygir",
             "difficulty": 0,
-            "category": "Spor"
+            "category": "Spor",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 88,
@@ -972,9 +1063,10 @@
             "choice2": "Tamahkar",
             "choice3": "Pinti",
             "choice4": "Nekes",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Nank\u00f6r",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 89,
@@ -983,9 +1075,10 @@
             "choice2": "Avanta",
             "choice3": "\u00d6denek",
             "choice4": "Bah\u015fi\u015f",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Bah\u015fi\u015f",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 90,
@@ -994,9 +1087,10 @@
             "choice2": "Tarumar",
             "choice3": "Teredd\u00fct",
             "choice4": "M\u00fctereddit",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Terenn\u00fcm",
             "difficulty": 3,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 91,
@@ -1005,9 +1099,10 @@
             "choice2": "Arp",
             "choice3": "Lir",
             "choice4": "Viyolonsel",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Viyolonsel",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 92,
@@ -1016,9 +1111,10 @@
             "choice2": "Riya",
             "choice3": "F\u00fct\u00fcvvet",
             "choice4": "Neyyire",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "F\u00fct\u00fcvvet",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 93,
@@ -1027,9 +1123,10 @@
             "choice2": "Talak",
             "choice3": "Rivaye",
             "choice4": "Galat",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Talak",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 94,
@@ -1038,9 +1135,10 @@
             "choice2": "Ka\u015fkaval",
             "choice3": "K\u0131ra\u00e7a",
             "choice4": "Binit",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Binit",
             "difficulty": 3,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 95,
@@ -1049,9 +1147,10 @@
             "choice2": "Roman",
             "choice3": "Romanesk",
             "choice4": "Destan",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Fabl",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 96,
@@ -1060,9 +1159,10 @@
             "choice2": "Lome",
             "choice3": "Guaj",
             "choice4": "Sa\u00e7atura",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Guaj",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 97,
@@ -1071,9 +1171,10 @@
             "choice2": "Oktay Rifat",
             "choice3": "Orhan Veli",
             "choice4": "Melih Cevdet",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Orhan Veli",
             "difficulty": 3,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 98,
@@ -1082,9 +1183,10 @@
             "choice2": "Leh",
             "choice3": "Bohem",
             "choice4": "Polikarya",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Leh",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 99,
@@ -1093,8 +1195,10 @@
             "choice2": "Parasempati",
             "choice3": "REFLEKS",
             "choice4": "Lenfatik Tepki",
+            "rightAnswer": "Refleks",
             "difficulty": 1,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 100,
@@ -1103,9 +1207,10 @@
             "choice2": "Paratiroid",
             "choice3": "Tiroid",
             "choice4": "B\u00f6brek \u00fcst\u00fc",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Tiroid",
             "difficulty": 0,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 101,
@@ -1114,8 +1219,10 @@
             "choice2": "A",
             "choice3": "N",
             "choice4": "Na",
+            "rightAnswer": "N",
             "difficulty": 2,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 102,
@@ -1124,9 +1231,10 @@
             "choice2": "\u0130zobar",
             "choice3": "\u0130zoton",
             "choice4": "\u0130zotop",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "\u0130zotop",
             "difficulty": 2,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 103,
@@ -1135,9 +1243,10 @@
             "choice2": "Dilin arkas\u0131nda",
             "choice3": "Dilin ucunda",
             "choice4": "Dilin alt k\u0131sm\u0131nda",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Dilin arkas\u0131nda",
             "difficulty": 2,
-            "category": "Bilim"
+            "category": "Bilim",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 104,
@@ -1146,9 +1255,10 @@
             "choice2": "Ta\u015f\u0131y\u0131c\u0131",
             "choice3": "Komisyoner",
             "choice4": "Ta\u015feron",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Ta\u015feron",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 105,
@@ -1157,9 +1267,10 @@
             "choice2": "Sarn\u0131\u00e7",
             "choice3": "H\u00f6y\u00fck",
             "choice4": "Fahur",
-            "rightAnswerIndex": 1,
+            "rightAnswer": "Sarn\u0131\u00e7",
             "difficulty": 0,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
         },
         {
             "questionId": 106,
@@ -1168,9 +1279,10 @@
             "choice2": "Etkorikse",
             "choice3": "Etr\u00fckseri",
             "choice4": "Etoklasi",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Etokrasi",
             "difficulty": 2,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 107,
@@ -1179,9 +1291,10 @@
             "choice2": "Keanu Reeves",
             "choice3": "Robert Redford",
             "choice4": "Gene Hackman",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Kevin Costner",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 108,
@@ -1190,9 +1303,10 @@
             "choice2": "Aleksandr Popov",
             "choice3": "Trevor Bayl\u0131s",
             "choice4": "Guguelmo Marcon\u0131",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Guguelmo Marcon\u0131",
             "difficulty": 2,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 109,
@@ -1201,9 +1315,10 @@
             "choice2": "Vitiligo",
             "choice3": "Crohn",
             "choice4": "Charcot",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Werner",
             "difficulty": 1,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         },
         {
             "questionId": 110,
@@ -1212,9 +1327,10 @@
             "choice2": "Mina Urgan",
             "choice3": "Ya\u015far Kemal",
             "choice4": "Ay\u015fe Kulin",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Ay\u015fe Kulin",
             "difficulty": 2,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 111,
@@ -1223,9 +1339,10 @@
             "choice2": "Iconforge",
             "choice3": "Napster",
             "choice4": "Netscape",
-            "rightAnswerIndex": 2,
+            "rightAnswer": "Napster",
             "difficulty": 3,
-            "category": "Genel K\u00fclt\u00fcr"
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
         },
         {
             "questionId": 112,
@@ -1234,9 +1351,10 @@
             "choice2": "Tom Cruise",
             "choice3": "Adam Sandler",
             "choice4": "Dustin Hoffman",
-            "rightAnswerIndex": 3,
+            "rightAnswer": "Dustin Hoffman",
             "difficulty": 1,
-            "category": "genel K\u00fclt\u00fcr"
+            "category": "genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
         },
         {
             "questionId": 113,
@@ -1245,9 +1363,1210 @@
             "choice2": "Elektroakustik",
             "choice3": "Rezonans",
             "choice4": "Mikrotonal",
-            "rightAnswerIndex": 0,
+            "rightAnswer": "Psikoakustik",
             "difficulty": 2,
-            "category": "genel K\u00fclt\u00fcr"
+            "category": "genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 114,
+            "questionText": "a\u015fa\u011f\u0131dakilerden hangisi tarihteki T\u00fcrk devletlerinden biri de\u011fildir?",
+            "choice1": "Hun \u0130mparatorlu\u011fu",
+            "choice2": "Avar Ka\u011fanl\u0131\u011f\u0131",
+            "choice3": "Emevi Devleti",
+            "choice4": "Sel\u00e7uklu Devleti",
+            "rightAnswer": "Emevi Devleti",
+            "difficulty": 2,
+            "category": "Tarih",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 115,
+            "questionText": "Galatasaray hangi y\u0131l UEFA kupas\u0131n\u0131 alm\u0131\u015ft\u0131r?",
+            "choice1": 2000,
+            "choice2": 2001,
+            "choice3": 2002,
+            "choice4": 2003,
+            "rightAnswer": 2000,
+            "difficulty": 2,
+            "category": "Spor",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 116,
+            "questionText": "K\u0131br\u0131s Bar\u0131\u015f Harekat\u0131 hangi tarihte ger\u00e7ekle\u015fmi\u015ftir?",
+            "choice1": 1970,
+            "choice2": 1972,
+            "choice3": 1974,
+            "choice4": 1975,
+            "rightAnswer": 1974,
+            "difficulty": 3,
+            "category": "Tarih",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 117,
+            "questionText": "Hangi \u00fclke Asya k\u0131tas\u0131ndad\u0131r?",
+            "choice1": "Madagaskar",
+            "choice2": "Peru",
+            "choice3": "Singapur",
+            "choice4": "\u015eili",
+            "rightAnswer": "Singapur",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 118,
+            "questionText": "Kuyucakl\u0131 Yusuf adl\u0131 eser kime aittir?",
+            "choice1": "Sabahattin Ali",
+            "choice2": "Yusuf At\u0131lgan",
+            "choice3": "Ya\u015far Kemal",
+            "choice4": "Yahya Kemal Beyatl\u0131",
+            "rightAnswer": "Sabahattin Ali",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 119,
+            "questionText": "A\u015fa\u011f\u0131dakilerden hangisi Aziz Nesin'in bir eseri de\u011fildir?",
+            "choice1": "Gol Kral\u0131",
+            "choice2": "Z\u00fcb\u00fck",
+            "choice3": "Yer Demir G\u00f6k Bak\u0131r",
+            "choice4": "G\u0131d\u0131g\u0131d\u0131",
+            "rightAnswer": "Yer Demir G\u00f6k Bak\u0131r",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 120,
+            "questionText": "Osmanl\u0131 \u0130mparatorlu\u011fu ka\u00e7 as\u0131r h\u00fck\u00fcm s\u00fcrm\u00fc\u015ft\u00fcr?",
+            "choice1": 5,
+            "choice2": 6,
+            "choice3": 7,
+            "choice4": 8,
+            "rightAnswer": 6,
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 121,
+            "questionText": "Fas'\u0131n ba\u015fkenti neresidir?",
+            "choice1": "Kazablanka",
+            "choice2": "Rabat",
+            "choice3": "Kahire",
+            "choice4": "Marake\u015f",
+            "rightAnswer": "Rabat",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 122,
+            "questionText": "\u0130stiklal Mar\u015f\u0131 hangi y\u0131l yaz\u0131lm\u0131\u015ft\u0131r?",
+            "choice1": 1919,
+            "choice2": 1920,
+            "choice3": 1921,
+            "choice4": 1922,
+            "rightAnswer": 1921,
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 123,
+            "questionText": "T\u00fcrk Silahl\u0131 Kuvvetleri'nde hangi r\u00fctbe daha y\u00fcksektir?",
+            "choice1": "T\u00fcmgeneral",
+            "choice2": "Korgeneral",
+            "choice3": "Tu\u011fgeneral",
+            "choice4": "Mare\u015fal",
+            "rightAnswer": "Mare\u015fal",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
+        },
+        {
+            "questionId": 124,
+            "questionText": "1 metre ka\u00e7 milimetredir?",
+            "choice1": 100,
+            "choice2": 1000,
+            "choice3": 10000,
+            "choice4": 100000,
+            "rightAnswer": 1000,
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 125,
+            "questionText": "Hangi sosyal medya platformu daha sonra kurulmu\u015ftur?",
+            "choice1": "Twitter",
+            "choice2": "Tinder",
+            "choice3": "Snapchat",
+            "choice4": "Facebook",
+            "rightAnswer": "Tinder",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 126,
+            "questionText": "Hangisi tarihteki Rus Devlet y\u00f6neticlerinden biridir?",
+            "choice1": "Deli Petro",
+            "choice2": "Kaz\u0131kl\u0131 Voyvoda",
+            "choice3": "Sezar",
+            "choice4": "\u0130skender",
+            "rightAnswer": "Deli Petro",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 127,
+            "questionText": "Mus,misk ve ren hangisinin t\u00fcrleridir?",
+            "choice1": "Ay\u0131",
+            "choice2": "Ke\u00e7i",
+            "choice3": "Geyik",
+            "choice4": "Koyun",
+            "rightAnswer": "Geyik",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 128,
+            "questionText": "Eyvah Eyvah film serisinde Ata Demirer ile ba\u015frol\u00fc payla\u015fan oyuncu kimdir?",
+            "choice1": "G\u00fclse Birsel",
+            "choice2": "Binnur Kaya",
+            "choice3": "Demet Akba\u011f",
+            "choice4": "Sumru Yavrucuk",
+            "rightAnswer": "Demet Akba\u011f",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 129,
+            "questionText": "S\u0131v\u0131lar\u0131 \u00f6l\u00e7mekte kullan\u0131lan 1 desimetrek\u00fcp hacmindeki \u00f6l\u00e7\u00fc birimi hangisidir?",
+            "choice1": "Gram",
+            "choice2": "Litre",
+            "choice3": "Ton",
+            "choice4": "Kilogram",
+            "rightAnswer": "Litre",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 130,
+            "questionText": "'Bana \u00f6ld\u00fc demeyin;yoruldu,gitti deyin'' s\u00f6z\u00fc 2012 y\u0131l\u0131nda hayat\u0131n\u0131 kaybeden hangi sanat\u00e7\u0131ya aittir?",
+            "choice1": "Ne\u015fet Erta\u015f",
+            "choice2": "M\u00fcsl\u00fcm G\u00fcrses",
+            "choice3": "Nejat Uygur",
+            "choice4": "M\u00fcnir \u00d6zkur",
+            "rightAnswer": "Ne\u015fet Erta\u015f",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 131,
+            "questionText": "\u0130ngiliz Kraliyet ailesinin ya\u015fad\u0131\u011f\u0131 775 odal\u0131 saray a\u015fa\u011f\u0131dakilerden hangisidir?",
+            "choice1": "Buckingham Saray\u0131",
+            "choice2": "Westminister Saray\u0131",
+            "choice3": "Versay Saray\u0131",
+            "choice4": "Beyaz Saray",
+            "rightAnswer": "Buckingham Saray\u0131",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 132,
+            "questionText": "Muammer Karaca'n\u0131n T\u00fcrk Tiyatrosuna uyarlad\u0131\u011f\u0131,Nejat Uygur ve Zihni G\u00f6ktay'\u0131n uzun y\u0131llar oynad\u0131\u011f\u0131 oyun hangisidir?",
+            "choice1": "L\u00fck\u00fcs Hayat",
+            "choice2": "Cibali Karakolu",
+            "choice3": "Ke\u015fanl\u0131 Ali Destan\u0131",
+            "choice4": "\u0130stanbul Efendisi",
+            "rightAnswer": "Cibali Karakolu",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 133,
+            "questionText": "Hangi \u00fclkenin y\u00fcz\u00f6l\u00e7\u00fcm\u00fc di\u011ferlerinden fazlad\u0131r?",
+            "choice1": "\u0130spanya ",
+            "choice2": "Tayland",
+            "choice3": "T\u00fcrkmenistan",
+            "choice4": "Portekiz",
+            "rightAnswer": "Tayland",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 134,
+            "questionText": "'Ah nerede''ve''Delisin'' gibi T\u00fcrk filmlerinde ''Ferit'' isimli karakteri canland\u0131ran oyuncu kimdir?",
+            "choice1": "Ayhan I\u015f\u0131k",
+            "choice2": "Kadir \u0130nan\u0131r",
+            "choice3": "Tar\u0131k Akan",
+            "choice4": "Halit Ak\u00e7atepe",
+            "rightAnswer": "Tar\u0131k Akan",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 135,
+            "questionText": "Sinema ve foto\u011fraf\u00e7\u0131l\u0131kta g\u00f6r\u00fcnt\u00fcy\u00fc \u00e7er\u00e7eve i\u00e7ine almaya ne ad verilir?",
+            "choice1": "Montaj",
+            "choice2": "Metraj",
+            "choice3": "Kadraj",
+            "choice4": "Fotomontaj",
+            "rightAnswer": "Kadraj",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 136,
+            "questionText": "'\u00c7ocuk Oyunu'' film serisiyle tan\u0131nan,bir seri katilin ruhunu ta\u015f\u0131yan oyuncak bebe\u011fin ad\u0131 nedir?",
+            "choice1": "Freddy",
+            "choice2": "Chucky",
+            "choice3": "Piggy",
+            "choice4": "Bonny",
+            "rightAnswer": "Chucky",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 137,
+            "questionText": "Charlie'nin Melekleri film serisinde Charlie'nin \u00e7e\u015fitli g\u00f6revler verdi\u011fi melekler ka\u00e7 ki\u015fidir?",
+            "choice1": 2,
+            "choice2": 3,
+            "choice3": 4,
+            "choice4": 5,
+            "rightAnswer": 3,
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 138,
+            "questionText": "Sessiz ve siyah-beyaz olarak \u00e7ekilen,Oskar \u00f6d\u00fcll\u00fc 2011 yap\u0131m\u0131 film hangisidir?",
+            "choice1": "A\u015fk ",
+            "choice2": "Umut I\u015f\u0131\u011f\u0131m",
+            "choice3": "Artist",
+            "choice4": "Yol",
+            "rightAnswer": "Artist",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 139,
+            "questionText": "Kartal Tibet'in yap\u0131mc\u0131,senarist ve y\u00f6netmenli\u011fin yan\u0131nda oyuncu olarak da yer al\u0131p kendini oynad\u0131\u011f\u0131 tek filmi hangisidir?",
+            "choice1": "Talih Ku\u015fu",
+            "choice2": "Bitirimler Sosyetede",
+            "choice3": "\u015eabaniye",
+            "choice4": "\u00c7\u00f6p\u00e7\u00fcler Kral\u0131",
+            "rightAnswer": "\u015eabaniye",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 140,
+            "questionText": "Hangi karde\u015fler ''En iyi y\u00f6netmen oskar \u00f6d\u00fcl\u00fc''kazanm\u0131\u015ft\u0131r?",
+            "choice1": "Coen karde\u015fler",
+            "choice2": "Wachowski karde\u015fler",
+            "choice3": "Lumiere karde\u015fler",
+            "choice4": "Waldorf Karde\u015fler",
+            "rightAnswer": "Coen Karde\u015fler",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 141,
+            "questionText": "Osmanl\u0131'da sitil,zarf ve pu\u015fide hangisinin sunumunda kullan\u0131l\u0131rd\u0131?",
+            "choice1": "Yemek",
+            "choice2": "Kahve",
+            "choice3": "Tatl\u0131",
+            "choice4": "\u015eerbet",
+            "rightAnswer": "Kahve",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 142,
+            "questionText": "Ulanbatur ve Karakurum \u015fehirleri hangi \u00fclkededir?",
+            "choice1": "T\u00fcrkmenistan",
+            "choice2": "Kazakistan",
+            "choice3": "Mo\u011folistan",
+            "choice4": "K\u0131rg\u0131zistan",
+            "rightAnswer": "Mo\u011folistan",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 143,
+            "questionText": "T\u00fcrkiye'nin Olimpiyatlardaki ilk alt\u0131n madalyas\u0131n\u0131 kazand\u0131\u011f\u0131 bran\u015f a\u015fa\u011f\u0131dakilerden hangisidir?",
+            "choice1": "Halter",
+            "choice2": "G\u00fcre\u015f",
+            "choice3": "Atletizm",
+            "choice4": "Jimnastik",
+            "rightAnswer": "G\u00fcre\u015f",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 144,
+            "questionText": "\u00c7arpanak,Ku\u015f ve Ad\u0131r adas\u0131 nerdedir?",
+            "choice1": "Van G\u00f6l\u00fc",
+            "choice2": "Karadeniz",
+            "choice3": "Marmara denizi",
+            "choice4": "Ege denizi",
+            "rightAnswer": "Van g\u00f6l\u00fc",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 145,
+            "questionText": "Eski Roma'da \u00f6zellikle soylulardan olu\u015fan y\u00f6neticiler meclisine ne ad verilir?",
+            "choice1": "Agora",
+            "choice2": "Senato",
+            "choice3": "Akropolis",
+            "choice4": "Arena",
+            "rightAnswer": "Senato",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 146,
+            "questionText": "'Jon Arbuckle'' ve ''Odie'' hangi \u00e7izgi filmde yer alan karakterlerin ad\u0131d\u0131r?",
+            "choice1": "Garfield",
+            "choice2": "Scooby Doo",
+            "choice3": "Snoopy",
+            "choice4": "Richie Rich",
+            "rightAnswer": "Garfield",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 147,
+            "questionText": "'Karpuz kabu\u011fu denize d\u00fc\u015ft\u00fc''s\u00f6z\u00fc hangi mevsimin geldi\u011fini haber verir?",
+            "choice1": "Yaz",
+            "choice2": "K\u0131\u015f",
+            "choice3": "\u0130lkbahar",
+            "choice4": "Sonbahar",
+            "rightAnswer": "Yaz",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 148,
+            "questionText": "Garsona do\u011fru el kald\u0131r\u0131p havaya yaz\u0131 yaz\u0131larak istenen \u015fey hangisidir?",
+            "choice1": "\u00c7ay",
+            "choice2": "Men\u00fc",
+            "choice3": "Hesap",
+            "choice4": "\u0130nternet \u015eifresi",
+            "rightAnswer": "Hesap",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 149,
+            "questionText": "A\u011flad\u0131\u011f\u0131n\u0131 gizlemeye \u00e7al\u0131\u015fan ki\u015filer genelde g\u00f6zlerine a\u015fa\u011f\u0131dakilerden hangisinin ka\u00e7t\u0131\u011f\u0131n\u0131 iddia eder?",
+            "choice1": "Toz",
+            "choice2": "Su",
+            "choice3": "Deterjan",
+            "choice4": "K\u00fcl",
+            "rightAnswer": "Toz",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 150,
+            "questionText": "Frodo Baggins,Aragorn hangi filmde yer alan karakterlerdir?",
+            "choice1": "Alacakaranl\u0131k",
+            "choice2": "Y\u00fcz\u00fcklerin Efendisi",
+            "choice3": "\u015earlo",
+            "choice4": "Hobbit",
+            "rightAnswer": "Y\u00fcz\u00fcklerin Efendisi",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 151,
+            "questionText": "Macaristan'\u0131n ba\u015fkenti Budape\u015fte'nin i\u00e7inden ge\u00e7en ve \u015fehri Budin ve Pe\u015fte olarak ay\u0131ran nehrin ad\u0131 nedir?",
+            "choice1": "Volga ",
+            "choice2": "Tuna",
+            "choice3": "Ural",
+            "choice4": "Nil",
+            "rightAnswer": "Tuna",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 152,
+            "questionText": "Kesinlik kazanmam\u0131\u015f a\u011f\u0131zdan a\u011f\u0131za dola\u015fan s\u00f6ylenti anlam\u0131na gelen kelime hangisidir?",
+            "choice1": "Tevecc\u00fcl",
+            "choice2": "Tevat\u00fcr",
+            "choice3": "Tevell\u00fct",
+            "choice4": "Tehecc\u00fct",
+            "rightAnswer": "Tevat\u00fcr",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 153,
+            "questionText": "'M\u00fc\u015fteri'' ve ''Erendiz'' hangi gezegenin eski ad\u0131d\u0131r?",
+            "choice1": "Mars",
+            "choice2": "Ven\u00fcs",
+            "choice3": "J\u00fcpiter",
+            "choice4": "Uran\u00fcs",
+            "rightAnswer": "J\u00fcpiter",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 154,
+            "questionText": "Mozart'\u0131n \u00fcnl\u00fc ''Saraydan K\u0131z Ka\u00e7\u0131rma'' operas\u0131ndan,ka\u00e7\u0131r\u0131lan k\u0131z\u0131n ad\u0131 nedir?",
+            "choice1": "Odette",
+            "choice2": "Konstanze",
+            "choice3": "Violetta",
+            "choice4": "Rozenza",
+            "rightAnswer": "Konstanze",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 155,
+            "questionText": "Fast food restaurantlar\u0131nda sat\u0131lan men\u00fcler genellikle hangisi olur?",
+            "choice1": "Hamburger,pizza",
+            "choice2": "Nohut,Pilav",
+            "choice3": "Kokore\u00e7,Midye",
+            "choice4": "Tur\u015fu,Salata",
+            "rightAnswer": "Hamburger,Pizza",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 156,
+            "questionText": "Antika e\u015fyalar\u0131 satmak amac\u0131yla d\u00fczenlenen organizasyona ne ad verilir?",
+            "choice1": "Defile",
+            "choice2": "M\u00fczayede",
+            "choice3": "M\u00fcsamere",
+            "choice4": "M\u00fcnazara",
+            "rightAnswer": "M\u00fczayede",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 157,
+            "questionText": "Ta\u015f,ka\u011f\u0131t,makas oyunun hangi kural\u0131 yanl\u0131\u015f verilmi\u015ftir?",
+            "choice1": "Ta\u015f ka\u011f\u0131d\u0131 y\u0131rtar",
+            "choice2": "Makas ka\u011f\u0131d\u0131 keser",
+            "choice3": "Ta\u015f makas\u0131 k\u0131rar",
+            "choice4": "Ka\u011f\u0131t makas\u0131 kaplar",
+            "rightAnswer": "Ta\u015f ka\u011f\u0131d\u0131 y\u0131rtar",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 158,
+            "questionText": "\u00c7i\u011f k\u00f6fte yap\u0131l\u0131rken bulgurun \u015fi\u015fmemesi i\u00e7in \u00f6zellikle yaz aylar\u0131nda i\u00e7ine ne konur?",
+            "choice1": "Ya\u011f",
+            "choice2": "Soda",
+            "choice3": "S\u00fct",
+            "choice4": "Buz",
+            "rightAnswer": "Buz",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
+        },
+        {
+            "questionId": 159,
+            "questionText": "Un,yumurta,tulum peyniri,tereya\u011f ve cevizi\u00e7inden yap\u0131lan Osmanl\u0131 d\u00f6nemi yeme\u011fine ne ad verilir?",
+            "choice1": "Piruhi",
+            "choice2": "Nevriyye",
+            "choice3": "Pelte\u015fin",
+            "choice4": "Mutancana",
+            "rightAnswer": "Piruhi",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 160,
+            "questionText": "UNESCO'nun merkezi nerededir?",
+            "choice1": "Paris",
+            "choice2": "New York ",
+            "choice3": "Cenevre",
+            "choice4": "Londra",
+            "rightAnswer": "Paris",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 161,
+            "questionText": "Ma\u00e7 s\u0131ras\u0131nda en kalabal\u0131k oyuncu say\u0131s\u0131 hangi bran\u015ftad\u0131r?",
+            "choice1": "Voleybol",
+            "choice2": "Basketbol",
+            "choice3": "Futbol",
+            "choice4": "Hentbol",
+            "rightAnswer": "Futbol",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 162,
+            "questionText": "Ye\u015fil\u00e7am'\u0131n ''\u00c7irkin Kral'' lakapl\u0131 oyuncusunun ad\u0131 nedir?",
+            "choice1": "Tar\u0131k Akan",
+            "choice2": "Y\u0131lmaz G\u00fcney",
+            "choice3": "Ediz Hun",
+            "choice4": "Kadir \u0130nan\u0131r",
+            "rightAnswer": "Y\u0131lmaz G\u00fcney",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 163,
+            "questionText": "Kuzey Yar\u0131m K\u00fcre'de en uzun gece hangi tarihte ya\u015fan\u0131r?",
+            "choice1": 43545,
+            "choice2": 43731,
+            "choice3": 43820,
+            "choice4": 43637,
+            "rightAnswer": 43820,
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 164,
+            "questionText": "Ekonomide nakit,Fizik'te s\u0131v\u0131 anlam\u0131na gelen kelime hangisidir?",
+            "choice1": "Mevduat",
+            "choice2": "Faiz",
+            "choice3": "Hacim",
+            "choice4": "Likit",
+            "rightAnswer": "Likit",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
+        },
+        {
+            "questionId": 165,
+            "questionText": "Karag\u00f6z oyunundaki kambur c\u00fccenin ad\u0131 nedir?",
+            "choice1": "Beberuhi",
+            "choice2": "\u0130bi\u015f",
+            "choice3": "Pi\u015fekar",
+            "choice4": "Hacivat",
+            "rightAnswer": "Beberuhi",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 166,
+            "questionText": "Sinemaya da uyarlanan ''Kuzular\u0131n Sessizli\u011fi'' roman\u0131n\u0131n yazar\u0131 kimdir?",
+            "choice1": "John Boyne",
+            "choice2": "Thomas Harris",
+            "choice3": "Winston Gromm",
+            "choice4": "J.K.Rowling",
+            "rightAnswer": "Thomas Harris",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 167,
+            "questionText": "Osmanl\u0131da hangi b\u00f6lgenin valilerine ''Hidiv'' unvan\u0131 verilirdi?",
+            "choice1": "K\u0131br\u0131s",
+            "choice2": "K\u0131r\u0131m",
+            "choice3": "M\u0131s\u0131r",
+            "choice4": "Rumeli",
+            "rightAnswer": "M\u0131s\u0131r",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 168,
+            "questionText": "'Tospik''hangi \u00e7izgi film karakterinin evcil hayvan\u0131n\u0131n ad\u0131d\u0131r?",
+            "choice1": "Niloya",
+            "choice2": "Ma\u015fa ile Kocaay\u0131",
+            "choice3": "Pepee",
+            "choice4": "Kelo\u011flan",
+            "rightAnswer": "Niloya",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 169,
+            "questionText": "Galaksi kelimesi Antik Yunan dilinde hangi anlama gelen kelimeden t\u00fcretilmi\u015ftir?",
+            "choice1": "Su",
+            "choice2": "S\u00fct",
+            "choice3": "Kum",
+            "choice4": "Hava",
+            "rightAnswer": "S\u00fct",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 170,
+            "questionText": "\u0130ki sene \u00fcst \u00fcste en iyi kad\u0131n oyuncu Oskar \u00f6d\u00fcl\u00fcn\u00fc kazanan oyuncu kimdir?",
+            "choice1": "Luise Rainer",
+            "choice2": "Mary Pickford",
+            "choice3": "Norma Shearer",
+            "choice4": "Angelina Jolie",
+            "rightAnswer": "Luise Rainer",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 171,
+            "questionText": "Bir ma\u011fazan\u0131n vitrinindeki ''Patron \u00c7\u0131ld\u0131rd\u0131'' ifadesi muhtemelen hangisini anlatmak istiyordur?",
+            "choice1": "Faturalar\u0131n y\u00fcksek geldi\u011fini",
+            "choice2": "\u0130ndirim oldu\u011funu",
+            "choice3": "Patronun tatile \u00e7\u0131kt\u0131\u011f\u0131n\u0131",
+            "choice4": "\u0130\u015f yerine nazar de\u011fdi\u011fini",
+            "rightAnswer": "\u0130ndirim oldu\u011funu",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 172,
+            "questionText": "Halk aras\u0131nda ki\u015finin destek\u00e7isi,\u00f6zellikle aile b\u00fcy\u00fckleri i\u00e7in kullan\u0131lan ve genellikle ''koca''s\u0131fat\u0131yla an\u0131lan a\u011fa\u00e7 t\u00fcr\u00fc hangisidir?",
+            "choice1": "Me\u015fe",
+            "choice2": "Kay\u0131n",
+            "choice3": "\u00c7\u0131nar",
+            "choice4": "servi",
+            "rightAnswer": "\u00c7\u0131nar",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 173,
+            "questionText": "Otomobillerde lastiklerin tak\u0131ld\u0131\u011f\u0131,tekerle\u011fin \u00e7ember bi\u00e7imindeki b\u00f6l\u00fcm\u00fcne ne denir?",
+            "choice1": "Kriko",
+            "choice2": "Jant",
+            "choice3": "\u015easi",
+            "choice4": "Dingil",
+            "rightAnswer": "Jant",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 174,
+            "questionText": "Hangisi ''M\u00fcdavim''s\u00f6zc\u00fc\u011f\u00fc ile ayn\u0131 anlamdad\u0131r?",
+            "choice1": "Rutin",
+            "choice2": "Gedikli",
+            "choice3": "Kalender",
+            "choice4": "Kadim",
+            "rightAnswer": "Gedikli",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 175,
+            "questionText": "\u015eekli ve tad\u0131 benzemesine ra\u011fmen,kullan\u0131lan malzemelerdeki de\u011fi\u015fikliklerle yap\u0131lan yemek ve tatl\u0131lara ne ad verilir?",
+            "choice1": "Terbiyeli",
+            "choice2": "Yalanc\u0131",
+            "choice3": "M\u0131z\u0131k\u00e7\u0131",
+            "choice4": "Do\u011frucu",
+            "rightAnswer": "Yalanc\u0131",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 176,
+            "questionText": "Hangisi bir m\u00fczik t\u00fcr\u00fcd\u00fcr?",
+            "choice1": "\u0130stanbulin",
+            "choice2": "New yorker",
+            "choice3": "Parisien",
+            "choice4": "napoliten",
+            "rightAnswer": "Napoliten",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
+        },
+        {
+            "questionId": 177,
+            "questionText": "Halk aras\u0131nda kullan\u0131lan s\u00f6ze g\u00f6re hangisinin cezas\u0131n\u0131 ayaklar \u00e7eker?",
+            "choice1": "Ak\u0131ll\u0131 telefonun",
+            "choice2": "Ak\u0131ls\u0131z ba\u015f\u0131n",
+            "choice3": "Bilin\u00e7li tercihin",
+            "choice4": "Bilin\u00e7siz t\u00fcketimin",
+            "rightAnswer": "Ak\u0131ls\u0131z ba\u015f\u0131n",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 178,
+            "questionText": "'G\u00fclen G\u00f6zler''filminde u\u00e7a\u011f\u0131yla sebdi\u011fi k\u0131z\u0131n evinin \u00fcst\u00fcnden ge\u00e7en ve filmin sonunda evin i\u00e7ine ini\u015f yapan \u015eener \u015een'in canland\u0131rd\u0131\u011f\u0131 karakterin ad\u0131 nedir?",
+            "choice1": "L\u00fctf\u00fc",
+            "choice2": "\u015eakir",
+            "choice3": "Vecihi",
+            "choice4": "H\u00fcsamettin",
+            "rightAnswer": "Vecihi",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 179,
+            "questionText": "Ba\u015fkenti Bogota'da Alt\u0131n m\u00fczesi bulunan ve d\u00fcnyadaki z\u00fcmr\u00fct \u00fcretiminin b\u00fcy\u00fck k\u0131sm\u0131n\u0131 ger\u00e7ekle\u015ftiren,kahvesiyle \u00fcnl\u00fc \u00fclke hangisidir?",
+            "choice1": "G\u00fcney Afrika",
+            "choice2": "Kolombiya",
+            "choice3": "Tunus",
+            "choice4": "Botsvana",
+            "rightAnswer": "Kolombiya",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 180,
+            "questionText": "Hangisini giyenler i\u00e7in ''Jilet gibi'' olmu\u015fsun ifadesi kullan\u0131l\u0131r?",
+            "choice1": "E\u015fofman",
+            "choice2": "Mayo",
+            "choice3": "Pijama",
+            "choice4": "Tak\u0131m Elbise",
+            "rightAnswer": "Tak\u0131m elbise",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
+        },
+        {
+            "questionId": 181,
+            "questionText": "'Razak\u0131'' ''ku\u015f'' ve ''Mis'',''Sultani'' hangi meyvenin t\u00fcrlerine verilen isimlerdir?",
+            "choice1": "Dut",
+            "choice2": "Kiraz",
+            "choice3": "\u00dcz\u00fcm",
+            "choice4": "Kay\u0131s\u0131",
+            "rightAnswer": "\u00dcz\u00fcm",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 182,
+            "questionText": "Birbirleriyle selamla\u015f\u0131rken ''Volar Morghulis'' diyen gen\u00e7ler hangi dizinin hayran\u0131d\u0131r?",
+            "choice1": "Vikings",
+            "choice2": "Merlin",
+            "choice3": "Tudors",
+            "choice4": "Game of Thrones",
+            "rightAnswer": "Game of thrones",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
+        },
+        {
+            "questionId": 183,
+            "questionText": "Osmanl\u0131 devletinde saraydaki ''Kehhalba\u015f\u0131''adl\u0131 hekim hangisinin tedavisi g\u00f6revliydi?",
+            "choice1": "Di\u015f",
+            "choice2": "G\u00f6z",
+            "choice3": "Bel",
+            "choice4": "Kulak",
+            "rightAnswer": "G\u00f6z",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 184,
+            "questionText": "'Gevrek Gevrek''ifadesi hangisiyle ilgili kullan\u0131l\u0131r?",
+            "choice1": "Ba\u011f\u0131rmak",
+            "choice2": "G\u00fclmek",
+            "choice3": "Ka\u015f\u0131nmak",
+            "choice4": "A\u011flamak",
+            "rightAnswer": "G\u00fclmek",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 185,
+            "questionText": "Bir yar\u0131\u015fmada konulan \u00f6d\u00fcle uygun g\u00f6r\u00fclmemekle birlikte,an\u0131lmaya de\u011fer bulunan ki\u015fiye ya da esere verilen dereceye en denir?",
+            "choice1": "Amorti",
+            "choice2": "Mansiyon",
+            "choice3": "Teselli",
+            "choice4": "\u015eilt",
+            "rightAnswer": "Mansiyon",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 186,
+            "questionText": "'Hala k\u0131z\u0131 zehra'' ''Kom\u015fu k\u0131z\u0131 d\u00fcriye'' ve ''D\u00fcnyalar g\u00fczeli kezban''kimin \u015fark\u0131lar\u0131nda ge\u00e7en isimlerdir?",
+            "choice1": "Cem Karaca",
+            "choice2": "Bar\u0131\u015f Man\u00e7o",
+            "choice3": "Erkin Koray",
+            "choice4": "B\u00fclent Orta\u00e7gil",
+            "rightAnswer": "Bar\u0131\u015f Man\u00e7o",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 187,
+            "questionText": "Hangi yeme\u011fin yap\u0131m\u0131nda tahin kullan\u0131l\u0131r?",
+            "choice1": "Borani",
+            "choice2": "Tabbule",
+            "choice3": "Humus",
+            "choice4": "\u00c7\u0131lb\u0131r",
+            "rightAnswer": "Humus",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 188,
+            "questionText": "'Charlie'nin \u00c7ikolata Fabrikas\u0131''filminde farbrikan\u0131n sahibi olan ve Johnny Deep'in canlandr\u0131d\u0131\u011f\u0131 ba\u015f karakterin ad\u0131 nedir?",
+            "choice1": "Willy Wonka",
+            "choice2": "Davy Jones",
+            "choice3": "Charlie Brown",
+            "choice4": "Sweeney Todd",
+            "rightAnswer": "Willy Wonka",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 189,
+            "questionText": "Yunan Mitolojisi'nde Eros ok atarak insanlar\u0131n birbirine hangi duyguyu hissetmesini sa\u011flard\u0131?",
+            "choice1": "A\u015fk",
+            "choice2": "\u015eefkat",
+            "choice3": "G\u00fcven",
+            "choice4": "Sab\u0131r",
+            "rightAnswer": "A\u015fk",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 190,
+            "questionText": "Kuma\u015f\u0131n kenar\u0131na t\u0131\u011f ile i\u015flenen,eski evlerde s\u0131k\u00e7a g\u00f6r\u00fclen,giysi ve \u00f6rt\u00fclerde kullan\u0131lan \u00f6rg\u00fcye ne ad verilir?",
+            "choice1": "Fisto",
+            "choice2": "Kanevi\u00e7e",
+            "choice3": "Kurdela",
+            "choice4": "Dantel",
+            "rightAnswer": "dantel",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
+        },
+        {
+            "questionId": 191,
+            "questionText": "Eski bir T\u00fcrk masal\u0131na ad\u0131n\u0131 veren g\u00fclen ayva ile birlikte a\u011flayan meyve hangisidir?",
+            "choice1": "Elma",
+            "choice2": "Nar",
+            "choice3": "Dut",
+            "choice4": "\u00dcz\u00fcm",
+            "rightAnswer": "Nar",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 192,
+            "questionText": "Peter Jackson'\u0131n y\u00f6netti\u011fi ''Tha Hobbit''serisinin son filmi hangisidir?",
+            "choice1": "Beklenmedik Yolculuk",
+            "choice2": "Smaug'un \u00c7orak Topraklar\u0131",
+            "choice3": "Be\u015f Ordunun sava\u015f\u0131",
+            "choice4": "Kral\u0131n d\u00f6n\u00fc\u015f\u00fc",
+            "rightAnswer": "Be\u015f Ordunun Sava\u015f\u0131",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 193,
+            "questionText": "Kurtulu\u015f Sava\u015f\u0131'nda cephede Mustafa Kemal'in yan\u0131nda onba\u015f\u0131 olarak yer alan,''Mor Salk\u0131ml\u0131 Ev''kitab\u0131n\u0131n yazar\u0131 kimdir?",
+            "choice1": "Yakup Kadri Karaosmano\u011flu",
+            "choice2": "Halide Edip Ad\u0131var",
+            "choice3": "Re\u015fat Nuri G\u00fcntekin",
+            "choice4": "Nezihe Meri\u00e7",
+            "rightAnswer": "Halide Edip Ad\u0131var",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 194,
+            "questionText": "G\u00fcne\u015fte veya hafif alevde kurutulmu\u015f ete ne denir?",
+            "choice1": "Dumur",
+            "choice2": "Tirit",
+            "choice3": "Fodul",
+            "choice4": "Kadit",
+            "rightAnswer": "Kadit",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
+        },
+        {
+            "questionId": 195,
+            "questionText": "Medeni kanunumuza g\u00f6re vasiyetname haz\u0131rlamak i\u00e7in ka\u00e7 ya\u015f\u0131n\u0131 doldurmak gerekir?",
+            "choice1": 15,
+            "choice2": 18,
+            "choice3": 21,
+            "choice4": 25,
+            "rightAnswer": 15,
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 196,
+            "questionText": "D\u00fcd\u00fck,futbol ma\u00e7lar\u0131nda kullan\u0131lmadan \u00f6nce hakemler hangisini kullan\u0131rlard\u0131?",
+            "choice1": "Beyaz mendil",
+            "choice2": "\u015eapka",
+            "choice3": "Gong",
+            "choice4": "\u00c7an",
+            "rightAnswer": "Beyaz Mendil",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 197,
+            "questionText": "'Melul melul'' bakan ki\u015filerin ruh hali nas\u0131ld\u0131r?",
+            "choice1": "\u00dczg\u00fcn",
+            "choice2": "Nazl\u0131",
+            "choice3": "\u015ea\u015fk\u0131n",
+            "choice4": "Utanga\u00e7",
+            "rightAnswer": "\u00dczg\u00fcn",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 198,
+            "questionText": "Tavla kar\u015f\u0131la\u015fmalar\u0131 genelde ka\u00e7ta biter?",
+            "choice1": 3,
+            "choice2": 5,
+            "choice3": 7,
+            "choice4": 10,
+            "rightAnswer": 5,
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 199,
+            "questionText": "\u0130nsanlarla ya\u015famaya karar verip kendi kendini evcille\u015ftiren hayvan hangisidir?",
+            "choice1": "K\u00f6pek",
+            "choice2": "Kedi",
+            "choice3": "Geyik",
+            "choice4": "Fil",
+            "rightAnswer": "Kedi",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 200,
+            "questionText": "Eski d\u00f6nem sava\u015flar\u0131nda surlar\u0131n kap\u0131s\u0131n\u0131 k\u0131rmak i\u00e7in kullan\u0131lan,en az 6 askerin kald\u0131rabildi\u011fi sava\u015f aletine ne ad verilir?",
+            "choice1": "At ba\u015f\u0131",
+            "choice2": "E\u015f\u015fek",
+            "choice3": "Geyik ba\u015f\u0131",
+            "choice4": "Ko\u00e7 ba\u015f\u0131",
+            "rightAnswer": "Ko\u00e7 ba\u015f\u0131",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
+        },
+        {
+            "questionId": 201,
+            "questionText": "Bir \u015feyin en fazla olabilecek miktar\u0131 hangi s\u00f6zle ifade edilir?",
+            "choice1": "Yer yar\u0131lsa",
+            "choice2": "\u0130\u011fne d\u00fc\u015fse",
+            "choice3": "Ta\u015f \u00c7atlasa",
+            "choice4": "Top patlasa",
+            "rightAnswer": "Ta\u015f \u00c7atlasa",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 202,
+            "questionText": "\u0130nsanlar hangisini anlat\u0131rken kli\u015fe olarak''Biliyorsan anlatmayay\u0131m''der?",
+            "choice1": "Askerlik an\u0131s\u0131",
+            "choice2": "Masal",
+            "choice3": "F\u0131kra",
+            "choice4": "Dedikodu",
+            "rightAnswer": "F\u0131kra",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 203,
+            "questionText": "Dedenizin damat dedi\u011fi,baban\u0131z\u0131n bacanak dedi\u011fi,kuzeninizin baba dedi\u011fi ki\u015fi sizin neyiniz olur?",
+            "choice1": "Day\u0131",
+            "choice2": "Koca",
+            "choice3": "Amca",
+            "choice4": "Eni\u015fte",
+            "rightAnswer": "Eni\u015fte",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
+        },
+        {
+            "questionId": 204,
+            "questionText": "Hangisi bir motosiklet t\u00fcr\u00fcd\u00fcr?",
+            "choice1": "Ginger",
+            "choice2": "Chopper",
+            "choice3": "Cruise",
+            "choice4": "Roadster",
+            "rightAnswer": "Chopper",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 205,
+            "questionText": "Hababam S\u0131n\u0131f\u0131 filmlerindeki Mahmut Hoca karakteri hangi bran\u015f \u00f6\u011fretmenidir?",
+            "choice1": "Co\u011frafya",
+            "choice2": "Edebiyat",
+            "choice3": "Tarih",
+            "choice4": "Matematik",
+            "rightAnswer": "Tarih",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 2
+        },
+        {
+            "questionId": 206,
+            "questionText": "'Domat ve tav\u015fan y\u00fcre\u011fi''hangisinin t\u00fcrleridir?",
+            "choice1": "Zeytin",
+            "choice2": "Domates",
+            "choice3": "\u0130ncir",
+            "choice4": "\u00dcz\u00fcm",
+            "rightAnswer": "Zeytin",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 207,
+            "questionText": "'Yaban ve Sodom ve Gomore'' kitaplar\u0131n\u0131n yazar\u0131 kimdir?",
+            "choice1": "Halit Ziya U\u015fakl\u0131gil",
+            "choice2": "Yakup Kadri Karaosmano\u011flu",
+            "choice3": "Ahmet Hamdi Tanp\u0131nar",
+            "choice4": "Sait Faik Abas\u0131yan\u0131k",
+            "rightAnswer": "Yakup Kadri Karaosmano\u011flu",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 208,
+            "questionText": "Uzay istasyonu Skylab'\u0131n par\u00e7alar\u0131n\u0131n \u00fclkeisne d\u00fc\u015fmesinin ard\u0131ndan NASA'ya \u00e7evreyi kirletti\u011fi i\u00e7in ceza kesen \u00fclke hangisidir?",
+            "choice1": "\u0130ngiltere",
+            "choice2": "Avustralya",
+            "choice3": "Hindistan",
+            "choice4": "Rusya",
+            "rightAnswer": "Avustralya",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 209,
+            "questionText": "'Homer,Barge,Bart,Lisa ve Maggie''hangi \u00e7izgi dizinin karakterleridir?",
+            "choice1": "Southpark",
+            "choice2": "The Simpsons",
+            "choice3": "Family Guy",
+            "choice4": "American Dad",
+            "rightAnswer": "The Simpsons",
+            "difficulty": 1,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 210,
+            "questionText": "19,yy boyunca ''\u00dczerinde g\u00fcne\u015f batmayan imparatorluk''olarak an\u0131lan \u00fclke hangisidir*",
+            "choice1": "\u00c7in",
+            "choice2": "\u0130ngiltere",
+            "choice3": "Rusya",
+            "choice4": "Japonya",
+            "rightAnswer": "\u0130ngiltere",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 1
+        },
+        {
+            "questionId": 211,
+            "questionText": "'Y\u0131lanlar\u0131n \u00d6c\u00fc'' ve ''Yol'' filmlerinin y\u00f6netmeni kimdir?",
+            "choice1": "Yavuz Turgul",
+            "choice2": "At\u0131f Y\u0131lmaz",
+            "choice3": "Ertem E\u011filmez",
+            "choice4": "\u015eerif G\u00f6ren",
+            "rightAnswer": "\u015eerif G\u00f6ren",
+            "difficulty": 3,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 3
+        },
+        {
+            "questionId": 212,
+            "questionText": "'15-16'y\u0131 ver'' deyince hangisinin bir t\u00fcr\u00fc isteniyordur?",
+            "choice1": "\u0130ngiliz anahtar\u0131",
+            "choice2": "Kriko",
+            "choice3": "\u00c7eki\u00e7",
+            "choice4": "Tornavida",
+            "rightAnswer": "\u0130ngiliz Anahtar\u0131",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
+        },
+        {
+            "questionId": 213,
+            "questionText": "'Fazla abartmak''analm\u0131nda kullan\u0131lan s\u00f6zde hangisini ka\u00e7\u0131rmaktan bahsedilir?",
+            "choice1": "Endaze",
+            "choice2": "Ar\u015f\u0131n",
+            "choice3": "Karat",
+            "choice4": "Okka",
+            "rightAnswer": "Endaze",
+            "difficulty": 2,
+            "category": "Genel K\u00fclt\u00fcr",
+            "rightAnswerIndex": 0
         }
     ]
 }

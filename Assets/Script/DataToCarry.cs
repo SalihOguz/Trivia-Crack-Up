@@ -20,7 +20,7 @@ public class DataToCarry : Singleton<DataToCarry> {
 		player2 = MakeFakeUser();
 		if (Camera.main.GetComponent<MenuManager>())
 		{
-			Camera.main.GetComponent<MenuManager>().opponentDataObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = Resources.Load<Avatars>("Data/Avatars").avatarSprites[player2.avatarId];
+			Camera.main.GetComponent<MenuManager>().opponentDataObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Image>().sprite = Resources.Load<Avatars>("Data/Avatars").avatarSprites[player2.avatarId];
 			Camera.main.GetComponent<MenuManager>().opponentDataObject.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Text>().text = player2.username;
 		}
 		else
@@ -34,7 +34,7 @@ public class DataToCarry : Singleton<DataToCarry> {
         // TextAsset textAssset = Resources.Load<TextAsset>("Data/FakeUserList");
 		// FakeUserList ful = JsonUtility.FromJson<FakeUserList>(textAssset.text);
         UserLite fake = ful.fakeUserList[UnityEngine.Random.Range(0, ful.fakeUserList.Count)];
-        User p2 = new User("1", fake.userName, fake.isMale, fake.totalCoin + 30 * (Random.Range(-65,65)));
+        User p2 = new User("1", fake.userName, fake.isMale, fake.totalCoin, fake.score);
         return p2;
     }
 }

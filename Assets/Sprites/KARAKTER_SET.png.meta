@@ -1,27 +1,37 @@
 fileFormatVersion: 2
-guid: 2afcb53155e521940a4606e7b34ee959
+guid: 84de8d475b1d54b46929d6e69d7c3dd6
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ALTIN_YILDIZ_ATLAS_0
-    21300002: ALTIN_YILDIZ_ATLAS_1
-    21300004: ALTIN_YILDIZ_ATLAS_2
-    21300006: ALTIN_YILDIZ_ATLAS_3
-    21300008: ALTIN_YILDIZ_ATLAS_4
-    21300010: ALTIN_YILDIZ_ATLAS_5
-    21300012: ALTIN_YILDIZ_ATLAS_6
-    21300014: ALTIN_YILDIZ_ATLAS_7
-    21300016: ALTIN_YILDIZ_ATLAS_8
-    21300018: ALTIN_YILDIZ_ATLAS_9
-    21300020: ALTIN_YILDIZ_ATLAS_10
-    21300022: ALTIN_YILDIZ_ATLAS_11
-    21300024: ALTIN_YILDIZ_ATLAS_12
-    21300026: ALTIN_YILDIZ_ATLAS_13
-    21300028: ALTIN_YILDIZ_ATLAS_14
-    21300030: ALTIN_YILDIZ_ATLAS_15
-    21300032: ALTIN_YILDIZ_ATLAS_16
-    21300034: ALTIN_YILDIZ_ATLAS_17
-    21300036: ALTIN_YILDIZ_ATLAS_18
-    21300038: ALTIN_YILDIZ_ATLAS_19
+    21300000: KARAKTER_SET_0
+    21300002: KARAKTER_SET_1
+    21300004: KARAKTER_SET_2
+    21300006: KARAKTER_SET_3
+    21300008: KARAKTER_SET_4
+    21300010: KARAKTER_SET_5
+    21300012: KARAKTER_SET_6
+    21300014: KARAKTER_SET_7
+    21300016: KARAKTER_SET_8
+    21300018: KARAKTER_SET_9
+    21300020: KARAKTER_SET_10
+    21300022: KARAKTER_SET_11
+    21300024: KARAKTER_SET_12
+    21300026: KARAKTER_SET_13
+    21300028: KARAKTER_SET_14
+    21300030: KARAKTER_SET_15
+    21300032: KARAKTER_SET_16
+    21300034: KARAKTER_SET_17
+    21300036: KARAKTER_SET_18
+    21300038: KARAKTER_SET_19
+    21300040: KARAKTER_SET_20
+    21300042: KARAKTER_SET_21
+    21300044: KARAKTER_SET_22
+    21300046: KARAKTER_SET_23
+    21300048: KARAKTER_SET_24
+    21300050: KARAKTER_SET_25
+    21300052: KARAKTER_SET_26
+    21300054: KARAKTER_SET_27
+    21300056: KARAKTER_SET_28
+    21300058: KARAKTER_SET_29
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -137,13 +147,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_0
+      name: KARAKTER_SET_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 838
-        width: 172
-        height: 173
+        x: 72
+        y: 739
+        width: 217
+        height: 274
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,19 +161,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1184cee7699d8d4ea79e061c2ade3eb
+      spriteID: f92ecd92f98c52b41925cdfb02c58d59
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_1
+      name: KARAKTER_SET_1
       rect:
         serializedVersion: 2
-        x: 193
-        y: 842
-        width: 164
-        height: 174
+        x: 305
+        y: 739
+        width: 230
+        height: 227
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,19 +181,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4342fae45e6684044bb599b8bb16ffe2
+      spriteID: 19425406389e3c14d8228ad49b418b67
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_2
+      name: KARAKTER_SET_2
       rect:
         serializedVersion: 2
-        x: 370
-        y: 844
-        width: 118
-        height: 174
+        x: 555
+        y: 730
+        width: 205
+        height: 208
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,19 +201,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53dc04ca289b3be4c80397dad1bd336b
+      spriteID: 1d5917af47123c9418f9ad0aefb2484b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_3
+      name: KARAKTER_SET_3
       rect:
         serializedVersion: 2
-        x: 501
-        y: 836
-        width: 48
-        height: 181
+        x: 788
+        y: 739
+        width: 184
+        height: 247
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,19 +221,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f037479f34c8c2e48af86d6a32f1e297
+      spriteID: ff4c2daaf78290940887f8c5a5b19068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_4
+      name: KARAKTER_SET_4
       rect:
         serializedVersion: 2
-        x: 557
-        y: 845
-        width: 118
-        height: 174
+        x: 52
+        y: 497
+        width: 276
+        height: 228
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,19 +241,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8237e1ee7946b6f468cb80f6cc43f4a6
+      spriteID: 3fe5dd6e944fab2499fed6568ca61cd0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_5
+      name: KARAKTER_SET_5
       rect:
         serializedVersion: 2
-        x: 683
-        y: 843
-        width: 154
-        height: 164
+        x: 358
+        y: 517
+        width: 187
+        height: 198
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,19 +261,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 276b9346526d97a43a0668ea19b70c5b
+      spriteID: 88647bd1570cb6848ae1b383b7ada479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_6
+      name: KARAKTER_SET_6
       rect:
         serializedVersion: 2
-        x: 846
-        y: 847
-        width: 172
-        height: 172
+        x: 567
+        y: 497
+        width: 180
+        height: 224
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,19 +281,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a1b112c2065e1246aae18c7bc65a556
+      spriteID: 72b83c56ed2efab478e3f1c2e24132ac
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_7
+      name: KARAKTER_SET_7
       rect:
         serializedVersion: 2
-        x: 63
-        y: 672
-        width: 157
-        height: 156
+        x: 765
+        y: 530
+        width: 163
+        height: 188
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,19 +301,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29a96b8946e8f1046966e79e1502590a
+      spriteID: 0edb941e50f61e040babf52dc46579b0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_8
+      name: KARAKTER_SET_8
       rect:
         serializedVersion: 2
-        x: 226
-        y: 674
-        width: 145
-        height: 158
+        x: 64
+        y: 276
+        width: 290
+        height: 210
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,19 +321,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13a2f4e47a0ea43459f6a44e48f184ae
+      spriteID: 3aa2777a5ac034941ba04874e49ed85d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_9
+      name: KARAKTER_SET_9
       rect:
         serializedVersion: 2
-        x: 379
-        y: 674
-        width: 97
-        height: 155
+        x: 371
+        y: 286
+        width: 177
+        height: 204
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,19 +341,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b170e3b5617bd2e45b2cd8fc9e4e617b
+      spriteID: b8fc22bc1172efe4a84d263037b13183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_10
+      name: KARAKTER_SET_10
       rect:
         serializedVersion: 2
-        x: 484
-        y: 674
-        width: 46
-        height: 154
+        x: 577
+        y: 265
+        width: 175
+        height: 213
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,19 +361,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af21590c80dc15f499d5eba293e2a9c7
+      spriteID: 641bf04825ba7024f8affeb6ebd20cbb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_11
+      name: KARAKTER_SET_11
       rect:
         serializedVersion: 2
-        x: 543
-        y: 672
-        width: 97
-        height: 156
+        x: 765
+        y: 286
+        width: 189
+        height: 209
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,19 +381,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a014e185bd6441d42bcc8304515ca8d1
+      spriteID: 1959178d7bc619043ac4d88de5434506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_12
+      name: KARAKTER_SET_12
       rect:
         serializedVersion: 2
-        x: 648
-        y: 672
-        width: 144
-        height: 156
+        x: 85
+        y: 12
+        width: 200
+        height: 246
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,19 +401,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b43e6d3784a8664f9ca564060bd919a
+      spriteID: 9e244d5a8f228914ebbf0c19070e3389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_13
+      name: KARAKTER_SET_13
       rect:
         serializedVersion: 2
-        x: 798
-        y: 668
-        width: 156
-        height: 158
+        x: 336
+        y: 41
+        width: 344
+        height: 194
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,19 +421,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c6c64ad38c84be4bbd22a5ad0d0827b
+      spriteID: 78741c6f5f7e77e47ad9da2a312c72a8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_14
+      name: KARAKTER_SET_14
       rect:
         serializedVersion: 2
-        x: 6
-        y: 495
-        width: 172
-        height: 173
+        x: 709
+        y: 60
+        width: 185
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,19 +441,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c6b0820c1e532f41b56b7a2795ceb52
+      spriteID: 3b403c919e1934448b09368a34a58c65
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_15
+      name: KARAKTER_SET_15
       rect:
         serializedVersion: 2
-        x: 2
-        y: 260
-        width: 233
-        height: 233
+        x: 52
+        y: 779
+        width: 245
+        height: 245
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -451,19 +461,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1dbbdb1c00d5f646b64cc82c9fd171c
+      spriteID: 0a8132be8d7caab4f9d93025e9761dd0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_16
+      name: KARAKTER_SET_16
       rect:
         serializedVersion: 2
-        x: 187
-        y: 599
-        width: 69
-        height: 65
+        x: 296
+        y: 771
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -471,19 +481,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb147925392f6c04584773936a166733
+      spriteID: 566765d6d611d544d81146bf6ec7818c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_17
+      name: KARAKTER_SET_17
       rect:
         serializedVersion: 2
-        x: 259
-        y: 599
-        width: 69
-        height: 65
+        x: 549
+        y: 764
+        width: 215
+        height: 215
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -491,19 +501,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 262454e5b10d8eb4eac265456aec9bbc
+      spriteID: d2afbda3a4f34044c9b55cdc816edd2b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_18
+      name: KARAKTER_SET_18
       rect:
         serializedVersion: 2
-        x: 331
-        y: 598
-        width: 69
-        height: 65
+        x: 781
+        y: 779
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -511,27 +521,227 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 372c8b55a443a1e4f98f31a355e4496e
+      spriteID: 0765268ea3e36e84aae046accf29c2df
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALTIN_YILDIZ_ATLAS_19
+      name: KARAKTER_SET_19
       rect:
         serializedVersion: 2
-        x: 486
-        y: 297
-        width: 531
-        height: 362
+        x: 76
+        y: 546
+        width: 185
+        height: 185
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32fe992d0e6e78944beadf2c85ab7493
+      spriteID: 02cb3f4c2dc7d94409d18d34cd0c79ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KARAKTER_SET_20
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 538
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a70fecb0df7224688c3bacd3887d86
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KARAKTER_SET_21
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 529
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9ae4964c79f1248a852b30f0daf0f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KARAKTER_SET_22
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 563
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1644db2700f3e4743ad5c227a90dab27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KARAKTER_SET_23
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 322
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1e99f75d0d20449b7fb42a6a4eed67
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KARAKTER_SET_24
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 319
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe03f4e8dcc5094f9e9ac7c84f911ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KARAKTER_SET_25
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 320
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524eab2b8b56b08439b353fe068075bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KARAKTER_SET_26
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 62
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69cfef2ddeef3e74da10e352f6c6cf6d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KARAKTER_SET_27
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 68
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac2cceb056968b4aabd2667bc083d52
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KARAKTER_SET_28
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 94
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb19414b1043e1142912217ae33b5d43
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KARAKTER_SET_29
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 303
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b586d8bac5e2b9f4888cdcda353099a3
       vertices: []
       indices: 
       edges: []
@@ -539,7 +749,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 56b5b9dddec3b6a43b1146a57d7080eb
+    spriteID: 21f084c69302e8040a40ed80d56d1acd
     vertices: []
     indices: 
     edges: []

@@ -57,7 +57,7 @@ public class QuestionManager : MonoBehaviour {
 		}
 	}
 
-	void FillQuestionLists() //  TODO I may call this again if we run out of questions
+	void FillQuestionLists()
 	{
 		RemoveSeenQuestions();
 

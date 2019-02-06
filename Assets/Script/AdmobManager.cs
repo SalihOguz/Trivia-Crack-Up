@@ -52,21 +52,22 @@ public class AdmobManager : Singleton<AdmobManager> {
 
     public void RequestRewardBasedVideo()
     {
+        // fake ad ids
+        // #if UNITY_ANDROID
+        //     string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        // #elif UNITY_IPHONE
+        //     string adUnitId = "ca-app-pub-3940256099942544/1712485313";
+        // #else
+        //     string adUnitId = "unexpected_platform";
+        // #endif
+
         #if UNITY_ANDROID
-            string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+            string adUnitId = "ca-app-pub-7734671340913331/9151687246";
         #elif UNITY_IPHONE
-            string adUnitId = "ca-app-pub-3940256099942544/1712485313";
+            string adUnitId = "ca-app-pub-7734671340913331/3404590447";
         #else
             string adUnitId = "unexpected_platform";
         #endif
-
-        // #if UNITY_ANDROID
-        //     string adUnitIdCoin = "ca-app-pub-7734671340913331/9151687246";
-        // #elif UNITY_IPHONE
-        //     string adUnitIdCoin = "ca-app-pub-7734671340913331/3404590447";
-        // #else
-        //     string adUnitIdCoin = "unexpected_platform";
-        // #endif
 
         // Create an empty ad request.
         AdRequest request = new AdRequest.Builder().Build();

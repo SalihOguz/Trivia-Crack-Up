@@ -5,4 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Avatars", menuName = "ScriptableObjects/Avatar", order = 1)]
 public class Avatars : ScriptableObject  {
 	public Sprite[] avatarSprites;
+	public Sprite[] avatarBodySprites;
+	public int[] levelUpgradeScores;
 }
