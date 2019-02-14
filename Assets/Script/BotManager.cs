@@ -102,17 +102,18 @@ public class BotManager : MonoBehaviour {
             skillUseTime += UnityEngine.Random.Range(minSkillUseTime, maxSkillUseTime);
             StartCoroutine(DelayedDisableTwoChoices(skillUseTime));
             skillUseTime++;  // to leave more time to answer after skill used to make it look like thinking
+
+            StartCoroutine(DelayedChoose(UnityEngine.Random.Range(botMinAnswerTime + skillUseTime, botMaxAnswerTime)));
         }
         else if (rnd < (chanceOfUsingKnowQuestion + chanceOfUsingDisableTwo) * 100 && !knowQuestionUsed && gameManager.currentQuestion.difficulty >= 3) // use know question skill
         {
             knowQuestionUsed = true;
-            skillUseTime += UnityEngine.Random.Range(minSkillUseTime, maxSkillUseTime);
-            StartCoroutine(DelayedKnowQuestion(skillUseTime));
-            skillUseTime++; // to leave more time to answer after skill used to make it look like thinking
+            StartCoroutine(DelayedKnowQuestion(UnityEngine.Random.Range(minSkillUseTime, maxSkillUseTime)));
         }
-
-        // answering
-        StartCoroutine(DelayedChoose(UnityEngine.Random.Range(botMinAnswerTime + skillUseTime, botMaxAnswerTime)));
+        else
+        {
+            StartCoroutine(DelayedChoose(UnityEngine.Random.Range(botMinAnswerTime + skillUseTime, botMaxAnswerTime)));
+        }
     }
 
     IEnumerator DelayedKnowQuestion(float time)
@@ -164,7 +165,7 @@ public class BotManager : MonoBehaviour {
         if (gameManager.userWantsAgain)
         {
             float rnd = UnityEngine.Random.Range(0, 100);
-            if (rnd < revengeAcceptenceRate * 100)
+            if (rnd < revengeAcceptenceRate * 100 && PlayerPrefs.GetInt("IsTutorialCompeted") == 1)
             {
                 botWantsAgain = true;
                 StartCoroutine(gameManager.DelayRestart());
@@ -178,7 +179,7 @@ public class BotManager : MonoBehaviour {
         else
         {
             float rnd = UnityEngine.Random.Range(0, 100);
-            if (rnd < revengeOfferRate * 100)
+            if (rnd < revengeOfferRate * 100 && PlayerPrefs.GetInt("IsTutorialCompeted") == 1)
             {
                 botWantsAgain = true;
                 gameManager.BotWantsAgain();
@@ -224,6 +225,9 @@ public class BotManager : MonoBehaviour {
     IEnumerator DelayedSendEmoji(int id)
     {
         yield return new WaitForSeconds(UnityEngine.Random.Range(2f, 4f));
-        gameManager.SendEmojiBot(id);
+        if(PlayerPrefs.GetInt("IsTutorialCompeted") == 1)
+        {
+            gameManager.SendEmojiBot(id);       
+        }
     }
 }

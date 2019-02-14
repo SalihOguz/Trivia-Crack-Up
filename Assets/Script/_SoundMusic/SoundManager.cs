@@ -11,7 +11,7 @@ public class SoundManager : MonoBehaviour {
 		audioSource = GetComponent<AudioSource>();
 		if (PlayerPrefs.GetInt("isSoundOn") == 1)
 		{
-			audioSource.volume = 1;
+			audioSource.volume = 0.5f;
 		}
 		else
 		{
@@ -29,6 +29,13 @@ public class SoundManager : MonoBehaviour {
 	public void TurnSound(int state) // 1 = on, 0 = off
 	{
 		PlayerPrefs.SetInt("isSoundOn", state);
-		audioSource.volume = state;
+		if (state == 1)
+		{
+			audioSource.volume = 0.5f;
+		}
+		else
+		{
+			audioSource.volume = state;
+		}
 	}
 }

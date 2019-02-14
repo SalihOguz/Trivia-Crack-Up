@@ -20,12 +20,16 @@ public class MenuManager : MonoBehaviour {
 	public GameObject leaderboardLoadingObject;
 	public GameObject adButton;
 	public GameObject soundButton;
-
+	public GameObject levelContentParent;
+	public Sprite[] levelBgSprites; // 0 past, 1 current, 2 future
+	Avatars av;
+	
 	void Start()
 	{
 		player = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
+		av = Resources.Load<Avatars>("Data/Avatars");
 		
-		Sprite avatar = Resources.Load<Avatars>("Data/Avatars").avatarSprites[player.avatarId];
+		Sprite avatar = av.avatarSprites[player.avatarId];
 		userDataObject.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = avatar;
 		userDataObject.transform.Find("UserNameBG").GetChild(0).GetComponent<Text>().text = player.username;
 		userDataObject.transform.Find("CoinButton").GetChild(0).GetComponent<Text>().text = player.totalCoin.ToString();
@@ -48,6 +52,29 @@ public class MenuManager : MonoBehaviour {
 
 		ArrangeSound();
 		SetStartScreen();
+		ArrangeLevelScreen();
+	}
+
+	void ArrangeLevelScreen()
+	{
+		for (int i = 0; i < levelContentParent.transform.childCount - 1; i++) // -1 because last one is not character but "coming soon"
+		{
+			if (i < player.level)
+			{
+				levelContentParent.transform.GetChild(i).GetComponent<Image>().sprite = levelBgSprites[0];
+				levelContentParent.transform.GetChild(i).GetChild(2).GetComponent<Image>().sprite = av.avatarSprites[i];
+			}
+			else if (i == player.level)
+			{
+				levelContentParent.transform.GetChild(i).GetComponent<Image>().sprite = levelBgSprites[1];
+				levelContentParent.transform.GetChild(i).GetChild(2).GetComponent<Image>().sprite = av.avatarSprites[i];
+			}
+			else
+			{
+				levelContentParent.transform.GetChild(i).GetComponent<Image>().sprite = levelBgSprites[2];
+				levelContentParent.transform.GetChild(i).GetChild(2).GetComponent<Image>().sprite = av.avatarUnlockedSprites[i];
+			}
+		}
 	}
 
 	void ArrangeSound()
@@ -166,7 +193,10 @@ public class MenuManager : MonoBehaviour {
 			GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex = -1;
 		}
 
-		yield return new WaitForSeconds(UnityEngine.Random.Range(4f, 6f));
+		float rnd = UnityEngine.Random.Range(4f, 8f);
+		yield return new WaitForSeconds(rnd - 1.5f);
+		PlaySound(11);
+		yield return new WaitForSeconds(1.5f);
 		ChangeLayerTo(5);
 		yield return new WaitForSeconds(3f);
 		ChangeLayerTo(8);
@@ -204,21 +234,12 @@ public class MenuManager : MonoBehaviour {
 		}
 	}
 
-	public void PurchasePass()
-	{
-
-	}
-
-	public void PurchaseCoin()
-	{
-
-	}
-
 	public void AddCoins(int amount)
 	{
 		player.totalCoin += amount;
 		SendUserData();
 
+		userDataObject.transform.Find("CoinButton").GetChild(0).GetComponent<Text>().text = player.totalCoin.ToString();
 	}
 
 	public void AddMixedPack(int amount)
@@ -226,6 +247,11 @@ public class MenuManager : MonoBehaviour {
 		player.knowQuestionSkillCount += amount;
 		player.fiftyFiftySkillCount += amount;
 		SendUserData();
+
+		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = "Joker " + player.knowQuestionSkillCount.ToString();
+		userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = "Şık Eleme " + player.fiftyFiftySkillCount.ToString();
+		knowQuestionCountText.text = player.knowQuestionSkillCount.ToString();
+		disableTwoCountText.text = player.fiftyFiftySkillCount.ToString();
 	}
 
     void SendUserData()

@@ -23,24 +23,24 @@ public class Purchaser : MonoBehaviour, IStoreListener {
     public GameObject loading;
     public MenuManager menuManager;     
 
-    public static string mix10 = "com.digitalwords.triviachallanger.mix10";
-    public static string mixed30 = "com.digitalwords.triviachallanger.mixed30";
-    public static string mix100 = "com.digitalwords.triviachallanger.mix100";
-    public static string mix500 = "com.digitalwords.triviachallanger.mix500";
+    public static string mix10 = "mixedpack1";
+    public static string mixed30 = "mixedpack2";
+    public static string mix100 = "mixedpack3";
+    public static string mix500 = "mixedpack4";
 
-    public static string coin1000 = "com.digitalwords.triviachallanger.coin1000";
-    public static string coin5000 = "com.digitalwords.triviachallanger.coin5000";
-    public static string coin10000 = "com.digitalwords.triviachallanger.coin10000";
+    public static string coin1000 = "coinpack1";
+    public static string coin5000 = "coinpack2";
+    public static string coin10000 = "coinpack3";
 
     public static string kProductIDConsumable = "consumable";
     public static string kProductIDNonConsumable = "nonconsumable";
     public static string kProductIDSubscription = "subscription";
 
     // Apple App Store-specific product identifier for the subscription product.
-    private static string kProductNameAppleSubscription = "com.unity3d.subscription.new";
+    //private static string kProductNameAppleSubscription = "com.unity3d.subscription.new";
 
     // Google Play Store-specific product identifier subscription product.
-    private static string kProductNameGooglePlaySubscription = "com.unity3d.subscription.original";
+    //private static string kProductNameGooglePlaySubscription = "com.unity3d.subscription.original";
 
     void Start() {
         // If we haven't set up the Unity Purchasing reference

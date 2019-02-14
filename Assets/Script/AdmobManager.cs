@@ -9,6 +9,7 @@ using System;
 public class AdmobManager : Singleton<AdmobManager> {
     private RewardBasedVideoAd rewardBasedVideo;
     MenuManager menuManager;
+    GameManager gameManager;
     string adType = "";
 
     public void DelayedStart()
@@ -87,7 +88,8 @@ public class AdmobManager : Singleton<AdmobManager> {
     {
         PlayerPrefs.SetString("userData", JsonUtility.ToJson(menuManager.player));
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
-		reference.Child("userList").Child(menuManager.player.userId).SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
+        reference.Child("userList").Child(menuManager.player.userId).SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
+
     }
 
     private void OnDestroy() {
@@ -139,7 +141,7 @@ public class AdmobManager : Singleton<AdmobManager> {
             "HandleRewardBasedVideoRewarded event received for "
                 + args.Amount.ToString() + " " + args.Type);
 
-        if(!menuManager)
+        if(!menuManager && Camera.main.GetComponent<MenuManager>())
         {
             menuManager = Camera.main.GetComponent<MenuManager>();
         }
@@ -168,7 +170,15 @@ public class AdmobManager : Singleton<AdmobManager> {
         {
             Camera.main.GetComponent<GameManager>().DoubleTheCoin();
         }
-        SendUserData();
+
+        if(menuManager || Camera.main.GetComponent<MenuManager>())
+        {
+            if (!menuManager)
+            {
+                menuManager = Camera.main.GetComponent<MenuManager>();
+            }
+            SendUserData();
+        }
     }
 
     public void HandleRewardBasedVideoLeftApplication(object sender, EventArgs args) {

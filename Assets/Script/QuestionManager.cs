@@ -13,6 +13,7 @@ public class QuestionManager : MonoBehaviour {
 	public float userLevelTreshold = 0.8f; // percentage of questions that has to be answered right to go to the next level
 	public float chanceOfAskingLowerLevel = 0.15f;
 	public float chanceOfAskingHigherLevel = 0.15f;
+	int questionCount = 0;
 
 	void Start()
 	{
@@ -36,6 +37,7 @@ public class QuestionManager : MonoBehaviour {
 			ql = JsonUtility.FromJson<QuestionList>(textAssset.text);
 			print("Working with offline questions! You need to come from the register scene for online questions.");	
 		}
+		questionCount = ql.questionList.Count;
 
 	}
 
@@ -73,6 +75,10 @@ public class QuestionManager : MonoBehaviour {
 
 	void RemoveSeenQuestions()
 	{
+		if (ql.questionList.Count < questionCount)
+		{
+			GetQuestionsFromJson();
+		}
 		// TODO we may need to test question list integrity. It may be uncomplete. If there is a index missing in row numbers, it will cause problems
 		sortedSeen = new List<int>(player1.seenQuestionIds);
 		sortedSeen.Sort();
@@ -170,7 +176,7 @@ public class QuestionManager : MonoBehaviour {
 		}
 		else if (rnd < (chanceOfAskingLowerLevel + chanceOfAskingHigherLevel) * 100)
 		{
-			if (difficultyList[userDifficultyLevel + 1].questionList.Count == 0)
+			if (difficultyList[Mathf.Clamp(userDifficultyLevel + 1, 0, difficultyLevelCount-1)].questionList.Count == 0)
 			{
 				FillQuestionLists();
 			}

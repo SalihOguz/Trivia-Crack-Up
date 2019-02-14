@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>457317115974-mc5npacn8rkmlnlq143ihvplhm7ri4t2.apps.googleusercontent.com</string>
+	<string>586522041874-dbt4gpikl95mfrdoap5eja304gavnnf4.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.457317115974-mc5npacn8rkmlnlq143ihvplhm7ri4t2</string>
+	<string>com.googleusercontent.apps.586522041874-dbt4gpikl95mfrdoap5eja304gavnnf4</string>
 	<key>API_KEY</key>
-	<string>AIzaSyClAlFvViMBDRrp5wTY-CxXmC9k6Ubw1HI</string>
+	<string>AIzaSyAaGT7Qq9RCzCj-JoWBi6Uw2GM89CJatc8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>457317115974</string>
+	<string>586522041874</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.digitalwords.triviachallanger</string>
+	<string>com.digitalwords.trivia</string>
 	<key>PROJECT_ID</key>
-	<string>trivia-challanger</string>
+	<string>triviachallanger</string>
 	<key>STORAGE_BUCKET</key>
-	<string>trivia-challanger.appspot.com</string>
+	<string>triviachallanger.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:457317115974:ios:1a6714deb2a083b1</string>
+	<string>1:586522041874:ios:2f8de6eddde98ab2</string>
 	<key>DATABASE_URL</key>
-	<string>https://trivia-challanger.firebaseio.com</string>
+	<string>https://triviachallanger.firebaseio.com</string>
 </dict>
 </plist>

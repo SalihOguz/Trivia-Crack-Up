@@ -9,6 +9,7 @@ using Firebase.Database;
 using Firebase.Unity.Editor;
 using DG.Tweening;
 using GoogleMobileAds.Api;
+using BugsnagUnity;
 
 public class RegisterManager : MonoBehaviour {
 	public GameObject uiLayer;
@@ -96,7 +97,7 @@ public class RegisterManager : MonoBehaviour {
 	{
 		// Set up the Editor before calling into the realtime database.
 		#if UNITY_EDITOR
-			FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://trivia-challanger.firebaseio.com/");
+			FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://triviachallanger.firebaseio.com/");
 		#endif
 	}
 

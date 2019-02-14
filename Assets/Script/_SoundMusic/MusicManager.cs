@@ -12,8 +12,7 @@ public class MusicManager : MonoBehaviour {
 		audioSource = GetComponent<AudioSource>();
 		if (PlayerPrefs.GetInt("isMusicOn") == 1)
 		{
-			audioSource.volume = 1;
-			PlayMusic(0);
+			audioSource.volume = 0.6f;
 		}
 		else
 		{
@@ -32,7 +31,7 @@ public class MusicManager : MonoBehaviour {
 					audioSource.Stop();
 					audioSource.clip = musicClips[id];
 					audioSource.Play();
-					DOTween.To(()=> audioSource.volume, x => audioSource.volume = x, 1, 0.5f);
+					DOTween.To(()=> audioSource.volume, x => audioSource.volume = x, 0.6f, 0.5f);
 				});
 			}
 			else
@@ -43,9 +42,24 @@ public class MusicManager : MonoBehaviour {
 		}
 	}
 
+	public void StopMusic()
+	{
+		DOTween.To(()=> audioSource.volume, x => audioSource.volume = x, 0f,0.5f).
+		OnComplete(delegate(){
+			audioSource.Stop();
+		});
+	}
+
 	public void TurnMusic(int state) // 1 = on, 0 = off
 	{
 		PlayerPrefs.SetInt("isMusicOn", state);
-		audioSource.volume = state;
+		if (state == 1)
+		{
+			audioSource.volume = 0.6f;
+		}
+		else
+		{
+			audioSource.volume = state;
+		}
 	}
 }

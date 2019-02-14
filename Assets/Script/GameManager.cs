@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour {
     public GameObject opponentCoinsParent;
     public GameObject chestCoinsParent;
     public GameObject tutorialPanel;
-    public GameObject tutorialHandBid;
     public GameObject tutorialHandQuestion;
     public GameObject emojiBg;
     public GameObject emojiButton;
@@ -57,6 +56,8 @@ public class GameManager : MonoBehaviour {
     public GameObject botEmojiButton;
     public GameObject botShowEmojiObject;
     public GameObject doublecoinButton;
+    public GameObject tutorialTextObjects;
+    public GameObject tutorialBidHand;
 
     [Header ("In Game Variables")]
     [HideInInspector]
@@ -78,11 +79,13 @@ public class GameManager : MonoBehaviour {
     float disconnectedSec = 0;
     SoundManager soundManager;
     MusicManager musicManager;
+    SoundManager otherSoundManager;
     int startingPlayerId; // who wins the bid
     int totalBidPlayer = 0;
     int totalBidOpponent = 0;
     int startingCoin;
     DatabaseReference reference;
+    int tutorialCount = 0;
 
 	[Header ("User Variables")]
     [HideInInspector]
@@ -99,15 +102,9 @@ public class GameManager : MonoBehaviour {
 	public float totalBiddingTime = 5f;
 	public float choiceApperTime = 0.75f;
     public int[] bidAmounts = { 15, 35, 70, 100};
-    public float questionAnsweringTime = 10f;
+    public float questionAnsweringTime = 15f;
     public int totalTurnCount = 7;
     public float maxDisconnectedSec = 3;
-
-    [Header ("Question Data")]
-    int[] chosenChoiceCounts = new int[4];
-    int[] chosenBidIndexCounts = new int[3];
-    float firstAnsweringTime = 0;
-    float secondAnsweringTime = 0;
 
     #endregion
 
@@ -121,6 +118,11 @@ public class GameManager : MonoBehaviour {
         {
             musicManager = GameObject.FindGameObjectWithTag("music").GetComponent<MusicManager>();
         }
+        if (GameObject.FindGameObjectWithTag("otherSound"))
+        {
+            otherSoundManager = GameObject.FindGameObjectWithTag("otherSound").GetComponent<SoundManager>();
+        }
+        
 
         PlayMusic(2);
 
@@ -137,7 +139,10 @@ public class GameManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         StartCoroutine(DelayedStart());
-        //StartCoroutine(CheckConnection()); // TODO uncomment
+        
+        #if ! UNITY_EDITOR
+        StartCoroutine(CheckConnection());
+        #endif
     }
 
     void Init()
@@ -166,6 +171,9 @@ public class GameManager : MonoBehaviour {
         knowQuestionAmountText.text = player1.knowQuestionSkillCount.ToString();
         fiftyFiftyAmountText.text = player1.fiftyFiftySkillCount.ToString();
 
+        endScreen.transform.Find("PlayerText").GetComponent<Text>().text = player1.username;
+        endScreen.transform.Find("OpponentText").GetComponent<Text>().text = player2.username;
+
         startingCoin = player1.totalCoin;
     }
 
@@ -191,7 +199,7 @@ public class GameManager : MonoBehaviour {
         {
             print("reference was null");
             #if UNITY_EDITOR
-			    FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://trivia-challanger.firebaseio.com/");
+			    FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://triviachallanger.firebaseio.com/");
 		    #endif
             reference = FirebaseDatabase.DefaultInstance.RootReference;
         }
@@ -212,7 +220,43 @@ public class GameManager : MonoBehaviour {
     IEnumerator DelayedStart()
     {
         yield return new WaitForSeconds(0.2f);
+        DisplayTutorial();
         ProceedGame();
+    }
+
+    void DisplayTutorial()
+    {
+        if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+        {
+            Time.timeScale = 0f;
+            tutorialPanel.transform.GetChild(0).gameObject.SetActive(true);
+            tutorialPanel.transform.GetChild(1).GetChild(tutorialCount).gameObject.SetActive(true);
+            tutorialTextObjects.transform.GetChild(tutorialCount).gameObject.SetActive(true);
+            tutorialPanel.transform.GetChild(0).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0.5f),0.3f).SetUpdate(true);
+
+            if (tutorialCount == 4)
+            {
+                PlayerPrefs.SetInt("IsTutorialCompeted", 1);
+            }
+        }
+    }
+
+    public void TutorialDone()
+    {
+        Time.timeScale = 1f;
+        tutorialPanel.transform.GetChild(0).gameObject.SetActive(false);
+        tutorialPanel.transform.GetChild(1).GetChild(tutorialCount).gameObject.SetActive(false);
+        tutorialTextObjects.transform.GetChild(tutorialCount).gameObject.SetActive(false);
+        tutorialPanel.transform.GetChild(0).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0),0.3f).SetUpdate(true);
+
+        if (tutorialCount == 2) // Bid
+        {
+            tutorialBidHand.SetActive(true);
+            tutorialBidHand.transform.DOScale(Vector3.one * 0.65f, 0.5f).SetLoops(-1,LoopType.Yoyo);
+        }
+
+        tutorialCount++;
+
     }
 
 	void ProceedGame()
@@ -245,6 +289,7 @@ public class GameManager : MonoBehaviour {
             bidTimerText.text =  (Mathf.CeilToInt(totalBiddingTime - bidTimer)).ToString();
             if (bidTimer >= totalBiddingTime) // bidding time ended // && (playerBid == 0 || opponentBid == 0) 
 			{
+                StopMusic();
 				EvaluateBidding();
 			}
 		}
@@ -282,6 +327,10 @@ public class GameManager : MonoBehaviour {
 		yield return new WaitForSeconds(choiceApperTime);
 		optionTexts[3].text = currentQuestion.choice4;
 
+        if(playerScore + opponentScore == 0)
+        {
+            DisplayTutorial();
+        }
 		ProceedGame();
 	}
 
@@ -304,12 +353,10 @@ public class GameManager : MonoBehaviour {
         playerNameText.gameObject.SetActive(false);
         opponentNameText.gameObject.SetActive(false);
 
-        if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+        yield return new WaitForSeconds(0.3f);
+        if(playerScore + opponentScore == 0)
         {
-            tutorialPanel.SetActive(true);
-            tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0.45f),0.5f);
-            tutorialHandBid.SetActive(true);
-            tutorialHandBid.transform.DOScale(Vector3.one * 0.8f, 0.5f).SetLoops(-1,LoopType.Yoyo);
+            DisplayTutorial();
         }
 	}
 
@@ -389,6 +436,8 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator EndBidState()
     {
+        PlayOtherSound(1);
+
         // show bids
         bidIndicatorsParent.SetActive(true);
 
@@ -401,6 +450,8 @@ public class GameManager : MonoBehaviour {
         {
              infoText.text = "Soru <b><color=#FFEA00>" + player2.username + "</color></b> için geliyor";           
         }
+
+        yield return new WaitForSeconds(1f);
 
         SendCoinsToChest();
 
@@ -421,16 +472,15 @@ public class GameManager : MonoBehaviour {
 
         accumulatedMoneyText.transform.parent.GetChild(4).gameObject.SetActive(false);
 
-        PlaySound(1);
+        //PlaySound(1);
 
-        if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
-        {
-            tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0f),0.5f).OnComplete(delegate()
-            {
-                tutorialPanel.SetActive(false);
-            });
-            tutorialHandBid.SetActive(false);
-        }
+        // if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+        // {
+        //     tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0f),0.5f).OnComplete(delegate()
+        //     {
+        //         tutorialPanel.SetActive(false);
+        //     });
+        // }
 
         ProceedGame();
     }
@@ -457,39 +507,41 @@ public class GameManager : MonoBehaviour {
         int p2 = player2.totalCoin;
         int tot = totalMoneyAccumulated;
 
-        float flowDelay = 1.5f/Mathf.Max(playerBid/10, opponentBid/10); //Mathf.Max(Mathf.Clamp(playerBid/10, 3, 10), Mathf.Clamp(opponentBid/10, 3, 10));
+        float flowDelay = 0.5f/Mathf.Max(playerBid/30, opponentBid/30); //Mathf.Max(Mathf.Clamp(playerBid/10, 3, 10), Mathf.Clamp(opponentBid/10, 3, 10));
 
-        accumulatedMoneyText.transform.parent.GetChild(1).DOShakeRotation(Mathf.Max(playerBid/10, opponentBid/10) * flowDelay, new Vector3(0,0,20f),90,90).SetDelay(1f);
-        accumulatedMoneyText.transform.parent.GetChild(1).DOShakeScale(Mathf.Max(playerBid/10, opponentBid/10) * flowDelay, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(1f);
+        accumulatedMoneyText.transform.parent.GetChild(1).DOShakeRotation(Mathf.Max(playerBid/30, opponentBid/30) * flowDelay, new Vector3(0,0,20f),90,90).SetDelay(1f).OnComplete(delegate(){
+            tot += (playerBid) % 30;
+            tot += (opponentBid) % 30;
+            accumulatedMoneyText.text = tot + " COIN";
+        });
+        accumulatedMoneyText.transform.parent.GetChild(1).DOShakeScale(Mathf.Max(playerBid/30, opponentBid/30) * flowDelay, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(1f);
 
-        for(int i = 0; i < Mathf.Max(playerBid/10, opponentBid/10); i++) // Mathf.Max(Mathf.Clamp(playerBid/10, 3, 10), Mathf.Clamp(opponentBid/10, 3, 10))
+        for(int i = 0; i < Mathf.Max(playerBid/30, opponentBid/30); i++) // Mathf.Max(Mathf.Clamp(playerBid/10, 3, 10), Mathf.Clamp(opponentBid/10, 3, 10))
         {
-            if (i < playerBid/10)
+            if (i < playerBid/30)
             {
-                int no = i;
                 playerCoinsParent.transform.GetChild(i).DOMove(accumulatedMoneyText.transform.parent.GetChild(0).position, 1f).SetEase(Ease.InCubic).SetDelay(flowDelay*i).
                 OnComplete(delegate() { 
-                    tot += 10;
+                    tot += 30;
                     accumulatedMoneyText.text = tot + " COIN";
                  }).OnStart(delegate() {
-                    p1 -= 10;
+                    p1 -= 30;
                     playerMoneyText.text = p1.ToString();
                  });
                 playerCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.8f, 0.5f).SetEase(Ease.InCubic).SetDelay(flowDelay*i);
                 playerCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.4f, 0.5f).SetEase(Ease.InCubic).SetDelay(flowDelay*i + 0.5f);
             }
-            if (i < opponentBid/10)
+            if (i < opponentBid/30)
             {
-                int no = i;
                 opponentCoinsParent.transform.GetChild(i).DOMove(accumulatedMoneyText.transform.parent.GetChild(0).position, 1f).SetEase(Ease.InCubic).SetDelay(flowDelay*i).OnComplete(delegate() { 
-                    tot += 10;
+                    tot += 30;
                     accumulatedMoneyText.text = tot + " COIN";
                  }).OnStart(delegate() {
-                    p2 -= 10;
+                    p2 -= 30;
                     opponentMoneyText.text = p2.ToString();
                  });;
-                opponentCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.8f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i);
-                opponentCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.4f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i + 0.5f);
+                //opponentCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.8f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i);
+                //opponentCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.4f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i + 0.5f);
             }
         }
     }
@@ -536,24 +588,28 @@ public class GameManager : MonoBehaviour {
         playerNameText.gameObject.SetActive(false);
         opponentNameText.gameObject.SetActive(false);
 
-        int count = totalMoneyAccumulated/10; //Mathf.Clamp(totalMoneyAccumulated/10, 3, 10);
+        int count = totalMoneyAccumulated/30; //Mathf.Clamp(totalMoneyAccumulated/10, 3, 10);
 
-        float flowDelay = 1.5f/count;
+        float flowDelay = 0.5f/count;
 
         indicator.transform.DOShakeRotation(count * flowDelay, new Vector3(0,0,10f),50,50).SetDelay(1f);
-        indicator.transform.DOShakeScale(count * flowDelay, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(1f);
+        indicator.transform.DOShakeScale(count * flowDelay, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(1f).OnComplete(delegate(){
+            p1 += totalMoneyAccumulated % 30;
+            accumulatedMoneyText.text = "0 COIN";
+            winnerText.text = p1.ToString();
+        });
         for(int i = 0; i < count; i++)
         {
             accumulatedMoneyText.transform.parent.GetChild(0).GetChild(i).DOMove(target.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(flowDelay * i)
             .OnComplete(delegate() { 
-                p1 += 10;
+                p1 += 30;
                 winnerText.text = p1.ToString();
             }).OnStart(delegate() {
-                tot -= 10;
+                tot -= 30;
                 accumulatedMoneyText.text = tot + " COIN";
             });
-            accumulatedMoneyText.transform.parent.GetChild(0).GetChild(i).DOScale(Vector3.one * 0.6f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i);
-            accumulatedMoneyText.transform.parent.GetChild(0).GetChild(i).DOScale(Vector3.one * 0.4f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i + 0.5f);
+            //accumulatedMoneyText.transform.parent.GetChild(0).GetChild(i).DOScale(Vector3.one * 0.6f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i);
+            //accumulatedMoneyText.transform.parent.GetChild(0).GetChild(i).DOScale(Vector3.one * 0.4f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i + 0.5f);
         }
     }
 
@@ -585,7 +641,7 @@ public class GameManager : MonoBehaviour {
 	{
         if (playerBid == 0) // didn't make a bid before
         {
-            PlaySound(0);
+            PlaySound(3);
 
             playerBid = bidAmounts[index];
             playerBidTime = Time.timeSinceLevelLoad - bidStartTime;
@@ -603,17 +659,8 @@ public class GameManager : MonoBehaviour {
             // {
             //     EvaluateBidding();
             // }
-            if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
-            {
-                tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0f),0.5f).OnComplete(delegate()
-                {
-                    tutorialPanel.SetActive(false);
-                    tutorialPanel.transform.GetChild(0).gameObject.SetActive(false);
-                    tutorialPanel.transform.GetChild(2).gameObject.SetActive(true);
-                });
-                tutorialHandBid.SetActive(false);
-            }
 
+            tutorialBidHand.SetActive(false);
             currentQuestionData.chosenBidIndexCounts[index]++;
         }
 	}
@@ -654,6 +701,8 @@ public class GameManager : MonoBehaviour {
         if (playingPlayerId == 0)
         {
             infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b>\ncevaplıyor";
+            knowQuestionButton.GetComponent<Button>().enabled = true;
+            fiftyFiftyButton.GetComponent<Button>().enabled = true;
         }
         else
         {
@@ -666,16 +715,17 @@ public class GameManager : MonoBehaviour {
         }
         questionCountdown.GetComponent<Animator>().enabled = true;
 
-        if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+        if (playerScore + opponentScore == 2)
         {
-            print("aaaa");
-            tutorialHandQuestion.transform.position = new Vector3(1.5f, optionTexts[currentQuestion.rightAnswerIndex].transform.parent.position.y, 0);
-            tutorialPanel.transform.GetChild(2).position = new Vector3(0, optionTexts[currentQuestion.rightAnswerIndex].transform.parent.position.y, 0); //new Vector3(2.53f, optionTexts[currentQuestion.rightAnswerIndex].transform.parent.position.y, 0);
+            // tutorialHandQuestion.transform.position = new Vector3(1.5f, optionTexts[currentQuestion.rightAnswerIndex].transform.parent.position.y, 0);
+            // tutorialPanel.transform.GetChild(2).position = new Vector3(0, optionTexts[currentQuestion.rightAnswerIndex].transform.parent.position.y, 0); //new Vector3(2.53f, optionTexts[currentQuestion.rightAnswerIndex].transform.parent.position.y, 0);
 
-            tutorialPanel.SetActive(true);
-            tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0.45f),0.5f);
-            tutorialHandQuestion.SetActive(true);
-            tutorialHandQuestion.transform.DOScale(Vector3.one * 0.65f, 0.5f).SetLoops(-1,LoopType.Yoyo);
+            // tutorialPanel.SetActive(true);
+            // tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0.45f),0.5f);
+            // tutorialHandQuestion.SetActive(true);
+            // tutorialHandQuestion.transform.DOScale(Vector3.one * 0.65f, 0.5f).SetLoops(-1,LoopType.Yoyo);
+
+            DisplayTutorial();
         }
     }
 
@@ -699,6 +749,9 @@ public class GameManager : MonoBehaviour {
 
             infoText.transform.DOShakeRotation(1f,new Vector3(0,0,10f),20,50);
             infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b> cevaplıyor";
+
+            knowQuestionButton.enabled = true;
+            fiftyFiftyButton.enabled = true;
         }
 
         questionTimer = 0;
@@ -712,6 +765,8 @@ public class GameManager : MonoBehaviour {
     public void ChooseAnswer(int index)
     {
         questionCountdown.GetComponent<Animator>().enabled = false;
+        knowQuestionButton.enabled = false;
+        fiftyFiftyButton.enabled = false;
 
         if (playingPlayerId == 0 && gameState == 2)
         {
@@ -747,7 +802,7 @@ public class GameManager : MonoBehaviour {
                 }
                 else
                 {
-                    StartCoroutine(CleanScreen());
+                    StartCoroutine(CleanScreen(true));
                 }
                 
                 if (!botShowEmojiObject.activeSelf)
@@ -758,15 +813,15 @@ public class GameManager : MonoBehaviour {
                 currentQuestionData.answeredWrongCount++;
             }
 
-            if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
-            {
-                tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0f),0.5f).OnComplete(delegate()
-                {
-                    tutorialPanel.SetActive(false);
-                });
-                tutorialHandQuestion.SetActive(false);
-                PlayerPrefs.SetInt("IsTutorialCompeted", 1); // tutorial completed
-            }
+            // if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+            // {
+            //     tutorialPanel.transform.GetChild(1).GetComponent<SpriteRenderer>().DOColor(new Color(0,0,0,0f),0.5f).OnComplete(delegate()
+            //     {
+            //         tutorialPanel.SetActive(false);
+            //     });
+            //     tutorialHandQuestion.SetActive(false);
+            //     PlayerPrefs.SetInt("IsTutorialCompeted", 1); // tutorial completed
+            // }
             currentQuestionData.chosenChoiceCounts[index]++;
             if (GetAvaliableChoiceCount() == 0 || fiftyFiftyUsed)
             {
@@ -812,7 +867,7 @@ public class GameManager : MonoBehaviour {
             }
             else
             {
-               StartCoroutine(CleanScreen());
+               StartCoroutine(CleanScreen(true));
             }
 
             if (!botShowEmojiObject.activeSelf)
@@ -824,9 +879,9 @@ public class GameManager : MonoBehaviour {
 
 	public void KnowTheQuestion()
 	{
-        if (!knowQuestionUsed && player1.knowQuestionSkillCount > 0 &&  gameState == 2)
+        if (!knowQuestionUsed && player1.knowQuestionSkillCount > 0 &&  gameState == 2 && playingPlayerId == 0)
         {
-            PlaySound(6);
+            PlayOtherSound(3);
 
     		ChooseAnswer(currentQuestion.rightAnswerIndex);
             knowQuestionUsed = true;
@@ -861,7 +916,7 @@ public class GameManager : MonoBehaviour {
     {
         if(!fiftyFiftyUsed && GetAvaliableChoiceCount() == 4 && player1.fiftyFiftySkillCount > 0 && gameState == 2 && playingPlayerId == 0)
         {
-            PlaySound(10);
+            PlayOtherSound(4);
 
             List<Button> enabledbuttons = new List<Button>();
             for(int i = 0; i < optionTexts.Length; i++)
@@ -962,6 +1017,7 @@ public class GameManager : MonoBehaviour {
             SendCoinsToWinner(winnerId);
             ApplyCutToLoser(winnerId);
             destination.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+            PlayOtherSound(2);
             });;
         // animStar.transform.DORotate(new Vector3(0,0,1080), 2f, RotateMode.WorldAxisAdd).SetEase(Ease.InCubic).OnComplete(delegate(){
         //     destination.GetComponent<Image>().sprite = fullStarSprite; 
@@ -1077,7 +1133,7 @@ public class GameManager : MonoBehaviour {
 
     void StartEndGameCoinFlow()
     {
-        PlayDelayedSound(2, 2.1f);
+        StartCoroutine(PlayDelayedOtherSound(0, 2.1f));
 
         foreach (Transform i in chestCoinsParent.transform)
         {
@@ -1085,16 +1141,24 @@ public class GameManager : MonoBehaviour {
             i.gameObject.SetActive(true);
         }
 
-        int p1 = player1.totalCoin;
-        int p2 = player2.totalCoin;
-
         if(playerScore > opponentScore)
         {
-            chestCoinsParent.transform.parent.DOShakeRotation(1 + 0.1f * Mathf.Clamp(Mathf.FloorToInt((totalBidPlayer)/50), 1, chestCoinsParent.transform.childCount), new Vector3(0,0,10f),50,50).SetDelay(2f);
-            for (int i = 0; i <  Mathf.Clamp(Mathf.FloorToInt((totalBidPlayer)/50), 1, chestCoinsParent.transform.childCount); i++)
+            int p1 = player1.totalCoin;
+            int count = Mathf.Clamp(Mathf.FloorToInt((totalBidPlayer)/50), 1, chestCoinsParent.transform.childCount);
+            float flowDelay = 2f/count;
+            chestCoinsParent.transform.parent.DOShakeRotation(1 + 0.1f * count, new Vector3(0,0,10f),50,50).SetDelay(2f);
+            playerIndicator.transform.DOShakeRotation(count * flowDelay, new Vector3(0,0,10f),50,50).SetDelay(3f);
+            playerIndicator.transform.DOShakeScale(count * flowDelay, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(3f).OnComplete(delegate(){
+                if(PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+                {
+                    DisplayTutorial();
+                }
+            });
+            
+            for (int i = 0; i <  count; i++)
             {
                 int no = i;
-                chestCoinsParent.transform.GetChild(i).DOMove(playerCoinsParent.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(2f + 0.1f*i)
+                chestCoinsParent.transform.GetChild(i).DOMove(playerCoinsParent.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(2f + flowDelay*i)
                 .OnComplete(delegate(){
                     p1 += 50;
                     if (p1 == player1.totalCoin - (totalBidPlayer) % 50)
@@ -1102,50 +1166,25 @@ public class GameManager : MonoBehaviour {
                         p1 += (totalBidPlayer) % 50;
                     }
                     playerMoneyText.text = p1.ToString();
-
                     chestCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
                 });
-                chestCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.6f, 0.5f).SetEase(Ease.Linear).SetDelay(2f + 0.1f*i);
-                chestCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.2148f, 0.5f).SetEase(Ease.Linear).SetDelay(2f + 0.1f*i + 0.5f);
-
-                playerIndicator.transform.DOShakeRotation(0.1f, new Vector3(0,0,10f),50,50).SetDelay(3f + 0.1f*i);
-                playerIndicator.transform.DOShakeScale(0.1f, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(3f + 0.1f*i);
+                chestCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.6f, 0.5f).SetEase(Ease.Linear).SetDelay(2f + flowDelay*i);
+                chestCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.2148f, 0.5f).SetEase(Ease.Linear).SetDelay(2f + flowDelay*i + 0.5f);
             }
         }
-        // else
-        // {
-        //     for (int i = 0; i <  Mathf.Clamp(Mathf.FloorToInt((totalBidOpponent/2)/30), 1, chestCoinsParent.transform.childCount); i++)
-        //     {
-        //         int no = i;
-        //         chestCoinsParent.transform.GetChild(i).DOMove(opponentCoinsParent.transform.position, 1f).SetEase(Ease.InCubic).SetDelay(2f + 0.1f*i).OnStart(delegate() {
-        //             p2 += 30;
-        //             opponentMoneyText.text = p2.ToString();
-        //          }).OnComplete(delegate(){
-        //              if (i == Mathf.Clamp(Mathf.FloorToInt((totalBidOpponent/2)/30), 1, chestCoinsParent.transform.childCount) - 1)
-        //              {
-        //                 p2 += (totalBidOpponent/2) % 30;
-        //                 opponentMoneyText.text = p2.ToString();
-        //              }
-        //              chestCoinsParent.transform.GetChild(no).gameObject.SetActive(false);
-        //          });
-
-        //         opponentIndicator.transform.DOShakeRotation(0.1f, new Vector3(0,0,20f),90,90).SetDelay(3f + 1.1f*i);
-        //         opponentIndicator.transform.DOShakeScale(0.1f, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(3f + 1.1f*i);
-        //     }
-        // }
     }
 
     public void DoubleTheCoin()
     {
         doublecoinButton.SetActive(false);
-        player1.totalCoin += totalBidPlayer;
         StartEndGameCoinFlow();
+        player1.totalCoin += totalBidPlayer;
         endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = (player1.totalCoin - startingCoin).ToString() + " COIN";
         
         SendUserData();
     } 
 
-    void SendUserData()
+    public void SendUserData()
     {
         if (ConnectionManager.isOnline)
         {
@@ -1154,7 +1193,7 @@ public class GameManager : MonoBehaviour {
             {
                 reference = FirebaseDatabase.DefaultInstance.RootReference;
             }
-            reference.Child("userList").Child(player1.userId).SetRawJsonValueAsync(PlayerPrefs.GetString("userData"));
+            reference.Child("userList").Child(player1.userId).SetRawJsonValueAsync(JsonUtility.ToJson(player1));
         }
         else
         {
@@ -1368,13 +1407,11 @@ public class GameManager : MonoBehaviour {
 
     public void Restart()
     {
-        PlaySound(0);
         SceneManager.LoadScene("Game");
     } 
 
     public void GoToMenu()
     {
-        PlaySound(0);
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
@@ -1426,6 +1463,12 @@ public class GameManager : MonoBehaviour {
         PlaySound(id);
     }
 
+    IEnumerator PlayDelayedOtherSound(int id, float time)
+    {
+        yield return new WaitForSeconds(time);
+        PlayOtherSound(id);
+    }
+
     void PlayMusic(int id)
 	{
         if(musicManager)
@@ -1438,6 +1481,32 @@ public class GameManager : MonoBehaviour {
             musicManager.GetComponent<MusicManager>().PlayMusic(id);
         }
 	}
+
+    void PlayOtherSound(int id)
+    {
+        if (otherSoundManager)
+        {
+            otherSoundManager.GetComponent<SoundManager>().PlaySound(id);
+        }
+        else if (GameObject.FindGameObjectWithTag("otherSound"))
+        {
+            otherSoundManager = GameObject.FindGameObjectWithTag("otherSound").GetComponent<SoundManager>();
+            otherSoundManager.GetComponent<SoundManager>().PlaySound(id);
+        }
+    }
+
+    void StopMusic()
+    {
+        if(musicManager)
+        {
+            musicManager.GetComponent<MusicManager>().StopMusic();
+        }
+        else if (GameObject.FindGameObjectWithTag("music"))
+        {
+            musicManager = GameObject.FindGameObjectWithTag("music").GetComponent<MusicManager>();
+            musicManager.GetComponent<MusicManager>().StopMusic();
+        }
+    }
 
     public void ShowEmojiBG()
     {

@@ -18,12 +18,12 @@ public class LevelManager : MonoBehaviour {
 
 	public void CheckLevelUp()
 	{
-		if (gameManager.player1.score > av.levelUpgradeScores[gameManager.player1.level + 1]) // level up
+		if (gameManager.player1.score >= av.levelUpgradeScores[gameManager.player1.level + 1]) // level up
 		{
 			levelUpScreen.SetActive(true);
 			gameManager.endScreen.SetActive(false);
 
-			levelUpScreen.transform.Find("AvatarBodyImage").GetComponent<Image>().sprite = av.avatarBodySprites[Mathf.Clamp(gameManager.player1.avatarId + 1, 1, av.avatarBodySprites.Length - 1)];
+			levelUpScreen.transform.Find("AvatarBodyImage").GetComponent<Image>().sprite = av.avatarSprites[Mathf.Clamp(gameManager.player1.avatarId + 1, 1, av.avatarSprites.Length - 1)];
 			levelUpScreen.transform.Find("light Image").DORotate(new Vector3(0,0,360), 4f, RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear);
 
 			gameManager.player1.level++;

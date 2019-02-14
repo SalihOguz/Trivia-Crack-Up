@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "457317115974",
-    "firebase_url": "https://trivia-challanger.firebaseio.com",
-    "project_id": "trivia-challanger",
-    "storage_bucket": "trivia-challanger.appspot.com"
+    "project_number": "586522041874",
+    "firebase_url": "https://triviachallanger.firebaseio.com",
+    "project_id": "triviachallanger",
+    "storage_bucket": "triviachallanger.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:457317115974:android:1a6714deb2a083b1",
+        "mobilesdk_app_id": "1:586522041874:android:2f8de6eddde98ab2",
         "android_client_info": {
-          "package_name": "com.digitalwords.triviachallanger"
+          "package_name": "com.digitalwords.trivia"
         }
       },
       "oauth_client": [
         {
-          "client_id": "457317115974-6471evq6bro5p6mb4uco33q52ks2bkps.apps.googleusercontent.com",
+          "client_id": "586522041874-74nj5d1qaaa45jeot5kv4a65c0a5tpsq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCuC38D7WwAbrVS2mEGCYXgaqEOpaM0SC0"
+          "current_key": "AIzaSyA-FYd_jVb3pmOlB2qxQVSR7B7e1E-A268"
         }
       ],
       "services": {

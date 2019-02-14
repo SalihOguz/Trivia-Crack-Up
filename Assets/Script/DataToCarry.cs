@@ -17,7 +17,15 @@ public class DataToCarry : Singleton<DataToCarry> {
 
 	public void ChooseOpponent()
 	{
-		player2 = MakeFakeUser();
+		if (PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+		{
+			player2 = CallTutor();
+		}
+		else
+		{
+			player2 = MakeFakeUser();
+		}
+
 		if (Camera.main.GetComponent<MenuManager>())
 		{
 			Camera.main.GetComponent<MenuManager>().opponentDataObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Image>().sprite = Resources.Load<Avatars>("Data/Avatars").avatarSprites[player2.avatarId];
@@ -37,4 +45,10 @@ public class DataToCarry : Singleton<DataToCarry> {
         User p2 = new User("1", fake.userName, fake.isMale, fake.totalCoin, fake.score);
         return p2;
     }
+
+	User CallTutor()
+	{
+		User p2 = new User("1", "Eğitmen", true, 100000, 5);
+        return p2;
+	}
 }
