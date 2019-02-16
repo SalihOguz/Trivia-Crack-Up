@@ -10,9 +10,10 @@ public class QuestionManager : MonoBehaviour {
 	public int difficultyLevelCount = 4; // how many question difficulties are there. If this is changed from 4, User.cs needs to change too
 	List<int> sortedSeen;
 	int userDifficultyLevel; // level of user, one below, one above
-	public float userLevelTreshold = 0.8f; // percentage of questions that has to be answered right to go to the next level
-	public float chanceOfAskingLowerLevel = 0.15f;
-	public float chanceOfAskingHigherLevel = 0.15f;
+	public float userLevelTreshold = 0.85f; // percentage of questions that has to be answered right to go to the next level
+	public int userLevelTresholdQuestionCount = 25; // number of question to answer before going to the next level
+	public float chanceOfAskingLowerLevel = 0.2f;
+	public float chanceOfAskingHigherLevel = 0.2f;
 	int questionCount = 0;
 
 	void Start()
@@ -46,8 +47,7 @@ public class QuestionManager : MonoBehaviour {
 		for (int i = difficultyLevelCount - 1; i > -1; i--)
 		{
 			if (player1.rightAnswersInDifficulties[i] / (player1.wrongAnswersInDifficulties[i] + 0.001) > userLevelTreshold &&
-			player1.rightAnswersInDifficulties[i] + player1.wrongAnswersInDifficulties[i] > 10)
-			// player1.rightAnswersInDifficulties[i] > 0 && player1.wrongAnswersInDifficulties[i] > 0 &&
+			player1.rightAnswersInDifficulties[i] + player1.wrongAnswersInDifficulties[i] > userLevelTresholdQuestionCount)
 			{
 				userDifficultyLevel = Mathf.Clamp(i + 1, 0, difficultyLevelCount - 1);
 				break;

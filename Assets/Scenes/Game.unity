@@ -3840,7 +3840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -42.799927, y: -211.49998}
+  m_AnchoredPosition: {x: -43, y: -211.49998}
   m_SizeDelta: {x: 83.48001, y: 17.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231133964
@@ -6895,7 +6895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38.1, y: -70.5}
+  m_AnchoredPosition: {x: -38.1, y: -58.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &413358588
@@ -7000,7 +7000,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Bamba\u015Fka bir trivia oyunu deneyimine haz\u0131r m\u0131s\u0131n?\n\nAma
-    bunun i\xE7in e\u011Fitmenimizle bir el oynaman gerekiyor."
+    bunun i\xE7in e\u011Fitmenimizle bir tur oynaman gerekiyor."
 --- !u!222 &416609894
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12604,136 +12604,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224049468678572512, guid: 2f95da5f53864da4493b3dd8f271203b,
     type: 2}
   m_PrefabInternal: {fileID: 469001169}
---- !u!1001 &469347965
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 491564, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -6.1306295
-      objectReference: {fileID: 0}
-    - target: {fileID: 491564, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -2.8426895
-      objectReference: {fileID: 0}
-    - target: {fileID: 491564, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491564, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 491564, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491564, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491564, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 491564, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19820506, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19820506, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19820506, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: InitialModule.startRotationX.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19820506, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: InitialModule.startRotationY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19802778, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19802778, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19802778, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: InitialModule.startRotationX.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19802778, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: InitialModule.startRotationY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19802778, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.8116398
-      objectReference: {fileID: 0}
-    - target: {fileID: 19802778, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19802778, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: ColorModule.gradient.maxGradient.key1.g
-      value: 0.74660194
-      objectReference: {fileID: 0}
-    - target: {fileID: 19802778, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: ColorModule.gradient.maxGradient.key1.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19899312, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: ColorModule.gradient.maxGradient.key1.g
-      value: 0.8116398
-      objectReference: {fileID: 0}
-    - target: {fileID: 19899312, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: ColorModule.gradient.maxGradient.key1.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19820506, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: ColorModule.gradient.maxGradient.key0.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19820506, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: ColorModule.gradient.maxGradient.key0.g
-      value: 0.79263175
-      objectReference: {fileID: 0}
-    - target: {fileID: 19820506, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: ColorModule.gradient.maxGradient.key0.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491564, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.4074536
-      objectReference: {fileID: 0}
-    - target: {fileID: 491564, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.4074536
-      objectReference: {fileID: 0}
-    - target: {fileID: 491564, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.4074536
-      objectReference: {fileID: 0}
-    - target: {fileID: 172526, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1001 &471701978
 Prefab:
   m_ObjectHideFlags: 0
@@ -12945,7 +12815,7 @@ RectTransform:
   m_Children:
   - {fileID: 2052594080}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14761,7 +14631,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &601288093
 GameObject:
@@ -29879,7 +29749,7 @@ RectTransform:
   - {fileID: 1501674364}
   - {fileID: 1598729563}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -36273,7 +36143,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.19001007, y: 80}
+  m_AnchoredPosition: {x: 0.19001007, y: 93}
   m_SizeDelta: {x: 220.48, y: 39.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1012360029
@@ -36915,34 +36785,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1071058219}
   m_CullTransparentMesh: 0
---- !u!1 &1075313082
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 469347965}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1075313083}
-  m_Layer: 0
-  m_Name: Missing Prefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1075313083
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 469347965}
-  m_GameObject: {fileID: 1075313082}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1080224090
 Prefab:
   m_ObjectHideFlags: 0
@@ -37502,8 +37344,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Bunlar az sonra gelecek sorunun cevaplar\u0131. \n\nOku ve soruyu tahmin
-    etmeye \xE7al\u0131\u015F. \n\nUnutma vaktin \xE7ok k\u0131s\u0131tl\u0131!"
+  m_Text: "Bunlar az sonra gelecek sorunun \u015F\u0131klar\u0131. \n\nOku ve soruyu
+    tahmin etmeye \xE7al\u0131\u015F. \n\nUnutma vaktin \xE7ok k\u0131s\u0131tl\u0131!"
 --- !u!222 &1104503194
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47678,7 +47520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32.4, y: 50.7}
+  m_AnchoredPosition: {x: -32.4, y: 61.499992}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1157364000
@@ -53506,7 +53348,7 @@ Transform:
   - {fileID: 1451700483}
   - {fileID: 1096982242}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1267387723
 GameObject:
@@ -54271,7 +54113,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1330268789
 MonoBehaviour:
@@ -54391,9 +54233,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyLevelCount: 4
-  userLevelTreshold: 0.7
-  chanceOfAskingLowerLevel: 0.15
-  chanceOfAskingHigherLevel: 0.15
+  userLevelTreshold: 0.8
+  userLevelTresholdQuestionCount: 28
+  chanceOfAskingLowerLevel: 0.2
+  chanceOfAskingHigherLevel: 0.2
 --- !u!114 &1330268791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56402,8 +56245,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -33.4}
-  m_SizeDelta: {x: 220.5, y: 206.1}
+  m_AnchoredPosition: {x: 0, y: -33.82}
+  m_SizeDelta: {x: 220.5, y: 218.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1470595242
 MonoBehaviour:
@@ -56439,7 +56282,7 @@ MonoBehaviour:
     m_LineSpacing: 1.05
   m_Text: "\t<b>Joker</b>\r\nKullan ve soruyu direkt bil!\r Her oyunda sadece bir
     kez kullanabilirsin.\n\n\t<b>\u015E\u0131k Ele\r</b>\r\nYanl\u0131\u015F iki cevab\u0131
-    u\xE7ur ve \u015Fans\u0131n\u0131 artt\u0131r."
+    u\xE7ur ve \u015Fans\u0131n\u0131 artt\u0131r. D\xF6rt \u015F\u0131k varken kullanabilirsin."
 --- !u!222 &1470595243
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -61857,7 +61700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: 499}
+  m_AnchoredPosition: {x: -8, y: 521}
   m_SizeDelta: {x: 1145, y: 672}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1558331474
@@ -63258,7 +63101,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1632386922
 Prefab:
@@ -65084,7 +64927,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.25, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0.41360474, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1785711863
@@ -66651,7 +66494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 41.73999, y: -211.5}
+  m_AnchoredPosition: {x: 42, y: -211.5}
   m_SizeDelta: {x: 83.48, y: 17.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889565221
@@ -77841,7 +77684,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Bamba\u015Fka bir trivia oyunu deneyimine haz\u0131r m\u0131s\u0131n?\n\nAma
-    bunun i\xE7in e\u011Fitmenimizle bir el oynaman gerekiyor."
+    bunun i\xE7in e\u011Fitmenimizle bir tur oynaman gerekiyor."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa3b7d47cb500b94083402de2e79f413, type: 2}
   m_sharedMaterial: {fileID: 21189223725538432, guid: aa3b7d47cb500b94083402de2e79f413,

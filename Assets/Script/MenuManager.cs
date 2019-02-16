@@ -134,7 +134,10 @@ public class MenuManager : MonoBehaviour {
 		}
 		else
 		{
+#if ! UNITY_EDITOR
+
 			auth.SignInAnonymouslyAsync();
+#endif
 		}
 	}
 

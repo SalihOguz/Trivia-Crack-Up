@@ -19,13 +19,13 @@ public class RegisterManager : MonoBehaviour {
 	public GameObject loadingImage;
 	DataToCarry dtc;
 	int tryConnectionCount = 0;
-	int maxConectionTryCount = 7;
+	public int maxConectionTryCount = 7;
 	bool isCheckingName;
 
 
 	void Start()
 	{
-		//PlayerPrefs.DeleteAll();
+		//PlayerPrefs.DeleteAll(); //TODO
 		loadingImage.GetComponent<Image>().DOFillAmount(0.5f, 0.2f);
 		StartCoroutine(CheckConnection());
 	}
@@ -96,9 +96,9 @@ public class RegisterManager : MonoBehaviour {
 	void FirebaseStart()
 	{
 		// Set up the Editor before calling into the realtime database.
-		#if UNITY_EDITOR
-			FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://triviachallanger.firebaseio.com/");
-		#endif
+#if UNITY_EDITOR
+		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://triviachallanger.firebaseio.com/");
+#endif
 	}
 
 	void UpdateGoogle()
@@ -166,7 +166,7 @@ public class RegisterManager : MonoBehaviour {
 	IEnumerator GoToMenu()
 	{
 		ChangeLayerTo(2);
-		yield return new WaitForSeconds(1.3f);
+		yield return new WaitForSeconds(0.9f);
 		SceneManager.LoadScene("MainMenu");
 	}
 
