@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour {
     public GameObject doublecoinButton;
     public GameObject tutorialTextObjects;
     public GameObject tutorialBidHand;
+    public GameObject disconnectedScreen;
 
     [Header ("In Game Variables")]
     [HideInInspector]
@@ -1368,6 +1369,16 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void GoToMenuAndSearchPlayer()
+    {
+        Time.timeScale = 1;
+        if (GameObject.Find("DataToCarry"))
+        {
+            GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex = 4;
+        }
+        GoToMenu();
+    }
+
     public void BotWantsAgain()
     {
         if (player1.totalCoin >= 30*5)
@@ -1537,5 +1548,14 @@ public class GameManager : MonoBehaviour {
             botEmojiButton.SetActive(true);
             botShowEmojiObject.SetActive(false);
         });    
+    }
+
+    void OnApplicationPause(bool paused)
+    {
+        if (paused)
+        {
+            Time.timeScale = 0f;
+            disconnectedScreen.SetActive(true);
+        }
     }
 }                            

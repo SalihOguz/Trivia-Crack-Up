@@ -31,7 +31,7 @@ public class User {
         this.wonGameCount = 0;
         this.playedGameCount = 0;
         this.knowQuestionSkillCount = 3;
-        this.fiftyFiftySkillCount = 5;
+        this.fiftyFiftySkillCount = 3;
         this.level = level;
         this.avatarId = level;
     }
