@@ -155,14 +155,14 @@ public class AdmobManager : Singleton<AdmobManager> {
         else if(adType == "joker")
         {
             menuManager.player.knowQuestionSkillCount += 1;
-            menuManager.userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = "Joker " + menuManager.player.knowQuestionSkillCount.ToString();
+            menuManager.userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = I2.Loc.ScriptLocalization.Get("Joker") + " " + menuManager.player.knowQuestionSkillCount.ToString();
             menuManager.knowQuestionCountText.text = menuManager.player.knowQuestionSkillCount.ToString();
         
         }
         else if (adType == "disable")
         {
             menuManager.player.fiftyFiftySkillCount += 1;
-            menuManager.userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = "Şık Eleme " + menuManager.player.fiftyFiftySkillCount.ToString();
+            menuManager.userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = I2.Loc.ScriptLocalization.Get("Wipe") + " " + menuManager.player.fiftyFiftySkillCount.ToString();
 		    menuManager.disableTwoCountText.text = menuManager.player.fiftyFiftySkillCount.ToString();
         
         }

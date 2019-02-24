@@ -39,8 +39,6 @@ public class DataToCarry : Singleton<DataToCarry> {
 
 	User MakeFakeUser()
     {
-        // TextAsset textAssset = Resources.Load<TextAsset>("Data/FakeUserList");
-		// FakeUserList ful = JsonUtility.FromJson<FakeUserList>(textAssset.text);
         UserLite fake = ful.fakeUserList[UnityEngine.Random.Range(0, ful.fakeUserList.Count)];
         User p2 = new User("1", fake.userName, fake.isMale, fake.totalCoin, fake.score);
         return p2;
@@ -48,7 +46,7 @@ public class DataToCarry : Singleton<DataToCarry> {
 
 	User CallTutor()
 	{
-		User p2 = new User("1", "Eğitmen", true, 100000, 5);
+		User p2 = new User("1", I2.Loc.ScriptLocalization.Get("tutor"), true, 100000, 300);
         return p2;
 	}
 }

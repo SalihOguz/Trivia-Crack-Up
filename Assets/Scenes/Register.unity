@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 612917477}
   - component: {fileID: 612917479}
   - component: {fileID: 612917478}
+  - component: {fileID: 612917480}
   m_Layer: 5
   m_Name: LeaderboardText
   m_TagString: Untagged
@@ -511,7 +512,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0130NTERNET YOK"
+  m_Text: NO INTERNET
 --- !u!222 &612917479
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -519,6 +520,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 612917476}
   m_CullTransparentMesh: 0
+--- !u!114 &612917480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 612917476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: NO INTERNET
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  LocalizeOnAwake: 1
+  Source: {fileID: 114536795468238956, guid: 323dd2ea457caea46b6e84f4e17010f9, type: 2}
+  mTarget: {fileID: 612917478}
+  CanUseSecondaryTerm: 1
+  AllowMainTermToBeRTL: 1
+  AllowSecondTermToBeRTL: 0
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  CorrectAlignmentForRTL: 1
+  TranslatedObjects: []
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
 --- !u!1 &632085637
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +708,7 @@ GameObject:
   - component: {fileID: 788829744}
   - component: {fileID: 788829746}
   - component: {fileID: 788829745}
+  - component: {fileID: 788829747}
   m_Layer: 0
   m_Name: InfoText
   m_TagString: Untagged
@@ -736,7 +766,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "L\xFCtfen Cnisiyetini Se\xE7"
+  m_Text: Please Select Your Gender
 --- !u!222 &788829746
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -744,6 +774,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 788829743}
   m_CullTransparentMesh: 0
+--- !u!114 &788829747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 788829743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: Select Gender
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  LocalizeOnAwake: 1
+  Source: {fileID: 114536795468238956, guid: 323dd2ea457caea46b6e84f4e17010f9, type: 2}
+  mTarget: {fileID: 788829745}
+  CanUseSecondaryTerm: 1
+  AllowMainTermToBeRTL: 1
+  AllowSecondTermToBeRTL: 0
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  CorrectAlignmentForRTL: 1
+  TranslatedObjects: []
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
 --- !u!1 &826275585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,6 +1263,7 @@ GameObject:
   - component: {fileID: 1302718079}
   - component: {fileID: 1302718081}
   - component: {fileID: 1302718080}
+  - component: {fileID: 1302718082}
   m_Layer: 5
   m_Name: WarningText (1)
   m_TagString: Untagged
@@ -1262,7 +1321,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Bu oyunu oynayabilmek i\xE7in internete ihtiyac\u0131n var."
+  m_Text: You need internet to be able to play this game
 --- !u!222 &1302718081
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1270,6 +1329,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1302718078}
   m_CullTransparentMesh: 0
+--- !u!114 &1302718082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1302718078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: you need internet
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  LocalizeOnAwake: 1
+  Source: {fileID: 114536795468238956, guid: 323dd2ea457caea46b6e84f4e17010f9, type: 2}
+  mTarget: {fileID: 1302718080}
+  CanUseSecondaryTerm: 1
+  AllowMainTermToBeRTL: 1
+  AllowSecondTermToBeRTL: 0
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  CorrectAlignmentForRTL: 1
+  TranslatedObjects: []
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
 --- !u!1 &1325767646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,6 +1413,7 @@ GameObject:
   - component: {fileID: 1328872797}
   - component: {fileID: 1328872799}
   - component: {fileID: 1328872798}
+  - component: {fileID: 1328872800}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -1383,7 +1471,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ilerle
+  m_Text: continue
 --- !u!222 &1328872799
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1391,6 +1479,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1328872796}
   m_CullTransparentMesh: 0
+--- !u!114 &1328872800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1328872796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: continuetext
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  LocalizeOnAwake: 1
+  Source: {fileID: 114536795468238956, guid: 323dd2ea457caea46b6e84f4e17010f9, type: 2}
+  mTarget: {fileID: 1328872798}
+  CanUseSecondaryTerm: 1
+  AllowMainTermToBeRTL: 1
+  AllowSecondTermToBeRTL: 0
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  CorrectAlignmentForRTL: 1
+  TranslatedObjects: []
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
 --- !u!1 &1356315892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,6 +1554,7 @@ GameObject:
   - component: {fileID: 1408425447}
   - component: {fileID: 1408425449}
   - component: {fileID: 1408425448}
+  - component: {fileID: 1408425450}
   m_Layer: 5
   m_Name: WarningText
   m_TagString: Untagged
@@ -1495,7 +1612,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0130nternetinin a\xE7\u0131k old\u0131\u011Fundan emin ol."
+  m_Text: Make sure internet is on
 --- !u!222 &1408425449
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1503,6 +1620,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1408425446}
   m_CullTransparentMesh: 0
+--- !u!114 &1408425450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1408425446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: make sure of internet
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  LocalizeOnAwake: 1
+  Source: {fileID: 114536795468238956, guid: 323dd2ea457caea46b6e84f4e17010f9, type: 2}
+  mTarget: {fileID: 1408425448}
+  CanUseSecondaryTerm: 1
+  AllowMainTermToBeRTL: 1
+  AllowSecondTermToBeRTL: 0
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  CorrectAlignmentForRTL: 1
+  TranslatedObjects: []
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
 --- !u!224 &1447861436 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224621555949203656, guid: 9e4082bfa1a0945178e014c1ef7a22af,
@@ -1752,17 +1897,23 @@ MonoBehaviour:
     userId: 
     username: 
     score: 0
-    seenQuestionIds: 
     totalCoin: 0
     avatarId: 0
     isMale: 0
-    rightAnswersInDifficulties: []
-    wrongAnswersInDifficulties: []
+    rightAnswersInDifficulties:
+      m_keys: []
+      m_values: []
+    wrongAnswersInDifficulties:
+      m_keys: []
+      m_values: []
     wonGameCount: 0
     playedGameCount: 0
     knowQuestionSkillCount: 0
     fiftyFiftySkillCount: 0
     level: 0
+    seenQuestionIds:
+      m_keys: []
+      m_values: []
   ql:
     questionList: []
   ful:
@@ -2097,6 +2248,7 @@ GameObject:
   - component: {fileID: 1812866464}
   - component: {fileID: 1812866466}
   - component: {fileID: 1812866465}
+  - component: {fileID: 1812866467}
   m_Layer: 0
   m_Name: Placeholder
   m_TagString: Untagged
@@ -2154,7 +2306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ad\u0131n\u0131z..."
+  m_Text: Name...
 --- !u!222 &1812866466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2162,6 +2314,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1812866463}
   m_CullTransparentMesh: 0
+--- !u!114 &1812866467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1812866463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: Name...
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  LocalizeOnAwake: 1
+  Source: {fileID: 114536795468238956, guid: 323dd2ea457caea46b6e84f4e17010f9, type: 2}
+  mTarget: {fileID: 1812866465}
+  CanUseSecondaryTerm: 1
+  AllowMainTermToBeRTL: 1
+  AllowSecondTermToBeRTL: 0
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  CorrectAlignmentForRTL: 1
+  TranslatedObjects: []
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
 --- !u!1 &1842427186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,6 +2999,7 @@ GameObject:
   - component: {fileID: 2142946853}
   - component: {fileID: 2142946855}
   - component: {fileID: 2142946854}
+  - component: {fileID: 2142946856}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -2876,7 +3057,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Y\xFCkleniyor..."
+  m_Text: Loading...
 --- !u!222 &2142946855
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2884,3 +3065,31 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2142946852}
   m_CullTransparentMesh: 0
+--- !u!114 &2142946856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2142946852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: Loading...
+  mTermSecondary: Loading...
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  LocalizeOnAwake: 1
+  Source: {fileID: 114536795468238956, guid: 323dd2ea457caea46b6e84f4e17010f9, type: 2}
+  mTarget: {fileID: 2142946854}
+  CanUseSecondaryTerm: 1
+  AllowMainTermToBeRTL: 1
+  AllowSecondTermToBeRTL: 0
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  CorrectAlignmentForRTL: 1
+  TranslatedObjects: []
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 

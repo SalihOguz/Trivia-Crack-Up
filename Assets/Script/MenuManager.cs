@@ -7,6 +7,7 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 using UnityEngine.Purchasing;
+using I2.Loc;
 
 public class MenuManager : MonoBehaviour {
 	// DatabaseReference reference;
@@ -22,10 +23,16 @@ public class MenuManager : MonoBehaviour {
 	public GameObject soundButton;
 	public GameObject levelContentParent;
 	public Sprite[] levelBgSprites; // 0 past, 1 current, 2 future
+	public GameObject packsStoreParent;
+	public GameObject coinsStoreParent;
 	Avatars av;
+	public GameObject tr_flag;
+	public GameObject en_flag;
 	
 	void Start()
 	{
+
+
 		player = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
 		av = Resources.Load<Avatars>("Data/Avatars");
 		
@@ -33,8 +40,8 @@ public class MenuManager : MonoBehaviour {
 		userDataObject.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = avatar;
 		userDataObject.transform.Find("UserNameBG").GetChild(0).GetComponent<Text>().text = player.username;
 		userDataObject.transform.Find("CoinButton").GetChild(0).GetComponent<Text>().text = player.totalCoin.ToString();
-		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = "Joker " + player.knowQuestionSkillCount.ToString();
-		userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = "Şık Eleme " + player.fiftyFiftySkillCount.ToString();
+		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Joker") + " " + player.knowQuestionSkillCount.ToString();
+		userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Wipe") + " " + player.fiftyFiftySkillCount.ToString();
 		adButton.transform.GetChild(UnityEngine.Random.Range(0, adButton.transform.childCount)).gameObject.SetActive(true);
 
 		knowQuestionCountText.text = player.knowQuestionSkillCount.ToString();
@@ -53,6 +60,10 @@ public class MenuManager : MonoBehaviour {
 		ArrangeSound();
 		SetStartScreen();
 		ArrangeLevelScreen();
+
+		SetLanguage(PlayerPrefs.GetString("lang"));
+
+		Debug.Log(JsonUtility.ToJson(player));
 	}
 
 	void ArrangeLevelScreen()
@@ -74,6 +85,8 @@ public class MenuManager : MonoBehaviour {
 				levelContentParent.transform.GetChild(i).GetComponent<Image>().sprite = levelBgSprites[2];
 				levelContentParent.transform.GetChild(i).GetChild(2).GetComponent<Image>().sprite = av.avatarUnlockedSprites[i];
 			}
+
+			levelContentParent.transform.GetChild(i).GetChild(1).GetComponent<Text>().text = AddOrdinal(i+1) + " " + ScriptLocalization.Get("LevelSmall");
 		}
 	}
 
@@ -251,8 +264,8 @@ public class MenuManager : MonoBehaviour {
 		player.fiftyFiftySkillCount += amount;
 		SendUserData();
 
-		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = "Joker " + player.knowQuestionSkillCount.ToString();
-		userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = "Şık Eleme " + player.fiftyFiftySkillCount.ToString();
+		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Joker") + " " + player.knowQuestionSkillCount.ToString();
+		userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Wipe") + " " + player.fiftyFiftySkillCount.ToString();
 		knowQuestionCountText.text = player.knowQuestionSkillCount.ToString();
 		disableTwoCountText.text = player.fiftyFiftySkillCount.ToString();
 	}
@@ -272,21 +285,25 @@ public class MenuManager : MonoBehaviour {
     }
 
 	public void updatePriceList(Product[] products) {
-        // foreach(var product in products) {
-        //     if(product.definition.id.Equals("com.digitalwords.wordcube.pass5")) {
-        //         hintPanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
-        //     } else if (product.definition.id.Equals("com.digitalwords.wordcube.pass10")) {
-        //         hintPanel.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
-        //     } else if (product.definition.id.Equals("com.digitalwords.wordcube.pass20")) {
-        //         hintPanel.transform.GetChild(2).GetChild(2).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
-        //     } else if (product.definition.id.Equals("com.digitalwords.wordcube.coin1000")) {
-        //         coinPanel.transform.GetChild(0).GetChild(3).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
-        //     } else if (product.definition.id.Equals("com.digitalwords.wordcube.coin5000")) {
-        //         coinPanel.transform.GetChild(1).GetChild(3).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
-        //     } else if (product.definition.id.Equals("com.digitalwords.wordcube.coin10000")) {
-        //         coinPanel.transform.GetChild(2).GetChild(3).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
-        //     }
-        // }
+        foreach(var product in products) {
+            if(product.definition.id.Equals("mixedpack1")) {
+                packsStoreParent.transform.GetChild(2).GetChild(5).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+            } else if (product.definition.id.Equals("mixedpack2")) {
+                packsStoreParent.transform.GetChild(3).GetChild(5).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+            } else if (product.definition.id.Equals("mixedpack3")) {
+                packsStoreParent.transform.GetChild(4).GetChild(5).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+            } else if (product.definition.id.Equals("mixedpack4")) {
+                packsStoreParent.transform.GetChild(5).GetChild(5).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+            } 
+			
+			else if (product.definition.id.Equals("coinpack1")) {
+                coinsStoreParent.transform.GetChild(0).GetChild(3).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+            } else if (product.definition.id.Equals("coinpack2")) {
+                coinsStoreParent.transform.GetChild(1).GetChild(3).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+            } else if (product.definition.id.Equals("coinpack3")) {
+                coinsStoreParent.transform.GetChild(2).GetChild(3).GetChild(0).GetComponent<Text>().text = product.metadata.localizedPriceString;
+            }
+        }
     }
 
 	public void LoadLeaderboard()
@@ -294,6 +311,8 @@ public class MenuManager : MonoBehaviour {
 		// getting all users evertime leaderboard viewed might not be the best idea TODO
 		leaderboardLoadingObject.SetActive(true);
 		List<User> userList = new List<User>();
+
+		// get users
 		FirebaseDatabase.DefaultInstance.GetReference("userList").GetValueAsync().ContinueWith(task => {
 			if (task.IsFaulted) {
 				// Handle the error...
@@ -306,10 +325,30 @@ public class MenuManager : MonoBehaviour {
 				{
 					userList.Add(JsonUtility.FromJson<User>(i.GetRawJsonValue()));
 				}
-				FillLeaderboard(userList);	
+
+				// get fake users
+				FirebaseDatabase.DefaultInstance.GetReference("fakeUserList/"+LocalizationManager.CurrentLanguageCode).GetValueAsync().ContinueWith(fakesTask => {
+					if (fakesTask.IsFaulted) {
+						// Handle the error...
+						Debug.LogError("Error in FirebaseStart");
+					}
+					else if (fakesTask.IsCompleted) {
+						DataSnapshot fakesSnapshot = fakesTask.Result;				
+
+						foreach (DataSnapshot i in fakesSnapshot.Children)
+						{
+							UserLite fake = JsonUtility.FromJson<UserLite>(i.GetRawJsonValue());
+        					User temp = new User("1", fake.userName, fake.isMale, fake.totalCoin, fake.score);						
+							userList.Add(temp);
+						}
+						FillLeaderboard(userList);	
+					}
+				});	
 			}
 		});
 	}
+
+	
 
 	public void FillLeaderboard(List<User> userList)
 	{	
@@ -319,13 +358,13 @@ public class MenuManager : MonoBehaviour {
 
 		for (int i = 0; i < userList.Count; i++)
 		{
-			if (i == 10)
+			if (i == leaderboardObject.transform.childCount - 1)
 			{
 				break;
 			}
 			leaderboardObject.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = userList[i].username;
 			leaderboardObject.transform.GetChild(i).GetChild(1).GetComponent<Text>().text = userList[i].score.ToString();
-			leaderboardObject.transform.GetChild(i).GetChild(2).GetComponent<Text>().text = (i+1).ToString() + ".";
+			leaderboardObject.transform.GetChild(i).GetChild(2).GetComponent<Text>().text = AddOrdinal(i+1);
 			leaderboardObject.transform.GetChild(i).gameObject.SetActive(true);
 
 			if(userList[i].userId == player.userId)
@@ -340,10 +379,47 @@ public class MenuManager : MonoBehaviour {
 			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount-1).gameObject.SetActive(true);
 			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount-1).GetChild(0).GetComponent<Text>().text = player.username;
 			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount-1).GetChild(1).GetComponent<Text>().text = player.score.ToString();
-			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount-1).GetChild(2).GetComponent<Text>().text = (FindUserIndex(userList)).ToString() + ".";
+			int index = FindUserIndex(userList);
+			leaderboardObject.transform.GetChild(leaderboardObject.transform.childCount-1).GetChild(2).GetComponent<Text>().text = AddOrdinal(index);
 		}
 		
 		leaderboardLoadingObject.SetActive(false);
+	}
+
+	public static string AddOrdinal(int num)
+	{
+		if (LocalizationManager.CurrentLanguageCode == "tr")
+		{
+			return num + ".";
+		}
+		else if (LocalizationManager.CurrentLanguageCode == "en")
+		{
+			if( num <= 0 ) return num.ToString();
+
+			switch(num % 100)
+			{
+				case 11:
+				case 12:
+				case 13:
+					return num + "th";
+			}
+
+			switch(num % 10)
+			{
+				case 1:
+					return num + "st";
+				case 2:
+					return num + "nd";
+				case 3:
+					return num + "rd";
+				default:
+					return num + "th";
+			}	
+		}
+		else
+		{
+			return "";
+		}
 	}
 
 	int FindUserIndex(List<User> userList)
@@ -453,4 +529,37 @@ public class MenuManager : MonoBehaviour {
 			soundButton.transform.GetChild(0).gameObject.SetActive(0 == id);
 		}
 	}	
+
+	public void ChangeLanguage()
+	{
+		if (PlayerPrefs.GetString("lang") == "en")
+		{
+			SetLanguage("tr");
+		}
+		else
+		{
+			SetLanguage("en");
+		}
+	}
+
+	void SetLanguage(string language)
+	{
+		if (language == "tr")
+		{
+			en_flag.SetActive(false);
+			tr_flag.SetActive(true);
+			PlayerPrefs.SetString("lang", "tr");
+			LocalizationManager.CurrentLanguageCode = "tr";
+		}
+		else
+		{
+			en_flag.SetActive(true);
+			tr_flag.SetActive(false);
+			PlayerPrefs.SetString("lang", "en");
+			LocalizationManager.CurrentLanguageCode = "en";		
+		}
+
+		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Joker") + " " + player.knowQuestionSkillCount.ToString();
+		userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Wipe") + " " + player.fiftyFiftySkillCount.ToString();
+	}
 }

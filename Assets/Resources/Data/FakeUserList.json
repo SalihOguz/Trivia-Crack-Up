@@ -1,832 +1,1766 @@
 {
-    "fakeUserList": [
-        {
-            "userName": "masmavi",
-            "isMale": "fasle",
-            "totalCoin": 8880.0,
-            "score": 2.0
-        },
-        {
-            "userName": "nerdy",
-            "isMale": "fasle",
-            "totalCoin": 2820.0,
-            "score": 0.0
-        },
-        {
-            "userName": "|EFE|",
-            "isMale": "true",
-            "totalCoin": 5340.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Ay\u00e7a",
-            "isMale": "fasle",
-            "totalCoin": 7980.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Reco",
-            "isMale": "true",
-            "totalCoin": 7500.0,
-            "score": 2.0
-        },
-        {
-            "userName": "SinaN",
-            "isMale": "true",
-            "totalCoin": 1770.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Crow-Yi\u011fit",
-            "isMale": "true",
-            "totalCoin": 6360.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Dumb Morty",
-            "isMale": "true",
-            "totalCoin": 6510.0,
-            "score": 1.0
-        },
-        {
-            "userName": "ac\u0131 patl\u0131can",
-            "isMale": "fasle",
-            "totalCoin": 2460.0,
-            "score": 0.0
-        },
-        {
-            "userName": "turganyev",
-            "isMale": "true",
-            "totalCoin": 7650.0,
-            "score": 2.0
-        },
-        {
-            "userName": "KapTanMehMeT",
-            "isMale": "true",
-            "totalCoin": 6180.0,
-            "score": 1.0
-        },
-        {
-            "userName": "ALPEREN",
-            "isMale": "true",
-            "totalCoin": 4170.0,
-            "score": 1.0
-        },
-        {
-            "userName": "MuZuR",
-            "isMale": "fasle",
-            "totalCoin": 5310.0,
-            "score": 1.0
-        },
-        {
-            "userName": "TriviaCihan",
-            "isMale": "true",
-            "totalCoin": 8100.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Erdemaydn23",
-            "isMale": "true",
-            "totalCoin": 3000.0,
-            "score": 0.0
-        },
-        {
-            "userName": "OnurKRNZ",
-            "isMale": "true",
-            "totalCoin": 4200.0,
-            "score": 1.0
-        },
-        {
-            "userName": "AliKral",
-            "isMale": "true",
-            "totalCoin": 8370.0,
-            "score": 2.0
-        },
-        {
-            "userName": "KranjcarSerhat",
-            "isMale": "true",
-            "totalCoin": 8190.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Makcelik",
-            "isMale": "true",
-            "totalCoin": 7500.0,
-            "score": 2.0
-        },
-        {
-            "userName": "R\u00fczgaR",
-            "isMale": "true",
-            "totalCoin": 8640.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Lord Legolas",
-            "isMale": "true",
-            "totalCoin": 3780.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Hassam",
-            "isMale": "true",
-            "totalCoin": 7950.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Mustafa Tpc",
-            "isMale": "true",
-            "totalCoin": 5550.0,
-            "score": 1.0
-        },
-        {
-            "userName": "arpendos",
-            "isMale": "true",
-            "totalCoin": 7860.0,
-            "score": 2.0
-        },
-        {
-            "userName": "acagil",
-            "isMale": "fasle",
-            "totalCoin": 6480.0,
-            "score": 1.0
-        },
-        {
-            "userName": "EfeFTW",
-            "isMale": "true",
-            "totalCoin": 6360.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Lord Vader",
-            "isMale": "true",
-            "totalCoin": 2010.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Umut",
-            "isMale": "true",
-            "totalCoin": 6300.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Arda",
-            "isMale": "true",
-            "totalCoin": 6810.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Melik",
-            "isMale": "true",
-            "totalCoin": 6180.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Efe",
-            "isMale": "true",
-            "totalCoin": 3090.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Nusret",
-            "isMale": "true",
-            "totalCoin": 3270.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Raven",
-            "isMale": "true",
-            "totalCoin": 2610.0,
-            "score": 0.0
-        },
-        {
-            "userName": "MustafaTr123",
-            "isMale": "true",
-            "totalCoin": 6930.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Ey\u00fcp",
-            "isMale": "true",
-            "totalCoin": 1500.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Batuhan",
-            "isMale": "true",
-            "totalCoin": 7290.0,
-            "score": 2.0
-        },
-        {
-            "userName": "saliholp",
-            "isMale": "true",
-            "totalCoin": 2520.0,
-            "score": 0.0
-        },
-        {
-            "userName": "YaS\u0130N",
-            "isMale": "true",
-            "totalCoin": 1920.0,
-            "score": 0.0
-        },
-        {
-            "userName": "\u00f6mer",
-            "isMale": "true",
-            "totalCoin": 4260.0,
-            "score": 1.0
-        },
-        {
-            "userName": "FkOzaslan",
-            "isMale": "true",
-            "totalCoin": 3510.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Tongalay",
-            "isMale": "true",
-            "totalCoin": 3420.0,
-            "score": 0.0
-        },
-        {
-            "userName": "suskun2deniz",
-            "isMale": "fasle",
-            "totalCoin": 6480.0,
-            "score": 1.0
-        },
-        {
-            "userName": "*SalihKral*",
-            "isMale": "true",
-            "totalCoin": 6510.0,
-            "score": 1.0
-        },
-        {
-            "userName": "T\u00dcRK",
-            "isMale": "true",
-            "totalCoin": 7680.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Bugra14",
-            "isMale": "true",
-            "totalCoin": 5310.0,
-            "score": 1.0
-        },
-        {
-            "userName": "BOSS",
-            "isMale": "true",
-            "totalCoin": 7860.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Reis61",
-            "isMale": "true",
-            "totalCoin": 2280.0,
-            "score": 0.0
-        },
-        {
-            "userName": "hryulsy",
-            "isMale": "fasle",
-            "totalCoin": 8640.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Tarkan59",
-            "isMale": "true",
-            "totalCoin": 7800.0,
-            "score": 2.0
-        },
-        {
-            "userName": "eemreee",
-            "isMale": "true",
-            "totalCoin": 2220.0,
-            "score": 0.0
-        },
-        {
-            "userName": "dlkozdmr",
-            "isMale": "fasle",
-            "totalCoin": 2100.0,
-            "score": 0.0
-        },
-        {
-            "userName": "troy2172",
-            "isMale": "fasle",
-            "totalCoin": 1620.0,
-            "score": 0.0
-        },
-        {
-            "userName": "nurayz59",
-            "isMale": "fasle",
-            "totalCoin": 6300.0,
-            "score": 1.0
-        },
-        {
-            "userName": "hryulsy",
-            "isMale": "fasle",
-            "totalCoin": 8550.0,
-            "score": 2.0
-        },
-        {
-            "userName": "AyhanA",
-            "isMale": "true",
-            "totalCoin": 2610.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Sevda\u00c7_02",
-            "isMale": "fasle",
-            "totalCoin": 7140.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Aga48",
-            "isMale": "true",
-            "totalCoin": 8670.0,
-            "score": 2.0
-        },
-        {
-            "userName": "-Sezin-",
-            "isMale": "fasle",
-            "totalCoin": 3210.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Ridvaning",
-            "isMale": "true",
-            "totalCoin": 6120.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Lumiere",
-            "isMale": "fasle",
-            "totalCoin": 7290.0,
-            "score": 2.0
-        },
-        {
-            "userName": "fato\u015f33",
-            "isMale": "fasle",
-            "totalCoin": 6870.0,
-            "score": 1.0
-        },
-        {
-            "userName": "hasturk",
-            "isMale": "true",
-            "totalCoin": 5310.0,
-            "score": 1.0
-        },
-        {
-            "userName": "defneyapragi",
-            "isMale": "fasle",
-            "totalCoin": 3390.0,
-            "score": 0.0
-        },
-        {
-            "userName": "MAV\u0130\u015e",
-            "isMale": "fasle",
-            "totalCoin": 5100.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Gomes G.S.",
-            "isMale": "true",
-            "totalCoin": 8340.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Reyhan..",
-            "isMale": "fasle",
-            "totalCoin": 5490.0,
-            "score": 1.0
-        },
-        {
-            "userName": "f\u00fcs",
-            "isMale": "fasle",
-            "totalCoin": 5280.0,
-            "score": 1.0
-        },
-        {
-            "userName": "sadocan",
-            "isMale": "true",
-            "totalCoin": 5580.0,
-            "score": 1.0
-        },
-        {
-            "userName": "erg\u00fcn uzun",
-            "isMale": "true",
-            "totalCoin": 3510.0,
-            "score": 1.0
-        },
-        {
-            "userName": "ST\u0130L\u0130ST1",
-            "isMale": "fasle",
-            "totalCoin": 5220.0,
-            "score": 1.0
-        },
-        {
-            "userName": "AdemMeral2",
-            "isMale": "true",
-            "totalCoin": 6600.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Ahmet K\u0131ratl\u0131",
-            "isMale": "true",
-            "totalCoin": 5250.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Testere Berk",
-            "isMale": "true",
-            "totalCoin": 6360.0,
-            "score": 1.0
-        },
-        {
-            "userName": "G\u00f6ksan",
-            "isMale": "true",
-            "totalCoin": 6960.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Apasya",
-            "isMale": "fasle",
-            "totalCoin": 5820.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Osman.53",
-            "isMale": "true",
-            "totalCoin": 3150.0,
-            "score": 0.0
-        },
-        {
-            "userName": "ay\u015fen",
-            "isMale": "fasle",
-            "totalCoin": 7500.0,
-            "score": 2.0
-        },
-        {
-            "userName": "AYAZ",
-            "isMale": "true",
-            "totalCoin": 4170.0,
-            "score": 1.0
-        },
-        {
-            "userName": "kartacha2",
-            "isMale": "true",
-            "totalCoin": 4170.0,
-            "score": 1.0
-        },
-        {
-            "userName": "M\u00dcN\u00dcR \u00d6ZDEM\u0130R",
-            "isMale": "true",
-            "totalCoin": 7470.0,
-            "score": 2.0
-        },
-        {
-            "userName": "HIZLI JOE",
-            "isMale": "true",
-            "totalCoin": 4710.0,
-            "score": 1.0
-        },
-        {
-            "userName": "naydin08",
-            "isMale": "fasle",
-            "totalCoin": 3240.0,
-            "score": 0.0
-        },
-        {
-            "userName": "MeltemAk",
-            "isMale": "fasle",
-            "totalCoin": 8760.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Pumpkin",
-            "isMale": "fasle",
-            "totalCoin": 2250.0,
-            "score": 0.0
-        },
-        {
-            "userName": "nlyfyz",
-            "isMale": "fasle",
-            "totalCoin": 6240.0,
-            "score": 1.0
-        },
-        {
-            "userName": "s\u00fcpernine",
-            "isMale": "fasle",
-            "totalCoin": 3270.0,
-            "score": 0.0
-        },
-        {
-            "userName": "kim_bu",
-            "isMale": "fasle",
-            "totalCoin": 3240.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Gpinar",
-            "isMale": "fasle",
-            "totalCoin": 8190.0,
-            "score": 2.0
-        },
-        {
-            "userName": "say",
-            "isMale": "fasle",
-            "totalCoin": 2580.0,
-            "score": 0.0
-        },
-        {
-            "userName": ":KURBAN",
-            "isMale": "true",
-            "totalCoin": 8940.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Aysel1964",
-            "isMale": "fasle",
-            "totalCoin": 5190.0,
-            "score": 1.0
-        },
-        {
-            "userName": "MSB",
-            "isMale": "fasle",
-            "totalCoin": 3450.0,
-            "score": 0.0
-        },
-        {
-            "userName": "cerencemre",
-            "isMale": "fasle",
-            "totalCoin": 8730.0,
-            "score": 2.0
-        },
-        {
-            "userName": "DevrimKBL",
-            "isMale": "true",
-            "totalCoin": 1590.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Hayriye123",
-            "isMale": "fasle",
-            "totalCoin": 2880.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Koray_1980",
-            "isMale": "true",
-            "totalCoin": 4800.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Komiser Nevzat",
-            "isMale": "true",
-            "totalCoin": 7770.0,
-            "score": 2.0
-        },
-        {
-            "userName": "byuby",
-            "isMale": "true",
-            "totalCoin": 4500.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Mehmet Amcam",
-            "isMale": "true",
-            "totalCoin": 6210.0,
-            "score": 1.0
-        },
-        {
-            "userName": "K\u0131r\u0131k hayalli",
-            "isMale": "fasle",
-            "totalCoin": 7320.0,
-            "score": 2.0
-        },
-        {
-            "userName": "umutvarl\u0131k",
-            "isMale": "true",
-            "totalCoin": 3600.0,
-            "score": 1.0
-        },
-        {
-            "userName": "cazu",
-            "isMale": "fasle",
-            "totalCoin": 2910.0,
-            "score": 0.0
-        },
-        {
-            "userName": "AtillaTR",
-            "isMale": "true",
-            "totalCoin": 2160.0,
-            "score": 0.0
-        },
-        {
-            "userName": "CcCBozkurtCcC",
-            "isMale": "true",
-            "totalCoin": 7320.0,
-            "score": 2.0
-        },
-        {
-            "userName": "Arhanettin",
-            "isMale": "true",
-            "totalCoin": 1710.0,
-            "score": 0.0
-        },
-        {
-            "userName": "sesizol",
-            "isMale": "fasle",
-            "totalCoin": 6060.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Faruksmoove",
-            "isMale": "true",
-            "totalCoin": 5010.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Mislamoglu",
-            "isMale": "fasle",
-            "totalCoin": 7260.0,
-            "score": 2.0
-        },
-        {
-            "userName": "nejatAB\u0130N\u0130Z",
-            "isMale": "true",
-            "totalCoin": 5190.0,
-            "score": 1.0
-        },
-        {
-            "userName": "-KEL MAHMUT-",
-            "isMale": "true",
-            "totalCoin": 1620.0,
-            "score": 0.0
-        },
-        {
-            "userName": "merti\u015fko",
-            "isMale": "true",
-            "totalCoin": 5670.0,
-            "score": 1.0
-        },
-        {
-            "userName": "oyun fatihi",
-            "isMale": "true",
-            "totalCoin": 5730.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Kobra berat",
-            "isMale": "true",
-            "totalCoin": 3810.0,
-            "score": 1.0
-        },
-        {
-            "userName": "mira\u00e752pro",
-            "isMale": "true",
-            "totalCoin": 8970.0,
-            "score": 2.0
-        },
-        {
-            "userName": "BAMBAM",
-            "isMale": "true",
-            "totalCoin": 3300.0,
-            "score": 0.0
-        },
-        {
-            "userName": "duvar",
-            "isMale": "true",
-            "totalCoin": 3570.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Bomband\u0131rMan",
-            "isMale": "true",
-            "totalCoin": 1500.0,
-            "score": 0.0
-        },
-        {
-            "userName": "kral haso",
-            "isMale": "true",
-            "totalCoin": 7650.0,
-            "score": 2.0
-        },
-        {
-            "userName": "K.E.R.E.M4",
-            "isMale": "true",
-            "totalCoin": 3330.0,
-            "score": 0.0
-        },
-        {
-            "userName": "M\u00d6SY\u00d6",
-            "isMale": "true",
-            "totalCoin": 5070.0,
-            "score": 1.0
-        },
-        {
-            "userName": "kazanan123",
-            "isMale": "fasle",
-            "totalCoin": 7080.0,
-            "score": 2.0
-        },
-        {
-            "userName": "xmustix51",
-            "isMale": "true",
-            "totalCoin": 4290.0,
-            "score": 1.0
-        },
-        {
-            "userName": "boslordoyuncu",
-            "isMale": "true",
-            "totalCoin": 4950.0,
-            "score": 1.0
-        },
-        {
-            "userName": "BOSS\u00d6ZMEN",
-            "isMale": "true",
-            "totalCoin": 7110.0,
-            "score": 2.0
-        },
-        {
-            "userName": "crazyboy_baturhan",
-            "isMale": "true",
-            "totalCoin": 6480.0,
-            "score": 1.0
-        },
-        {
-            "userName": "LoLo\u0130zzet",
-            "isMale": "true",
-            "totalCoin": 3630.0,
-            "score": 1.0
-        },
-        {
-            "userName": "DeliBet\u00fc\u015f",
-            "isMale": "fasle",
-            "totalCoin": 3360.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Orhanbencegay",
-            "isMale": "true",
-            "totalCoin": 6840.0,
-            "score": 1.0
-        },
-        {
-            "userName": "Tanko\u00e7",
-            "isMale": "true",
-            "totalCoin": 3240.0,
-            "score": 0.0
-        },
-        {
-            "userName": "premsess",
-            "isMale": "fasle",
-            "totalCoin": 4110.0,
-            "score": 1.0
-        },
-        {
-            "userName": "BaBa",
-            "isMale": "true",
-            "totalCoin": 5760.0,
-            "score": 1.0
-        },
-        {
-            "userName": "malbay\u0131m",
-            "isMale": "true",
-            "totalCoin": 1980.0,
-            "score": 0.0
-        },
-        {
-            "userName": "M\u00fcsl\u00fcmBaba",
-            "isMale": "true",
-            "totalCoin": 2430.0,
-            "score": 0.0
-        },
-        {
-            "userName": "Nursen",
-            "isMale": "fasle",
-            "totalCoin": 5010.0,
-            "score": 1.0
-        },
-        {
-            "userName": "KutayH",
-            "isMale": "true",
-            "totalCoin": 6720.0,
-            "score": 1.0
-        },
-        {
-            "userName": "ArapFaik",
-            "isMale": "true",
-            "totalCoin": 5100.0,
-            "score": 1.0
-        },
-        {
-            "userName": "KomutanLogar",
-            "isMale": "true",
-            "totalCoin": 5040.0,
-            "score": 1.0
-        },
-        {
-            "userName": "doksandokuz99",
-            "isMale": "false",
-            "totalCoin": 3990.0,
-            "score": 1.0
-        }
-    ]
+    "fakeUserList": {
+        "tr": [
+            {
+                "userName": "M\u00dcN\u00dcR \u00d6ZDEM\u0130R",
+                "isMale": "true",
+                "totalCoin": 119096.0,
+                "score": 594.0
+            },
+            {
+                "userName": "Aga48",
+                "isMale": "true",
+                "totalCoin": 137518.0,
+                "score": 772.0
+            },
+            {
+                "userName": "FatmaO\u011ful",
+                "isMale": "fasle",
+                "totalCoin": 122094.0,
+                "score": 720.0
+            },
+            {
+                "userName": "turganyev",
+                "isMale": "true",
+                "totalCoin": 96455.0,
+                "score": 477.0
+            },
+            {
+                "userName": "M\u00d6SY\u00d6",
+                "isMale": "true",
+                "totalCoin": 76700.0,
+                "score": 350.0
+            },
+            {
+                "userName": "sesizol",
+                "isMale": "fasle",
+                "totalCoin": 82715.0,
+                "score": 428.0
+            },
+            {
+                "userName": "Jale Demirkul",
+                "isMale": "fasle",
+                "totalCoin": 101530.0,
+                "score": 584.0
+            },
+            {
+                "userName": "Mehmet Ala",
+                "isMale": "true",
+                "totalCoin": 48518.0,
+                "score": 260.0
+            },
+            {
+                "userName": "AyhanA",
+                "isMale": "true",
+                "totalCoin": 41090.0,
+                "score": 202.0
+            },
+            {
+                "userName": "TriviaCihan",
+                "isMale": "true",
+                "totalCoin": 37104.0,
+                "score": 217.0
+            },
+            {
+                "userName": "IVI Kral",
+                "isMale": "true",
+                "totalCoin": 17019.0,
+                "score": 107.0
+            },
+            {
+                "userName": "R\u00fczgaR",
+                "isMale": "true",
+                "totalCoin": 43218.0,
+                "score": 181.0
+            },
+            {
+                "userName": "eemreee",
+                "isMale": "true",
+                "totalCoin": 28332.0,
+                "score": 123.0
+            },
+            {
+                "userName": "masmavi",
+                "isMale": "fasle",
+                "totalCoin": 44740.0,
+                "score": 194.0
+            },
+            {
+                "userName": "Reis61",
+                "isMale": "true",
+                "totalCoin": 23654.0,
+                "score": 115.0
+            },
+            {
+                "userName": "hryulsy",
+                "isMale": "fasle",
+                "totalCoin": 1880.0,
+                "score": 14.0
+            },
+            {
+                "userName": ":KURBAN",
+                "isMale": "true",
+                "totalCoin": 18005.0,
+                "score": 98.0
+            },
+            {
+                "userName": "LoLo\u0130zzet",
+                "isMale": "true",
+                "totalCoin": 18318.0,
+                "score": 85.0
+            },
+            {
+                "userName": "arpendos",
+                "isMale": "true",
+                "totalCoin": 19986.0,
+                "score": 94.0
+            },
+            {
+                "userName": "DevrimKBL",
+                "isMale": "true",
+                "totalCoin": 7374.0,
+                "score": 35.0
+            },
+            {
+                "userName": "Arhanettin",
+                "isMale": "true",
+                "totalCoin": 15170.0,
+                "score": 66.0
+            },
+            {
+                "userName": "-KEL MAHMUT-",
+                "isMale": "true",
+                "totalCoin": 10750.0,
+                "score": 54.0
+            },
+            {
+                "userName": "xmustix51",
+                "isMale": "true",
+                "totalCoin": 9464.0,
+                "score": 44.0
+            },
+            {
+                "userName": "acagil",
+                "isMale": "fasle",
+                "totalCoin": 6228.0,
+                "score": 34.0
+            },
+            {
+                "userName": "cerencemre",
+                "isMale": "fasle",
+                "totalCoin": 9078.0,
+                "score": 40.0
+            },
+            {
+                "userName": "hasturk",
+                "isMale": "true",
+                "totalCoin": 7665.0,
+                "score": 47.0
+            },
+            {
+                "userName": "kartacha2",
+                "isMale": "true",
+                "totalCoin": 13155.0,
+                "score": 75.0
+            },
+            {
+                "userName": "M\u00fcsl\u00fcmBaba",
+                "isMale": "true",
+                "totalCoin": 9126.0,
+                "score": 44.0
+            },
+            {
+                "userName": "kazanan123",
+                "isMale": "fasle",
+                "totalCoin": 1804.0,
+                "score": 10.0
+            },
+            {
+                "userName": "boslordoyuncu",
+                "isMale": "true",
+                "totalCoin": 6747.0,
+                "score": 36.0
+            },
+            {
+                "userName": "T\u00dcRK",
+                "isMale": "true",
+                "totalCoin": 5733.0,
+                "score": 36.0
+            },
+            {
+                "userName": "BaBa",
+                "isMale": "true",
+                "totalCoin": 11054.0,
+                "score": 69.0
+            },
+            {
+                "userName": "cazu",
+                "isMale": "fasle",
+                "totalCoin": 8107.0,
+                "score": 36.0
+            },
+            {
+                "userName": "crazyboy_baturhan",
+                "isMale": "true",
+                "totalCoin": 8976.0,
+                "score": 46.0
+            },
+            {
+                "userName": "Reyhan..",
+                "isMale": "fasle",
+                "totalCoin": 14778.0,
+                "score": 67.0
+            },
+            {
+                "userName": "Efe",
+                "isMale": "true",
+                "totalCoin": 13866.0,
+                "score": 60.0
+            },
+            {
+                "userName": "s\u00fcpernine",
+                "isMale": "fasle",
+                "totalCoin": 10894.0,
+                "score": 71.0
+            },
+            {
+                "userName": "K\u0131r\u0131k hayalli",
+                "isMale": "fasle",
+                "totalCoin": 3580.0,
+                "score": 23.0
+            },
+            {
+                "userName": "oyun fatihi",
+                "isMale": "true",
+                "totalCoin": 16051.0,
+                "score": 96.0
+            },
+            {
+                "userName": "Mustafa Tpc",
+                "isMale": "true",
+                "totalCoin": 13110.0,
+                "score": 61.0
+            },
+            {
+                "userName": "fato\u015f33",
+                "isMale": "fasle",
+                "totalCoin": 14833.0,
+                "score": 87.0
+            },
+            {
+                "userName": "kral haso",
+                "isMale": "true",
+                "totalCoin": 9291.0,
+                "score": 46.0
+            },
+            {
+                "userName": "Tarkan59",
+                "isMale": "true",
+                "totalCoin": 1882.0,
+                "score": 10.0
+            },
+            {
+                "userName": "Ridvaning",
+                "isMale": "true",
+                "totalCoin": 6454.0,
+                "score": 40.0
+            },
+            {
+                "userName": "Crow-Yi\u011fit",
+                "isMale": "true",
+                "totalCoin": 7629.0,
+                "score": 46.0
+            },
+            {
+                "userName": "defneyapragi",
+                "isMale": "fasle",
+                "totalCoin": 8140.0,
+                "score": 53.0
+            },
+            {
+                "userName": "sadocan",
+                "isMale": "true",
+                "totalCoin": 5442.0,
+                "score": 33.0
+            },
+            {
+                "userName": "Aysel1964",
+                "isMale": "fasle",
+                "totalCoin": 11640.0,
+                "score": 52.0
+            },
+            {
+                "userName": "Kaptan_47",
+                "isMale": "true",
+                "totalCoin": 4956.0,
+                "score": 33.0
+            },
+            {
+                "userName": "HIZLI JOE",
+                "isMale": "true",
+                "totalCoin": 16158.0,
+                "score": 72.0
+            },
+            {
+                "userName": "Ey\u00fcp",
+                "isMale": "true",
+                "totalCoin": 8600.0,
+                "score": 53.0
+            },
+            {
+                "userName": "Tanko\u00e7",
+                "isMale": "true",
+                "totalCoin": 10020.0,
+                "score": 61.0
+            },
+            {
+                "userName": "naydin08",
+                "isMale": "fasle",
+                "totalCoin": 16332.0,
+                "score": 92.0
+            },
+            {
+                "userName": "AtillaTR",
+                "isMale": "true",
+                "totalCoin": 17904.0,
+                "score": 90.0
+            },
+            {
+                "userName": "CcCBozkurtCcC",
+                "isMale": "true",
+                "totalCoin": 7131.0,
+                "score": 47.0
+            },
+            {
+                "userName": "Melik",
+                "isMale": "true",
+                "totalCoin": 3201.0,
+                "score": 17.0
+            },
+            {
+                "userName": "Mehmet Amcam",
+                "isMale": "true",
+                "totalCoin": 8928.0,
+                "score": 48.0
+            },
+            {
+                "userName": "mira\u00e752pro",
+                "isMale": "true",
+                "totalCoin": 8630.0,
+                "score": 52.0
+            },
+            {
+                "userName": "Testere Berk",
+                "isMale": "true",
+                "totalCoin": 8484.0,
+                "score": 45.0
+            },
+            {
+                "userName": "KapTanMehMeT",
+                "isMale": "true",
+                "totalCoin": 15328.0,
+                "score": 82.0
+            },
+            {
+                "userName": "ac\u0131 patl\u0131can",
+                "isMale": "fasle",
+                "totalCoin": 16248.0,
+                "score": 92.0
+            },
+            {
+                "userName": "Batuhan",
+                "isMale": "true",
+                "totalCoin": 4825.0,
+                "score": 28.0
+            },
+            {
+                "userName": "Gomes G.S.",
+                "isMale": "true",
+                "totalCoin": 5514.0,
+                "score": 31.0
+            },
+            {
+                "userName": "saliholp",
+                "isMale": "true",
+                "totalCoin": 6042.0,
+                "score": 33.0
+            },
+            {
+                "userName": "hryulsy",
+                "isMale": "fasle",
+                "totalCoin": 6944.0,
+                "score": 40.0
+            },
+            {
+                "userName": "KomutanLogar",
+                "isMale": "true",
+                "totalCoin": 4572.0,
+                "score": 23.0
+            },
+            {
+                "userName": "OnurKRNZ",
+                "isMale": "true",
+                "totalCoin": 22608.0,
+                "score": 97.0
+            },
+            {
+                "userName": "Gpinar",
+                "isMale": "fasle",
+                "totalCoin": 4215.0,
+                "score": 26.0
+            },
+            {
+                "userName": "AliKral",
+                "isMale": "true",
+                "totalCoin": 5520.0,
+                "score": 28.0
+            },
+            {
+                "userName": "K.E.R.E.M4",
+                "isMale": "true",
+                "totalCoin": 3552.0,
+                "score": 20.0
+            },
+            {
+                "userName": "Koray_1980",
+                "isMale": "true",
+                "totalCoin": 4364.0,
+                "score": 24.0
+            },
+            {
+                "userName": "nlyfyz",
+                "isMale": "fasle",
+                "totalCoin": 22687.0,
+                "score": 98.0
+            },
+            {
+                "userName": "*SalihKral*",
+                "isMale": "true",
+                "totalCoin": 6384.0,
+                "score": 36.0
+            },
+            {
+                "userName": "KutayH",
+                "isMale": "true",
+                "totalCoin": 14720.0,
+                "score": 97.0
+            },
+            {
+                "userName": "ArapFaik",
+                "isMale": "true",
+                "totalCoin": 7810.0,
+                "score": 50.0
+            },
+            {
+                "userName": "BOSS\u00d6ZMEN",
+                "isMale": "true",
+                "totalCoin": 13766.0,
+                "score": 88.0
+            },
+            {
+                "userName": "Osman.53",
+                "isMale": "true",
+                "totalCoin": 4746.0,
+                "score": 34.0
+            },
+            {
+                "userName": "G\u00f6ksan",
+                "isMale": "true",
+                "totalCoin": 18135.0,
+                "score": 75.0
+            },
+            {
+                "userName": "nejatAB\u0130N\u0130Z",
+                "isMale": "true",
+                "totalCoin": 18783.0,
+                "score": 95.0
+            },
+            {
+                "userName": "suskun2deniz",
+                "isMale": "fasle",
+                "totalCoin": 13320.0,
+                "score": 60.0
+            },
+            {
+                "userName": "MuZuR",
+                "isMale": "fasle",
+                "totalCoin": 14665.0,
+                "score": 68.0
+            },
+            {
+                "userName": "-Sezin-",
+                "isMale": "fasle",
+                "totalCoin": 4370.0,
+                "score": 24.0
+            },
+            {
+                "userName": "Kobra berat",
+                "isMale": "true",
+                "totalCoin": 13097.0,
+                "score": 57.0
+            },
+            {
+                "userName": "MustafaTr123",
+                "isMale": "true",
+                "totalCoin": 12015.0,
+                "score": 75.0
+            },
+            {
+                "userName": "SinaN",
+                "isMale": "true",
+                "totalCoin": 5275.0,
+                "score": 29.0
+            },
+            {
+                "userName": "ST\u0130L\u0130ST1",
+                "isMale": "fasle",
+                "totalCoin": 4046.0,
+                "score": 24.0
+            },
+            {
+                "userName": "f\u00fcs",
+                "isMale": "fasle",
+                "totalCoin": 13635.0,
+                "score": 76.0
+            },
+            {
+                "userName": "DeliBet\u00fc\u015f",
+                "isMale": "fasle",
+                "totalCoin": 15478.0,
+                "score": 71.0
+            },
+            {
+                "userName": "\u00f6mer",
+                "isMale": "true",
+                "totalCoin": 9624.0,
+                "score": 48.0
+            },
+            {
+                "userName": "umutvarl\u0131k",
+                "isMale": "true",
+                "totalCoin": 19929.0,
+                "score": 89.0
+            },
+            {
+                "userName": "premsess",
+                "isMale": "fasle",
+                "totalCoin": 8016.0,
+                "score": 41.0
+            },
+            {
+                "userName": "Orhanbencegay",
+                "isMale": "true",
+                "totalCoin": 16606.0,
+                "score": 81.0
+            },
+            {
+                "userName": "ay\u015fen",
+                "isMale": "fasle",
+                "totalCoin": 2454.0,
+                "score": 11.0
+            },
+            {
+                "userName": "nurayz59",
+                "isMale": "fasle",
+                "totalCoin": 19066.0,
+                "score": 83.0
+            },
+            {
+                "userName": "Makcelik",
+                "isMale": "true",
+                "totalCoin": 14004.0,
+                "score": 92.0
+            },
+            {
+                "userName": "Mislamoglu",
+                "isMale": "fasle",
+                "totalCoin": 14129.0,
+                "score": 88.0
+            },
+            {
+                "userName": "ALPEREN",
+                "isMale": "true",
+                "totalCoin": 6080.0,
+                "score": 26.0
+            },
+            {
+                "userName": "Reco",
+                "isMale": "true",
+                "totalCoin": 13755.0,
+                "score": 78.0
+            },
+            {
+                "userName": "MAV\u0130\u015e",
+                "isMale": "fasle",
+                "totalCoin": 9500.0,
+                "score": 51.0
+            },
+            {
+                "userName": "Nursen",
+                "isMale": "fasle",
+                "totalCoin": 9774.0,
+                "score": 46.0
+            },
+            {
+                "userName": "Tongalay",
+                "isMale": "true",
+                "totalCoin": 12843.0,
+                "score": 55.0
+            },
+            {
+                "userName": "Erdemaydn23",
+                "isMale": "true",
+                "totalCoin": 13228.0,
+                "score": 57.0
+            },
+            {
+                "userName": "FkOzaslan",
+                "isMale": "true",
+                "totalCoin": 20930.0,
+                "score": 100.0
+            },
+            {
+                "userName": "Nusret",
+                "isMale": "true",
+                "totalCoin": 9026.0,
+                "score": 40.0
+            },
+            {
+                "userName": "Arda",
+                "isMale": "true",
+                "totalCoin": 10880.0,
+                "score": 54.0
+            },
+            {
+                "userName": "Sevda\u00c7_02",
+                "isMale": "fasle",
+                "totalCoin": 4174.0,
+                "score": 21.0
+            },
+            {
+                "userName": "|EFE|",
+                "isMale": "true",
+                "totalCoin": 3322.0,
+                "score": 20.0
+            },
+            {
+                "userName": "malbay\u0131m",
+                "isMale": "true",
+                "totalCoin": 5862.0,
+                "score": 31.0
+            },
+            {
+                "userName": "dlkozdmr",
+                "isMale": "fasle",
+                "totalCoin": 3364.0,
+                "score": 24.0
+            },
+            {
+                "userName": "Umut",
+                "isMale": "true",
+                "totalCoin": 8908.0,
+                "score": 40.0
+            },
+            {
+                "userName": "erg\u00fcn uzun",
+                "isMale": "true",
+                "totalCoin": 9020.0,
+                "score": 54.0
+            },
+            {
+                "userName": "Apasya",
+                "isMale": "fasle",
+                "totalCoin": 1768.0,
+                "score": 14.0
+            },
+            {
+                "userName": "say",
+                "isMale": "fasle",
+                "totalCoin": 9702.0,
+                "score": 64.0
+            },
+            {
+                "userName": "duvar",
+                "isMale": "true",
+                "totalCoin": 11220.0,
+                "score": 54.0
+            },
+            {
+                "userName": "Bomband\u0131rMan",
+                "isMale": "true",
+                "totalCoin": 9694.0,
+                "score": 43.0
+            },
+            {
+                "userName": "Komiser Nevzat",
+                "isMale": "true",
+                "totalCoin": 11628.0,
+                "score": 64.0
+            },
+            {
+                "userName": "doksandokuz99",
+                "isMale": "false",
+                "totalCoin": 6516.0,
+                "score": 31.0
+            },
+            {
+                "userName": "merti\u015fko",
+                "isMale": "true",
+                "totalCoin": 9280.0,
+                "score": 50.0
+            },
+            {
+                "userName": "troy2172",
+                "isMale": "fasle",
+                "totalCoin": 22074.0,
+                "score": 99.0
+            },
+            {
+                "userName": "MeltemAk",
+                "isMale": "fasle",
+                "totalCoin": 8868.0,
+                "score": 46.0
+            },
+            {
+                "userName": "kim_bu",
+                "isMale": "fasle",
+                "totalCoin": 3902.0,
+                "score": 21.0
+            },
+            {
+                "userName": "EfeFTW",
+                "isMale": "true",
+                "totalCoin": 11694.0,
+                "score": 61.0
+            },
+            {
+                "userName": "byuby",
+                "isMale": "true",
+                "totalCoin": 11098.0,
+                "score": 73.0
+            },
+            {
+                "userName": "Lumiere",
+                "isMale": "fasle",
+                "totalCoin": 12590.0,
+                "score": 72.0
+            },
+            {
+                "userName": "Hassam",
+                "isMale": "true",
+                "totalCoin": 5465.0,
+                "score": 26.0
+            },
+            {
+                "userName": "Faruksmoove",
+                "isMale": "true",
+                "totalCoin": 4886.0,
+                "score": 22.0
+            },
+            {
+                "userName": "AdemMeral2",
+                "isMale": "true",
+                "totalCoin": 14693.0,
+                "score": 67.0
+            },
+            {
+                "userName": "Ay\u00e7a",
+                "isMale": "fasle",
+                "totalCoin": 10140.0,
+                "score": 49.0
+            },
+            {
+                "userName": "Bugra14",
+                "isMale": "true",
+                "totalCoin": 10610.0,
+                "score": 58.0
+            },
+            {
+                "userName": "AYAZ",
+                "isMale": "true",
+                "totalCoin": 21371.0,
+                "score": 96.0
+            },
+            {
+                "userName": "BAMBAM",
+                "isMale": "true",
+                "totalCoin": 11784.0,
+                "score": 64.0
+            },
+            {
+                "userName": "Hayriye123",
+                "isMale": "fasle",
+                "totalCoin": 18590.0,
+                "score": 100.0
+            },
+            {
+                "userName": "YaS\u0130N",
+                "isMale": "true",
+                "totalCoin": 5737.0,
+                "score": 38.0
+            },
+            {
+                "userName": "KranjcarSerhat",
+                "isMale": "true",
+                "totalCoin": 3036.0,
+                "score": 15.0
+            }
+        ],
+        "en": [
+            {
+                "userName": "Anyela Bencosme",
+                "isMale": "fasle",
+                "totalCoin": 167745.0,
+                "score": 767.0
+            },
+            {
+                "userName": "Kelly Scott",
+                "isMale": "true",
+                "totalCoin": 148770.0,
+                "score": 753.0
+            },
+            {
+                "userName": "Consolette1",
+                "isMale": "fasle",
+                "totalCoin": 142302.0,
+                "score": 722.0
+            },
+            {
+                "userName": "alley cat",
+                "isMale": "fasle",
+                "totalCoin": 142287.0,
+                "score": 696.0
+            },
+            {
+                "userName": "jublues",
+                "isMale": "true",
+                "totalCoin": 103668.0,
+                "score": 691.0
+            },
+            {
+                "userName": "MNGE",
+                "isMale": "true",
+                "totalCoin": 116068.0,
+                "score": 605.0
+            },
+            {
+                "userName": "Pumpkin",
+                "isMale": "fasle",
+                "totalCoin": 114747.0,
+                "score": 536.0
+            },
+            {
+                "userName": "TriviaNerd",
+                "isMale": "true",
+                "totalCoin": 88584.0,
+                "score": 393.0
+            },
+            {
+                "userName": "Ibocca",
+                "isMale": "fasle",
+                "totalCoin": 57863.0,
+                "score": 369.0
+            },
+            {
+                "userName": "jladia1",
+                "isMale": "fasle",
+                "totalCoin": 52020.0,
+                "score": 232.0
+            },
+            {
+                "userName": "Brycent",
+                "isMale": "true",
+                "totalCoin": 48225.0,
+                "score": 228.0
+            },
+            {
+                "userName": "jer",
+                "isMale": "fasle",
+                "totalCoin": 36555.0,
+                "score": 225.0
+            },
+            {
+                "userName": "jclay3913",
+                "isMale": "true",
+                "totalCoin": 46278.0,
+                "score": 210.0
+            },
+            {
+                "userName": "mmskaf",
+                "isMale": "true",
+                "totalCoin": 33114.0,
+                "score": 207.0
+            },
+            {
+                "userName": "Dumb Morty",
+                "isMale": "true",
+                "totalCoin": 29387.0,
+                "score": 189.0
+            },
+            {
+                "userName": "Thani",
+                "isMale": "fasle",
+                "totalCoin": 35370.0,
+                "score": 154.0
+            },
+            {
+                "userName": "LEAD2HEAD",
+                "isMale": "true",
+                "totalCoin": 20290.0,
+                "score": 110.0
+            },
+            {
+                "userName": "de4",
+                "isMale": "true",
+                "totalCoin": 20930.0,
+                "score": 110.0
+            },
+            {
+                "userName": "Captain_47",
+                "isMale": "true",
+                "totalCoin": 17313.0,
+                "score": 109.0
+            },
+            {
+                "userName": "Roro81159",
+                "isMale": "fasle",
+                "totalCoin": 18660.0,
+                "score": 100.0
+            },
+            {
+                "userName": "GEEKing",
+                "isMale": "true",
+                "totalCoin": 16482.0,
+                "score": 99.0
+            },
+            {
+                "userName": "HENNERS",
+                "isMale": "true",
+                "totalCoin": 18979.0,
+                "score": 99.0
+            },
+            {
+                "userName": "aboombox",
+                "isMale": "fasle",
+                "totalCoin": 16477.0,
+                "score": 99.0
+            },
+            {
+                "userName": "nansee",
+                "isMale": "fasle",
+                "totalCoin": 22404.0,
+                "score": 98.0
+            },
+            {
+                "userName": "KUNGFU",
+                "isMale": "true",
+                "totalCoin": 17600.0,
+                "score": 97.0
+            },
+            {
+                "userName": "aho",
+                "isMale": "fasle",
+                "totalCoin": 17541.0,
+                "score": 95.0
+            },
+            {
+                "userName": "Will Perry",
+                "isMale": "true",
+                "totalCoin": 19362.0,
+                "score": 94.0
+            },
+            {
+                "userName": "Donator",
+                "isMale": "true",
+                "totalCoin": 20670.0,
+                "score": 94.0
+            },
+            {
+                "userName": "Melaine K",
+                "isMale": "fasle",
+                "totalCoin": 15048.0,
+                "score": 94.0
+            },
+            {
+                "userName": "rob_phelps",
+                "isMale": "true",
+                "totalCoin": 14856.0,
+                "score": 94.0
+            },
+            {
+                "userName": "justforfun1930",
+                "isMale": "fasle",
+                "totalCoin": 17016.0,
+                "score": 93.0
+            },
+            {
+                "userName": "Sunburn",
+                "isMale": "fasle",
+                "totalCoin": 20598.0,
+                "score": 93.0
+            },
+            {
+                "userName": "Deb Johanson",
+                "isMale": "fasle",
+                "totalCoin": 14718.0,
+                "score": 92.0
+            },
+            {
+                "userName": "diamondav66",
+                "isMale": "fasle",
+                "totalCoin": 18630.0,
+                "score": 90.0
+            },
+            {
+                "userName": "Caduuh",
+                "isMale": "fasle",
+                "totalCoin": 21432.0,
+                "score": 90.0
+            },
+            {
+                "userName": "BLGDT",
+                "isMale": "fasle",
+                "totalCoin": 18260.0,
+                "score": 86.0
+            },
+            {
+                "userName": "OSCAR",
+                "isMale": "true",
+                "totalCoin": 19501.0,
+                "score": 86.0
+            },
+            {
+                "userName": "pcole003",
+                "isMale": "fasle",
+                "totalCoin": 13487.0,
+                "score": 85.0
+            },
+            {
+                "userName": "dundy_158",
+                "isMale": "true",
+                "totalCoin": 19189.0,
+                "score": 85.0
+            },
+            {
+                "userName": "JIO",
+                "isMale": "fasle",
+                "totalCoin": 16962.0,
+                "score": 83.0
+            },
+            {
+                "userName": "SweetHomeNY",
+                "isMale": "fasle",
+                "totalCoin": 13274.0,
+                "score": 82.0
+            },
+            {
+                "userName": "|Avenger|",
+                "isMale": "true",
+                "totalCoin": 13852.0,
+                "score": 81.0
+            },
+            {
+                "userName": "MikeMoney234",
+                "isMale": "true",
+                "totalCoin": 17812.0,
+                "score": 80.0
+            },
+            {
+                "userName": "sahanke",
+                "isMale": "true",
+                "totalCoin": 15180.0,
+                "score": 79.0
+            },
+            {
+                "userName": "Young95",
+                "isMale": "true",
+                "totalCoin": 11505.0,
+                "score": 78.0
+            },
+            {
+                "userName": "austinkennedy",
+                "isMale": "fasle",
+                "totalCoin": 11745.0,
+                "score": 78.0
+            },
+            {
+                "userName": "TibbyTurkey",
+                "isMale": "fasle",
+                "totalCoin": 11595.0,
+                "score": 77.0
+            },
+            {
+                "userName": "jeffng08",
+                "isMale": "fasle",
+                "totalCoin": 11490.0,
+                "score": 76.0
+            },
+            {
+                "userName": "Adam",
+                "isMale": "true",
+                "totalCoin": 12255.0,
+                "score": 76.0
+            },
+            {
+                "userName": "KITTY",
+                "isMale": "fasle",
+                "totalCoin": 13980.0,
+                "score": 76.0
+            },
+            {
+                "userName": "dmeech",
+                "isMale": "true",
+                "totalCoin": 15945.0,
+                "score": 76.0
+            },
+            {
+                "userName": "viper",
+                "isMale": "fasle",
+                "totalCoin": 14100.0,
+                "score": 76.0
+            },
+            {
+                "userName": "Wizard111",
+                "isMale": "fasle",
+                "totalCoin": 17820.0,
+                "score": 76.0
+            },
+            {
+                "userName": "03drc",
+                "isMale": "fasle",
+                "totalCoin": 12045.0,
+                "score": 75.0
+            },
+            {
+                "userName": "Aphroditi",
+                "isMale": "fasle",
+                "totalCoin": 12750.0,
+                "score": 75.0
+            },
+            {
+                "userName": "LAF0820",
+                "isMale": "fasle",
+                "totalCoin": 10976.0,
+                "score": 73.0
+            },
+            {
+                "userName": "KevinQ",
+                "isMale": "true",
+                "totalCoin": 15282.0,
+                "score": 71.0
+            },
+            {
+                "userName": "dampha",
+                "isMale": "fasle",
+                "totalCoin": 10040.0,
+                "score": 69.0
+            },
+            {
+                "userName": "silbert_j",
+                "isMale": "fasle",
+                "totalCoin": 13851.0,
+                "score": 68.0
+            },
+            {
+                "userName": "lex",
+                "isMale": "true",
+                "totalCoin": 15454.0,
+                "score": 68.0
+            },
+            {
+                "userName": "PeevishAirline2",
+                "isMale": "fasle",
+                "totalCoin": 14748.0,
+                "score": 67.0
+            },
+            {
+                "userName": "8Bytes",
+                "isMale": "fasle",
+                "totalCoin": 10333.0,
+                "score": 67.0
+            },
+            {
+                "userName": "Gogotun",
+                "isMale": "true",
+                "totalCoin": 12929.0,
+                "score": 67.0
+            },
+            {
+                "userName": "JamieG",
+                "isMale": "true",
+                "totalCoin": 10481.0,
+                "score": 66.0
+            },
+            {
+                "userName": "MarkM",
+                "isMale": "true",
+                "totalCoin": 11554.0,
+                "score": 65.0
+            },
+            {
+                "userName": "VESCHID",
+                "isMale": "true",
+                "totalCoin": 9354.0,
+                "score": 63.0
+            },
+            {
+                "userName": "Ragnarok",
+                "isMale": "fasle",
+                "totalCoin": 10518.0,
+                "score": 63.0
+            },
+            {
+                "userName": "emmarose706",
+                "isMale": "fasle",
+                "totalCoin": 11478.0,
+                "score": 63.0
+            },
+            {
+                "userName": "MARC",
+                "isMale": "true",
+                "totalCoin": 14538.0,
+                "score": 63.0
+            },
+            {
+                "userName": "DECCKER",
+                "isMale": "true",
+                "totalCoin": 13074.0,
+                "score": 63.0
+            },
+            {
+                "userName": "Melaine Dunn",
+                "isMale": "fasle",
+                "totalCoin": 11802.0,
+                "score": 62.0
+            },
+            {
+                "userName": "meshooo",
+                "isMale": "fasle",
+                "totalCoin": 10908.0,
+                "score": 62.0
+            },
+            {
+                "userName": "LINDA",
+                "isMale": "fasle",
+                "totalCoin": 10764.0,
+                "score": 62.0
+            },
+            {
+                "userName": "MANDYJEANNE",
+                "isMale": "fasle",
+                "totalCoin": 14190.0,
+                "score": 61.0
+            },
+            {
+                "userName": "nichatesmoths",
+                "isMale": "fasle",
+                "totalCoin": 13110.0,
+                "score": 61.0
+            },
+            {
+                "userName": "ellendmc",
+                "isMale": "fasle",
+                "totalCoin": 12786.0,
+                "score": 61.0
+            },
+            {
+                "userName": "Coldeyes",
+                "isMale": "fasle",
+                "totalCoin": 12078.0,
+                "score": 61.0
+            },
+            {
+                "userName": "Lyle Capaiu",
+                "isMale": "true",
+                "totalCoin": 12798.0,
+                "score": 59.0
+            },
+            {
+                "userName": "taserface",
+                "isMale": "true",
+                "totalCoin": 9378.0,
+                "score": 59.0
+            },
+            {
+                "userName": "REX",
+                "isMale": "true",
+                "totalCoin": 9320.0,
+                "score": 59.0
+            },
+            {
+                "userName": "badger",
+                "isMale": "true",
+                "totalCoin": 12356.0,
+                "score": 59.0
+            },
+            {
+                "userName": "NINIMAN",
+                "isMale": "fasle",
+                "totalCoin": 9406.0,
+                "score": 59.0
+            },
+            {
+                "userName": "zach020584",
+                "isMale": "true",
+                "totalCoin": 11898.0,
+                "score": 58.0
+            },
+            {
+                "userName": "BOBBY",
+                "isMale": "true",
+                "totalCoin": 12829.0,
+                "score": 58.0
+            },
+            {
+                "userName": "THIS IS BRAZIL",
+                "isMale": "fasle",
+                "totalCoin": 10401.0,
+                "score": 58.0
+            },
+            {
+                "userName": "burn head",
+                "isMale": "true",
+                "totalCoin": 10895.0,
+                "score": 57.0
+            },
+            {
+                "userName": "Aydede",
+                "isMale": "fasle",
+                "totalCoin": 12086.0,
+                "score": 56.0
+            },
+            {
+                "userName": "mmmmm*8",
+                "isMale": "fasle",
+                "totalCoin": 10261.0,
+                "score": 56.0
+            },
+            {
+                "userName": "0fkf",
+                "isMale": "true",
+                "totalCoin": 10370.0,
+                "score": 54.0
+            },
+            {
+                "userName": "magro",
+                "isMale": "true",
+                "totalCoin": 10750.0,
+                "score": 53.0
+            },
+            {
+                "userName": "Alma",
+                "isMale": "fasle",
+                "totalCoin": 8310.0,
+                "score": 51.0
+            },
+            {
+                "userName": "Thomas 12",
+                "isMale": "true",
+                "totalCoin": 11810.0,
+                "score": 51.0
+            },
+            {
+                "userName": "Noscocity",
+                "isMale": "true",
+                "totalCoin": 8360.0,
+                "score": 51.0
+            },
+            {
+                "userName": "Vertrix",
+                "isMale": "true",
+                "totalCoin": 9870.0,
+                "score": 50.0
+            },
+            {
+                "userName": "Sahar Love",
+                "isMale": "fasle",
+                "totalCoin": 9369.0,
+                "score": 49.0
+            },
+            {
+                "userName": "pettersino",
+                "isMale": "true",
+                "totalCoin": 7104.0,
+                "score": 49.0
+            },
+            {
+                "userName": "fAt cAt",
+                "isMale": "fasle",
+                "totalCoin": 7914.0,
+                "score": 48.0
+            },
+            {
+                "userName": "johngbrainard",
+                "isMale": "true",
+                "totalCoin": 8262.0,
+                "score": 46.0
+            },
+            {
+                "userName": "BOSS",
+                "isMale": "true",
+                "totalCoin": 9243.0,
+                "score": 46.0
+            },
+            {
+                "userName": "Renee.10",
+                "isMale": "fasle",
+                "totalCoin": 8370.0,
+                "score": 46.0
+            },
+            {
+                "userName": "heels4life",
+                "isMale": "true",
+                "totalCoin": 10278.0,
+                "score": 45.0
+            },
+            {
+                "userName": "woodman",
+                "isMale": "true",
+                "totalCoin": 8544.0,
+                "score": 44.0
+            },
+            {
+                "userName": "Harris 10",
+                "isMale": "true",
+                "totalCoin": 8636.0,
+                "score": 44.0
+            },
+            {
+                "userName": "BOB",
+                "isMale": "true",
+                "totalCoin": 9282.0,
+                "score": 43.0
+            },
+            {
+                "userName": "Shaun Fesser",
+                "isMale": "true",
+                "totalCoin": 7120.0,
+                "score": 43.0
+            },
+            {
+                "userName": "Raven",
+                "isMale": "true",
+                "totalCoin": 6908.0,
+                "score": 43.0
+            },
+            {
+                "userName": "Punisher01",
+                "isMale": "true",
+                "totalCoin": 7650.0,
+                "score": 42.0
+            },
+            {
+                "userName": "crazy.aydee",
+                "isMale": "fasle",
+                "totalCoin": 7748.0,
+                "score": 41.0
+            },
+            {
+                "userName": "mollykinz",
+                "isMale": "fasle",
+                "totalCoin": 6700.0,
+                "score": 40.0
+            },
+            {
+                "userName": "KEJ",
+                "isMale": "fasle",
+                "totalCoin": 8208.0,
+                "score": 40.0
+            },
+            {
+                "userName": "GODFATHER",
+                "isMale": "true",
+                "totalCoin": 6449.0,
+                "score": 39.0
+            },
+            {
+                "userName": "MOUSE",
+                "isMale": "fasle",
+                "totalCoin": 5403.0,
+                "score": 38.0
+            },
+            {
+                "userName": "jsully0130",
+                "isMale": "fasle",
+                "totalCoin": 6924.0,
+                "score": 38.0
+            },
+            {
+                "userName": "Sendy Gregory",
+                "isMale": "fasle",
+                "totalCoin": 7926.0,
+                "score": 38.0
+            },
+            {
+                "userName": "David Callahan",
+                "isMale": "true",
+                "totalCoin": 5976.0,
+                "score": 37.0
+            },
+            {
+                "userName": "Stalker",
+                "isMale": "fasle",
+                "totalCoin": 7730.0,
+                "score": 37.0
+            },
+            {
+                "userName": "Sliver Fox",
+                "isMale": "true",
+                "totalCoin": 7338.0,
+                "score": 37.0
+            },
+            {
+                "userName": "DaveFarragut",
+                "isMale": "true",
+                "totalCoin": 6908.0,
+                "score": 36.0
+            },
+            {
+                "userName": "KILLER1",
+                "isMale": "true",
+                "totalCoin": 5431.0,
+                "score": 36.0
+            },
+            {
+                "userName": "Mfh 27",
+                "isMale": "fasle",
+                "totalCoin": 5802.0,
+                "score": 36.0
+            },
+            {
+                "userName": "|IMMORTAL|",
+                "isMale": "true",
+                "totalCoin": 7622.0,
+                "score": 35.0
+            },
+            {
+                "userName": "Acethedic44",
+                "isMale": "fasle",
+                "totalCoin": 5412.0,
+                "score": 34.0
+            },
+            {
+                "userName": "kacub",
+                "isMale": "fasle",
+                "totalCoin": 4728.0,
+                "score": 33.0
+            },
+            {
+                "userName": "Neal",
+                "isMale": "true",
+                "totalCoin": 5706.0,
+                "score": 33.0
+            },
+            {
+                "userName": "katiefite12",
+                "isMale": "fasle",
+                "totalCoin": 7350.0,
+                "score": 32.0
+            },
+            {
+                "userName": "Suzyq:)(:",
+                "isMale": "fasle",
+                "totalCoin": 7026.0,
+                "score": 32.0
+            },
+            {
+                "userName": "Jardman",
+                "isMale": "true",
+                "totalCoin": 7098.0,
+                "score": 30.0
+            },
+            {
+                "userName": "vue",
+                "isMale": "fasle",
+                "totalCoin": 5360.0,
+                "score": 29.0
+            },
+            {
+                "userName": "CamazArbuzow",
+                "isMale": "true",
+                "totalCoin": 5340.0,
+                "score": 29.0
+            },
+            {
+                "userName": "Dolly5858",
+                "isMale": "fasle",
+                "totalCoin": 6055.0,
+                "score": 28.0
+            },
+            {
+                "userName": "Lord Legolas",
+                "isMale": "true",
+                "totalCoin": 4670.0,
+                "score": 27.0
+            },
+            {
+                "userName": "claws202",
+                "isMale": "fasle",
+                "totalCoin": 4070.0,
+                "score": 26.0
+            },
+            {
+                "userName": "Natoocherliboo",
+                "isMale": "true",
+                "totalCoin": 4030.0,
+                "score": 26.0
+            },
+            {
+                "userName": "Arnault",
+                "isMale": "true",
+                "totalCoin": 5465.0,
+                "score": 26.0
+            },
+            {
+                "userName": "MemeMaster",
+                "isMale": "true",
+                "totalCoin": 4750.0,
+                "score": 26.0
+            },
+            {
+                "userName": "GoHeard2001",
+                "isMale": "fasle",
+                "totalCoin": 4795.0,
+                "score": 26.0
+            },
+            {
+                "userName": "craig.blanock",
+                "isMale": "true",
+                "totalCoin": 4690.0,
+                "score": 25.0
+            },
+            {
+                "userName": "dudboilermane",
+                "isMale": "fasle",
+                "totalCoin": 5430.0,
+                "score": 25.0
+            },
+            {
+                "userName": "bobmoe777",
+                "isMale": "true",
+                "totalCoin": 3738.0,
+                "score": 24.0
+            },
+            {
+                "userName": "Rajit B",
+                "isMale": "true",
+                "totalCoin": 4616.0,
+                "score": 24.0
+            },
+            {
+                "userName": "Gaz4371",
+                "isMale": "fasle",
+                "totalCoin": 4232.0,
+                "score": 23.0
+            },
+            {
+                "userName": "buddyruff",
+                "isMale": "fasle",
+                "totalCoin": 4426.0,
+                "score": 23.0
+            },
+            {
+                "userName": "kimmeldn",
+                "isMale": "true",
+                "totalCoin": 3274.0,
+                "score": 22.0
+            },
+            {
+                "userName": "D4VIDROYT",
+                "isMale": "true",
+                "totalCoin": 4636.0,
+                "score": 22.0
+            },
+            {
+                "userName": "tomcat",
+                "isMale": "true",
+                "totalCoin": 3380.0,
+                "score": 21.0
+            },
+            {
+                "userName": "mwilson9500",
+                "isMale": "fasle",
+                "totalCoin": 3720.0,
+                "score": 20.0
+            },
+            {
+                "userName": "nerdy",
+                "isMale": "fasle",
+                "totalCoin": 3183.0,
+                "score": 19.0
+            },
+            {
+                "userName": "Nicefox",
+                "isMale": "fasle",
+                "totalCoin": 2826.0,
+                "score": 19.0
+            },
+            {
+                "userName": "SteveW",
+                "isMale": "true",
+                "totalCoin": 3339.0,
+                "score": 17.0
+            },
+            {
+                "userName": "T_A_N_K",
+                "isMale": "true",
+                "totalCoin": 2400.0,
+                "score": 16.0
+            },
+            {
+                "userName": "UnknownYoji",
+                "isMale": "true",
+                "totalCoin": 2304.0,
+                "score": 16.0
+            },
+            {
+                "userName": "Janik",
+                "isMale": "fasle",
+                "totalCoin": 3486.0,
+                "score": 15.0
+            },
+            {
+                "userName": "actualterri",
+                "isMale": "true",
+                "totalCoin": 2442.0,
+                "score": 14.0
+            },
+            {
+                "userName": "MSB",
+                "isMale": "fasle",
+                "totalCoin": 2248.0,
+                "score": 14.0
+            },
+            {
+                "userName": "RESPIRATOR",
+                "isMale": "true",
+                "totalCoin": 2660.0,
+                "score": 14.0
+            },
+            {
+                "userName": "NotACop",
+                "isMale": "true",
+                "totalCoin": 1978.0,
+                "score": 14.0
+            },
+            {
+                "userName": "DEATHMAN",
+                "isMale": "true",
+                "totalCoin": 1806.0,
+                "score": 13.0
+            },
+            {
+                "userName": "Lord Vader",
+                "isMale": "true",
+                "totalCoin": 1916.0,
+                "score": 11.0
+            },
+            {
+                "userName": "Slampy",
+                "isMale": "fasle",
+                "totalCoin": 1546.0,
+                "score": 11.0
+            }
+        ]
+    }
 }

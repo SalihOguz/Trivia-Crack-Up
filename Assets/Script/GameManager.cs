@@ -8,6 +8,7 @@ using Firebase.Database;
 using Firebase.Unity.Editor;
 using TMPro;
 using DG.Tweening;
+using I2.Loc;
 
 public class GameManager : MonoBehaviour {
 
@@ -134,6 +135,8 @@ public class GameManager : MonoBehaviour {
         accumulatedMoneyText.transform.parent.GetChild(4).GetChild(1).position = opponentMoneyText.transform.GetChild(0).position;
         endScreen.transform.GetChild(2).GetChild(4).GetChild(0).position = playerMoneyText.transform.GetChild(0).position;
         endScreen.transform.GetChild(2).GetChild(4).GetChild(1).position = opponentMoneyText.transform.GetChild(0).position;
+
+
     }
 
     IEnumerator AnimationDelay()
@@ -210,7 +213,7 @@ public class GameManager : MonoBehaviour {
 
     User MakeFakeUser()
     {
-        TextAsset textAssset = Resources.Load<TextAsset>("Data/FakeUserList");
+        TextAsset textAssset = Resources.Load<TextAsset>("Data/FakeUserList/"+LocalizationManager.CurrentLanguageCode);
 		FakeUserList ful = JsonUtility.FromJson<FakeUserList>(textAssset.text);
         UserLite fake = ful.fakeUserList[UnityEngine.Random.Range(0, ful.fakeUserList.Count)];
 
@@ -300,7 +303,6 @@ public class GameManager : MonoBehaviour {
             questionTimerText.text = (Mathf.CeilToInt(questionAnsweringTime - questionTimer)).ToString();
             if (questionTimer >= questionAnsweringTime)
             {
-                print("lololoooo");
                 gameState++;  // to stop the timer
 
                 ChangeActivePlayer();
@@ -313,12 +315,12 @@ public class GameManager : MonoBehaviour {
         currentQuestionData = new QuestionData();
         currentQuestion = GetComponent<QuestionManager>().ChooseQuestion();
         questionText.text = currentQuestion.questionText;
-        player1.seenQuestionIds.Add(currentQuestion.questionId);
+        player1.seenQuestionIds[LocalizationManager.CurrentLanguageCode].Add(currentQuestion.questionId);
     }
 
 	IEnumerator ShowChoices()
 	{
-        infoText.text = "Şıklar geliyor";
+        infoText.text = I2.Loc.ScriptLocalization.Get("Choices coming");
 
 		optionTexts[0].text = currentQuestion.choice1;
 		yield return new WaitForSeconds(choiceApperTime);
@@ -340,7 +342,7 @@ public class GameManager : MonoBehaviour {
 		yield return new WaitForSeconds(choiceApperTime);
         PlayMusic(1);
 
-        infoText.text = "Bahsini Koy!";
+        infoText.text = I2.Loc.ScriptLocalization.Get("Bid Now");
 		bidTimer = 0;
         bidStartTime = Time.timeSinceLevelLoad;
         playerBid = 0;
@@ -445,11 +447,11 @@ public class GameManager : MonoBehaviour {
         // arrange info text
         if (playingPlayerId == 0)
         {
-            infoText.text = "Soru <b><color=#FFEA00>" + player1.username + "</color></b> için geliyor";
+            infoText.text = I2.Loc.ScriptLocalization.Get("Question is coming 1") + " <b><color=#FFEA00>" + player1.username + "</color></b> " + I2.Loc.ScriptLocalization.Get("Question is coming 2");
         }
         else
         {
-             infoText.text = "Soru <b><color=#FFEA00>" + player2.username + "</color></b> için geliyor";           
+             infoText.text = I2.Loc.ScriptLocalization.Get("Question is coming 1") + " <b><color=#FFEA00>" + player2.username + "</color></b> " + I2.Loc.ScriptLocalization.Get("Question is coming 2");           
         }
 
         yield return new WaitForSeconds(1f);
@@ -464,7 +466,7 @@ public class GameManager : MonoBehaviour {
 
         playerMoneyText.text = player1.totalCoin.ToString();
         opponentMoneyText.text = player2.totalCoin.ToString();
-        accumulatedMoneyText.text = totalMoneyAccumulated.ToString() + " COIN";
+        accumulatedMoneyText.text = totalMoneyAccumulated.ToString() + " " + I2.Loc.ScriptLocalization.Get("COIN");
 
         playerMoneyText.gameObject.SetActive(false);
         opponentMoneyText.gameObject.SetActive(false);
@@ -513,7 +515,7 @@ public class GameManager : MonoBehaviour {
         accumulatedMoneyText.transform.parent.GetChild(1).DOShakeRotation(Mathf.Max(playerBid/30, opponentBid/30) * flowDelay, new Vector3(0,0,20f),90,90).SetDelay(1f).OnComplete(delegate(){
             tot += (playerBid) % 30;
             tot += (opponentBid) % 30;
-            accumulatedMoneyText.text = tot + " COIN";
+            accumulatedMoneyText.text = tot + " " + I2.Loc.ScriptLocalization.Get("COIN");
         });
         accumulatedMoneyText.transform.parent.GetChild(1).DOShakeScale(Mathf.Max(playerBid/30, opponentBid/30) * flowDelay, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(1f);
 
@@ -524,7 +526,7 @@ public class GameManager : MonoBehaviour {
                 playerCoinsParent.transform.GetChild(i).DOMove(accumulatedMoneyText.transform.parent.GetChild(0).position, 1f).SetEase(Ease.InCubic).SetDelay(flowDelay*i).
                 OnComplete(delegate() { 
                     tot += 30;
-                    accumulatedMoneyText.text = tot + " COIN";
+                    accumulatedMoneyText.text = tot + " " + I2.Loc.ScriptLocalization.Get("COIN");
                  }).OnStart(delegate() {
                     p1 -= 30;
                     playerMoneyText.text = p1.ToString();
@@ -536,7 +538,7 @@ public class GameManager : MonoBehaviour {
             {
                 opponentCoinsParent.transform.GetChild(i).DOMove(accumulatedMoneyText.transform.parent.GetChild(0).position, 1f).SetEase(Ease.InCubic).SetDelay(flowDelay*i).OnComplete(delegate() { 
                     tot += 30;
-                    accumulatedMoneyText.text = tot + " COIN";
+                    accumulatedMoneyText.text = tot + " " + I2.Loc.ScriptLocalization.Get("COIN");
                  }).OnStart(delegate() {
                     p2 -= 30;
                     opponentMoneyText.text = p2.ToString();
@@ -596,7 +598,7 @@ public class GameManager : MonoBehaviour {
         indicator.transform.DOShakeRotation(count * flowDelay, new Vector3(0,0,10f),50,50).SetDelay(1f);
         indicator.transform.DOShakeScale(count * flowDelay, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(1f).OnComplete(delegate(){
             p1 += totalMoneyAccumulated % 30;
-            accumulatedMoneyText.text = "0 COIN";
+            accumulatedMoneyText.text = "0 " + I2.Loc.ScriptLocalization.Get("COIN");
             winnerText.text = p1.ToString();
         });
         for(int i = 0; i < count; i++)
@@ -607,7 +609,7 @@ public class GameManager : MonoBehaviour {
                 winnerText.text = p1.ToString();
             }).OnStart(delegate() {
                 tot -= 30;
-                accumulatedMoneyText.text = tot + " COIN";
+                accumulatedMoneyText.text = tot + " " + I2.Loc.ScriptLocalization.Get("COIN");
             });
             //accumulatedMoneyText.transform.parent.GetChild(0).GetChild(i).DOScale(Vector3.one * 0.6f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i);
             //accumulatedMoneyText.transform.parent.GetChild(0).GetChild(i).DOScale(Vector3.one * 0.4f, 0.5f).SetEase(Ease.Linear).SetDelay(flowDelay*i + 0.5f);
@@ -701,13 +703,13 @@ public class GameManager : MonoBehaviour {
 
         if (playingPlayerId == 0)
         {
-            infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b>\ncevaplıyor";
+            infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b>\n" + I2.Loc.ScriptLocalization.Get("answering");
             knowQuestionButton.GetComponent<Button>().enabled = true;
             fiftyFiftyButton.GetComponent<Button>().enabled = true;
         }
         else
         {
-            infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b>\ncevaplıyor";
+            infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b>\n"+ I2.Loc.ScriptLocalization.Get("answering");
         }
 
         for (int i = 0; i < optionTexts.Length; i++)
@@ -739,7 +741,7 @@ public class GameManager : MonoBehaviour {
             opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
             
             infoText.transform.DOShakeRotation(1f,new Vector3(0,0,10f),20,50);
-            infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b> cevaplıyor";
+            infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b> " + I2.Loc.ScriptLocalization.Get("answering");
             botManager.Choose();
         }
         else
@@ -749,7 +751,7 @@ public class GameManager : MonoBehaviour {
             opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[0];
 
             infoText.transform.DOShakeRotation(1f,new Vector3(0,0,10f),20,50);
-            infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b> cevaplıyor";
+            infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b> " + I2.Loc.ScriptLocalization.Get("answering");
 
             knowQuestionButton.enabled = true;
             fiftyFiftyButton.enabled = true;
@@ -781,7 +783,7 @@ public class GameManager : MonoBehaviour {
                 IncreaseScore();
                 GoToTheNextTurn();
                 optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[2];
-                player1.rightAnswersInDifficulties[currentQuestion.difficulty]++;
+                player1.rightAnswersInDifficulties[LocalizationManager.CurrentLanguageCode][currentQuestion.difficulty]++;
 
                 if (!botShowEmojiObject.activeSelf)
                 {
@@ -795,7 +797,7 @@ public class GameManager : MonoBehaviour {
                 PlaySound(9);
                 optionTexts[index].transform.parent.GetComponent<Button>().enabled = false;
                 optionTexts[index].transform.parent.GetComponent<Image>().sprite = choiceSprites[1];
-                player1.wrongAnswersInDifficulties[currentQuestion.difficulty]++;
+                player1.wrongAnswersInDifficulties[LocalizationManager.CurrentLanguageCode][currentQuestion.difficulty]++;
 
                 if (GetAvaliableChoiceCount() > 1)
                 {
@@ -824,7 +826,7 @@ public class GameManager : MonoBehaviour {
             //     PlayerPrefs.SetInt("IsTutorialCompeted", 1); // tutorial completed
             // }
             currentQuestionData.chosenChoiceCounts[index]++;
-            if (GetAvaliableChoiceCount() == 0 || fiftyFiftyUsed)
+            if (GetAvaliableChoiceCount() >= 3 || fiftyFiftyUsed)
             {
                 currentQuestionData.firstAnsweringTimes.Add(questionTimer);
             }
@@ -981,11 +983,11 @@ public class GameManager : MonoBehaviour {
         infoText.transform.Find("disable").gameObject.SetActive(false);
         if (playingPlayerId == 0)
         {
-            infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b> cevaplıyor";
+            infoText.text = "<b><color=#FFEA00>" + player2.username + "</color></b> " + I2.Loc.ScriptLocalization.Get("answering");
         }
         else
         {
-            infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b> cevaplıyor";
+            infoText.text = "<b><color=#FFEA00>" + player1.username + "</color></b> " + I2.Loc.ScriptLocalization.Get("answering");
         }
     }
 
@@ -1069,7 +1071,7 @@ public class GameManager : MonoBehaviour {
         accumulatedMoneyText.transform.parent.GetChild(4).gameObject.SetActive(false);
 
         totalMoneyAccumulated = 0;
-        accumulatedMoneyText.text = 0 + " COIN";
+        accumulatedMoneyText.text = 0 + " " + I2.Loc.ScriptLocalization.Get("COIN");
         playerMoneyText.text = player1.totalCoin.ToString();
         opponentMoneyText.text = player2.totalCoin.ToString();
 
@@ -1120,9 +1122,9 @@ public class GameManager : MonoBehaviour {
         }
 
         GetComponent<LevelManager>().CheckLevelUp();
-        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = (player1.totalCoin - startingCoin) + " " + "COIN";
+        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = (player1.totalCoin - startingCoin) + " " + I2.Loc.ScriptLocalization.Get("COIN");
         retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
-        retryButton.transform.GetChild(0).GetComponent<Text>().text = "tekrar oyna";
+        retryButton.transform.GetChild(0).GetComponent<Text>().text = I2.Loc.ScriptLocalization.Get("play again");
         endGameInfoText.text = "";
         retryButton.GetComponent<Button>().interactable = true;
         botManager.WantAgain();
@@ -1180,7 +1182,7 @@ public class GameManager : MonoBehaviour {
         doublecoinButton.SetActive(false);
         StartEndGameCoinFlow();
         player1.totalCoin += totalBidPlayer;
-        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = (player1.totalCoin - startingCoin).ToString() + " COIN";
+        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = (player1.totalCoin - startingCoin).ToString() + " " + I2.Loc.ScriptLocalization.Get("COIN");
         
         SendUserData();
     } 
@@ -1214,16 +1216,13 @@ public class GameManager : MonoBehaviour {
     {
         // save question data to firebase
         #if ! UNITY_EDITOR
-            FirebaseDatabase.DefaultInstance.GetReference("questionDataList/"+currentQuestion.questionId).GetValueAsync().ContinueWith(task => {
+            FirebaseDatabase.DefaultInstance.GetReference("questionDataList/"+LocalizationManager.CurrentLanguageCode+"/"+currentQuestion.questionId).GetValueAsync().ContinueWith(task => {
                 if (task.IsFaulted) {
                     // Handle the error...
                     Debug.LogError("Error in FirebaseStart");
                 }
                 else if (task.IsCompleted) {
                     QuestionData realTimeQuestionData = JsonUtility.FromJson<QuestionData>(task.Result.GetRawJsonValue());
-
-                    print(JsonUtility.ToJson(realTimeQuestionData));
-                    print(JsonUtility.ToJson(currentQuestionData));
 
                     realTimeQuestionData.answeredRightCount += currentQuestionData.answeredRightCount;
                     realTimeQuestionData.answeredWrongCount += currentQuestionData.answeredWrongCount;
@@ -1259,7 +1258,7 @@ public class GameManager : MonoBehaviour {
                     {
                         reference = FirebaseDatabase.DefaultInstance.RootReference;
                     }
-                    reference.Child("questionDataList").Child(currentQuestion.questionId.ToString()).SetRawJsonValueAsync(JsonUtility.ToJson(realTimeQuestionData));
+                    reference.Child("questionDataList").Child(LocalizationManager.CurrentLanguageCode).Child(currentQuestion.questionId.ToString()).SetRawJsonValueAsync(JsonUtility.ToJson(realTimeQuestionData));
                 }
             });
         #endif
@@ -1277,7 +1276,7 @@ public class GameManager : MonoBehaviour {
         {
             yield return new WaitForSeconds(5.5f);
             totalMoneyAccumulated = 0;
-            accumulatedMoneyText.text = 0 + " COIN";
+            accumulatedMoneyText.text = 0 + " " + I2.Loc.ScriptLocalization.Get("COIN");
         }
         
         playerMoneyText.text = player1.totalCoin.ToString();
@@ -1347,11 +1346,11 @@ public class GameManager : MonoBehaviour {
             {
                 StartCoroutine(DelayRestart());
             }
-            else if (endGameInfoText.text != "Rakip kaçtı!")
+            else if (endGameInfoText.text != I2.Loc.ScriptLocalization.Get("run away"))
             {
                 retryButton.GetComponent<Image>().sprite = retryButtonSprites[1];
-                endGameInfoText.text = "Rakibe istek gönderildi";
-                retryButton.transform.GetChild(0).GetComponent<Text>().text = "bekleniyor";
+                endGameInfoText.text = I2.Loc.ScriptLocalization.Get("wants again");
+                retryButton.transform.GetChild(0).GetComponent<Text>().text = I2.Loc.ScriptLocalization.Get("waiting");
                 retryButton.GetComponent<Button>().interactable = false;
             }
             else
@@ -1365,7 +1364,7 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
-            endGameInfoText.text = "Yetersiz bakiye! Marketten daha fazla coin alabilirsiniz";
+            endGameInfoText.text = I2.Loc.ScriptLocalization.Get("Not enough coins");
         }
     }
 
@@ -1384,8 +1383,8 @@ public class GameManager : MonoBehaviour {
         if (player1.totalCoin >= 30*5)
         {
             retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
-            endGameInfoText.text = "Rakip tekrar oynamak istiyor!";
-            retryButton.transform.GetChild(0).GetComponent<Text>().text = "tekrar oyna";
+            endGameInfoText.text = I2.Loc.ScriptLocalization.Get("wants again");
+            retryButton.transform.GetChild(0).GetComponent<Text>().text = I2.Loc.ScriptLocalization.Get("play again");
              retryButton.GetComponent<Button>().interactable = true;
         }
     }
@@ -1395,8 +1394,8 @@ public class GameManager : MonoBehaviour {
         if (player1.totalCoin >= 30*5)
         {
             retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
-            endGameInfoText.text = "Rakip kaçtı!";
-            retryButton.transform.GetChild(0).GetComponent<Text>().text = "yeni oyun";
+            endGameInfoText.text = I2.Loc.ScriptLocalization.Get("run away");
+            retryButton.transform.GetChild(0).GetComponent<Text>().text = I2.Loc.ScriptLocalization.Get("new game");
             retryButton.GetComponent<Button>().interactable = true;
         }
     }
@@ -1409,8 +1408,8 @@ public class GameManager : MonoBehaviour {
 
         retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
         retryButton.GetComponent<Button>().interactable = false;
-        endGameInfoText.text = "İstek kabul edildi";
-        retryButton.transform.GetChild(0).GetComponent<Text>().text = "başlıyor";
+        endGameInfoText.text = I2.Loc.ScriptLocalization.Get("request accepted");
+        retryButton.transform.GetChild(0).GetComponent<Text>().text = I2.Loc.ScriptLocalization.Get("starting");
         yield return new WaitForSeconds(1.5f);
 
         Restart();

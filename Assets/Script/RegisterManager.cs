@@ -10,6 +10,7 @@ using Firebase.Unity.Editor;
 using DG.Tweening;
 using GoogleMobileAds.Api;
 using BugsnagUnity;
+using I2.Loc;
 
 public class RegisterManager : MonoBehaviour {
 	public GameObject uiLayer;
@@ -25,7 +26,21 @@ public class RegisterManager : MonoBehaviour {
 
 	void Start()
 	{
-		//PlayerPrefs.DeleteAll(); //TODO
+		if (!PlayerPrefs.HasKey("lang"))
+		{
+			if (Application.systemLanguage == SystemLanguage.Turkish)
+			{
+				PlayerPrefs.SetString("lang", "tr");
+				LocalizationManager.CurrentLanguageCode = "tr";
+			}
+			else
+			{
+				PlayerPrefs.SetString("lang", "en");
+				LocalizationManager.CurrentLanguageCode = "en";
+			}
+		}
+
+		//PlayerPrefs.DeleteAll(); //TODO comment
 		loadingImage.GetComponent<Image>().DOFillAmount(0.5f, 0.2f);
 		StartCoroutine(CheckConnection());
 	}
@@ -124,7 +139,7 @@ public class RegisterManager : MonoBehaviour {
 
 	public void GetFakeUsers()
 	{
-		FirebaseDatabase.DefaultInstance.GetReference("fakeUserList").GetValueAsync().ContinueWith(task => {
+		FirebaseDatabase.DefaultInstance.GetReference("fakeUserList/"+LocalizationManager.CurrentLanguageCode).GetValueAsync().ContinueWith(task => {
 			if (task.IsFaulted) {
 				// Handle the error...
 				Debug.LogError("Error in FirebaseStart");
@@ -142,7 +157,7 @@ public class RegisterManager : MonoBehaviour {
 
 	void GetQuestions()
 	{
-		FirebaseDatabase.DefaultInstance.GetReference("questionList").GetValueAsync().ContinueWith(task => {
+		FirebaseDatabase.DefaultInstance.GetReference("questionList/"+LocalizationManager.CurrentLanguageCode).GetValueAsync().ContinueWith(task => {
 			if (task.IsFaulted) {
 				// Handle the error...
 				Debug.LogError("Error in FirebaseStart");
@@ -178,7 +193,8 @@ public class RegisterManager : MonoBehaviour {
 			infoText.gameObject.SetActive(false);
 			if (nameField.text.Length < 3)
 			{
-				infoText.text = "Kullanıcı adınız 3 karakterden kısa olamaz";
+				//infoText.text = "Kullanıcı adınız 3 karakterden kısa olamaz";
+				infoText.text = I2.Loc.ScriptLocalization.Get("name less than 3 chars"); 
 				infoText.gameObject.SetActive(true);
 				isCheckingName = false;
 				return;
@@ -188,7 +204,8 @@ public class RegisterManager : MonoBehaviour {
 			FirebaseDatabase.DefaultInstance.GetReference("userList").GetValueAsync().ContinueWith(task => {
 				if (task.IsFaulted) {
 					Debug.LogError("Error in FirebaseStart");
-					infoText.text = "İnternet bağlantınızı kontrol edin";
+					//infoText.text = "İnternet bağlantınızı kontrol edin";
+					infoText.text = I2.Loc.ScriptLocalization.Get("check internet"); 
 					infoText.gameObject.SetActive(true);
 				}
 				else if (task.IsCompleted) {
@@ -217,7 +234,8 @@ public class RegisterManager : MonoBehaviour {
 
 					if (!isNameAvailable)
 					{
-						infoText.text = "Bu kullanıcı adı zaten kullanılıyor";
+						//infoText.text = "Bu kullanıcı adı zaten kullanılıyor";
+						infoText.text = I2.Loc.ScriptLocalization.Get("Name being used"); 
 						infoText.gameObject.SetActive(true);
 					}
 					else

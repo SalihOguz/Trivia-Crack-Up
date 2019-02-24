@@ -1,0 +1,873 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1774337456053658}
+  m_IsPrefabAsset: 1
+--- !u!1 &1774337456053658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4893635238080956}
+  - component: {fileID: 114536795468238956}
+  m_Layer: 0
+  m_Name: I2Languages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4893635238080956
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774337456053658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114536795468238956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774337456053658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488051eaa73ba421e8fe4868f2e0f364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Google_WebServiceURL: https://script.google.com/macros/s/AKfycbwMPmh4w2R9KxzsGI2fwz3R0EgoetvEn6tVkYof6Q/exec
+  Google_SpreadsheetKey: 1PbrwIfaJb3WpgqromCcHuPaYKtGJa2ApOSjQBJmBskk
+  Google_SpreadsheetName: I2Loc Trivia Challanger Localization
+  Google_LastUpdatedVersion: 1550416946350
+  GoogleUpdateFrequency: 3
+  GoogleUpdateDelay: 5
+  mTerms:
+  - Term: Loading...
+    TermType: 0
+    Description: 
+    Languages:
+    - "Y\xFCkleniyor..."
+    - Loading...
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Select Gender
+    TermType: 0
+    Description: 
+    Languages:
+    - "L\xFCtfen Cnisiyetini Se\xE7"
+    - Please Select Your Gender
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: NO INTERNET
+    TermType: 0
+    Description: 
+    Languages:
+    - "\u0130NTERNET YOK"
+    - NO INTERNET
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Name...
+    TermType: 0
+    Description: 
+    Languages:
+    - "Ad\u0131n\u0131z..."
+    - Name...
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: continue
+    TermType: 0
+    Description: 
+    Languages:
+    - ilerle
+    - continue
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: make sure of internet
+    TermType: 0
+    Description: 
+    Languages:
+    - "\u0130nternetinin a\xE7\u0131k old\u0131\u011Fundan emin ol."
+    - Make sure internet is on
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: you need internet
+    TermType: 0
+    Description: 
+    Languages:
+    - "Bu oyunu oynayabilmek i\xE7in internete ihtiyac\u0131n var."
+    - You need internet to be able to play this game
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: name used
+    TermType: 0
+    Description: 
+    Languages:
+    - "Bu isim daha \xF6nce kullan\u0131lm\u0131\u015F!"
+    - This name is used before!
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: check internet
+    TermType: 0
+    Description: 
+    Languages:
+    - "\u0130nternet ba\u011Flant\u0131n\u0131z\u0131 kontrol edin"
+    - Check your internet connectin
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: name less than 3 chars
+    TermType: 0
+    Description: 
+    Languages:
+    - "Kullan\u0131c\u0131 ad\u0131n\u0131z 3 karakterden k\u0131sa olamaz"
+    - Your name can't be shorter than 3 characters
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Name being used
+    TermType: 0
+    Description: 
+    Languages:
+    - "Bu kullan\u0131c\u0131 ad\u0131 zaten kullan\u0131l\u0131yor"
+    - This username is taken
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: watch
+    TermType: 0
+    Description: 
+    Languages:
+    - "\u0130ZLE"
+    - WATCH
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: rate
+    TermType: 0
+    Description: 
+    Languages:
+    - oyla
+    - rate us
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: LEVEL
+    TermType: 0
+    Description: 
+    Languages:
+    - Seviye
+    - Level
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: NOT ENOUGH
+    TermType: 0
+    Description: 
+    Languages:
+    - "YETERS\u0130Z BAK\u0130YE"
+    - NOT ENOUGH COIN
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: LEADERBOARD
+    TermType: 0
+    Description: 
+    Languages:
+    - SKOR TABLOSU
+    - LEADERBOARD
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Wipe
+    TermType: 0
+    Description: 
+    Languages:
+    - "\u015EIK ELE"
+    - WIPE
+    Languages_Touch:
+    - "\u015E\u0131k Ele"
+    - Wipe
+    Flags: 0000
+  - Term: Marksman
+    TermType: 0
+    Description: 
+    Languages:
+    - "Ni\u015Fanc\u0131"
+    - Marksman
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: find player
+    TermType: 0
+    Description: 
+    Languages:
+    - rakip bul
+    - find player
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Knight
+    TermType: 0
+    Description: 
+    Languages:
+    - "\u015E\xF6valye"
+    - Knight
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Processing
+    TermType: 0
+    Description: 
+    Languages:
+    - "\u0130\u015Fleminiz Ger\xE7ekle\u015Ftiriliyor"
+    - Processing Transaction
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Before Playing
+    TermType: 0
+    Description: 
+    Languages:
+    - "Oyuna girmeden \xF6nce\n <b>g\xFC\xE7lerini doldur</b>"
+    - "<b>Fill your powers</b>\n before starting the game"
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Watch Earn
+    TermType: 0
+    Description: 
+    Languages:
+    - "\u0130ZLE\n KAZAN"
+    - "WATCH\n EARN"
+    Languages_Touch:
+    - "\u0130ZLE &\nKAZAN"
+    - 'WATCH
+
+      & EARN'
+    Flags: 0000
+  - Term: Looking for player
+    TermType: 0
+    Description: 
+    Languages:
+    - "Rakip Aran\u0131yor"
+    - Looking for Player
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Game Starting
+    TermType: 0
+    Description: 
+    Languages:
+    - "Oyun Ba\u015Fl\u0131yor"
+    - Game Starting
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: New Recruit
+    TermType: 0
+    Description: 
+    Languages:
+    - Acemi Asker
+    - New Recruit
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Battle Angel
+    TermType: 0
+    Description: 
+    Languages:
+    - "Sava\u015F Mele\u011Fi"
+    - Battle Angel
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: FREE WIPE
+    TermType: 0
+    Description: 
+    Languages:
+    - "BEDAVA\n \u015EIK ELEME"
+    - "FREE\n WIPE"
+    Languages_Touch:
+    - "BEDAVA\n\u015EIK ELEME"
+    - 'FREE
+
+      WIPE'
+    Flags: 0000
+  - Term: Prophet
+    TermType: 0
+    Description: 
+    Languages:
+    - Kahin
+    - Prophet
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: FREE JOKER
+    TermType: 0
+    Description: 
+    Languages:
+    - "BEDAVA\n JOKER"
+    - "FREE\n JOKER"
+    Languages_Touch:
+    - 'BEDAVA
+
+      JOKER'
+    - 'FREE
+
+      JOKER'
+    Flags: 0000
+  - Term: COIN
+    TermType: 0
+    Description: 
+    Languages:
+    - COIN
+    - COIN
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: POWERS
+    TermType: 0
+    Description: 
+    Languages:
+    - "G\xDC\xC7LER"
+    - POWERS
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: play
+    TermType: 0
+    Description: 
+    Languages:
+    - oyna
+    - play
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Queen
+    TermType: 0
+    Description: 
+    Languages:
+    - "Krali\xE7e"
+    - Queen
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: King
+    TermType: 0
+    Description: 
+    Languages:
+    - Kral
+    - King
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Coming Soon
+    TermType: 0
+    Description: 
+    Languages:
+    - "\xC7ok Yak\u0131nda"
+    - Coming Soon
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Mage
+    TermType: 0
+    Description: 
+    Languages:
+    - "B\xFCy\xFCc\xFC"
+    - Mage
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Undead
+    TermType: 0
+    Description: 
+    Languages:
+    - "\xD6l\xFCms\xFCz"
+    - Undead
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Need coin
+    TermType: 0
+    Description: 
+    Languages:
+    - "Oyuna girebilmek i\xE7in\n 150 Coin'e ihtiyac\u0131n var.\n L\xFCtfen sat\u0131n
+      al."
+    - "You need 150 Coins\n to play.\n Please buy some"
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Choices coming
+    TermType: 0
+    Description: 
+    Languages:
+    - "\u015E\u0131klar geliyor"
+    - Choices are coming
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Discoonected text
+    TermType: 0
+    Description: 
+    Languages:
+    - "Oyun arkaplana al\u0131nd\u0131\u011F\u0131 i\xE7in ba\u011Flant\u0131n koptu.\n
+      \n Yeni bir oyuna ba\u015Flayarak e\u011Flenceye kald\u0131\u011F\u0131n yerden
+      devam edebilirsin."
+    - "You are disconnected because game was sent to background.\n \n You can continue
+      having fun by starting a new game."
+    Languages_Touch:
+    - "Oyun arkaplana al\u0131nd\u0131\u011F\u0131 i\xE7in ba\u011Flant\u0131n koptu.\n
+      \nYeni bir oyuna ba\u015Flayarak e\u011Flenceye kald\u0131\u011F\u0131n yerden
+      devam edebilirsin."
+    - "You are disconnected because game was sent to background.\n \nYou can continue
+      having fun by starting a new game."
+    Flags: 0000
+  - Term: Tutorial Start
+    TermType: 0
+    Description: 
+    Languages:
+    - "Bamba\u015Fka bir trivia oyunu deneyimine haz\u0131r m\u0131s\u0131n?\n \n
+      Ama bunun i\xE7in e\u011Fitmenimizle bir tur oynaman gerekiyor."
+    - "Are you ready for a completely new trivia experience?\n \n But first you need
+      to play with our tutor."
+    Languages_Touch:
+    - "Bamba\u015Fka bir trivia oyunu deneyimine haz\u0131r m\u0131s\u0131n?\n \nAma
+      bunun i\xE7in e\u011Fitmenimizle bir tur oynaman gerekiyor."
+    - "Are you ready for a completely new trivia experience?\n \nBut first you need
+      to play with our tutor."
+    Flags: 0000
+  - Term: Tutorial Bid
+    TermType: 0
+    Description: 
+    Languages:
+    - "En h\u0131zl\u0131 ve en y\xFCksek bahsi koyan soruyu al\u0131r!\n \n Ama soruyu
+      bilemezsen cezan\u0131n da y\xFCksek olaca\u011F\u0131n\u0131 unutma!"
+    - "Player bidding faster and higher answers first!\n \n But if can't answer right,
+      your penalty will be higher!"
+    Languages_Touch:
+    - "En h\u0131zl\u0131 ve en y\xFCksek bahsi koyan soruyu al\u0131r!\n \nAma soruyu
+      bilemezsen cezan\u0131n da y\xFCksek olaca\u011F\u0131n\u0131 unutma!"
+    - "Player bidding faster and higher answers first!\n \nBut if can't answer right,
+      your penalty will be higher!"
+    Flags: 0000
+  - Term: Tutorial Powers
+    TermType: 0
+    Description: 
+    Languages:
+    - "<b>Joker</b>\n Kullan ve soruyu direkt bil!\n  Her oyunda sadece bir kez kullanabilirsin.\n
+      \n  <b>\u015E\u0131k Ele</b>\n Yanl\u0131\u015F iki cevab\u0131 u\xE7ur ve \u015Fans\u0131n\u0131
+      artt\u0131r. D\xF6rt \u015F\u0131k varken kullanabilirsin."
+    - "<b>Joker</b>\n Use and answer the question immedietly.\n Can be used once in
+      every game.\n \n  <b>Wipe</b>\n Wipe two choices and increase your chance.\n
+      Can be used when there are four choices."
+    Languages_Touch:
+    - "<b>Joker</b>\r\nKullan ve soruyu direkt bil!\r Her oyunda sadece bir kez kullanabilirsin.\n\n<b>\u015E\u0131k
+      Ele\r</b>\r\nYanl\u0131\u015F iki cevab\u0131 u\xE7ur ve \u015Fans\u0131n\u0131
+      artt\u0131r. D\xF6rt \u015F\u0131k varken kullanabilirsin."
+    - "<b>Joker</b>\nUse and answer the question immedietly. Can be used once in every
+      game.\n \n <b>Wipe</b>\nWipe two choices and increase your chance. Can be used
+      when there are four choices."
+    Flags: 0000
+  - Term: Tutorial End
+    TermType: 0
+    Description: 
+    Languages:
+    - "E\u011Fitimi ba\u015Far\u0131 ile tamamlad\u0131n\u0131z.\n \n \u015Eimdi ger\xE7ek
+      rakiplerle oynama zaman\u0131."
+    - "You have completed the tutorial.\n \n Now it is time to play with real competitors."
+    Languages_Touch:
+    - "E\u011Fitimi ba\u015Far\u0131 ile tamamlad\u0131n\u0131z.\n \n\u015Eimdi ger\xE7ek
+      rakiplerle oynama zaman\u0131."
+    - "You have completed the tutorial.\n \nNow it is time to play with real competitors."
+    Flags: 0000
+  - Term: Tutorial Choices
+    TermType: 0
+    Description: 
+    Languages:
+    - "Bunlar az sonra gelecek sorunun \u015F\u0131klar\u0131. \n \n Oku ve soruyu
+      tahmin etmeye \xE7al\u0131\u015F. \n \n Unutma vaktin \xE7ok k\u0131s\u0131tl\u0131!"
+    - "These are the choices of the question that is going to come soon \n \n Read
+      an try to guess the question. \n \n Don't forget! You have a very limited time"
+    Languages_Touch:
+    - "Bunlar az sonra gelecek sorunun \u015F\u0131klar\u0131. \n \nOku ve soruyu
+      tahmin etmeye \xE7al\u0131\u015F. \n \nUnutma vaktin \xE7ok k\u0131s\u0131tl\u0131!"
+    - "These are the choices of the question that is going to come soon \n \nRead
+      an try to guess the question. \n \nDon't forget! You have a very limited time"
+    Flags: 0000
+  - Term: play again
+    TermType: 0
+    Description: 
+    Languages:
+    - tekrar oyna
+    - play again
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Choices Came
+    TermType: 0
+    Description: 
+    Languages:
+    - "\u015E\u0131klar Geldi"
+    - Choices Came
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Congratulations
+    TermType: 0
+    Description: 
+    Languages:
+    - Tebrikler
+    - Congratulations
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Use Your Powers
+    TermType: 0
+    Description: 
+    Languages:
+    - "G\xFC\xE7lerini Kullan"
+    - Use Your Powers
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Bid Now
+    TermType: 0
+    Description: 
+    Languages:
+    - Bahsini Koy
+    - Bid Now
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: We are Starting!
+    TermType: 0
+    Description: 
+    Languages:
+    - "Ba\u015Fl\u0131yoruz!"
+    - We are Starting!
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: sec
+    TermType: 0
+    Description: 
+    Languages:
+    - sn
+    - sec
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: TOTAL PRIZE
+    TermType: 0
+    Description: 
+    Languages:
+    - "TOPLAM \xD6D\xDCL"
+    - TOTAL PRIZE
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: We are Sorry
+    TermType: 0
+    Description: 
+    Languages:
+    - "\xC7ok \xDCzg\xFCn\xFCz"
+    - We are Sorry
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: run away
+    TermType: 0
+    Description: 
+    Languages:
+    - "Rakip ka\xE7t\u0131!"
+    - Opponent run away!
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Request sent
+    TermType: 0
+    Description: 
+    Languages:
+    - "Rakibe istek g\xF6nderildi"
+    - Request sent to opponent
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: waiting
+    TermType: 0
+    Description: 
+    Languages:
+    - bekleniyor
+    - waiting
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Not enough coins
+    TermType: 0
+    Description: 
+    Languages:
+    - Yetersiz bakiye! Marketten daha fazla coin alabilirsiniz
+    - Not enough coins! You can buy more from the store
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: wants again
+    TermType: 0
+    Description: 
+    Languages:
+    - Rakip tekrar oynamak istiyor!
+    - Opponent want to play again!
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: request accepted
+    TermType: 0
+    Description: 
+    Languages:
+    - "\u0130stek kabul edildi"
+    - Request accepted
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: tutor
+    TermType: 0
+    Description: 
+    Languages:
+    - "E\u011Fitmen"
+    - Tutor
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Question is coming 1
+    TermType: 0
+    Description: 
+    Languages:
+    - Soru
+    - Question is coming for
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Question is coming 2
+    TermType: 0
+    Description: 
+    Languages:
+    - "i\xE7in geliyor"
+    - 
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Answering
+    TermType: 0
+    Description: 
+    Languages:
+    - "cevapl\u0131yor"
+    - is answering
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Joker
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Joker
+    - Joker
+    Flags: 0000
+  - Term: new game
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - yeni oyun
+    - new game
+    Flags: 0000
+  - Term: joker image
+    TermType: 5
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - ATLAS_2 2_20
+    - ATLAS_2 2_20
+    Flags: 0000
+  - Term: wipe image
+    TermType: 5
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - ATLAS_2 2_12
+    - TRIVIA_ING_METIN_KESME_2
+    Flags: 0000
+  - Term: win image
+    TermType: 5
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - TRIVIA_ATLAS1_41
+    - TRIVIA_ING_METIN_KESME_3
+    Flags: 0000
+  - Term: lose image
+    TermType: 5
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - TRIVIA_ATLAS1_37
+    - TRIVIA_ING_METIN_KESME_5
+    Flags: 0000
+  - Term: double image
+    TermType: 5
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - ATLAS_2 2_0
+    - TRIVIA_ING_METIN_KESME_6
+    Flags: 0000
+  - Term: level up image
+    TermType: 5
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - ALTIN_YILDIZ_ATLAS_19
+    - TRIVIA_ING_METIN_KESME_4
+    Flags: 0000
+  - Term: used image
+    TermType: 5
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - ATLAS_2 2_21
+    - TRIVIA_ING_METIN_KESME_7
+    Flags: 0000
+  - Term: CONNECTION LOST
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "BA\u011ELANTIN KOPTU"
+    - CONNECTION LOST
+    Flags: 0000
+  mLanguages:
+  - Name: Turkish
+    Code: tr
+  - Name: English
+    Code: en
+  CaseInsensitiveTerms: 1
+  Assets:
+  - {fileID: 21300040, guid: 115c0312c4caf4543979fca5d8abe126, type: 3}
+  - {fileID: 21300024, guid: 115c0312c4caf4543979fca5d8abe126, type: 3}
+  - {fileID: 21300004, guid: 463779d2e1747f34cb14b55974d1b0a8, type: 3}
+  - {fileID: 21300106, guid: 9f04da2f3c3224e629be28b45d2bfe2b, type: 3}
+  - {fileID: 21300006, guid: 463779d2e1747f34cb14b55974d1b0a8, type: 3}
+  - {fileID: 21300104, guid: 9f04da2f3c3224e629be28b45d2bfe2b, type: 3}
+  - {fileID: 21300010, guid: 463779d2e1747f34cb14b55974d1b0a8, type: 3}
+  - {fileID: 21300000, guid: 115c0312c4caf4543979fca5d8abe126, type: 3}
+  - {fileID: 21300012, guid: 463779d2e1747f34cb14b55974d1b0a8, type: 3}
+  - {fileID: 21300038, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
+  - {fileID: 21300008, guid: 463779d2e1747f34cb14b55974d1b0a8, type: 3}
+  - {fileID: 21300042, guid: 115c0312c4caf4543979fca5d8abe126, type: 3}
+  - {fileID: 21300014, guid: 463779d2e1747f34cb14b55974d1b0a8, type: 3}
+  NeverDestroy: 1
+  UserAgreesToHaveItOnTheScene: 0
+  UserAgreesToHaveItInsideThePluginsFolder: 0
+  Spreadsheet_LocalFileName: 
+  Spreadsheet_LocalCSVSeparator: ','
+  Spreadsheet_LocalCSVEncoding: utf-8
