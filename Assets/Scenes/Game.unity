@@ -29220,6 +29220,7 @@ GameObject:
   - component: {fileID: 906900401}
   - component: {fileID: 906900403}
   - component: {fileID: 906900402}
+  - component: {fileID: 906900404}
   m_Layer: 5
   m_Name: Text (1)
   m_TagString: Untagged
@@ -29277,7 +29278,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u015E\u0131klar Geldi"
+  m_Text: Choices Came
 --- !u!222 &906900403
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29285,6 +29286,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 906900400}
   m_CullTransparentMesh: 0
+--- !u!114 &906900404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 906900400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: Choices Came
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  LocalizeOnAwake: 1
+  Source: {fileID: 114536795468238956, guid: 323dd2ea457caea46b6e84f4e17010f9, type: 2}
+  mTarget: {fileID: 906900402}
+  CanUseSecondaryTerm: 1
+  AllowMainTermToBeRTL: 1
+  AllowSecondTermToBeRTL: 0
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  CorrectAlignmentForRTL: 1
+  TranslatedObjects: []
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
 --- !u!1 &916199720
 GameObject:
   m_ObjectHideFlags: 0

@@ -553,7 +553,7 @@ MonoBehaviour:
     - "Bunlar az sonra gelecek sorunun \u015F\u0131klar\u0131. \n \nOku ve soruyu
       tahmin etmeye \xE7al\u0131\u015F. \n \nUnutma vaktin \xE7ok k\u0131s\u0131tl\u0131!"
     - "These are the choices of the question that is going to come soon \n \nRead
-      an try to guess the question. \n \nDon't forget! You have a very limited time"
+      and try to guess the question. \n \nDon't forget! You have a very limited time"
     Flags: 0000
   - Term: play again
     TermType: 0
