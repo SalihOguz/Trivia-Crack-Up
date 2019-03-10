@@ -30,12 +30,14 @@ public class MenuManager : MonoBehaviour {
 	public GameObject en_flag;
 	public GameObject chooseLanguageScreen;
 	public GameObject characterNamesParent;
+	DataToCarry dtc;
 	
 	void Start()
 	{
 		player = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
 		av = Resources.Load<Avatars>("Data/Avatars");
-		
+		dtc = GameObject.Find("DataToCarry").GetComponent<DataToCarry>();
+
 		adButton.transform.GetChild(UnityEngine.Random.Range(0, adButton.transform.childCount - 1)).gameObject.SetActive(true);
 		Sprite avatar = av.avatarSprites[player.avatarId];
 		userDataObject.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = avatar;
@@ -111,9 +113,9 @@ public class MenuManager : MonoBehaviour {
 
 	void SetStartScreen()
 	{
-		if (GameObject.Find("DataToCarry"))
+		if (dtc)
 		{
-			if (GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex == 4)
+			if (dtc.mainMenuAnimLayerIndex == 4)
 			{
 				if (player.totalCoin >= 30 * 5) // TODO this is min bid amount 30 * 5 turns
 				{
@@ -167,9 +169,9 @@ public class MenuManager : MonoBehaviour {
 
 	void ChooseOpponent()
 	{
-		if(GameObject.Find("DataToCarry"))
+		if(dtc)
 		{
-			GameObject.Find("DataToCarry").GetComponent<DataToCarry>().ChooseOpponent();
+			dtc.ChooseOpponent();
 		}
 	}
 
@@ -233,13 +235,13 @@ public class MenuManager : MonoBehaviour {
 
 	IEnumerator PlayerFound()
 	{
-		if (GameObject.Find("DataToCarry"))
+		if (dtc)
 		{
-			GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex = -1;
+			dtc.mainMenuAnimLayerIndex = -1;
 		}
 
 		characterNamesParent.transform.GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get(av.avatarNames[player.avatarId]);
-		characterNamesParent.transform.GetChild(1).GetComponent<Text>().text = ScriptLocalization.Get(av.avatarNames[GameObject.Find("DataToCarry").GetComponent<DataToCarry>().player2.avatarId]);
+		characterNamesParent.transform.GetChild(1).GetComponent<Text>().text = ScriptLocalization.Get(av.avatarNames[dtc.player2.avatarId]);
 
 		float rnd = UnityEngine.Random.Range(4f, 8f);
 		yield return new WaitForSeconds(rnd - 1.5f);
@@ -359,23 +361,30 @@ public class MenuManager : MonoBehaviour {
 				}
 
 				// get fake users
-				FirebaseDatabase.DefaultInstance.GetReference("fakeUserList/"+LocalizationManager.CurrentLanguageCode).GetValueAsync().ContinueWith(fakesTask => {
-					if (fakesTask.IsFaulted) {
-						// Handle the error...
-						Debug.LogError("Error in FirebaseStart");
-					}
-					else if (fakesTask.IsCompleted) {
-						DataSnapshot fakesSnapshot = fakesTask.Result;				
+				foreach (var fake in dtc.ful.fakeUserList)
+				{
+					User temp = new User("1", fake.userName, fake.isMale, fake.totalCoin, fake.score);						
+					userList.Add(temp);
+				}
+				FillLeaderboard(userList);
 
-						foreach (DataSnapshot i in fakesSnapshot.Children)
-						{
-							UserLite fake = JsonUtility.FromJson<UserLite>(i.GetRawJsonValue());
-        					User temp = new User("1", fake.userName, fake.isMale, fake.totalCoin, fake.score);						
-							userList.Add(temp);
-						}
-						FillLeaderboard(userList);	
-					}
-				});	
+				// FirebaseDatabase.DefaultInstance.GetReference("fakeUserList/"+LocalizationManager.CurrentLanguageCode).GetValueAsync().ContinueWith(fakesTask => {
+				// 	if (fakesTask.IsFaulted) {
+				// 		// Handle the error...
+				// 		Debug.LogError("Error in FirebaseStart");
+				// 	}
+				// 	else if (fakesTask.IsCompleted) {
+				// 		DataSnapshot fakesSnapshot = fakesTask.Result;				
+
+				// 		foreach (DataSnapshot i in fakesSnapshot.Children)
+				// 		{
+				// 			UserLite fake = JsonUtility.FromJson<UserLite>(i.GetRawJsonValue());
+        		// 			User temp = new User("1", fake.userName, fake.isMale, fake.totalCoin, fake.score);						
+				// 			userList.Add(temp);
+				// 		}
+				// 		FillLeaderboard(userList);	
+				// 	}
+				// });	
 			}
 		});
 	}
@@ -594,45 +603,19 @@ public class MenuManager : MonoBehaviour {
 		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Joker") + " " + player.knowQuestionSkillCount.ToString();
 		userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Wipe") + " " + player.fiftyFiftySkillCount.ToString();
 		ArrangeLevelScreen();
-		GetQuestions();
-		GetFakeUsers();
+		LoadQuestions();
+		LoadFakeUsers();
 	}
 
-	void GetQuestions()
+	void LoadQuestions()
 	{
-		DataToCarry dtc = GameObject.Find("DataToCarry").GetComponent<DataToCarry>();
-		FirebaseDatabase.DefaultInstance.GetReference("questionList/"+LocalizationManager.CurrentLanguageCode).GetValueAsync().ContinueWith(task => {
-			if (task.IsFaulted) {
-				// Handle the error...
-				Debug.LogError("Error in FirebaseStart");
-			}
-			else if (task.IsCompleted) {
-				DataSnapshot snapshot = task.Result;				
-				dtc.ql = new QuestionList();
-				foreach (DataSnapshot i in snapshot.Children)
-				{
-					dtc.ql.questionList.Add(JsonUtility.FromJson<Question>(i.GetRawJsonValue()));
-				}
-			}
-		});
+		LocalQuestionDatabase lqdb = JsonUtility.FromJson<LocalQuestionDatabase>(PlayerPrefs.GetString("localQuestions"));
+		dtc.ql = lqdb.questionsInLanguages[LocalizationManager.CurrentLanguageCode];
 	}
 
-	void GetFakeUsers()
+	void LoadFakeUsers()
 	{
-		DataToCarry dtc = GameObject.Find("DataToCarry").GetComponent<DataToCarry>();
-		FirebaseDatabase.DefaultInstance.GetReference("fakeUserList/"+LocalizationManager.CurrentLanguageCode).GetValueAsync().ContinueWith(task => {
-			if (task.IsFaulted) {
-				// Handle the error...
-				Debug.LogError("Error in FirebaseStart");
-			}
-			else if (task.IsCompleted) {
-				DataSnapshot snapshot = task.Result;				
-				dtc.ful.fakeUserList = new List<UserLite>();
-				foreach (DataSnapshot i in snapshot.Children)
-				{
-					dtc.ful.fakeUserList.Add(JsonUtility.FromJson<UserLite>(i.GetRawJsonValue()));
-				}
-			}
-		});
+		LocalFakeUsersDatabase lfudb = JsonUtility.FromJson<LocalFakeUsersDatabase>(PlayerPrefs.GetString("localFakeUsers"));
+		dtc.ful = lfudb.fakeusersInLanguages[LocalizationManager.CurrentLanguageCode];
 	}
 }

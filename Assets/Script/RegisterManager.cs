@@ -43,7 +43,10 @@ public class RegisterManager : MonoBehaviour {
 			}
 		}
 
-		//PlayerPrefs.DeleteAll(); //TODO comment
+		//PlayerPrefs.DeleteAll(); //TODO comment these
+		// PlayerPrefs.DeleteKey("fakeUsersVersionNo");
+		// PlayerPrefs.DeleteKey("questionVersionNo");
+
 		loadingImage.GetComponent<Image>().DOFillAmount(0.8f, 0.4f);
 		StartCoroutine(CheckConnection());
 	}
@@ -139,9 +142,10 @@ public class RegisterManager : MonoBehaviour {
 		});
 	}
 
-	public void GetFakeUsers()
+	public void GetFakeUsersFromCloud()
 	{
-		FirebaseDatabase.DefaultInstance.GetReference("fakeUserList/"+LocalizationManager.CurrentLanguageCode).GetValueAsync().ContinueWith(task => {
+		print("bbb");
+		FirebaseDatabase.DefaultInstance.GetReference("fakeUserList").GetValueAsync().ContinueWith(task => {
 			if (task.IsFaulted) {
 				// Handle the error...
 				Debug.LogError("Error in FirebaseStart");
@@ -149,19 +153,29 @@ public class RegisterManager : MonoBehaviour {
 			else if (task.IsCompleted) {
 				DataSnapshot snapshot = task.Result;				
 
-				foreach (DataSnapshot i in snapshot.Children)
+				LocalFakeUsersDatabase lfudb = new LocalFakeUsersDatabase();
+				print("aaa");
+				foreach (var language in snapshot.Children)
 				{
-					dtc.ful.fakeUserList.Add(JsonUtility.FromJson<UserLite>(i.GetRawJsonValue()));
+					lfudb.fakeusersInLanguages[language.Key] = new FakeUserList();
+					foreach (var fakeUser in language.Children)
+					{
+						print(JsonUtility.FromJson<UserLite>(fakeUser.GetRawJsonValue()));
+						lfudb.fakeusersInLanguages[language.Key].fakeUserList.Add(JsonUtility.FromJson<UserLite>(fakeUser.GetRawJsonValue()));
+					}
 				}
+				PlayerPrefs.SetString("localFakeUsers", JsonUtility.ToJson(lfudb));
+
+				LoadFakeUsers();
 				fakeUsersDone = true;
 				CompleteBar();
 			}
 		});
 	}
 
-	void GetQuestions()
+	void GetQuestionsFromCloud()
 	{
-		FirebaseDatabase.DefaultInstance.GetReference("questionList/"+LocalizationManager.CurrentLanguageCode).GetValueAsync().ContinueWith(task => {
+		FirebaseDatabase.DefaultInstance.GetReference("questionList").GetValueAsync().ContinueWith(task => {
 			if (task.IsFaulted) {
 				// Handle the error...
 				Debug.LogError("Error in FirebaseStart");
@@ -169,14 +183,35 @@ public class RegisterManager : MonoBehaviour {
 			else if (task.IsCompleted) {
 				DataSnapshot snapshot = task.Result;				
 
-				foreach (DataSnapshot i in snapshot.Children)
+				LocalQuestionDatabase lqdb = new LocalQuestionDatabase();
+
+				foreach (var language in snapshot.Children)
 				{
-					dtc.ql.questionList.Add(JsonUtility.FromJson<Question>(i.GetRawJsonValue()));
+					lqdb.questionsInLanguages[language.Key] = new QuestionList();
+					foreach (var question in language.Children)
+					{
+						lqdb.questionsInLanguages[language.Key].questionList.Add(JsonUtility.FromJson<Question>(question.GetRawJsonValue()));
+					}
 				}
+				PlayerPrefs.SetString("localQuestions", JsonUtility.ToJson(lqdb));
+
+				LoadQuestions();
 				quesitonDone = true;
 				CompleteBar();
 			}
 		});
+	}
+
+	void LoadQuestions()
+	{
+		LocalQuestionDatabase lqdb = JsonUtility.FromJson<LocalQuestionDatabase>(PlayerPrefs.GetString("localQuestions"));
+		dtc.ql = lqdb.questionsInLanguages[LocalizationManager.CurrentLanguageCode];
+	}
+
+	void LoadFakeUsers()
+	{
+		LocalFakeUsersDatabase lfudb = JsonUtility.FromJson<LocalFakeUsersDatabase>(PlayerPrefs.GetString("localFakeUsers"));
+		dtc.ful = lfudb.fakeusersInLanguages[LocalizationManager.CurrentLanguageCode];
 	}
 
 	public void ChangeLayerTo(int layerCount)
@@ -303,11 +338,6 @@ public class RegisterManager : MonoBehaviour {
 
 	void ForceUpdate()
 	{
-// #if UNITY_EDITOR
-// 		GetQuestions();
-// 		GetFakeUsers();
-// 		return;
-// #endif
 		bool upToDate = false;
 		FirebaseDatabase.DefaultInstance.GetReference("versionCodes").GetValueAsync().ContinueWith(task => {
 			if (task.IsFaulted) {
@@ -317,7 +347,9 @@ public class RegisterManager : MonoBehaviour {
 			else if (task.IsCompleted) {
 				DataSnapshot snapshot = task.Result;				
 
-				if (JsonUtility.FromJson<VersionNumbers>(snapshot.GetRawJsonValue()).gameVersionNo.Equals(Application.version))
+				VersionNumbers vn = JsonUtility.FromJson<VersionNumbers>(snapshot.GetRawJsonValue());
+
+				if (vn.gameVersionNo.Equals(Application.version))
 				{
 					print("uptodate");
 					upToDate = true;
@@ -331,17 +363,38 @@ public class RegisterManager : MonoBehaviour {
 					Application.OpenURL("market://details?id=com.digitalwords.trivia");
 #elif UNITY_IPHONE
 					Application.OpenURL("itms-apps://itunes.apple.com/app/id1454414970");
+#elif UNITY_EDITOR
+					Debug.LogError("Update version code data in Firebase. Go to the scene 'Firebase Data Control' and do it.");
 #endif
 				}
 				else
 				{
-					GetQuestions();
-					GetFakeUsers();
+					if (vn.questionsVersionNo.Equals(PlayerPrefs.GetString("questionVersionNo")))
+					{
+						LoadQuestions();
+						quesitonDone = true;
+					}
+					else
+					{
+						GetQuestionsFromCloud();
+						PlayerPrefs.SetString("questionVersionNo", vn.questionsVersionNo);
+					}
+					
+					if (vn.fakeUsersVersionNo.Equals(PlayerPrefs.GetString("fakeUsersVersionNo")))
+					{
+						LoadFakeUsers();
+						fakeUsersDone = true;
+					}
+					else
+					{
+						GetFakeUsersFromCloud();
+						PlayerPrefs.SetString("fakeUsersVersionNo", vn.fakeUsersVersionNo);
+					}
+
 					CompleteBar();
 				}
 			}
 		});
-
 	}
 
 	void CompleteBar()
