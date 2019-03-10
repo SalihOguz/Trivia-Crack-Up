@@ -12,9 +12,9 @@ public class BotManager : MonoBehaviour {
     public float botMaxBidTime = 3.5f;   
     public float botMinAnswerTime = 2f;
     public float botMaxAnswerTime = 8f;
-    public float baseRightAnswerPercentage = 0.625f;
-    public float difficultyEffectOnRightAnswer = 0.08f; // decreases the chance of answering right by this amount for every difficulty level
-    public float choiceCountMultiplier = 0.125f; // the increases the chance of answering right the less choices there are
+    float baseRightAnswerPercentage = 0.625f;
+    float difficultyEffectOnRightAnswer = 0.08f; // decreases the chance of answering right by this amount for every difficulty level
+    float choiceCountMultiplier = 0.125f; // the increases the chance of answering right the less choices there are
     public float randomBidChance = 0.2f;
     public float bidDelayAmount = 1f; // if question is hard or if AI has scored 3 points, it gives bid in longer time
     public float minSkillUseTime = 1f;
@@ -38,11 +38,18 @@ public class BotManager : MonoBehaviour {
 		gameManager = Camera.main.GetComponent<GameManager>();
         questionManager = Camera.main.GetComponent<QuestionManager>();
 
-        if (I2.Loc.LocalizationManager.CurrentLanguageCode == "en") // TODO these numbers might be bad
+        if (I2.Loc.LocalizationManager.CurrentLanguageCode == "en")
         {
-            baseRightAnswerPercentage -= 0.200f;
-            difficultyEffectOnRightAnswer += 0.4f;
-        } 
+            baseRightAnswerPercentage = 0.75f;
+            difficultyEffectOnRightAnswer = 0.12f;
+            choiceCountMultiplier = 0.1f;
+        }
+        else if (I2.Loc.LocalizationManager.CurrentLanguageCode == "tr")
+        {
+            baseRightAnswerPercentage = 0.85f;
+            difficultyEffectOnRightAnswer = 0.09f;
+            choiceCountMultiplier = 0.1f;
+        }
 	}
 
 	public void Bid()
@@ -148,8 +155,9 @@ public class BotManager : MonoBehaviour {
 
         float rnd = UnityEngine.Random.Range(0f, 1000.0f);
         float rightChance = baseRightAnswerPercentage - (difficultyEffectOnRightAnswer * gameManager.currentQuestion.difficulty); // if question is hard, chance is lower by difficulty * difficultyEffectOnRightAnswer
-        rightChance += (gameManager.optionTexts.Length - availableWrongChoices.Count + 1) * choiceCountMultiplier; // if there are less number of choices available, chance is higher by choiceCountMultiplier
-        if (rnd <  rightChance * 1000)
+        rightChance += (gameManager.optionTexts.Length - (availableWrongChoices.Count + 1)) * choiceCountMultiplier; // if there are less number of choices available, chance is higher by choiceCountMultiplier
+        print(rightChance);
+        if (rnd <=  rightChance * 1000)
         {
             gameManager.ChooseAnswerBot(gameManager.currentQuestion.rightAnswerIndex);
         }

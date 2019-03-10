@@ -2475,7 +2475,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 34
 --- !u!222 &262480265
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4304,7 +4304,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "FREE\n JOKER"
+  m_Text: 'BEDAVA
+
+    JOKER'
 --- !u!222 &408316813
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4524,7 +4526,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: JOKER
+  m_Text: Joker
 --- !u!222 &429008742
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4835,7 +4837,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WIPE
+  m_Text: "\u015E\u0131k Ele"
 --- !u!222 &452868857
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6901,7 +6903,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WIPE
+  m_Text: "\u015E\u0131k Ele"
 --- !u!222 &598741518
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7644,8 +7646,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000013351, y: 0.000083923}
-  m_SizeDelta: {x: 374, y: 131}
+  m_AnchoredPosition: {x: 2.9, y: 0.000083923}
+  m_SizeDelta: {x: 320.8, y: 131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650398944
 MonoBehaviour:
@@ -7671,7 +7673,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: d3b3e36a88aaa46e885022ee8d5adaca, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 7
     m_MaxSize: 80
     m_Alignment: 4
@@ -7680,7 +7682,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 49,99 TL
+  m_Text: 98,99
 --- !u!222 &650398945
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8963,7 +8965,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WATCH
+  m_Text: "\u0130ZLE"
 --- !u!222 &772135896
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9304,7 +9306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: JOKER
+  m_Text: Joker
 --- !u!222 &793807490
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10037,7 +10039,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WATCH
+  m_Text: "\u0130ZLE"
 --- !u!222 &829584037
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10443,7 +10445,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30
+  m_Text: 17
 --- !u!222 &844594558
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12169,8 +12171,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000013351, y: 0.000083923}
-  m_SizeDelta: {x: 374, y: 131}
+  m_AnchoredPosition: {x: -1.6, y: 0.000083923}
+  m_SizeDelta: {x: 305.9, y: 131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &993896119
 MonoBehaviour:
@@ -12196,7 +12198,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: d3b3e36a88aaa46e885022ee8d5adaca, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 7
     m_MaxSize: 80
     m_Alignment: 4
@@ -12205,7 +12207,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3,99 TL
+  m_Text: 13,99
 --- !u!222 &993896120
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13041,8 +13043,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000013351, y: 0.000083923}
-  m_SizeDelta: {x: 374, y: 131}
+  m_AnchoredPosition: {x: -0.5, y: 0.000083923}
+  m_SizeDelta: {x: 308, y: 131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024326285
 MonoBehaviour:
@@ -13068,7 +13070,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: d3b3e36a88aaa46e885022ee8d5adaca, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 7
     m_MaxSize: 80
     m_Alignment: 4
@@ -13077,7 +13079,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 12,99 TL
+  m_Text: 67,89
 --- !u!222 &1024326286
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13643,7 +13645,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WIPE
+  m_Text: "\u015E\u0131k Ele"
 --- !u!222 &1078618813
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15559,8 +15561,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000013351, y: 0.000083923}
-  m_SizeDelta: {x: 374, y: 131}
+  m_AnchoredPosition: {x: 2.9, y: 0.000083923}
+  m_SizeDelta: {x: 320.8, y: 131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1260136685
 MonoBehaviour:
@@ -15586,7 +15588,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: d3b3e36a88aaa46e885022ee8d5adaca, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 7
     m_MaxSize: 80
     m_Alignment: 4
@@ -15595,7 +15597,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5,99 TL
+  m_Text: 37,99
 --- !u!222 &1260136686
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16314,13 +16316,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 70
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 5
 --- !u!222 &1338782445
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16997,7 +16999,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: JOKER
+  m_Text: Joker
 --- !u!222 &1388086993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18498,13 +18500,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 70
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 5
 --- !u!222 &1517549258
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18972,12 +18974,12 @@ Prefab:
     - target: {fileID: 114971162208797930, guid: 219c582b736e34268bd6d63aa96874a0,
         type: 2}
       propertyPath: m_Text
-      value: 5.000
+      value: 16.000
       objectReference: {fileID: 0}
     - target: {fileID: 114943671937127216, guid: 219c582b736e34268bd6d63aa96874a0,
         type: 2}
       propertyPath: m_Text
-      value: 9,99 TL
+      value: 14,99
       objectReference: {fileID: 0}
     - target: {fileID: 114257864342652108, guid: 219c582b736e34268bd6d63aa96874a0,
         type: 2}
@@ -18985,6 +18987,31 @@ Prefab:
       value: 
       objectReference: {fileID: 21300014, guid: 2afcb53155e521940a4606e7b34ee959,
         type: 3}
+    - target: {fileID: 224968741433505156, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -53
+      objectReference: {fileID: 0}
+    - target: {fileID: 224968741433505156, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -346
+      objectReference: {fileID: 0}
+    - target: {fileID: 114943671937127216, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975763293966530, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975763293966530, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 306
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114017588008427240, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
@@ -19392,22 +19419,22 @@ Prefab:
     - target: {fileID: 114943671937127216, guid: 219c582b736e34268bd6d63aa96874a0,
         type: 2}
       propertyPath: m_Text
-      value: 15,99 TL
+      value: 42,99
       objectReference: {fileID: 0}
     - target: {fileID: 114971162208797930, guid: 219c582b736e34268bd6d63aa96874a0,
         type: 2}
       propertyPath: m_Text
-      value: 10.000
+      value: 53.000
       objectReference: {fileID: 0}
     - target: {fileID: 224968741433505156, guid: 219c582b736e34268bd6d63aa96874a0,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -56
+      value: -48.6
       objectReference: {fileID: 0}
     - target: {fileID: 224968741433505156, guid: 219c582b736e34268bd6d63aa96874a0,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -358.85
+      value: -323.8
       objectReference: {fileID: 0}
     - target: {fileID: 114257864342652108, guid: 219c582b736e34268bd6d63aa96874a0,
         type: 2}
@@ -19415,6 +19442,26 @@ Prefab:
       value: 
       objectReference: {fileID: 21300014, guid: 2afcb53155e521940a4606e7b34ee959,
         type: 3}
+    - target: {fileID: 114943671937127216, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975763293966530, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975763293966530, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975763293966530, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 306
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114017588008427240, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
@@ -23441,7 +23488,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WIPE
+  m_Text: "\u015E\u0131k Ele"
 --- !u!222 &1856279287
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24310,7 +24357,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: JOKER
+  m_Text: Joker
 --- !u!222 &1921324566
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24918,7 +24965,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500
+  m_Text: 52
 --- !u!222 &1958956956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25423,7 +25470,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500
+  m_Text: 52
 --- !u!222 &1990395428
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25642,7 +25689,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "FREE\n WIPE"
+  m_Text: "BEDAVA\n\u015EIK ELEME"
 --- !u!222 &2002335900
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25953,7 +26000,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30
+  m_Text: 17
 --- !u!222 &2026747653
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26167,7 +26214,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: POWERS
+  m_Text: "G\xDC\xC7LER"
 --- !u!222 &2061794706
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26488,7 +26535,7 @@ Prefab:
     - target: {fileID: 114971162208797930, guid: 219c582b736e34268bd6d63aa96874a0,
         type: 2}
       propertyPath: m_Text
-      value: 1.000
+      value: 5.000
       objectReference: {fileID: 0}
     - target: {fileID: 114257864342652108, guid: 219c582b736e34268bd6d63aa96874a0,
         type: 2}
@@ -26496,6 +26543,31 @@ Prefab:
       value: 
       objectReference: {fileID: 21300014, guid: 2afcb53155e521940a4606e7b34ee959,
         type: 3}
+    - target: {fileID: 114943671937127216, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_Text
+      value: 4,99
+      objectReference: {fileID: 0}
+    - target: {fileID: 114943671937127216, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975763293966530, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975763293966530, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975763293966530, guid: 219c582b736e34268bd6d63aa96874a0,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 306
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114017588008427240, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 219c582b736e34268bd6d63aa96874a0, type: 2}
@@ -27008,7 +27080,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 34
 --- !u!222 &2111567039
 CanvasRenderer:
   m_ObjectHideFlags: 0

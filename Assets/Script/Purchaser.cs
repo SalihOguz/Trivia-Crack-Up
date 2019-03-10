@@ -23,14 +23,14 @@ public class Purchaser : MonoBehaviour, IStoreListener {
     public GameObject loading;
     public MenuManager menuManager;     
 
-    public static string mix10 = "mixedpack1";
-    public static string mixed30 = "mixedpack2";
-    public static string mix100 = "mixedpack3";
-    public static string mix500 = "mixedpack4";
+    public static string mixedpack1 = "mixedpack1";
+    public static string mixedpack2 = "mixedpack2";
+    public static string mixedpack3 = "mixedpack3";
+    public static string mixedpack4 = "mixedpack4";
 
-    public static string coin1000 = "coinpack1";
-    public static string coin5000 = "coinpack2";
-    public static string coin10000 = "coinpack3";
+    public static string coinpack1 = "coinpack1";
+    public static string coinpack2 = "coinpack2";
+    public static string coinpack3 = "coinpack3";
 
     public static string kProductIDConsumable = "consumable";
     public static string kProductIDNonConsumable = "nonconsumable";
@@ -60,14 +60,14 @@ public class Purchaser : MonoBehaviour, IStoreListener {
         // Create a builder, first passing in a suite of Unity provided stores.
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
-        builder.AddProduct(mix10, ProductType.Consumable);
-        builder.AddProduct(mixed30, ProductType.Consumable);
-        builder.AddProduct(mix100, ProductType.Consumable);
-        builder.AddProduct(mix500, ProductType.Consumable);
+        builder.AddProduct(mixedpack1, ProductType.Consumable);
+        builder.AddProduct(mixedpack2, ProductType.Consumable);
+        builder.AddProduct(mixedpack3, ProductType.Consumable);
+        builder.AddProduct(mixedpack4, ProductType.Consumable);
 
-        builder.AddProduct(coin1000, ProductType.Consumable);
-        builder.AddProduct(coin5000, ProductType.Consumable);
-        builder.AddProduct(coin10000, ProductType.Consumable);
+        builder.AddProduct(coinpack1, ProductType.Consumable);
+        builder.AddProduct(coinpack2, ProductType.Consumable);
+        builder.AddProduct(coinpack3, ProductType.Consumable);
 
         // Add a product to sell / restore by way of its identifier, associating the general identifier
         // with its store-specific identifiers.
@@ -206,27 +206,27 @@ public class Purchaser : MonoBehaviour, IStoreListener {
 
     public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs args) {
         // A consumable product has been purchased by this user.
-        if (String.Equals(args.purchasedProduct.definition.id, mix10, StringComparison.Ordinal)) {
+        if (String.Equals(args.purchasedProduct.definition.id, mixedpack1, StringComparison.Ordinal)) {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            menuManager.AddMixedPack(10);
-        } else if(String.Equals(args.purchasedProduct.definition.id, mixed30, StringComparison.Ordinal)) {
+            menuManager.AddMixedPack(5);
+        } else if(String.Equals(args.purchasedProduct.definition.id, mixedpack2, StringComparison.Ordinal)) {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            menuManager.AddMixedPack(30);
-        } else if (String.Equals(args.purchasedProduct.definition.id, mix100, StringComparison.Ordinal)) {
+            menuManager.AddMixedPack(17);
+        } else if (String.Equals(args.purchasedProduct.definition.id, mixedpack3, StringComparison.Ordinal)) {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            menuManager.AddMixedPack(100);
-        } else if (String.Equals(args.purchasedProduct.definition.id, mix500, StringComparison.Ordinal)) {
+            menuManager.AddMixedPack(34);
+        } else if (String.Equals(args.purchasedProduct.definition.id, mixedpack4, StringComparison.Ordinal)) {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            menuManager.AddMixedPack(500);
-        } else if (String.Equals(args.purchasedProduct.definition.id, coin1000, StringComparison.Ordinal)) {
-            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            menuManager.AddCoins(1000);
-        } else if (String.Equals(args.purchasedProduct.definition.id, coin5000, StringComparison.Ordinal)) {
+            menuManager.AddMixedPack(52);
+        } else if (String.Equals(args.purchasedProduct.definition.id, coinpack1, StringComparison.Ordinal)) {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
             menuManager.AddCoins(5000);
-        } else if (String.Equals(args.purchasedProduct.definition.id, coin10000, StringComparison.Ordinal)) {
+        } else if (String.Equals(args.purchasedProduct.definition.id, coinpack2, StringComparison.Ordinal)) {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            menuManager.AddCoins(10000);
+            menuManager.AddCoins(16000);
+        } else if (String.Equals(args.purchasedProduct.definition.id, coinpack3, StringComparison.Ordinal)) {
+            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+            menuManager.AddCoins(53000);
         }
 
         // Return a flag indicating whether this product has completely been received, or if the application needs 

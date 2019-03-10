@@ -33,7 +33,7 @@ public class RateUsManager : MonoBehaviour {
 			#if UNITY_ANDROID
             	Application.OpenURL("market://details?id=com.digitalwords.trivia");
 			#elif UNITY_IPHONE
-				//Application.OpenURL("itms-apps://itunes.apple.com/app/id1442550000"); TODO
+				Application.OpenURL("itms-apps://itunes.apple.com/app/id1454414970");
 			#endif
 
 			rateButton.interactable = false;

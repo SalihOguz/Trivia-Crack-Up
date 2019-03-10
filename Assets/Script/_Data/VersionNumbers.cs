@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class VersionNumbers
 {
-	string gameVersionNo;
-	string questionsVersionNo;
-	string fakeUsersVersionNo;
+	public string gameVersionNo;
+	public string questionsVersionNo;
+	public string fakeUsersVersionNo;
 }

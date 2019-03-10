@@ -22,6 +22,9 @@ public class RegisterManager : MonoBehaviour {
 	int tryConnectionCount = 0;
 	public int maxConectionTryCount = 7;
 	bool isCheckingName;
+	public GameObject NotUpToDateObject;
+	bool quesitonDone;
+	bool fakeUsersDone;
 
 
 	void Start()
@@ -41,7 +44,7 @@ public class RegisterManager : MonoBehaviour {
 		}
 
 		//PlayerPrefs.DeleteAll(); //TODO comment
-		loadingImage.GetComponent<Image>().DOFillAmount(0.5f, 0.2f);
+		loadingImage.GetComponent<Image>().DOFillAmount(0.8f, 0.4f);
 		StartCoroutine(CheckConnection());
 	}
 
@@ -79,8 +82,7 @@ public class RegisterManager : MonoBehaviour {
 				{
 					GameObject.Find("AdManager").GetComponent<AdmobManager>().DelayedStart();
 				}
-				GetQuestions();
-				GetFakeUsers();
+				ForceUpdate();
 			}
 			else
 			{
@@ -91,7 +93,7 @@ public class RegisterManager : MonoBehaviour {
 		{
 			Debug.LogError("DataToCarry gameObject couldn't be found");
 		}
-		loadingImage.GetComponent<Image>().DOFillAmount(1, 0.8f).OnComplete(Cont);
+
 	}
 
 	void Cont()
@@ -151,6 +153,8 @@ public class RegisterManager : MonoBehaviour {
 				{
 					dtc.ful.fakeUserList.Add(JsonUtility.FromJson<UserLite>(i.GetRawJsonValue()));
 				}
+				fakeUsersDone = true;
+				CompleteBar();
 			}
 		});
 	}
@@ -169,6 +173,8 @@ public class RegisterManager : MonoBehaviour {
 				{
 					dtc.ql.questionList.Add(JsonUtility.FromJson<Question>(i.GetRawJsonValue()));
 				}
+				quesitonDone = true;
+				CompleteBar();
 			}
 		});
 	}
@@ -293,5 +299,65 @@ public class RegisterManager : MonoBehaviour {
 	public void Restart()
 	{
 		SceneManager.LoadScene("Register");
+	}
+
+	void ForceUpdate()
+	{
+// #if UNITY_EDITOR
+// 		GetQuestions();
+// 		GetFakeUsers();
+// 		return;
+// #endif
+		bool upToDate = false;
+		FirebaseDatabase.DefaultInstance.GetReference("versionCodes").GetValueAsync().ContinueWith(task => {
+			if (task.IsFaulted) {
+				// Handle the error...
+				Debug.LogError("Error in FirebaseStart");
+			}
+			else if (task.IsCompleted) {
+				DataSnapshot snapshot = task.Result;				
+
+				if (JsonUtility.FromJson<VersionNumbers>(snapshot.GetRawJsonValue()).gameVersionNo.Equals(Application.version))
+				{
+					print("uptodate");
+					upToDate = true;
+				}
+
+				if (!upToDate)
+				{
+					print("not uptodate");
+					NotUpToDateObject.SetActive(true);
+#if UNITY_ANDROID
+					Application.OpenURL("market://details?id=com.digitalwords.trivia");
+#elif UNITY_IPHONE
+					Application.OpenURL("itms-apps://itunes.apple.com/app/id1454414970");
+#endif
+				}
+				else
+				{
+					GetQuestions();
+					GetFakeUsers();
+					CompleteBar();
+				}
+			}
+		});
+
+	}
+
+	void CompleteBar()
+	{
+		if (quesitonDone && fakeUsersDone)
+		{
+			loadingImage.GetComponent<Image>().DOFillAmount(1, 0.2f).OnComplete(Cont);
+		}
+	}
+
+	public void GoToStore()
+	{
+#if UNITY_ANDROID
+					Application.OpenURL("market://details?id=com.digitalwords.trivia");
+#elif UNITY_IPHONE
+					Application.OpenURL("itms-apps://itunes.apple.com/app/id1454414970");
+#endif		
 	}
 }

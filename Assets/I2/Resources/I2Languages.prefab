@@ -1141,6 +1141,30 @@ MonoBehaviour:
     - 'Bahisler:'
     - 'Bids:'
     Flags: 0000
+  - Term: NotUpToDate
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Oyunun yeni bir versiyonu \xE7\u0131kt\u0131\n\nDaha iyi bir oyun deneyimi
+      i\xE7in markete git ve oyunu g\xFCncelle"
+    - 'There is a brand new update
+
+
+      For a better gaming experience go to the store and update the game'
+    Flags: 0000
+  - Term: update
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "G\xFCncelle"
+    - Update
+    Flags: 0000
   mLanguages:
   - Name: Turkish
     Code: tr
