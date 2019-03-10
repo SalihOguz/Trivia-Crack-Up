@@ -46,7 +46,7 @@ public class DataToCarry : Singleton<DataToCarry> {
 
 	User CallTutor()
 	{
-		User p2 = new User("1", I2.Loc.ScriptLocalization.Get("tutor"), true, 100000, 300);
+		User p2 = new User("1", I2.Loc.ScriptLocalization.Get("tutor"), true, 216000, 4500);
         return p2;
 	}
 }

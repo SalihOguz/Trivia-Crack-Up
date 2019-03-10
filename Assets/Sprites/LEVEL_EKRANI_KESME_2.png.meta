@@ -18,6 +18,35 @@ TextureImporter:
     21300026: LEVEL_EKRANI_KESME_2_13
     21300028: LEVEL_EKRANI_KESME_2_14
     21300030: LEVEL_EKRANI_KESME_2_15
+    21300032: LEVEL_EKRANI_KESME_2_16
+    21300034: LEVEL_EKRANI_KESME_2_17
+    21300036: LEVEL_EKRANI_KESME_2_18
+    21300038: LEVEL_EKRANI_KESME_2_19
+    21300040: LEVEL_EKRANI_KESME_2_20
+    21300042: LEVEL_EKRANI_KESME_2_21
+    21300044: LEVEL_EKRANI_KESME_2_22
+    21300046: LEVEL_EKRANI_KESME_2_23
+    21300048: LEVEL_EKRANI_KESME_2_24
+    21300050: LEVEL_EKRANI_KESME_2_25
+    21300052: LEVEL_EKRANI_KESME_2_26
+    21300054: LEVEL_EKRANI_KESME_2_27
+    21300056: LEVEL_EKRANI_KESME_2_28
+    21300058: LEVEL_EKRANI_KESME_2_29
+    21300060: LEVEL_EKRANI_KESME_2_30
+    21300062: LEVEL_EKRANI_KESME_2_31
+    21300064: LEVEL_EKRANI_KESME_2_32
+    21300066: LEVEL_EKRANI_KESME_2_33
+    21300068: LEVEL_EKRANI_KESME_2_34
+    21300070: LEVEL_EKRANI_KESME_2_35
+    21300072: LEVEL_EKRANI_KESME_2_36
+    21300074: LEVEL_EKRANI_KESME_2_37
+    21300076: LEVEL_EKRANI_KESME_2_38
+    21300078: LEVEL_EKRANI_KESME_2_39
+    21300080: LEVEL_EKRANI_KESME_2_40
+    21300082: LEVEL_EKRANI_KESME_2_41
+    21300084: LEVEL_EKRANI_KESME_2_42
+    21300086: LEVEL_EKRANI_KESME_2_43
+    21300088: LEVEL_EKRANI_KESME_2_44
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -137,9 +166,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4
-        y: 832
-        width: 827
-        height: 126
+        y: 1892
+        width: 828
+        height: 127
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,9 +186,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 696
-        width: 827
-        height: 126
+        y: 1756
+        width: 828
+        height: 127
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,211 +202,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LEVEL_EKRANI_KESME_2_2
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 168
-        width: 143
-        height: 171
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50bae8036d3953140bb0639405ef5e55
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEVEL_EKRANI_KESME_2_3
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 170
-        width: 138
-        height: 169
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e47b8d9b8ac666849a904f55e5c3bbe2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEVEL_EKRANI_KESME_2_4
-      rect:
-        serializedVersion: 2
-        x: 295
-        y: 176
-        width: 138
-        height: 188
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8ae25ee36d5968b4ab0064c5d7a91e33
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEVEL_EKRANI_KESME_2_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 357
-        width: 181
-        height: 159
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c081c469494b21d448d9c8f53f35870d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEVEL_EKRANI_KESME_2_6
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 2
-        width: 167
-        height: 149
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b31ea5fff002357498cface18d27adf2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEVEL_EKRANI_KESME_2_7
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 2
-        width: 145
-        height: 165
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa44a33dadf25d549b21f37daca3e108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEVEL_EKRANI_KESME_2_8
-      rect:
-        serializedVersion: 2
-        x: 325
-        y: 10
-        width: 149
-        height: 166
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86e805e13609b7045bb3b894d84702f2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEVEL_EKRANI_KESME_2_9
-      rect:
-        serializedVersion: 2
-        x: 475
-        y: 4
-        width: 127
-        height: 152
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82ae64cc178ed374d887bce705683581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEVEL_EKRANI_KESME_2_10
-      rect:
-        serializedVersion: 2
-        x: 605
-        y: 1
-        width: 148
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c65575c35277c304f93fb5d9fabea1db
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEVEL_EKRANI_KESME_2_11
-      rect:
-        serializedVersion: 2
-        x: 756
-        y: 8
-        width: 138
-        height: 164
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e53dddd0fd0f92e47ae4c78692e624bb
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: LEVEL_EKRANI_KESME_2_12
       rect:
         serializedVersion: 2
-        x: 902
-        y: 9
+        x: 574
+        y: 1940
         width: 4
         height: 34
       alignment: 0
@@ -396,10 +225,10 @@ TextureImporter:
       name: LEVEL_EKRANI_KESME_2_13
       rect:
         serializedVersion: 2
-        x: 910
-        y: 9
+        x: 571
+        y: 1810
         width: 4
-        height: 34
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,12 +245,12 @@ TextureImporter:
       name: LEVEL_EKRANI_KESME_2_14
       rect:
         serializedVersion: 2
-        x: 875
-        y: 888
-        width: 78
-        height: 73
+        x: 882
+        y: 1955
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -436,18 +265,798 @@ TextureImporter:
       name: LEVEL_EKRANI_KESME_2_15
       rect:
         serializedVersion: 2
-        x: 587
-        y: 181
-        width: 367
-        height: 368
+        x: 3
+        y: 637
+        width: 353
+        height: 353
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 65616a7ae6f0d5b478bba2a9a7e19864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_2
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 1704
+        width: 318
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f6247ed53e04042bdf1804fbc9cd6b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_3
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 1700
+        width: 270
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65f405162dd3574593a068a99c40a58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_4
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 1703
+        width: 255
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2815a7aa574093f46ae399926e81b632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_5
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 1698
+        width: 239
+        height: 341
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5180d569c0ab12841a4173e59927b107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1385
+        width: 269
+        height: 341
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddbd7885cd6053045a5f46ad6cbafcc2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_7
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1395
+        width: 255
+        height: 337
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba05c084b1995b4b9b0675ce662cbe8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_8
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1393
+        width: 246
+        height: 341
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc580108e7df3840ba54c59d049169a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_9
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1320
+        width: 232
+        height: 331
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97256f100287f64694e38d65bf71f4e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_10
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1333
+        width: 231
+        height: 329
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cce1d352f833704aa672f164749cef9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_11
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 1351
+        width: 222
+        height: 342
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7c03c1e443ee74ca1d502e869f0f9a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_16
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 1356
+        width: 236
+        height: 337
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779f768dd29f0784abfe971be9c1a9c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_17
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 1355
+        width: 260
+        height: 333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fe665672f3cb4d40a51792ccdd10651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_18
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1004
+        width: 234
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d17b662c1048714283e2aba0aa1afcf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_19
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1012
+        width: 232
+        height: 337
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af09597ca94c400499eb566de0e085f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_20
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1024
+        width: 229
+        height: 355
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6356f0baf0d7c0439182f2e4568ba35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_21
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 979
+        width: 254
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae0a34a46513d841802ced39397b34e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_22
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 978
+        width: 242
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196d469604289744d96b2e37e3a64cf2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_23
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 988
+        width: 236
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ece7fce811f4a143933824d1d223d07
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_24
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 984
+        width: 215
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e15d22adf26a57e45a2fcd0a9bc32245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_25
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 992
+        width: 286
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3072a0daac4be41afe70a8eca1653c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_26
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 652
+        width: 279
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae12f1d3bcbbfe48bc1c98f64c22afa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_27
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 657
+        width: 238
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f89fa96edbf704986b4571c42866ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_28
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 658
+        width: 226
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058db4556b30b0948aa327a3332a39a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_29
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 653
+        width: 213
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e752f8931bb5542828befe2e5e4c60
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_30
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 311
+        width: 237
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4dba672e91baa4a8d13a66bf025db9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_31
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 20
+        width: 204
+        height: 309
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866c41ad6b7325d47bf4e8a278d63894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_32
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 340
+        width: 218
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31bd96e699b897e418e8b80f625de80e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_33
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 324
+        width: 206
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3048422f1bcc3478015b8be90808f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_34
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 328
+        width: 206
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101e8da10bd5d544690fff62206d4a53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_35
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 344
+        width: 198
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02c37a26a92950459f402258e4a1a89
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_36
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 348
+        width: 210
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b67385ed190a8f4a98318c6f8fe30f2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_37
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 347
+        width: 230
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf1acff82dfcd54797ee7a574d7df08
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_38
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 4
+        width: 206
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35983c9252e031d46a0151ccb670c0a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_39
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 10
+        width: 206
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0541c7dc46e0db48a9c3d7a5219e0ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_40
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 26
+        width: 224
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1cd163b248da040bc922dc1cc4c7f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_41
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 24
+        width: 213
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d4d57cdf50e2a4e953ea9056cd4875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_42
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 32
+        width: 209
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6060440b3692d643bc923ceb9683606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_43
+      rect:
+        serializedVersion: 2
+        x: 1574
+        y: 32
+        width: 192
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9b23d4ce3759544892f48689957581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEVEL_EKRANI_KESME_2_44
+      rect:
+        serializedVersion: 2
+        x: 1782
+        y: 38
+        width: 251
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21636c538e62e7c4e97ccf160a90ea95
       vertices: []
       indices: 
       edges: []

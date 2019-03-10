@@ -6,5 +6,6 @@ using UnityEngine;
 public class Avatars : ScriptableObject  {
 	public Sprite[] avatarSprites;
 	public Sprite[] avatarUnlockedSprites;
+	public string[] avatarNames;
 	public int[] levelUpgradeScores;
 }

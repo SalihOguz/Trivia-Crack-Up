@@ -85,9 +85,13 @@ public class GameManager : MonoBehaviour {
     int startingPlayerId; // who wins the bid
     int totalBidPlayer = 0;
     int totalBidOpponent = 0;
+    int totalPenalty = 0;
+    int totalCoinEarnedFromOpponent;
+    int totalCoinGivenToOpponent;
     int startingCoin;
     DatabaseReference reference;
     int tutorialCount = 0;
+    bool gameEnded = false;
 
 	[Header ("User Variables")]
     [HideInInspector]
@@ -133,10 +137,8 @@ public class GameManager : MonoBehaviour {
 
         accumulatedMoneyText.transform.parent.GetChild(4).GetChild(0).position = playerMoneyText.transform.GetChild(0).position;
         accumulatedMoneyText.transform.parent.GetChild(4).GetChild(1).position = opponentMoneyText.transform.GetChild(0).position;
-        endScreen.transform.GetChild(2).GetChild(4).GetChild(0).position = playerMoneyText.transform.GetChild(0).position;
-        endScreen.transform.GetChild(2).GetChild(4).GetChild(1).position = opponentMoneyText.transform.GetChild(0).position;
-
-
+        endScreen.transform.GetChild(1).GetChild(4).GetChild(0).position = playerMoneyText.transform.GetChild(0).position;
+        endScreen.transform.GetChild(1).GetChild(4).GetChild(1).position = opponentMoneyText.transform.GetChild(0).position;
     }
 
     IEnumerator AnimationDelay()
@@ -423,12 +425,10 @@ public class GameManager : MonoBehaviour {
 
         if (playingPlayerId == 0)
         {
-            //player1.totalCoin += (playerBid + opponentBid);
             playerIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
         }
         else
         {
-            //player2.totalCoin += (playerBid + opponentBid);
             opponentIndicator.GetComponent<Image>().sprite = nameBGSprites[1];
         }
 
@@ -576,6 +576,7 @@ public class GameManager : MonoBehaviour {
             p1 = player1.totalCoin;
             player1.totalCoin += totalMoneyAccumulated;
             indicator = playerIndicator;
+            totalCoinEarnedFromOpponent += opponentBid;
         }
         else
         {
@@ -584,6 +585,7 @@ public class GameManager : MonoBehaviour {
             p1 = player2.totalCoin;
             player2.totalCoin += totalMoneyAccumulated;
             indicator = opponentIndicator;
+            totalCoinGivenToOpponent += playerBid;
         }
 
         playerMoneyText.gameObject.SetActive(true);
@@ -616,7 +618,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    void ApplyCutToLoser(int winnerId)
+    void ApplyCutToLoser(int winnerId) // penalty
     {
         if (startingPlayerId == 0 && winnerId == 1)
         {
@@ -627,6 +629,7 @@ public class GameManager : MonoBehaviour {
             playerMoneyText.transform.DOShakeRotation(1.5f, new Vector3(0,0,10f),10,10).OnComplete(delegate(){
                 playerMoneyText.transform.GetChild(3).gameObject.SetActive(false);
             });
+            totalPenalty += playerBid;
         }
         else if (startingPlayerId == 1 && winnerId == 0)
         {
@@ -1045,6 +1048,7 @@ public class GameManager : MonoBehaviour {
         else
         {
             print("Game Over");
+            gameEnded = true;
             gameState = 4;
             StartCoroutine(GameOver());
         }
@@ -1122,7 +1126,17 @@ public class GameManager : MonoBehaviour {
         }
 
         GetComponent<LevelManager>().CheckLevelUp();
-        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = (player1.totalCoin - startingCoin) + " " + I2.Loc.ScriptLocalization.Get("COIN");
+        endScreen.transform.Find("CoinTexts/CoinText").GetComponent<TextMeshProUGUI>().text = (player1.totalCoin - startingCoin) + " " + I2.Loc.ScriptLocalization.Get("COIN");
+        endScreen.transform.Find("CoinTexts/fromRival").GetComponent<TextMeshProUGUI>().text = ScriptLocalization.Get("fromRival") + " " + totalCoinEarnedFromOpponent;
+        endScreen.transform.Find("CoinTexts/toRival").GetComponent<TextMeshProUGUI>().text = ScriptLocalization.Get("toRival") + " -" + totalCoinGivenToOpponent;
+        endScreen.transform.Find("CoinTexts/penalty").GetComponent<TextMeshProUGUI>().text = ScriptLocalization.Get("Penalty") + " -" + totalPenalty;
+        endScreen.transform.Find("CoinTexts/bids").GetComponent<TextMeshProUGUI>().text = ScriptLocalization.Get("Bids") + " " + totalBidPlayer;
+
+        if(PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
+        {
+            PlayerPrefs.SetInt("IsTutorialCompeted", 1);
+        }
+
         retryButton.GetComponent<Image>().sprite = retryButtonSprites[0];
         retryButton.transform.GetChild(0).GetComponent<Text>().text = I2.Loc.ScriptLocalization.Get("play again");
         endGameInfoText.text = "";
@@ -1154,7 +1168,7 @@ public class GameManager : MonoBehaviour {
             playerIndicator.transform.DOShakeScale(count * flowDelay, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(3f).OnComplete(delegate(){
                 if(PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
                 {
-                    DisplayTutorial();
+                    PlayerPrefs.SetInt("IsTutorialCompeted", 1);
                 }
             });
             
@@ -1182,8 +1196,10 @@ public class GameManager : MonoBehaviour {
         doublecoinButton.SetActive(false);
         StartEndGameCoinFlow();
         player1.totalCoin += totalBidPlayer;
-        endScreen.transform.Find("CoinText").GetComponent<TextMeshProUGUI>().text = (player1.totalCoin - startingCoin).ToString() + " " + I2.Loc.ScriptLocalization.Get("COIN");
-        
+        endScreen.transform.Find("CoinTexts/CoinText").GetComponent<TextMeshProUGUI>().text = (player1.totalCoin - startingCoin).ToString() + " " + I2.Loc.ScriptLocalization.Get("COIN");
+        endScreen.transform.Find("CoinTexts/bids").GetComponent<TextMeshProUGUI>().text = ScriptLocalization.Get("Bids") + " " + totalBidPlayer * 2;
+        endScreen.transform.Find("CoinTexts/bids").DOShakeRotation(1f, new Vector3(0,0,10f), 50, 50);
+
         SendUserData();
     } 
 
@@ -1551,7 +1567,7 @@ public class GameManager : MonoBehaviour {
 
     void OnApplicationPause(bool paused)
     {
-        if (paused)
+        if (paused && !gameEnded)
         {
             Time.timeScale = 0f;
             disconnectedScreen.SetActive(true);

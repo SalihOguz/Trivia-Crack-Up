@@ -12,23 +12,63 @@ MonoBehaviour:
   m_Name: Avatars
   m_EditorClassIdentifier: 
   avatarSprites:
-  - {fileID: 21300056, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
-  - {fileID: 21300040, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
-  - {fileID: 21300042, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
-  - {fileID: 21300050, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
-  - {fileID: 21300046, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
-  - {fileID: 21300048, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
-  - {fileID: 21300052, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
-  - {fileID: 21300054, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
-  - {fileID: 21300044, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
-  avatarUnlockedSprites:
-  - {fileID: 21300004, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
   - {fileID: 21300008, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
   - {fileID: 21300012, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
-  - {fileID: 21300018, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
-  - {fileID: 21300016, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
-  - {fileID: 21300014, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
   - {fileID: 21300020, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
-  - {fileID: 21300022, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300014, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
   - {fileID: 21300006, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
-  levelUpgradeScores: 000000000a000000320000006400000096000000fa000000f4010000ee020000e8030000dc050000c40900008813000010270000983a0000
+  - {fileID: 21300034, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300010, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300044, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300018, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300050, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300040, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300032, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300048, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300016, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300042, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300038, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300046, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300022, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300036, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  avatarUnlockedSprites:
+  - {fileID: 21300056, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300060, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300068, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300062, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300054, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300074, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300058, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300082, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300066, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300088, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300062, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300072, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300078, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300064, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300080, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300086, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300084, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300070, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  - {fileID: 21300076, guid: 07ed330c3427b464eb7066ae23e9984f, type: 3}
+  avatarNames:
+  - Vincent van Gogh
+  - Queen Elizabeth I
+  - Michelangelo
+  - Wolfgang Amadeus Mozart
+  - William Shakespeare
+  - Ludwig van Beethoven
+  - Fyodor Dostoyevski
+  - Confucius
+  - Thomas Edison
+  - Albert Einstein
+  - Leo Tolstoy
+  - Marie Curie
+  - Aristotle
+  - Genghis Kahn
+  - Isaac Newton
+  - Socrates
+  - Alexander the Great
+  - Leonardo da Vinci
+  - Julius Caesar
+  levelUpgradeScores: 000000000a0000001e000000320000004b0000006400000096000000c8000000fa000000f4010000ee020000e8030000dc050000d0070000b80b0000a00f000088130000581b000010270000

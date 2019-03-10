@@ -37,6 +37,12 @@ public class BotManager : MonoBehaviour {
 	{
 		gameManager = Camera.main.GetComponent<GameManager>();
         questionManager = Camera.main.GetComponent<QuestionManager>();
+
+        if (I2.Loc.LocalizationManager.CurrentLanguageCode == "en") // TODO these numbers might be bad
+        {
+            baseRightAnswerPercentage -= 0.200f;
+            difficultyEffectOnRightAnswer += 0.4f;
+        } 
 	}
 
 	public void Bid()

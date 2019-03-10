@@ -28,21 +28,22 @@ public class MenuManager : MonoBehaviour {
 	Avatars av;
 	public GameObject tr_flag;
 	public GameObject en_flag;
+	public GameObject chooseLanguageScreen;
+	public GameObject characterNamesParent;
 	
 	void Start()
 	{
-
-
 		player = JsonUtility.FromJson<User>(PlayerPrefs.GetString("userData"));
 		av = Resources.Load<Avatars>("Data/Avatars");
 		
+		adButton.transform.GetChild(UnityEngine.Random.Range(0, adButton.transform.childCount - 1)).gameObject.SetActive(true);
 		Sprite avatar = av.avatarSprites[player.avatarId];
 		userDataObject.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = avatar;
 		userDataObject.transform.Find("UserNameBG").GetChild(0).GetComponent<Text>().text = player.username;
 		userDataObject.transform.Find("CoinButton").GetChild(0).GetComponent<Text>().text = player.totalCoin.ToString();
 		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Joker") + " " + player.knowQuestionSkillCount.ToString();
 		userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Wipe") + " " + player.fiftyFiftySkillCount.ToString();
-		adButton.transform.GetChild(UnityEngine.Random.Range(0, adButton.transform.childCount)).gameObject.SetActive(true);
+		
 
 		knowQuestionCountText.text = player.knowQuestionSkillCount.ToString();
 		disableTwoCountText.text = player.fiftyFiftySkillCount.ToString();
@@ -64,26 +65,35 @@ public class MenuManager : MonoBehaviour {
 		SetLanguage(PlayerPrefs.GetString("lang"));
 
 		Debug.Log(JsonUtility.ToJson(player));
+
+		if (PlayerPrefs.GetInt("chosenLang") == 0)
+		{
+			chooseLanguageScreen.SetActive(true);
+			PlayerPrefs.SetInt("chosenLang", 1);
+		}
 	}
 
 	void ArrangeLevelScreen()
 	{
-		for (int i = 0; i < levelContentParent.transform.childCount - 1; i++) // -1 because last one is not character but "coming soon"
+		for (int i = 0; i < levelContentParent.transform.childCount; i++) // -1 because last one is not character but "coming soon"
 		{
 			if (i < player.level)
 			{
 				levelContentParent.transform.GetChild(i).GetComponent<Image>().sprite = levelBgSprites[0];
 				levelContentParent.transform.GetChild(i).GetChild(2).GetComponent<Image>().sprite = av.avatarSprites[i];
+				levelContentParent.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get(av.avatarNames[i]);
 			}
 			else if (i == player.level)
 			{
 				levelContentParent.transform.GetChild(i).GetComponent<Image>().sprite = levelBgSprites[1];
 				levelContentParent.transform.GetChild(i).GetChild(2).GetComponent<Image>().sprite = av.avatarSprites[i];
+				levelContentParent.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get(av.avatarNames[i]);
 			}
 			else
 			{
 				levelContentParent.transform.GetChild(i).GetComponent<Image>().sprite = levelBgSprites[2];
 				levelContentParent.transform.GetChild(i).GetChild(2).GetComponent<Image>().sprite = av.avatarUnlockedSprites[i];
+				levelContentParent.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get(av.avatarNames[i]);
 			}
 
 			levelContentParent.transform.GetChild(i).GetChild(1).GetComponent<Text>().text = AddOrdinal(i+1) + " " + ScriptLocalization.Get("LevelSmall");
@@ -107,6 +117,8 @@ public class MenuManager : MonoBehaviour {
 			{
 				if (player.totalCoin >= 30 * 5) // TODO this is min bid amount 30 * 5 turns
 				{
+					userDataObject.transform.GetChild(0).GetComponent<Button>().enabled = false;
+					userDataObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
 					ChooseOpponent();
 					uiLayer.GetComponent<Animator>().SetInteger("layerCount", 4);
 					StartCoroutine(PlayerFound());
@@ -148,7 +160,6 @@ public class MenuManager : MonoBehaviour {
 		else
 		{
 #if ! UNITY_EDITOR
-
 			auth.SignInAnonymouslyAsync();
 #endif
 		}
@@ -172,8 +183,26 @@ public class MenuManager : MonoBehaviour {
 		if (ConnectionManager.isOnline)
 		{
 			if(layerCount != 7 && layerCount != 5 && layerCount != 8)
-			PlaySound(0);
-			uiLayer.GetComponent<Animator>().SetInteger("layerCount", layerCount);
+			{
+				PlaySound(0);
+			}
+			if (layerCount == 6)
+			{
+				if (player.totalCoin >= 30 * 5) // TODO this is min bid amount 30 * 5 turns
+				{
+					uiLayer.GetComponent<Animator>().SetInteger("layerCount", layerCount);
+					userDataObject.transform.GetChild(0).GetComponent<Button>().enabled = false;
+					userDataObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+				}
+				else
+				{
+					ChangeLayerTo(3);
+				}
+			}
+			else
+			{
+				uiLayer.GetComponent<Animator>().SetInteger("layerCount", layerCount);
+			}
 		}
 		else
 		{
@@ -190,16 +219,16 @@ public class MenuManager : MonoBehaviour {
 
 	public void FakeSearchPlayer()
 	{
-		if (player.totalCoin >= 30 * 5) // TODO this is min bid amount 30 * 5 turns
-		{
+		// if (player.totalCoin >= 30 * 5) // TODO this is min bid amount 30 * 5 turns
+		// {
 			ChooseOpponent();
 			ChangeLayerTo(4);
 			StartCoroutine(PlayerFound());
-		}
-		else
-		{
-			ChangeLayerTo(3);
-		}
+		// }
+		// else
+		// {
+		// 	ChangeLayerTo(3);
+		// }
 	}
 
 	IEnumerator PlayerFound()
@@ -209,12 +238,15 @@ public class MenuManager : MonoBehaviour {
 			GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex = -1;
 		}
 
+		characterNamesParent.transform.GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get(av.avatarNames[player.avatarId]);
+		characterNamesParent.transform.GetChild(1).GetComponent<Text>().text = ScriptLocalization.Get(av.avatarNames[GameObject.Find("DataToCarry").GetComponent<DataToCarry>().player2.avatarId]);
+
 		float rnd = UnityEngine.Random.Range(4f, 8f);
 		yield return new WaitForSeconds(rnd - 1.5f);
 		PlaySound(11);
 		yield return new WaitForSeconds(1.5f);
 		ChangeLayerTo(5);
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(3.5f);
 		ChangeLayerTo(8);
 		yield return new WaitForSeconds(1);
 		GoToScene("Game");
@@ -542,7 +574,7 @@ public class MenuManager : MonoBehaviour {
 		}
 	}
 
-	void SetLanguage(string language)
+	public void SetLanguage(string language)
 	{
 		if (language == "tr")
 		{
@@ -561,5 +593,46 @@ public class MenuManager : MonoBehaviour {
 
 		userDataObject.transform.Find("JokerButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Joker") + " " + player.knowQuestionSkillCount.ToString();
 		userDataObject.transform.Find("DisableButton").GetChild(0).GetComponent<Text>().text = ScriptLocalization.Get("Wipe") + " " + player.fiftyFiftySkillCount.ToString();
+		ArrangeLevelScreen();
+		GetQuestions();
+		GetFakeUsers();
+	}
+
+	void GetQuestions()
+	{
+		DataToCarry dtc = GameObject.Find("DataToCarry").GetComponent<DataToCarry>();
+		FirebaseDatabase.DefaultInstance.GetReference("questionList/"+LocalizationManager.CurrentLanguageCode).GetValueAsync().ContinueWith(task => {
+			if (task.IsFaulted) {
+				// Handle the error...
+				Debug.LogError("Error in FirebaseStart");
+			}
+			else if (task.IsCompleted) {
+				DataSnapshot snapshot = task.Result;				
+				dtc.ql = new QuestionList();
+				foreach (DataSnapshot i in snapshot.Children)
+				{
+					dtc.ql.questionList.Add(JsonUtility.FromJson<Question>(i.GetRawJsonValue()));
+				}
+			}
+		});
+	}
+
+	void GetFakeUsers()
+	{
+		DataToCarry dtc = GameObject.Find("DataToCarry").GetComponent<DataToCarry>();
+		FirebaseDatabase.DefaultInstance.GetReference("fakeUserList/"+LocalizationManager.CurrentLanguageCode).GetValueAsync().ContinueWith(task => {
+			if (task.IsFaulted) {
+				// Handle the error...
+				Debug.LogError("Error in FirebaseStart");
+			}
+			else if (task.IsCompleted) {
+				DataSnapshot snapshot = task.Result;				
+				dtc.ful.fakeUserList = new List<UserLite>();
+				foreach (DataSnapshot i in snapshot.Children)
+				{
+					dtc.ful.fakeUserList.Add(JsonUtility.FromJson<UserLite>(i.GetRawJsonValue()));
+				}
+			}
+		});
 	}
 }

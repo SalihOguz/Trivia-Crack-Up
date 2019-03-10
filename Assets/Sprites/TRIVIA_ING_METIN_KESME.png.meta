@@ -148,10 +148,10 @@ TextureImporter:
       name: TRIVIA_ING_METIN_KESME_1
       rect:
         serializedVersion: 2
-        x: 1044
-        y: 708
-        width: 616
-        height: 333
+        x: 1407
+        y: 964
+        width: 622
+        height: 338
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,9 +168,9 @@ TextureImporter:
       name: TRIVIA_ING_METIN_KESME_2
       rect:
         serializedVersion: 2
-        x: 9
-        y: 564
-        width: 1003
+        x: 1393
+        y: 234
+        width: 655
         height: 310
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -188,12 +188,12 @@ TextureImporter:
       name: TRIVIA_ING_METIN_KESME_3
       rect:
         serializedVersion: 2
-        x: 1046
-        y: 352
-        width: 586
-        height: 350
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1111
+        y: 540
+        width: 937
+        height: 419
+      alignment: 9
+      pivot: {x: 1.0387579, y: 1.1453017}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -208,10 +208,10 @@ TextureImporter:
       name: TRIVIA_ING_METIN_KESME_4
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 1028
-        height: 556
+        x: 1313
+        y: 1732
+        width: 735
+        height: 316
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: TRIVIA_ING_METIN_KESME_5
       rect:
         serializedVersion: 2
-        x: 1060
-        y: 28
-        width: 469
-        height: 313
+        x: 1158
+        y: 1300
+        width: 890
+        height: 418
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,12 +268,12 @@ TextureImporter:
       name: TRIVIA_ING_METIN_KESME_7
       rect:
         serializedVersion: 2
-        x: 727
-        y: 1270
-        width: 696
-        height: 345
+        x: 28
+        y: 542
+        width: 430
+        height: 249
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

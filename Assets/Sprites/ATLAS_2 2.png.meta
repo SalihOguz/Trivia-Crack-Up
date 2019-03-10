@@ -26,6 +26,7 @@ TextureImporter:
     21300042: ATLAS_2 2_21
     21300044: ATLAS_2 2_22
     21300046: ATLAS_2 2_23
+    21300048: ATLAS_2 2_24
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -586,8 +587,8 @@ TextureImporter:
         serializedVersion: 2
         x: 2
         y: 0
-        width: 1145
-        height: 672
+        width: 889
+        height: 656
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -616,6 +617,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 814ac264cc59643e2ba1704516f04abf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_2 2_24
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 727
+        width: 156
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc1f2eda3e4709541bfca42b67721e00
       vertices: []
       indices: 
       edges: []

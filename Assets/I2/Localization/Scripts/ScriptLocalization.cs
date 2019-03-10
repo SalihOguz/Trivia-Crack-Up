@@ -10,38 +10,58 @@ namespace I2.Loc
 		public static string Get( string Term, bool FixForRTL, int maxLineLengthForRTL ) { return LocalizationManager.GetTermTranslation(Term, FixForRTL, maxLineLengthForRTL); }
 
 
+		public static string Albert_Einstein 		{ get{ return Get ("Albert Einstein"); } }
+		public static string Alexander_the_Great 		{ get{ return Get ("Alexander the Great"); } }
 		public static string Answering 		{ get{ return Get ("Answering"); } }
 		public static string Arial 		{ get{ return Get ("Arial"); } }
+		public static string Aristotle 		{ get{ return Get ("Aristotle"); } }
 		public static string AzoSans_Black 		{ get{ return Get ("AzoSans-Black"); } }
 		public static string AzoSans_Bold 		{ get{ return Get ("AzoSans-Bold"); } }
 		public static string AzoSans_Regular 		{ get{ return Get ("AzoSans-Regular"); } }
 		public static string Battle_Angel 		{ get{ return Get ("Battle Angel"); } }
 		public static string Before_Playing 		{ get{ return Get ("Before Playing"); } }
 		public static string Bid_Now 		{ get{ return Get ("Bid Now"); } }
+		public static string Bids 		{ get{ return Get ("Bids"); } }
 		public static string check_internet 		{ get{ return Get ("check internet"); } }
 		public static string Choices_Came 		{ get{ return Get ("Choices Came"); } }
 		public static string Choices_coming 		{ get{ return Get ("Choices coming"); } }
+		public static string chooseLanguage 		{ get{ return Get ("chooseLanguage"); } }
 		public static string COIN 		{ get{ return Get ("COIN"); } }
 		public static string Coming_Soon 		{ get{ return Get ("Coming Soon"); } }
+		public static string Confucius 		{ get{ return Get ("Confucius"); } }
 		public static string Congratulations 		{ get{ return Get ("Congratulations"); } }
-		public static string continuetext 		{ get{ return Get ("continuetext"); } }
+		public static string CONNECTION_LOST 		{ get{ return Get ("CONNECTION LOST"); } }
 		public static string Discoonected_text 		{ get{ return Get ("Discoonected text"); } }
+		public static string double_image 		{ get{ return Get ("double image"); } }
 		public static string find_player 		{ get{ return Get ("find player"); } }
 		public static string FREE_JOKER 		{ get{ return Get ("FREE JOKER"); } }
 		public static string FREE_WIPE 		{ get{ return Get ("FREE WIPE"); } }
+		public static string fromRival 		{ get{ return Get ("fromRival"); } }
+		public static string Fyodor_Dostoyevski 		{ get{ return Get ("Fyodor Dostoyevski"); } }
 		public static string Game_Starting 		{ get{ return Get ("Game Starting"); } }
-		public static string JOKER 		{ get{ return Get ("JOKER"); } }
-		public static string JokerSmall 		{ get{ return Get ("JokerSmall"); } }
+		public static string GeneralSum 		{ get{ return Get ("GeneralSum"); } }
+		public static string Genghis_Kahn 		{ get{ return Get ("Genghis Kahn"); } }
+		public static string Isaac_Newton 		{ get{ return Get ("Isaac Newton"); } }
+		public static string Joker 		{ get{ return Get ("Joker"); } }
+		public static string joker_image 		{ get{ return Get ("joker image"); } }
+		public static string jokerBold 		{ get{ return Get ("jokerBold"); } }
+		public static string Julius_Caesar 		{ get{ return Get ("Julius Caesar"); } }
 		public static string King 		{ get{ return Get ("King"); } }
 		public static string Knight 		{ get{ return Get ("Knight"); } }
 		public static string LEADERBOARD 		{ get{ return Get ("LEADERBOARD"); } }
+		public static string Leo_Tolstoy 		{ get{ return Get ("Leo Tolstoy"); } }
+		public static string Leonardo_da_Vinci 		{ get{ return Get ("Leonardo da Vinci"); } }
 		public static string LEVEL 		{ get{ return Get ("LEVEL"); } }
-		public static string LevelSmall 		{ get{ return Get ("LevelSmall"); } }
+		public static string level_up_image 		{ get{ return Get ("level up image"); } }
 		public static string Loading___ 		{ get{ return Get ("Loading..."); } }
 		public static string Looking_for_player 		{ get{ return Get ("Looking for player"); } }
+		public static string lose_image 		{ get{ return Get ("lose image"); } }
+		public static string Ludwig_van_Beethoven 		{ get{ return Get ("Ludwig van Beethoven"); } }
 		public static string Mage 		{ get{ return Get ("Mage"); } }
 		public static string make_sure_of_internet 		{ get{ return Get ("make sure of internet"); } }
+		public static string Marie_Curie 		{ get{ return Get ("Marie Curie"); } }
 		public static string Marksman 		{ get{ return Get ("Marksman"); } }
+		public static string Michelangelo 		{ get{ return Get ("Michelangelo"); } }
 		public static string Name_being_used 		{ get{ return Get ("Name being used"); } }
 		public static string name_less_than_3_chars 		{ get{ return Get ("name less than 3 chars"); } }
 		public static string name_used 		{ get{ return Get ("name used"); } }
@@ -52,12 +72,15 @@ namespace I2.Loc
 		public static string NO_INTERNET 		{ get{ return Get ("NO INTERNET"); } }
 		public static string NOT_ENOUGH 		{ get{ return Get ("NOT ENOUGH"); } }
 		public static string Not_enough_coins 		{ get{ return Get ("Not enough coins"); } }
+		public static string ok 		{ get{ return Get ("ok"); } }
+		public static string Penalty 		{ get{ return Get ("Penalty"); } }
 		public static string play 		{ get{ return Get ("play"); } }
 		public static string play_again 		{ get{ return Get ("play again"); } }
 		public static string POWERS 		{ get{ return Get ("POWERS"); } }
 		public static string Processing 		{ get{ return Get ("Processing"); } }
 		public static string Prophet 		{ get{ return Get ("Prophet"); } }
 		public static string Queen 		{ get{ return Get ("Queen"); } }
+		public static string Queen_Elizabeth_I 		{ get{ return Get ("Queen Elizabeth I"); } }
 		public static string Question_is_coming_1 		{ get{ return Get ("Question is coming 1"); } }
 		public static string Question_is_coming_2 		{ get{ return Get ("Question is coming 2"); } }
 		public static string rate 		{ get{ return Get ("rate"); } }
@@ -66,25 +89,33 @@ namespace I2.Loc
 		public static string run_away 		{ get{ return Get ("run away"); } }
 		public static string sec 		{ get{ return Get ("sec"); } }
 		public static string Select_Gender 		{ get{ return Get ("Select Gender"); } }
-		public static string starting 		{ get{ return Get ("starting"); } }
+		public static string Socrates 		{ get{ return Get ("Socrates"); } }
+		public static string Thomas_Edison 		{ get{ return Get ("Thomas Edison"); } }
+		public static string toRival 		{ get{ return Get ("toRival"); } }
 		public static string TOTAL_PRIZE 		{ get{ return Get ("TOTAL PRIZE"); } }
 		public static string tutor 		{ get{ return Get ("tutor"); } }
 		public static string Tutorial_Bid 		{ get{ return Get ("Tutorial Bid"); } }
 		public static string Tutorial_Choices 		{ get{ return Get ("Tutorial Choices"); } }
 		public static string Tutorial_End 		{ get{ return Get ("Tutorial End"); } }
 		public static string Tutorial_Powers 		{ get{ return Get ("Tutorial Powers"); } }
+		public static string tutorial_Powers_Wipe 		{ get{ return Get ("tutorial Powers Wipe"); } }
 		public static string Tutorial_Start 		{ get{ return Get ("Tutorial Start"); } }
 		public static string Undead 		{ get{ return Get ("Undead"); } }
 		public static string Use_Your_Powers 		{ get{ return Get ("Use Your Powers"); } }
+		public static string used_image 		{ get{ return Get ("used image"); } }
+		public static string Vincent_van_Gogh 		{ get{ return Get ("Vincent van Gogh"); } }
 		public static string waiting 		{ get{ return Get ("waiting"); } }
 		public static string wants_again 		{ get{ return Get ("wants again"); } }
-		public static string WATCH 		{ get{ return Get ("WATCH"); } }
+		public static string watch 		{ get{ return Get ("watch"); } }
 		public static string Watch_Earn 		{ get{ return Get ("Watch Earn"); } }
-		public static string watchSmall 		{ get{ return Get ("watchSmall"); } }
 		public static string We_are_Sorry 		{ get{ return Get ("We are Sorry"); } }
-		public static string We_are_Starting 		{ get{ return Get ("We are Starting"); } }
-		public static string WIPE 		{ get{ return Get ("WIPE"); } }
-		public static string WipeSmall 		{ get{ return Get ("WipeSmall"); } }
+		public static string We_are_Starting_ 		{ get{ return Get ("We are Starting!"); } }
+		public static string William_Shakespeare 		{ get{ return Get ("William Shakespeare"); } }
+		public static string win_image 		{ get{ return Get ("win image"); } }
+		public static string Wipe 		{ get{ return Get ("Wipe"); } }
+		public static string wipe_image 		{ get{ return Get ("wipe image"); } }
+		public static string wipeBold 		{ get{ return Get ("wipeBold"); } }
+		public static string Wolfgang_Amadeus_Mozart 		{ get{ return Get ("Wolfgang Amadeus Mozart"); } }
 		public static string you_need_internet 		{ get{ return Get ("you need internet"); } }
 
 	}

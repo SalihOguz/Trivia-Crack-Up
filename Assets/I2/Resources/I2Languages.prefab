@@ -454,8 +454,17 @@ MonoBehaviour:
       al."
     - "You need 150 Coins\n to play.\n Please buy some"
     Languages_Touch:
-    - 
-    - 
+    - "Oyuna girebilmek i\xE7in\n150 Coin'e ihtiyac\u0131n var.\nL\xFCtfen sat\u0131n
+      al\nveya\nreklam izle"
+    - 'You need 150 Coins
+
+      to play.
+
+      Please buy some
+
+      or
+
+      watch ad'
     Flags: 0000
   - Term: Choices coming
     TermType: 0
@@ -522,12 +531,8 @@ MonoBehaviour:
       every game.\n \n  <b>Wipe</b>\n Wipe two choices and increase your chance.\n
       Can be used when there are four choices."
     Languages_Touch:
-    - "<b>Joker</b>\r\nKullan ve soruyu direkt bil!\r Her oyunda sadece bir kez kullanabilirsin.\n\n<b>\u015E\u0131k
-      Ele\r</b>\r\nYanl\u0131\u015F iki cevab\u0131 u\xE7ur ve \u015Fans\u0131n\u0131
-      artt\u0131r. D\xF6rt \u015F\u0131k varken kullanabilirsin."
-    - "<b>Joker</b>\nUse and answer the question immedietly. Can be used once in every
-      game.\n \n <b>Wipe</b>\nWipe two choices and increase your chance. Can be used
-      when there are four choices."
+    - "Kullan ve soruyu direkt bil!\r Her oyunda sadece bir kez kullanabilirsin."
+    - Use and answer the question immedietly. Can be used once in every game.
     Flags: 0000
   - Term: Tutorial End
     TermType: 0
@@ -844,6 +849,297 @@ MonoBehaviour:
     Languages_Touch:
     - "BA\u011ELANTIN KOPTU"
     - CONNECTION LOST
+    Flags: 0000
+  - Term: jokerBold
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "<b>Joker</b>\r"
+    - "<b>Joker</b>\r"
+    Flags: 0000
+  - Term: wipeBold
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "<b>\u015E\u0131k Eleme</b>"
+    - <b>Wipe</b>
+    Flags: 0000
+  - Term: tutorial Powers Wipe
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Yanl\u0131\u015F iki cevab\u0131 u\xE7ur ve \u015Fans\u0131n\u0131 artt\u0131r.
+      D\xF6rt \u015F\u0131k varken kullanabilirsin."
+    - Wipe two choices and increase your chance. Can be used when there are four choices.
+    Flags: 0000
+  - Term: ok
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - tamam
+    - ok
+    Flags: 0000
+  - Term: chooseLanguage
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Oynamak istedi\u011Finiz dili se\xE7in"
+    - Choose the language that you want to play with
+    Flags: 0000
+  - Term: Vincent van Gogh
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Vincent van Gogh
+    - Vincent van Gogh
+    Flags: 0000
+  - Term: Queen Elizabeth I
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Krali\xE7e I. Elizabeth"
+    - Queen Elizabeth I
+    Flags: 0000
+  - Term: Michelangelo
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Michelangelo
+    - Michelangelo
+    Flags: 0000
+  - Term: Wolfgang Amadeus Mozart
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Wolfgang Amadeus Mozart
+    - Wolfgang Amadeus Mozart
+    Flags: 0000
+  - Term: William Shakespeare
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - William Shakespeare
+    - William Shakespeare
+    Flags: 0000
+  - Term: Fyodor Dostoyevski
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Fyodor Dostoyevski
+    - Fyodor Dostoyevski
+    Flags: 0000
+  - Term: Confucius
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Konf\xFC\xE7y\xFCs"
+    - Confucius
+    Flags: 0000
+  - Term: Thomas Edison
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Thomas Edison
+    - Thomas Edison
+    Flags: 0000
+  - Term: Albert Einstein
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Albert Einstein
+    - Albert Einstein
+    Flags: 0000
+  - Term: Leo Tolstoy
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Leo Tolstoy
+    - Leo Tolstoy
+    Flags: 0000
+  - Term: Marie Curie
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Marie Curie
+    - Marie Curie
+    Flags: 0000
+  - Term: Aristotle
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Aristoteles
+    - Aristotle
+    Flags: 0000
+  - Term: Genghis Kahn
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Cengiz Han
+    - Genghis Kahn
+    Flags: 0000
+  - Term: Isaac Newton
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Isaac Newton
+    - Isaac Newton
+    Flags: 0000
+  - Term: Socrates
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Sokrates
+    - Socrates
+    Flags: 0000
+  - Term: Alexander the Great
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "B\xFCy\xFCk \u0130skender"
+    - Alexander the Great
+    Flags: 0000
+  - Term: Leonardo da Vinci
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Leonardo da Vinci
+    - Leonardo da Vinci
+    Flags: 0000
+  - Term: Julius Caesar
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "J\xFCl Sezar"
+    - Julius Caesar
+    Flags: 0000
+  - Term: Ludwig van Beethoven
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Ludwig van Beethoven
+    - Ludwig van Beethoven
+    Flags: 0000
+  - Term: GeneralSum
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - GENEL TOPLAM
+    - GRAND TOTAL
+    Flags: 0000
+  - Term: fromRival
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Rakipten:'
+    - 'From Rival:'
+    Flags: 0000
+  - Term: toRival
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Rakibe:'
+    - 'To Rival:'
+    Flags: 0000
+  - Term: Penalty
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Ceza:'
+    - 'Penalty:'
+    Flags: 0000
+  - Term: Bids
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Bahisler:'
+    - 'Bids:'
     Flags: 0000
   mLanguages:
   - Name: Turkish
