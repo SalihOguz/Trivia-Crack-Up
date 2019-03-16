@@ -25,10 +25,12 @@ public class RegisterManager : MonoBehaviour {
 	public GameObject NotUpToDateObject;
 	bool quesitonDone;
 	bool fakeUsersDone;
+	public Text versionCodeText;
 
 
 	void Start()
 	{
+		versionCodeText.text = "v." + Application.version;
 		if (!PlayerPrefs.HasKey("lang"))
 		{
 			if (Application.systemLanguage == SystemLanguage.Turkish)
@@ -144,7 +146,6 @@ public class RegisterManager : MonoBehaviour {
 
 	public void GetFakeUsersFromCloud()
 	{
-		print("bbb");
 		FirebaseDatabase.DefaultInstance.GetReference("fakeUserList").GetValueAsync().ContinueWith(task => {
 			if (task.IsFaulted) {
 				// Handle the error...
@@ -154,7 +155,7 @@ public class RegisterManager : MonoBehaviour {
 				DataSnapshot snapshot = task.Result;				
 
 				LocalFakeUsersDatabase lfudb = new LocalFakeUsersDatabase();
-				print("aaa");
+
 				foreach (var language in snapshot.Children)
 				{
 					lfudb.fakeusersInLanguages[language.Key] = new FakeUserList();
@@ -349,10 +350,26 @@ public class RegisterManager : MonoBehaviour {
 
 				VersionNumbers vn = JsonUtility.FromJson<VersionNumbers>(snapshot.GetRawJsonValue());
 
-				if (vn.gameVersionNo.Equals(Application.version))
+				try{
+					if (float.Parse(vn.gameVersionNo) <= float.Parse(Application.version))
+					{
+						print("uptodate");
+						upToDate = true;
+					}
+					else if (vn.gameVersionNo.Equals(Application.version))
+					{
+						print("uptodate");
+						upToDate = true;
+					}
+				}
+				catch
 				{
-					print("uptodate");
-					upToDate = true;
+					if (vn.gameVersionNo.Equals(Application.version))
+					{
+						print("uptodate");
+						upToDate = true;
+					}
+					Debug.LogError("Error in parsing version code to float");
 				}
 
 				if (!upToDate)
@@ -369,26 +386,68 @@ public class RegisterManager : MonoBehaviour {
 				}
 				else
 				{
-					if (vn.questionsVersionNo.Equals(PlayerPrefs.GetString("questionVersionNo")))
+					try
 					{
-						LoadQuestions();
-						quesitonDone = true;
+						if (float.Parse(vn.questionsVersionNo) <= float.Parse(PlayerPrefs.GetString("questionVersionNo")))
+						{
+							LoadQuestions();
+							quesitonDone = true;
+						}
+						else if (vn.questionsVersionNo.Equals(PlayerPrefs.GetString("questionVersionNo")))
+						{
+							LoadQuestions();
+							quesitonDone = true;
+						}
+						else
+						{
+							GetQuestionsFromCloud();
+							PlayerPrefs.SetString("questionVersionNo", vn.questionsVersionNo);
+						}
 					}
-					else
+					catch
 					{
-						GetQuestionsFromCloud();
-						PlayerPrefs.SetString("questionVersionNo", vn.questionsVersionNo);
+						if (vn.questionsVersionNo.Equals(PlayerPrefs.GetString("questionVersionNo")))
+						{
+							LoadQuestions();
+							quesitonDone = true;
+						}
+						else
+						{
+							GetQuestionsFromCloud();
+							PlayerPrefs.SetString("questionVersionNo", vn.questionsVersionNo);
+						}
 					}
-					
-					if (vn.fakeUsersVersionNo.Equals(PlayerPrefs.GetString("fakeUsersVersionNo")))
+
+					try
 					{
-						LoadFakeUsers();
-						fakeUsersDone = true;
+						if (float.Parse(vn.fakeUsersVersionNo) <= float.Parse(PlayerPrefs.GetString("fakeUsersVersionNo")))
+						{
+							LoadFakeUsers();
+							fakeUsersDone = true;
+						}
+						else if (vn.fakeUsersVersionNo.Equals(PlayerPrefs.GetString("fakeUsersVersionNo")))
+						{
+							LoadFakeUsers();
+							fakeUsersDone = true;
+						}
+						else
+						{
+							GetFakeUsersFromCloud();
+							PlayerPrefs.SetString("fakeUsersVersionNo", vn.fakeUsersVersionNo);
+						}
 					}
-					else
+					catch
 					{
-						GetFakeUsersFromCloud();
-						PlayerPrefs.SetString("fakeUsersVersionNo", vn.fakeUsersVersionNo);
+						if (vn.fakeUsersVersionNo.Equals(PlayerPrefs.GetString("fakeUsersVersionNo")))
+						{
+							LoadFakeUsers();
+							fakeUsersDone = true;
+						}
+						else
+						{
+							GetFakeUsersFromCloud();
+							PlayerPrefs.SetString("fakeUsersVersionNo", vn.fakeUsersVersionNo);
+						}
 					}
 
 					CompleteBar();

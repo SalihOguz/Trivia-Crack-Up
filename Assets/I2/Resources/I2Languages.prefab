@@ -503,7 +503,7 @@ MonoBehaviour:
     Languages_Touch:
     - "Bamba\u015Fka bir trivia oyunu deneyimine haz\u0131r m\u0131s\u0131n?\n \nAma
       bunun i\xE7in e\u011Fitmenimizle bir tur oynaman gerekiyor."
-    - "Are you ready for a completely new trivia experience?\n \nBut first you need
+    - "Are you ready for a completely new trivia experience?\n \nBut first, you need
       to play with our tutor."
     Flags: 0000
   - Term: Tutorial Bid
@@ -517,8 +517,8 @@ MonoBehaviour:
     Languages_Touch:
     - "En h\u0131zl\u0131 ve en y\xFCksek bahsi koyan soruyu al\u0131r!\n \nAma soruyu
       bilemezsen cezan\u0131n da y\xFCksek olaca\u011F\u0131n\u0131 unutma!"
-    - "Player bidding faster and higher answers first!\n \nBut if can't answer right,
-      your penalty will be higher!"
+    - "The quickest user takes the question!\n \nBut if you can't answer right, your
+      penalty will be higher!"
     Flags: 0000
   - Term: Tutorial Powers
     TermType: 0
@@ -532,7 +532,7 @@ MonoBehaviour:
       Can be used when there are four choices."
     Languages_Touch:
     - "Kullan ve soruyu direkt bil!\r Her oyunda sadece bir kez kullanabilirsin."
-    - Use and answer the question immedietly. Can be used once in every game.
+    - Use and answer the question immediately. Can be used once in every game.
     Flags: 0000
   - Term: Tutorial End
     TermType: 0
@@ -878,8 +878,9 @@ MonoBehaviour:
     - 
     Languages_Touch:
     - "Yanl\u0131\u015F iki cevab\u0131 u\xE7ur ve \u015Fans\u0131n\u0131 artt\u0131r.
-      D\xF6rt \u015F\u0131k varken kullanabilirsin."
-    - Wipe two choices and increase your chance. Can be used when there are four choices.
+      Sadece d\xF6rt \u015F\u0131k varken kullanabilirsin."
+    - Wipe two choices and increase your chance. It can be used only when there are
+      four choices.
     Flags: 0000
   - Term: ok
     TermType: 0
