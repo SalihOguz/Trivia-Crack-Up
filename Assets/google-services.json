@@ -36,6 +36,37 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586522041874:android:e202d5e225a4b6d7",
+        "android_client_info": {
+          "package_name": "com.digitalwords.triviacrackup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586522041874-74nj5d1qaaa45jeot5kv4a65c0a5tpsq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-FYd_jVb3pmOlB2qxQVSR7B7e1E-A268"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

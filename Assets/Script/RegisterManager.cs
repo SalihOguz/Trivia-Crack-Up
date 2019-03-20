@@ -45,7 +45,7 @@ public class RegisterManager : MonoBehaviour {
 			}
 		}
 
-		//PlayerPrefs.DeleteAll(); //TODO comment these
+		PlayerPrefs.DeleteAll(); //TODO comment these
 		// PlayerPrefs.DeleteKey("fakeUsersVersionNo");
 		// PlayerPrefs.DeleteKey("questionVersionNo");
 
@@ -471,5 +471,10 @@ public class RegisterManager : MonoBehaviour {
 #elif UNITY_IPHONE
 					Application.OpenURL("itms-apps://itunes.apple.com/app/id1454414970");
 #endif		
+	}
+
+	public void GoToPrivacyPolicy()
+	{
+		Application.OpenURL("https://wordcubeprivacy.wordpress.com/privacy-policy/");
 	}
 }

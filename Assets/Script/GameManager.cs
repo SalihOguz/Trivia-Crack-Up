@@ -1135,6 +1135,7 @@ public class GameManager : MonoBehaviour {
         if(PlayerPrefs.GetInt("IsTutorialCompeted") == 0)
         {
             endGameInfoText.gameObject.SetActive(false);
+            DisplayTutorial();
             PlayerPrefs.SetInt("IsTutorialCompeted", 1);
         }
 

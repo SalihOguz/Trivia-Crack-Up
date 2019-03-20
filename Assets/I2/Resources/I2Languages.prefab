@@ -1166,6 +1166,16 @@ MonoBehaviour:
     - "G\xFCncelle"
     - Update
     Flags: 0000
+  - Term: PrivacyPolicy
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Gizlilik Politikas\u0131"
+    - Privacy Policy
+    Flags: 0000
   mLanguages:
   - Name: Turkish
     Code: tr

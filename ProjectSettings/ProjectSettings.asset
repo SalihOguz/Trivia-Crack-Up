@@ -152,7 +152,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.digitalwords.trivia
+    Android: com.digitalwords.triviacrackup
     Standalone: com.Company.ProductName
     iOS: com.digitalwords.trivia
   buildNumber: {}

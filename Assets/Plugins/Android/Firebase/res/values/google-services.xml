@@ -6,6 +6,6 @@
   <string name="project_id" translatable="false">triviachallanger</string>
   <string name="google_api_key" translatable="false">AIzaSyA-FYd_jVb3pmOlB2qxQVSR7B7e1E-A268</string>
   <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA-FYd_jVb3pmOlB2qxQVSR7B7e1E-A268</string>
-  <string name="google_app_id" translatable="false">1:586522041874:android:2f8de6eddde98ab2</string>
+  <string name="google_app_id" translatable="false">1:586522041874:android:e202d5e225a4b6d7</string>
   <string name="default_web_client_id" translatable="false">586522041874-74nj5d1qaaa45jeot5kv4a65c0a5tpsq.apps.googleusercontent.com</string>
 </resources>
