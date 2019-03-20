@@ -30,7 +30,9 @@ public class RegisterManager : MonoBehaviour {
 
 	void Start()
 	{
+		Debug.Log("start function");
 		versionCodeText.text = "v." + Application.version;
+		Debug.Log("version code written");
 		if (!PlayerPrefs.HasKey("lang"))
 		{
 			if (Application.systemLanguage == SystemLanguage.Turkish)
@@ -44,8 +46,8 @@ public class RegisterManager : MonoBehaviour {
 				LocalizationManager.CurrentLanguageCode = "en";
 			}
 		}
-
-		PlayerPrefs.DeleteAll(); //TODO comment these
+		Debug.Log("language chosen");
+		//PlayerPrefs.DeleteAll(); //TODO comment these
 		// PlayerPrefs.DeleteKey("fakeUsersVersionNo");
 		// PlayerPrefs.DeleteKey("questionVersionNo");
 
@@ -77,6 +79,7 @@ public class RegisterManager : MonoBehaviour {
 	void DelayedStart()
 	{
 		//UpdateGoogle();
+		Debug.Log("delayed start");
 		FirebaseStart();
 		if (GameObject.Find("DataToCarry"))
 		{
