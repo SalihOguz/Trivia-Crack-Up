@@ -15135,9 +15135,6 @@ MonoBehaviour:
   botMaxBidTime: 2.5
   botMinAnswerTime: 2
   botMaxAnswerTime: 8
-  baseRightAnswerPercentage: 0.625
-  difficultyEffectOnRightAnswer: 0.08
-  choiceCountMultiplier: 0.125
   randomBidChance: 0.2
   bidDelayAmount: 1
   minSkillUseTime: 1

@@ -1366,6 +1366,8 @@ public class GameManager : MonoBehaviour {
             }
             else if (endGameInfoText.text != I2.Loc.ScriptLocalization.Get("run away"))
             {
+                GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd(); // TODO test
+
                 retryButton.GetComponent<Image>().sprite = retryButtonSprites[1];
                 endGameInfoText.text = I2.Loc.ScriptLocalization.Get("wants again");
                 retryButton.transform.GetChild(0).GetComponent<Text>().text = I2.Loc.ScriptLocalization.Get("waiting");
@@ -1373,6 +1375,8 @@ public class GameManager : MonoBehaviour {
             }
             else
             {
+                GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd(); // TODO test
+
                 if (GameObject.Find("DataToCarry"))
                 {
                     GameObject.Find("DataToCarry").GetComponent<DataToCarry>().mainMenuAnimLayerIndex = 4;
@@ -1388,6 +1392,7 @@ public class GameManager : MonoBehaviour {
 
     public void GoToMenuAndSearchPlayer()
     {
+        GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd(); // TODO test
         Time.timeScale = 1;
         if (GameObject.Find("DataToCarry"))
         {
@@ -1446,6 +1451,7 @@ public class GameManager : MonoBehaviour {
 
     public void ExitButton()
     {
+        GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd(); // TODO test
         StartCoroutine(DelayedGoToMenu());
     }
 
