@@ -1452,6 +1452,7 @@ public class GameManager : MonoBehaviour {
     public void ExitButton()
     {
         GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd(); // TODO test
+        Time.timeScale = 1;
         StartCoroutine(DelayedGoToMenu());
     }
 
