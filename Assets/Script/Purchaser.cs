@@ -60,6 +60,16 @@ public class Purchaser : MonoBehaviour, IStoreListener {
         // Create a builder, first passing in a suite of Unity provided stores.
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
+#if UNITY_IPHONE
+        mixedpack1 = "tcu"+mixedpack1;
+        mixedpack2 = "tcu"+mixedpack2;
+        mixedpack3 = "tcu"+mixedpack3;
+        mixedpack4 = "tcu"+mixedpack4;
+        coinpack1 = "tcu"+coinpack1;
+        coinpack2 = "tcu"+coinpack2;
+        coinpack3 = "tcu"+coinpack3;
+#endif
+
         builder.AddProduct(mixedpack1, ProductType.Consumable);
         builder.AddProduct(mixedpack2, ProductType.Consumable);
         builder.AddProduct(mixedpack3, ProductType.Consumable);
