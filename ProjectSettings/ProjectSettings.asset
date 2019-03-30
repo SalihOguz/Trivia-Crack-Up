@@ -118,7 +118,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.6
+  bundleVersion: 1.7
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -154,9 +154,9 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.digitalwords.triviacrackup
     Standalone: com.Company.ProductName
-    iOS: com.digitalwords.trivia
+    iOS: com.digitalwords.triviacrackup
   buildNumber: {}
-  AndroidBundleVersionCode: 18
+  AndroidBundleVersionCode: 19
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -866,7 +866,7 @@ PlayerSettings:
   apiCompatibilityLevel: 2
   cloudProjectId: 585c872c-7ec1-4cd3-ab2f-fc2d394fab69
   projectName: Trivia Challanger
-  organizationId: msotech
+  organizationId: ideancy-limited
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 224269231525174570}
   - component: {fileID: 222492457250204480}
   - component: {fileID: 114612598195896130}
-  - component: {fileID: 114017588008427240}
   m_Layer: 5
   m_Name: WordCoinButton
   m_TagString: Untagged
@@ -73,6 +72,7 @@ GameObject:
   - component: {fileID: 224286814702418288}
   - component: {fileID: 222103386240224562}
   - component: {fileID: 114858938692467090}
+  - component: {fileID: 114003616336687372}
   m_Layer: 5
   m_Name: CostBG
   m_TagString: Untagged
@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 224637656966623078}
   - component: {fileID: 222702986369699902}
   - component: {fileID: 114464063153007124}
+  - component: {fileID: 114050676286409468}
   m_Layer: 5
   m_Name: WordcoinText
   m_TagString: Untagged
@@ -114,12 +115,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114017588008427240
+--- !u!114 &114003616336687372
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1093397629723410}
+  m_GameObject: {fileID: 1478783493865660}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -149,12 +150,51 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114612598195896130}
+  m_TargetGraphic: {fileID: 114858938692467090}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: BuyConsumable
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: coinpack1
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114050676286409468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728499701162478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: COIN
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  LocalizeOnAwake: 1
+  Source: {fileID: 114536795468238956, guid: 323dd2ea457caea46b6e84f4e17010f9, type: 2}
+  mTarget: {fileID: 114464063153007124}
+  CanUseSecondaryTerm: 1
+  AllowMainTermToBeRTL: 1
+  AllowSecondTermToBeRTL: 0
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  CorrectAlignmentForRTL: 1
+  TranslatedObjects: []
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
 --- !u!114 &114257864342652108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,7 +214,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300028, guid: 9f04da2f3c3224e629be28b45d2bfe2b, type: 3}
+  m_Sprite: {fileID: 21300014, guid: 2afcb53155e521940a4606e7b34ee959, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -292,7 +332,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: d3b3e36a88aaa46e885022ee8d5adaca, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 7
     m_MaxSize: 80
     m_Alignment: 4
@@ -301,7 +341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3,99 TL
+  m_Text: --
 --- !u!114 &114971162208797930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,7 +374,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 5.000
 --- !u!222 &222103386240224562
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -396,7 +436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 287}
+  m_AnchoredPosition: {x: -4, y: 236}
   m_SizeDelta: {x: 548.7, y: 123.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224286814702418288
@@ -469,8 +509,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -59.00003, y: 8.25}
-  m_SizeDelta: {x: -369.7, y: -40}
+  m_AnchoredPosition: {x: -59.00003, y: 8.255}
+  m_SizeDelta: {x: -369.7, y: -39.989998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224975763293966530
 RectTransform:
@@ -487,6 +527,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000013351, y: 0.000083923}
-  m_SizeDelta: {x: 374, y: 131}
+  m_AnchoredPosition: {x: -1.4, y: 0}
+  m_SizeDelta: {x: 306, y: 131}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -10,7 +10,6 @@ public class AdmobManager : Singleton<AdmobManager> {
     private RewardBasedVideoAd rewardBasedVideo;
     private InterstitialAd interstitial;
     MenuManager menuManager;
-    GameManager gameManager;
     string adType = "";
 
     public void DelayedStart()

@@ -162,7 +162,16 @@ public class MenuManager : MonoBehaviour {
 		else
 		{
 #if ! UNITY_EDITOR
-			auth.SignInAnonymouslyAsync();
+			auth.SignInAnonymouslyAsync().ContinueWith(task => {
+				if (task.IsCanceled) {
+					Debug.LogError("SignInAnonymouslyAsync was canceled.");
+					return;
+				}
+				if (task.IsFaulted) {
+					Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
+					return;
+				}
+			});
 #endif
 		}
 	}
@@ -260,7 +269,8 @@ public class MenuManager : MonoBehaviour {
 		{
 			PlaySound(0);
 			print("coin");
-			GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("coin");
+			//GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("coin");
+			GameObject.Find("AdManager").GetComponent<UnityAdsManager>().ShowAd(AdType.coin);
 		}
 	}
 
@@ -270,7 +280,8 @@ public class MenuManager : MonoBehaviour {
 		{
 			PlaySound(0);
 			print("joker");
-			GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("joker");
+			//GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("joker");
+			GameObject.Find("AdManager").GetComponent<UnityAdsManager>().ShowAd(AdType.joker);
 		}
 	}	
 
@@ -280,7 +291,8 @@ public class MenuManager : MonoBehaviour {
 		{
 			PlaySound(0);
 			print("disable");
-			GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("disable");
+			//GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("disable");
+			GameObject.Find("AdManager").GetComponent<UnityAdsManager>().ShowAd(AdType.disable);
 		}
 	}
 

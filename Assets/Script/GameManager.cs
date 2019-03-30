@@ -1226,7 +1226,8 @@ public class GameManager : MonoBehaviour {
     {
         if (GameObject.Find("AdManager"))
         {
-            GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("earn2x");
+            //GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowAd("earn2x");
+            GameObject.Find("AdManager").GetComponent<UnityAdsManager>().ShowAd(AdType.earn2x);
         }
     }
 
@@ -1366,7 +1367,8 @@ public class GameManager : MonoBehaviour {
             }
             else if (endGameInfoText.text != I2.Loc.ScriptLocalization.Get("run away"))
             {
-                GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd(); // TODO test
+                //GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd();
+                GameObject.Find("AdManager").GetComponent<UnityAdsManager>().ShowAd(AdType.video);
 
                 retryButton.GetComponent<Image>().sprite = retryButtonSprites[1];
                 endGameInfoText.text = I2.Loc.ScriptLocalization.Get("wants again");
@@ -1375,7 +1377,8 @@ public class GameManager : MonoBehaviour {
             }
             else
             {
-                GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd(); // TODO test
+                //GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd();
+                GameObject.Find("AdManager").GetComponent<UnityAdsManager>().ShowAd(AdType.video);
 
                 if (GameObject.Find("DataToCarry"))
                 {
@@ -1392,7 +1395,8 @@ public class GameManager : MonoBehaviour {
 
     public void GoToMenuAndSearchPlayer()
     {
-        GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd(); // TODO test
+        //GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd();
+        GameObject.Find("AdManager").GetComponent<UnityAdsManager>().ShowAd(AdType.video);
         Time.timeScale = 1;
         if (GameObject.Find("DataToCarry"))
         {
@@ -1451,7 +1455,8 @@ public class GameManager : MonoBehaviour {
 
     public void ExitButton()
     {
-        GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd(); // TODO test
+        //GameObject.Find("AdManager").GetComponent<AdmobManager>().ShowInterstitialAd();
+        GameObject.Find("AdManager").GetComponent<UnityAdsManager>().ShowAd(AdType.video);
         Time.timeScale = 1;
         StartCoroutine(DelayedGoToMenu());
     }

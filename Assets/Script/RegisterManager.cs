@@ -11,6 +11,7 @@ using DG.Tweening;
 using GoogleMobileAds.Api;
 using BugsnagUnity;
 using I2.Loc;
+using UnityEngine.Monetization;
 
 public class RegisterManager : MonoBehaviour {
 	public GameObject uiLayer;
@@ -31,7 +32,7 @@ public class RegisterManager : MonoBehaviour {
 	void Start()
 	{
 		Debug.Log("start function");
-		versionCodeText.text = "v." + Application.version;
+		versionCodeText.text = "v." + Application.version+"q"+PlayerPrefs.GetString("questionVersionNo")+"f"+PlayerPrefs.GetString("fakeUsersVersionNo");
 		Debug.Log("version code written");
 		if (!PlayerPrefs.HasKey("lang"))
 		{
@@ -88,7 +89,8 @@ public class RegisterManager : MonoBehaviour {
 			{
 				if(GameObject.Find("AdManager"))
 				{
-					GameObject.Find("AdManager").GetComponent<AdmobManager>().DelayedStart();
+					//GameObject.Find("AdManager").GetComponent<AdmobManager>().DelayedStart();
+					GameObject.Find("AdManager").GetComponent<UnityAdsManager>().DelayedStart();
 				}
 				ForceUpdate();
 			}
@@ -452,7 +454,7 @@ public class RegisterManager : MonoBehaviour {
 							PlayerPrefs.SetString("fakeUsersVersionNo", vn.fakeUsersVersionNo);
 						}
 					}
-
+					versionCodeText.text = "v." + Application.version+"q"+PlayerPrefs.GetString("questionVersionNo")+"f"+PlayerPrefs.GetString("fakeUsersVersionNo");
 					CompleteBar();
 				}
 			}
