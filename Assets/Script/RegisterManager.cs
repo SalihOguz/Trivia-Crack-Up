@@ -382,9 +382,9 @@ public class RegisterManager : MonoBehaviour {
 					print("not uptodate");
 					NotUpToDateObject.SetActive(true);
 #if UNITY_ANDROID
-					Application.OpenURL("market://details?id=com.digitalwords.trivia");
+					Application.OpenURL("market://details?id=com.digitalwords.triviacrackup");
 #elif UNITY_IPHONE
-					Application.OpenURL("itms-apps://itunes.apple.com/app/id1454414970");
+					Application.OpenURL("itms-apps://itunes.apple.com/app/id1457500186");
 #elif UNITY_EDITOR
 					Debug.LogError("Update version code data in Firebase. Go to the scene 'Firebase Data Control' and do it.");
 #endif
@@ -472,7 +472,7 @@ public class RegisterManager : MonoBehaviour {
 	public void GoToStore()
 	{
 #if UNITY_ANDROID
-					Application.OpenURL("market://details?id=com.digitalwords.trivia");
+					Application.OpenURL("market://details?id=com.digitalwords.triviacrackup");
 #elif UNITY_IPHONE
 					Application.OpenURL("itms-apps://itunes.apple.com/app/id1454414970");
 #endif		

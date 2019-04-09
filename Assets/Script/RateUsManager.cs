@@ -31,9 +31,9 @@ public class RateUsManager : MonoBehaviour {
 		try
 		{
 			#if UNITY_ANDROID
-            	Application.OpenURL("market://details?id=com.digitalwords.trivia");
+            	Application.OpenURL("market://details?id=com.digitalwords.triviacrackup");
 			#elif UNITY_IPHONE
-				Application.OpenURL("itms-apps://itunes.apple.com/app/id1454414970");
+				Application.OpenURL("itms-apps://itunes.apple.com/app/id1457500186");
 			#endif
 
 			rateButton.interactable = false;
