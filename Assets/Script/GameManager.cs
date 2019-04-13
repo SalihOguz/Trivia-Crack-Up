@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator AnimationDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
         StartCoroutine(DelayedStart());
         
         #if ! UNITY_EDITOR
@@ -454,11 +454,11 @@ public class GameManager : MonoBehaviour {
              infoText.text = I2.Loc.ScriptLocalization.Get("Question is coming 1") + " <b><color=#FFEA00>" + player2.username + "</color></b> " + I2.Loc.ScriptLocalization.Get("Question is coming 2");           
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         SendCoinsToChest();
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(1.5f);
 
         player2.totalCoin -= opponentBid;
         player1.totalCoin -= playerBid;
@@ -510,7 +510,7 @@ public class GameManager : MonoBehaviour {
         int p2 = player2.totalCoin;
         int tot = totalMoneyAccumulated;
 
-        float flowDelay = 0.5f/Mathf.Max(playerBid/30, opponentBid/30); //Mathf.Max(Mathf.Clamp(playerBid/10, 3, 10), Mathf.Clamp(opponentBid/10, 3, 10));
+        float flowDelay = 0.3f/Mathf.Max(playerBid/30, opponentBid/30);
 
         accumulatedMoneyText.transform.parent.GetChild(1).DOShakeRotation(Mathf.Max(playerBid/30, opponentBid/30) * flowDelay, new Vector3(0,0,20f),90,90).SetDelay(1f).OnComplete(delegate(){
             tot += (playerBid) % 30;
@@ -532,7 +532,7 @@ public class GameManager : MonoBehaviour {
                     playerMoneyText.text = p1.ToString();
                  });
                 playerCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.8f, 0.5f).SetEase(Ease.InCubic).SetDelay(flowDelay*i);
-                playerCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.4f, 0.5f).SetEase(Ease.InCubic).SetDelay(flowDelay*i + 0.5f);
+                playerCoinsParent.transform.GetChild(i).DOScale(Vector3.one * 0.4f, 0.5f).SetEase(Ease.InCubic).SetDelay(flowDelay*i + 0.3f);
             }
             if (i < opponentBid/30)
             {
@@ -595,7 +595,7 @@ public class GameManager : MonoBehaviour {
 
         int count = totalMoneyAccumulated/30; //Mathf.Clamp(totalMoneyAccumulated/10, 3, 10);
 
-        float flowDelay = 0.5f/count;
+        float flowDelay = 0.3f/count;
 
         indicator.transform.DOShakeRotation(count * flowDelay, new Vector3(0,0,10f),50,50).SetDelay(1f);
         indicator.transform.DOShakeScale(count * flowDelay, new Vector3(0.3f, 0.3f, 0f),50,50).SetDelay(1f).OnComplete(delegate(){
@@ -1017,7 +1017,7 @@ public class GameManager : MonoBehaviour {
 
         animStar.transform.localScale = Vector3.zero;
         animStar.SetActive(true);
-        animStar.transform.DOJump(destination.position, 4, 1, 2f).SetEase(Ease.InCubic).OnComplete(delegate(){
+        animStar.transform.DOJump(destination.position, 4, 1, 1f).SetEase(Ease.InCubic).OnComplete(delegate(){
             destination.GetComponent<Image>().sprite = fullStarSprite; 
             animStar.SetActive(false);
             SendCoinsToWinner(winnerId);
@@ -1031,8 +1031,8 @@ public class GameManager : MonoBehaviour {
         //     SendCoinsToWinner(winnerId);
         //     ApplyCutToLoser(winnerId);
         //     });
-        animStar.transform.DOScale(new Vector3(0.6f,0.6f,0), 1f).SetEase(Ease.OutSine).OnComplete(delegate(){
-            animStar.transform.DOScale(new Vector3(0.159f,0.159f,0), 1f).SetEase(Ease.InQuart);
+        animStar.transform.DOScale(new Vector3(0.6f,0.6f,0), 0.5f).SetEase(Ease.OutSine).OnComplete(delegate(){
+            animStar.transform.DOScale(new Vector3(0.159f,0.159f,0), 0.5f).SetEase(Ease.InQuart);
         });
         
     }
@@ -1056,7 +1056,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator GameOver()
     {
-        yield return new WaitForSeconds(5.6f);
+        yield return new WaitForSeconds(3.6f);
 
         foreach (Transform i in playerCoinsParent.transform)
         {
@@ -1293,7 +1293,7 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
-            yield return new WaitForSeconds(5.5f);
+            yield return new WaitForSeconds(3.5f);
             totalMoneyAccumulated = 0;
             accumulatedMoneyText.text = 0 + " " + I2.Loc.ScriptLocalization.Get("COIN");
         }
@@ -1437,7 +1437,7 @@ public class GameManager : MonoBehaviour {
         retryButton.GetComponent<Button>().interactable = false;
         endGameInfoText.text = I2.Loc.ScriptLocalization.Get("request accepted");
         retryButton.transform.GetChild(0).GetComponent<Text>().text = I2.Loc.ScriptLocalization.Get("starting");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
 
         Restart();
     }
@@ -1466,7 +1466,7 @@ public class GameManager : MonoBehaviour {
         endScreen.GetComponent<Animator>().SetTrigger("gameEnded");
         playerScoreStarsParent.transform.parent.GetComponent<Animator>().SetTrigger("gameEnded");
         opponentScoreStarsParent.transform.parent.GetComponent<Animator>().SetTrigger("gameEnded");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
 
         GoToMenu();
     }

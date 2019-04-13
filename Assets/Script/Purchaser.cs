@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 
 public class Purchaser : MonoBehaviour, IStoreListener {
-    private static IStoreController m_StoreController;          // The Unity Purchasing system.
+    public static IStoreController m_StoreController;          // The Unity Purchasing system.
     private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
 
     // Product identifiers for all products capable of being purchased: 
@@ -42,7 +42,7 @@ public class Purchaser : MonoBehaviour, IStoreListener {
     // Google Play Store-specific product identifier subscription product.
     //private static string kProductNameGooglePlaySubscription = "com.unity3d.subscription.original";
 
-    void Start() {
+    public void Init() {
         // If we haven't set up the Unity Purchasing reference
         if (m_StoreController == null) {
             // Begin to configure our connection to Purchasing

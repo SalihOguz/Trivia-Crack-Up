@@ -228,7 +228,7 @@ public class RegisterManager : MonoBehaviour {
 	IEnumerator GoToMenu()
 	{
 		ChangeLayerTo(2);
-		yield return new WaitForSeconds(0.9f);
+		yield return new WaitForSeconds(0.5f);
 		SceneManager.LoadScene("MainMenu");
 	}
 
