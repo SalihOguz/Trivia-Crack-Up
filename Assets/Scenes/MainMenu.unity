@@ -18123,6 +18123,7 @@ MonoBehaviour:
   en_flag: {fileID: 2086139078}
   chooseLanguageScreen: {fileID: 198844586}
   characterNamesParent: {fileID: 1500860522}
+  purchaser: {fileID: 657082471}
 --- !u!114 &1509419781
 MonoBehaviour:
   m_ObjectHideFlags: 0

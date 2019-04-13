@@ -31,6 +31,7 @@ public class MenuManager : MonoBehaviour {
 	public GameObject chooseLanguageScreen;
 	public GameObject characterNamesParent;
 	DataToCarry dtc;
+	public Purchaser purchaser;
 	
 	void Start()
 	{
@@ -73,6 +74,8 @@ public class MenuManager : MonoBehaviour {
 			chooseLanguageScreen.SetActive(true);
 			PlayerPrefs.SetInt("chosenLang", 1);
 		}
+
+		purchaser.Init();
 	}
 
 	void ArrangeLevelScreen()
@@ -257,9 +260,9 @@ public class MenuManager : MonoBehaviour {
 		PlaySound(11);
 		yield return new WaitForSeconds(1.5f);
 		ChangeLayerTo(5);
-		yield return new WaitForSeconds(3.5f);
+		yield return new WaitForSeconds(1.5f);
 		ChangeLayerTo(8);
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(0.3f);
 		GoToScene("Game");
 	}
 
