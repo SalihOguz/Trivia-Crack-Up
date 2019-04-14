@@ -204,8 +204,8 @@ namespace I2.Loc
 		public static string ApplyRTLfix( string line ) { return ApplyRTLfix (line, 0); }
 		public static string ApplyRTLfix( string line, int maxCharacters )
 		{
-			if (maxCharacters <= 0)
-				return ArabicSupport.ArabicFixer.Fix (line);
+			// if (maxCharacters <= 0)
+			// 	return ArabicSupport.ArabicFixer.Fix (line);
 
 			// Split into lines of maximum length
 			var regex = new Regex(".{0,"+maxCharacters+"}(\\s+|$)", RegexOptions.Multiline);
@@ -216,9 +216,9 @@ namespace I2.Loc
 
 			// Apply the RTL fix for each line
 			var lines = line.Split ('\n');
-			for (int i=0, imax=lines.Length; i<imax; ++i)
-				lines[i] = ArabicSupport.ArabicFixer.Fix(lines[i]);
-			line = string.Join ("\n", lines);
+			// for (int i=0, imax=lines.Length; i<imax; ++i)
+			// 	lines[i] = ArabicSupport.ArabicFixer.Fix(lines[i]);
+			// line = string.Join ("\n", lines);
 
 			return line;
 		}
